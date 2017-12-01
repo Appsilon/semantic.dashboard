@@ -7,7 +7,7 @@
 dashboardBody(...)
 }
 \arguments{
-\item{...}{UI elements to include within the pusher.}
+\item{...}{UI elements to include within the body.}
 }
 \value{
 A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}

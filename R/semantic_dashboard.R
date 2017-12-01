@@ -79,7 +79,7 @@ dashboardSidebar <- function(..., side = "left", size = "", color = "black"){
 
 #' Create a body of a dashboard.
 #' @description Create a body of a dashboard with tabs and other additional UI elements.
-#' @param ... UI elements to include within the pusher.
+#' @param ... UI elements to include within the body.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
