@@ -13,17 +13,45 @@ dashboardSidebar(..., side = "left", size = "", color = "black")
 
 \item{size}{Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}}
 
-\item{color}{Color of the sidebar.}
+\item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 }
 \value{
-A sidebar that can be passed to \code{dashboardPage}
+A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 }
 \description{
-Create a sidebar of a dashboard.
+Create a pushable sidebar of a dashboard with menu items and other additional UI elements.
 }
 \examples{
-dashboardSidebar(side = "top",
-uimenu_item("a", "Tab 1"),
-uimenu_item("b", "Tab 2"),
-uimenu_item("c", "Tab 3"))
+if(interactive()){
+
+  library(shiny)
+  library(semantic.dashboard)
+  library(plotly)
+  library(DT)
+
+  ui <- dashboardPage(
+    dashboardSidebar(side = "top", size = "thin", color = "teal",
+                     uimenu_item("plot_tab", "My plot"),
+                     uimenu_item("table_tab", "My table")),
+    dashboardBody(uitab(id = "plot_tab", active = TRUE,
+                        selectInput(inputId =  "variable1", choices = names(mtcars),
+                                    label = "Select first variable", selected = "mpg"),
+                        selectInput(inputId =  "variable2", choices = names(mtcars),
+                                    label = "Select second variable", selected = "cyl"),
+                        plotlyOutput("mtcars_plot")),
+                  uitab(id = "table_tab",
+                        dataTableOutput("mtcars_table")))
+  )
+
+  server <- function(input, output) {
+
+    output$mtcars_plot <- renderPlotly(plot_ly(mtcars, x=~mtcars[ , input$variable1], y=~mtcars[ , input$variable2], width = "100\%"))
+    output$mtcars_table <- renderDataTable(mtcars)
+
+    lapply(c("mtcars_plot", "mtcars_table"),
+           function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
+  }
+
+  shinyApp(ui, server)
+}
 }

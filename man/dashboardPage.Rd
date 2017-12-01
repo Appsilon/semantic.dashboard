@@ -5,7 +5,7 @@
 \title{Create a dashboard.}
 \usage{
 dashboardPage(dashboardSidebar, dashboardBody, title = "",
-  supress_bootsrtap = TRUE)
+  suppress_bootsrtap = TRUE)
 }
 \arguments{
 \item{dashboardSidebar}{Sidebar of a dashboard.}
@@ -14,32 +14,45 @@ dashboardPage(dashboardSidebar, dashboardBody, title = "",
 
 \item{title}{Title of a dashboard.}
 
-\item{supress_bootsrtap}{If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
+\item{suppress_bootsrtap}{There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
 }
 \value{
 Dashboard.
 }
 \description{
-Create a dashboard.
+Create a page with menu item sidebar and body containing tabs and other additional elements.
 }
 \examples{
-dashboardPage(
- dashboardSidebar(side = "top",
- uimenu_item("a", "Tab 1"),
- uimenu_item("b", "Tab 2"),
- uimenu_item("c", "Tab 3")),
-dashboardBody(uitab(id = "a", active = TRUE,
-  numericInput("n1", "n", 50),
-  plotOutput("plot1"),
-  numericInput("n2", "n", 50),
-  plotOutput("plot2"),
-  numericInput("n3", "n", 50),
-  plotOutput("plot3")),
-  uitab(id = "b",
-        numericInput("n4", "nn", 50),
-        plotOutput("plot4")),
-  uitab(id = "c",
-        numericInput("n5", "nnn", 50),
-        plotOutput("plot5")))
-        )
+if(interactive()){
+
+  library(shiny)
+  library(semantic.dashboard)
+  library(plotly)
+  library(DT)
+
+  ui <- dashboardPage(
+    dashboardSidebar(side = "top", size = "thin", color = "teal",
+                     uimenu_item("plot_tab", "My plot"),
+                     uimenu_item("table_tab", "My table")),
+    dashboardBody(uitab(id = "plot_tab", active = TRUE,
+                        selectInput(inputId =  "variable1", choices = names(mtcars),
+                                    label = "Select first variable", selected = "mpg"),
+                        selectInput(inputId =  "variable2", choices = names(mtcars),
+                                    label = "Select second variable", selected = "cyl"),
+                        plotlyOutput("mtcars_plot")),
+                  uitab(id = "table_tab",
+                        dataTableOutput("mtcars_table")))
+  )
+
+  server <- function(input, output) {
+
+    output$mtcars_plot <- renderPlotly(plot_ly(mtcars, x=~mtcars[ , input$variable1], y=~mtcars[ , input$variable2], width = "100\%"))
+    output$mtcars_table <- renderDataTable(mtcars)
+
+    lapply(c("mtcars_plot", "mtcars_table"),
+           function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
+  }
+
+  shinyApp(ui, server)
+}
 }

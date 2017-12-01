@@ -2,6 +2,7 @@ Package: semantic.dashboard
 Type: Package
 Title: Dashboard with Semantic UI Support for Shiny
 Version: 0.1
+Organization: Appsilon Data Science
 Authors@R: person("Michal", "Maj", email = "michal.maj@appsilondatascience.com",
   role = c("aut", "cre"))
 Description: Basic functions for creating dashboard with Semantic UI
@@ -13,7 +14,8 @@ Imports:
     utils,
     shiny (>= 0.12.1),
     htmltools (>= 0.2.6),
-    htmlwidgets (>= 0.8),
-    purrr (>= 0.2.2),
-    shiny.semantic
+    shiny.semantic (>= 0.1.1)
+Suggests:
+    plotly,
+    DT
 RoxygenNote: 6.0.1
