@@ -1,70 +1,34 @@
+if(interactive()){
+
 library(shiny)
 library(semantic.dashboard)
+library(plotly)
+library(DT)
 
 ui <- dashboardPage(
-  dashboardSidebar(side = "top",
-                  uimenu_item("a", "Tab 1"),
-                  uimenu_item("b", "Tab 2"),
-                  uimenu_item("c", "Tab 3")),
-  dashboardBody(uitab(id = "a", active = TRUE,
-                       numericInput("n1", "n", 50),
-                       plotOutput("plot1"),
-                       numericInput("n2", "n", 50),
-                       plotOutput("plot2"),
-                       numericInput("n3", "n", 50),
-                       plotOutput("plot3")),
-                 uitab(id = "b",
-                       numericInput("n4", "nn", 50),
-                       plotOutput("plot4")),
-                 uitab(id = "c",
-                       numericInput("n5", "nnn", 50),
-                       plotOutput("plot5")))
+  dashboardSidebar(side = "top", size = "thin", color = "teal",
+                  uimenu_item("plot_tab", "My plot"),
+                  uimenu_item("table_tab", "My table")),
+  dashboardBody(uitab(id = "plot_tab", active = TRUE,
+                      selectInput(inputId =  "variable1", choices = names(mtcars),
+                               label = "Select first variable", selected = "mpg"),
+                      selectInput(inputId =  "variable2", choices = names(mtcars),
+                                  label = "Select second variable", selected = "cyl"),
+                       plotlyOutput("mtcars_plot")),
+                 uitab(id = "table_tab",
+                       dataTableOutput("mtcars_table")))
 )
 
 server <- function(input, output) {
 
-  randomVals1 <- reactive({
-    runif(input$n1)
-  })
+output$mtcars_plot <- renderPlotly(plot_ly(mtcars, x=~mtcars[ , input$variable1],
+                                           y=~mtcars[ , input$variable2], width = "100%",
+                                           type = "scatter", mode = "markers"))
+output$mtcars_table <- renderDataTable(mtcars)
 
-  output$plot1 <- renderPlot({
-    hist(randomVals1())
-  })
-
-  randomVals2 <- reactive({
-    runif(input$n2)
-  })
-
-  output$plot2 <- renderPlot({
-    hist(randomVals2())
-  })
-
-  randomVals3 <- reactive({
-    runif(input$n3)
-  })
-
-  output$plot3 <- renderPlot({
-    hist(randomVals3())
-  })
-
-  randomVals4 <- reactive({
-    runif(input$n4)
-  })
-
-  output$plot4 <- renderPlot({
-    hist(randomVals4())
-  })
-
-  randomVals5 <- reactive({
-    runif(input$n5)
-  })
-
-  output$plot5 <- renderPlot({
-    hist(randomVals5())
-  })
-
-  lapply(c("plot1", "plot2", "plot3", "plot4", "plot5"),
+  lapply(c("mtcars_plot", "mtcars_table"),
          function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
 }
 
 shinyApp(ui, server)
+}
