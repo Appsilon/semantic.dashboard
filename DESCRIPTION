@@ -3,8 +3,9 @@ Type: Package
 Title: Dashboard with Semantic UI Support for Shiny
 Version: 0.1
 Organization: Appsilon Data Science
-Authors@R: person("Michal", "Maj", email = "michal.maj@appsilondatascience.com",
-  role = c("aut", "cre"))
+Authors@R: c(person("Michal", "Maj", email = "michal.maj@appsilondatascience.com",
+  role = c("aut", "cre")),
+  person(family = "Appsilon Data Science", role = "cph"))
 Description: Basic functions for creating dashboard with Semantic UI
 BugReports: https://github.com/Appsilon/semantic.dashboard/issues
 Encoding: UTF-8
