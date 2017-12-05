@@ -26,5 +26,7 @@
 #' }
 uitab <- function(id, ..., active = FALSE){
   data_tab = paste0("shiny-tab-", id)
-  shiny::div(role = "tabpanel", style = "height: 100%;", class = paste("ui", ifelse(active, "active", ""), "tab tab-pane"), `data-tab` = data_tab, ...)
+  shiny::div(role = "tabpanel", style = "height: 100%;",
+             class = paste("ui", ifelse(active, "active", ""), "tab tab-pane"),
+             `data-tab` = data_tab, ...)
 }
