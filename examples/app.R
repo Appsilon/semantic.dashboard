@@ -6,7 +6,8 @@ if(interactive()){
   library(DT)
 
   ui <- dashboardPage(
-    dashboardSidebar(side = "top", size = "thin", color = "teal",
+    dashboardHeader(color = "black"),
+    dashboardSidebar(side = "top", size = "thin", color = "black",
                      uimenu_item("plot_tab", "My plot"),
                      uimenu_item("table_tab", "My table")),
     dashboardBody(uitab(id = "plot_tab", active = TRUE,

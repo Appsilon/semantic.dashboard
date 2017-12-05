@@ -4,7 +4,8 @@ if(interactive()){
   library(semantic.dashboard)
 
   ui <- dashboardPage(
-    dashboardSidebar(side = "top", size = "thin", color = "teal",
+    dashboardHeader(color = "black"),
+    dashboardSidebar(side = "top", size = "black", color = "teal",
                      uimenu_item("tab1", "Tab 1"),
                      uimenu_item("tab2", "Tab 2")),
     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),

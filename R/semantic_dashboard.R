@@ -1,3 +1,42 @@
+#' Create a header of a dashboard.
+#' @description Create a header of a dashboard with other additional UI elements.
+#' @param ... UI elements to include within the header.
+#' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
+dashboard_header <- function(..., color = "black"){
+  shiny::div(class = paste("ui top attached inverted", color, "demo menu"),
+             shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"), ...)
+}
+
+#' Create a header of a dashboard.
+#' @description Create a header of a dashboard with other additional UI elements.
+#' @param ... UI elements to include within the header.
+#' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
+#' @export
+#' @examples
+#' if(interactive()){
+#'
+#'   library(shiny)
+#'   library(semantic.dashboard)
+#'
+#'   ui <- dashboardPage(
+#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
+#'                      uimenu_item("tab1", "Tab 1"),
+#'                      uimenu_item("tab2", "Tab 2")),
+#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
+#'                   uitab(id = "tab2", p("Tab 2")))
+#'   )
+#'
+#'   server <- function(input, output) {
+#'   }
+#'
+#'   shinyApp(ui, server)
+#' }
+dashboardHeader <- function(..., color = "black"){
+  dashboard_header(..., color = color)
+}
+
 #' Create a sidebar of a dashboard.
 #' @description Create a pushable sidebar of a dashboard with menu items and other additional UI elements.
 #' @param ... UI elements to include within the sidebar.
@@ -101,6 +140,7 @@ sidebar_js <- "$('.sidebar.menu .item').tab({onVisible: function() {$(window).re
 
 #' Create a dashboard.
 #' @description Create a page with menu item sidebar and body containing tabs and other additional elements.
+#' @param  dashboardHeader Header of a dashboard.
 #' @param  dashboardSidebar Sidebar of a dashboard.
 #' @param  dashboardBody Body of a dashboard.
 #' @param  title Title of a dashboard.
@@ -116,6 +156,7 @@ dashboard_page <- function(dashboardSidebar, dashboardBody, title = "", suppress
 
 #' Create a dashboard.
 #' @description Create a page with menu item sidebar and body containing tabs and other additional elements.
+#' @param  dashboardHeader Header of a dashboard.
 #' @param  dashboardSidebar Sidebar of a dashboard.
 #' @param  dashboardBody Body of a dashboard.
 #' @param  title Title of a dashboard.
@@ -144,4 +185,5 @@ dashboard_page <- function(dashboardSidebar, dashboardBody, title = "", suppress
 dashboardPage <- function(dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
   dashboard_page(dashboardSidebar = dashboardSidebar, dashboardBody = dashboardBody,
                  title = title, suppress_bootstrap = suppress_bootstrap)
+
 }
