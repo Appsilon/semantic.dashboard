@@ -4,10 +4,12 @@
 \alias{dashboardPage}
 \title{Create a dashboard.}
 \usage{
-dashboardPage(dashboardSidebar, dashboardBody, title = "",
+dashboardPage(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
   suppress_bootstrap = TRUE)
 }
 \arguments{
+\item{dashboardHeader}{Header of a dashboard.}
+
 \item{dashboardSidebar}{Sidebar of a dashboard.}
 
 \item{dashboardBody}{Body of a dashboard.}
@@ -15,8 +17,6 @@ dashboardPage(dashboardSidebar, dashboardBody, title = "",
 \item{title}{Title of a dashboard.}
 
 \item{suppress_bootstrap}{There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
-
-\item{dashboardHeader}{Header of a dashboard.}
 }
 \value{
 Dashboard.
