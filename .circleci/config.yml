@@ -21,6 +21,7 @@ jobs:
       - run:
           command: |
             R -e 'devtools::check()'
+            R -e 'if (!testthat:::all_passed(testthat::test_dir("./tests"))) stop("Test failures", call. = FALSE)'
       - store_artifacts:
           path: man/
           destination: man
