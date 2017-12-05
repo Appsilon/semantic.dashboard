@@ -7,7 +7,7 @@ if(interactive()){
 
   ui <- dashboardPage(
     dashboardHeader(color = "black"),
-    dashboardSidebar(side = "top", size = "thin", color = "black",
+    dashboardSidebar(side = "left", size = "thin", color = "black",
                      uimenu_item("plot_tab", "My plot"),
                      uimenu_item("table_tab", "My table")),
     dashboardBody(uitab(id = "plot_tab", active = TRUE,

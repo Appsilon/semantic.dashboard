@@ -21,6 +21,7 @@ dashboard_header <- function(..., color = "black"){
 #'   library(semantic.dashboard)
 #'
 #'   ui <- dashboardPage(
+#'     dashboardHeader(color = "blue"),
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      uimenu_item("tab1", "Tab 1"),
 #'                      uimenu_item("tab2", "Tab 2")),
@@ -76,6 +77,7 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black"){
 #'   library(semantic.dashboard)
 #'
 #'   ui <- dashboardPage(
+#'     dashboardHeader(color = "blue"),
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      uimenu_item("tab1", "Tab 1"),
 #'                      uimenu_item("tab2", "Tab 2")),
@@ -113,6 +115,7 @@ dashboard_body <- function(...){
 #'   library(semantic.dashboard)
 #'
 #'   ui <- dashboardPage(
+#'     dashboardHeader(color = "blue"),
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      uimenu_item("tab1", "Tab 1"),
 #'                      uimenu_item("tab2", "Tab 2")),
@@ -148,9 +151,7 @@ sidebar_js <- "$('.sidebar.menu .item').tab({onVisible: function() {$(window).re
 #' @return Dashboard.
 dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")
-  dashboard_heared <- shiny::div(class = "ui top attached demo menu",
-                                 shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"))
-  shiny.semantic::semanticPage(dashboard_heared, dashboardSidebar, dashboardBody,
+  shiny.semantic::semanticPage(dashboardHeader, dashboardSidebar, dashboardBody,
                                shiny::tags$script(sidebar_js), title = title)
 }
 
