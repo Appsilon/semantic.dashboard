@@ -21,8 +21,6 @@ jobs:
       - run:
           command: |
             R -e 'devtools::check()'
-            R CMD INSTALL --no-multiarch --with-keep.source semantic.dashboard
-            R -e 'if (!testthat:::all_passed(testthat::test_dir("./tests"))) stop("Test failures", call. = FALSE)'
       - store_artifacts:
           path: man/
           destination: man
