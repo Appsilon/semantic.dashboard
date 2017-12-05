@@ -24,5 +24,5 @@
 #'   shinyApp(ui, server)
 #' }
 uimenu_item <- function(id, label){
-  shiny::tags$a(class="item", `data-tab` = paste0("shiny-tab-", id), label)
+  shiny::tags$a(class = "item", `data-tab` = paste0("shiny-tab-", id), label)
 }
