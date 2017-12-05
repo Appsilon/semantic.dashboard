@@ -9,7 +9,7 @@ linters_config <- lintr::with_defaults(
   #no_tab_linter = NULL,
   camel_case_linter = NULL,
   snake_case_linter = NULL,
-  multiple_dots_linter = NULL,
+  multiple_dots_linter = NULL
   #object_length_linter = NULL,
   #open_curly_linter = NULL,
   #single_quotes_linter = NULL,
