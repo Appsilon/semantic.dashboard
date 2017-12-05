@@ -146,7 +146,7 @@ sidebar_js <- "$('.sidebar.menu .item').tab({onVisible: function() {$(window).re
 #' @param  title Title of a dashboard.
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
-dashboard_page <- function(dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
+dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")
   dashboard_heared <- shiny::div(class = "ui top attached demo menu",
                                  shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"))
@@ -182,8 +182,8 @@ dashboard_page <- function(dashboardSidebar, dashboardBody, title = "", suppress
 #'
 #'   shinyApp(ui, server)
 #' }
-dashboardPage <- function(dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
-  dashboard_page(dashboardSidebar = dashboardSidebar, dashboardBody = dashboardBody,
+dashboardPage <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
+  dashboard_page(dashboardHeader = dashboardHeader, dashboardSidebar = dashboardSidebar, dashboardBody = dashboardBody,
                  title = title, suppress_bootstrap = suppress_bootstrap)
 
 }
