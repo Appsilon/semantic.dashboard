@@ -26,6 +26,26 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black"){
 #' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
+#' @examples
+#' if(interactive()){
+#'
+#'   library(shiny)
+#'   library(semantic.dashboard)
+#'
+#'   ui <- dashboardPage(
+#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
+#'                      uimenu_item("tab1", "Tab 1"),
+#'                      uimenu_item("tab2", "Tab 2")),
+#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
+#'                   uitab(id = "tab2", p("Tab 2")))
+#'   )
+#'
+#'   server <- function(input, output) {
+#'   }
+#'
+#'   shinyApp(ui, server)
+#' }
+
 dashboardSidebar <- function(..., side = "left", size = "", color = "black"){
   dashboard_sidebar(..., side = side, size = size, color = color)
 }
@@ -43,6 +63,25 @@ dashboard_body <- function(...){
 #' @param ... UI elements to include within the body.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
+#' @examples
+#' if(interactive()){
+#'
+#'   library(shiny)
+#'   library(semantic.dashboard)
+#'
+#'   ui <- dashboardPage(
+#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
+#'                      uimenu_item("tab1", "Tab 1"),
+#'                      uimenu_item("tab2", "Tab 2")),
+#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
+#'                   uitab(id = "tab2", p("Tab 2")))
+#'   )
+#'
+#'   server <- function(input, output) {
+#'   }
+#'
+#'   shinyApp(ui, server)
+#' }
 dashboardBody <- function(...){
   dashboard_body(...)
 }
@@ -77,6 +116,25 @@ dashboard_page <- function(dashboardSidebar, dashboardBody, title = "", suppress
 #' @param suppress_bootsrtap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
 #' @export
+#' @examples
+#' if(interactive()){
+#'
+#'   library(shiny)
+#'   library(semantic.dashboard)
+#'
+#'   ui <- dashboardPage(
+#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
+#'                      uimenu_item("tab1", "Tab 1"),
+#'                      uimenu_item("tab2", "Tab 2")),
+#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
+#'                   uitab(id = "tab2", p("Tab 2")))
+#'   )
+#'
+#'   server <- function(input, output) {
+#'   }
+#'
+#'   shinyApp(ui, server)
+#' }
 dashboardPage <- function(dashboardSidebar, dashboardBody, title = "", suppress_bootsrtap = TRUE){
   dashboard_page(dashboardSidebar = dashboardSidebar, dashboardBody = dashboardBody, title = title, suppress_bootsrtap = suppress_bootsrtap)
 }
