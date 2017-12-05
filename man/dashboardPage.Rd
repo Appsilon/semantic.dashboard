@@ -5,7 +5,7 @@
 \title{Create a dashboard.}
 \usage{
 dashboardPage(dashboardSidebar, dashboardBody, title = "",
-  suppress_bootsrtap = TRUE)
+  suppress_bootstrap = TRUE)
 }
 \arguments{
 \item{dashboardSidebar}{Sidebar of a dashboard.}
@@ -14,7 +14,7 @@ dashboardPage(dashboardSidebar, dashboardBody, title = "",
 
 \item{title}{Title of a dashboard.}
 
-\item{suppress_bootsrtap}{There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
+\item{suppress_bootstrap}{There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
 }
 \value{
 Dashboard.
