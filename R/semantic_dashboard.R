@@ -86,6 +86,15 @@ dashboardBody <- function(...){
   dashboard_body(...)
 }
 
+sidebar_js <- "$('.sidebar.menu .item').tab({onVisible: function() {$(window).resize()} });
+     $('.wrapper .ui.sidebar')
+  .sidebar({
+    context: $('.wrapper .pusher'),
+    transition: 'push'
+  })
+  .sidebar('attach events', '.wrapper .menu .item')
+;"
+
 #' Create a dashboard.
 #' @description Create a page with menu item sidebar and body containing tabs and other additional elements.
 #' @param  dashboardSidebar Sidebar of a dashboard.
@@ -94,18 +103,10 @@ dashboardBody <- function(...){
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
 dashboard_page <- function(dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
-  if(suppress_bootstrap) {shiny::suppressDependencies("bootstrap")}
+  if(suppress_bootstrap) shiny::suppressDependencies("bootstrap")
   dashboard_heared <- shiny::div(class = "ui top attached demo menu",
                                  shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"))
-  sidebar_js <- shiny::tags$script("$('.sidebar.menu .item').tab({onVisible: function() {$(window).resize()} });
-                                                                                            $('.wrapper .ui.sidebar')
-  .sidebar({
-    context: $('.wrapper .pusher'),
-    transition: 'push'
-  })
-  .sidebar('attach events', '.wrapper .menu .item')
-;")
-  shiny.semantic::semanticPage(dashboard_heared, dashboardSidebar, dashboardBody, sidebar_js, title = title)
+  shiny.semantic::semanticPage(dashboard_heared, dashboardSidebar, dashboardBody, shiny::tags$script(sidebar_js), title = title)
 }
 
 #' Create a dashboard.

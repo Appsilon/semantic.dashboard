@@ -15,7 +15,9 @@ Imports:
     utils,
     shiny (>= 0.12.1),
     htmltools (>= 0.2.6),
-    shiny.semantic (>= 0.1.1)
+    shiny.semantic (>= 0.1.1),
+    testthat,
+    lintr
 Suggests:
     plotly,
     DT
