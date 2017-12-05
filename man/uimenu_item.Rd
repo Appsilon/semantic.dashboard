@@ -4,12 +4,14 @@
 \alias{uimenu_item}
 \title{Create a menu item.}
 \usage{
-uimenu_item(id, label)
+uimenu_item(id, label, icon = NULL)
 }
 \arguments{
 \item{id}{Id of the tab.}
 
 \item{label}{Label of the menu item.}
+
+\item{icon}{Icon of the menu item. (Optimal)}
 }
 \value{
 A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
