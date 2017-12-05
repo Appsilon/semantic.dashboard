@@ -1,4 +1,4 @@
 library(testthat)
-library(ci.example)
+library(semantic.dashboard)
 
-test_check("ci.example")
+test_check("semantic.dashboard")
