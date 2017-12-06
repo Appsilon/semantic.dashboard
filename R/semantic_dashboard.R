@@ -23,8 +23,8 @@ dashboard_header <- function(..., color = "black"){
 #'   ui <- dashboardPage(
 #'     dashboardHeader(color = "blue"),
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      uimenu_item("tab1", "Tab 1"),
-#'                      uimenu_item("tab2", "Tab 2")),
+#'                      menuItem("tab1", "Tab 1"),
+#'                      menuItem("tab2", "Tab 2")),
 #'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
 #'                   uitab(id = "tab2", p("Tab 2")))
 #'   )
@@ -84,8 +84,8 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ty
 #'   ui <- dashboardPage(
 #'     dashboardHeader(color = "blue"),
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      uimenu_item("tab1", "Tab 1"),
-#'                      uimenu_item("tab2", "Tab 2")),
+#'                      menuItem("tab1", "Tab 1"),
+#'                      menuItem("tab2", "Tab 2")),
 #'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
 #'                   uitab(id = "tab2", p("Tab 2")))
 #'   )
@@ -122,8 +122,8 @@ dashboard_body <- function(...){
 #'   ui <- dashboardPage(
 #'     dashboardHeader(color = "blue"),
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      uimenu_item("tab1", "Tab 1"),
-#'                      uimenu_item("tab2", "Tab 2")),
+#'                      menuItem("tab1", "Tab 1"),
+#'                      menuItem("tab2", "Tab 2")),
 #'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
 #'                   uitab(id = "tab2", p("Tab 2")))
 #'   )
@@ -177,8 +177,8 @@ dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, tit
 #'
 #'   ui <- dashboardPage(
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      uimenu_item("tab1", "Tab 1"),
-#'                      uimenu_item("tab2", "Tab 2")),
+#'                      menuItem("tab1", "Tab 1"),
+#'                      menuItem("tab2", "Tab 2")),
 #'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
 #'                   uitab(id = "tab2", p("Tab 2")))
 #'   )
