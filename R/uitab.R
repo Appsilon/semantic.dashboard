@@ -1,6 +1,20 @@
 #' Create a tab panel.
 #' @description Create a tab panel with additional UI elements.
-#' @param id Id of the tab.
+#' @param tabName Id of the tab.
+#' @param ... UI elements to include within the tab.
+#' @param  active Should it be active.
+#' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+#' @export
+uitab <- function(tabName, ..., active = FALSE){
+  data_tab <- paste0("shiny-tab-", tabName)
+  shiny::div(role = "tabpanel", style = "height: 100%;",
+             class = paste("ui", ifelse(active, "active", ""), "tab tab-pane"),
+             `data-tab` = data_tab, ...)
+}
+
+#' Create a tab panel.
+#' @description Create a tab panel with additional UI elements.
+#' @param tabName Id of the tab.
 #' @param ... UI elements to include within the tab.
 #' @param  active Should it be active.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
@@ -16,8 +30,8 @@
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      menuItem("tab1", "Tab 1"),
 #'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-#'                   uitab(id = "tab2", p("Tab 2")))
+#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+#'                   tabItem(tabName = "tab2", p("Tab 2")))
 #'   )
 #'
 #'   server <- function(input, output) {
@@ -25,9 +39,6 @@
 #'
 #'   shinyApp(ui, server)
 #' }
-uitab <- function(id, ..., active = FALSE){
-  data_tab <- paste0("shiny-tab-", id)
-  shiny::div(role = "tabpanel", style = "height: 100%;",
-             class = paste("ui", ifelse(active, "active", ""), "tab tab-pane"),
-             `data-tab` = data_tab, ...)
+tabItem <- function(tabName, ..., active = FALSE){
+  uitab(tabName = tabName, ..., active = active)
 }

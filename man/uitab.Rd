@@ -4,10 +4,10 @@
 \alias{uitab}
 \title{Create a tab panel.}
 \usage{
-uitab(id, ..., active = FALSE)
+uitab(tabName, ..., active = FALSE)
 }
 \arguments{
-\item{id}{Id of the tab.}
+\item{tabName}{Id of the tab.}
 
 \item{...}{UI elements to include within the tab.}
 
@@ -18,25 +18,4 @@ A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 }
 \description{
 Create a tab panel with additional UI elements.
-}
-\examples{
-if(interactive()){
-
-  library(shiny)
-  library(semantic.dashboard)
-
-  ui <- dashboardPage(
-    dashboardHeader(color = "blue"),
-    dashboardSidebar(side = "top", size = "thin", color = "teal",
-                     menuItem("tab1", "Tab 1"),
-                     menuItem("tab2", "Tab 2")),
-    dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-                  uitab(id = "tab2", p("Tab 2")))
-  )
-
-  server <- function(input, output) {
-  }
-
-  shinyApp(ui, server)
-}
 }

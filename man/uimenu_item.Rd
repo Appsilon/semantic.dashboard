@@ -4,10 +4,10 @@
 \alias{uimenu_item}
 \title{Create a menu item.}
 \usage{
-uimenu_item(id, label, icon = NULL)
+uimenu_item(tabName, label, icon = NULL)
 }
 \arguments{
-\item{id}{Id of the tab.}
+\item{tabName}{Id of the tab.}
 
 \item{label}{Label of the menu item.}
 

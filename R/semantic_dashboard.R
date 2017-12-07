@@ -26,8 +26,8 @@ dashboard_header <- function(..., color = "black"){
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      menuItem("tab1", "Tab 1"),
 #'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-#'                   uitab(id = "tab2", p("Tab 2")))
+#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+#'                   tabItem(tabName = "tab2", p("Tab 2")))
 #'   )
 #'
 #'   server <- function(input, output) {
@@ -86,8 +86,8 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ce
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      menuItem("tab1", "Tab 1"),
 #'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-#'                   uitab(id = "tab2", p("Tab 2")))
+#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+#'                   tabItem(tabName = "tab2", p("Tab 2")))
 #'   )
 #'
 #'   server <- function(input, output) {
@@ -124,8 +124,8 @@ dashboard_body <- function(...){
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      menuItem("tab1", "Tab 1"),
 #'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-#'                   uitab(id = "tab2", p("Tab 2")))
+#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+#'                   tabItem(tabName = "tab2", p("Tab 2")))
 #'   )
 #'
 #'   server <- function(input, output) {
@@ -181,8 +181,8 @@ dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, tit
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      menuItem("tab1", "Tab 1"),
 #'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-#'                   uitab(id = "tab2", p("Tab 2")))
+#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+#'                   tabItem(tabName = "tab2", p("Tab 2")))
 #'   )
 #'
 #'   server <- function(input, output) {

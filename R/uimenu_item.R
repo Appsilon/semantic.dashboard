@@ -12,13 +12,13 @@ icon <- function(type = "", ...){
 
 #' Create a menu item.
 #' @description Create a menu item corresponding to a tab.
-#' @param id Id of the tab.
+#' @param tabName Id of the tab.
 #' @param label Label of the menu item.
 #' @param icon Icon of the menu item. (Optional)
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
-uimenu_item <- function(id, label, icon = NULL){
-  data_tab <- paste0("shiny-tab-", id)
+uimenu_item <- function(tabName, label, icon = NULL){
+  data_tab <- paste0("shiny-tab-", tabName)
   if (is.null(icon)) {
   shiny::tags$a(class = "item", `data-tab` = data_tab, label)
   } else {
@@ -28,7 +28,7 @@ uimenu_item <- function(id, label, icon = NULL){
 
 #' Create a menu item.
 #' @description Create a menu item corresponding to a tab.
-#' @param id Id of the tab.
+#' @param tabName Id of the tab.
 #' @param label Label of the menu item.
 #' @param icon Icon of the menu item. (Optional)
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
@@ -44,8 +44,8 @@ uimenu_item <- function(id, label, icon = NULL){
 #'     dashboardSidebar(side = "top", size = "thin", color = "teal",
 #'                      menuItem("tab1", "Tab 1"),
 #'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-#'                   uitab(id = "tab2", p("Tab 2")))
+#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+#'                   tabItem(tabName = "tab2", p("Tab 2")))
 #'   )
 #'
 #'   server <- function(input, output) {
@@ -53,6 +53,6 @@ uimenu_item <- function(id, label, icon = NULL){
 #'
 #'   shinyApp(ui, server)
 #' }
-menuItem <- function(id, label, icon = NULL){
-  uimenu_item(id = id, label = label, icon = icon)
+menuItem <- function(tabName, label, icon = NULL){
+  uimenu_item(tabName = tabName, label = label, icon = icon)
 }

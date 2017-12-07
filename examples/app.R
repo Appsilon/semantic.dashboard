@@ -11,13 +11,13 @@ if(interactive()){
     dashboardSidebar(side = "left", size = "thin", color = "black", center = TRUE,
                      menuItem("plot_tab", label = "My plot", icon = icon("home")),
                      menuItem("table_tab", label = "My table", icon = icon("smile"))),
-    dashboardBody(uitab(id = "plot_tab", active = TRUE,
+    dashboardBody(tabItem(tabName = "plot_tab", active = TRUE,
                         selectInput(inputId =  "variable1", choices = names(mtcars),
                                     label = "Select first variable", selected = "mpg"),
                         selectInput(inputId =  "variable2", choices = names(mtcars),
                                     label = "Select second variable", selected = "cyl"),
                         plotlyOutput("mtcars_plot")),
-                  uitab(id = "table_tab",
+                  tabItem(tabName = "table_tab",
                         dataTableOutput("mtcars_table")))
   )
 

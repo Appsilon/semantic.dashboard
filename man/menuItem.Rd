@@ -4,10 +4,10 @@
 \alias{menuItem}
 \title{Create a menu item.}
 \usage{
-menuItem(id, label, icon = NULL)
+menuItem(tabName, label, icon = NULL)
 }
 \arguments{
-\item{id}{Id of the tab.}
+\item{tabName}{Id of the tab.}
 
 \item{label}{Label of the menu item.}
 
@@ -30,8 +30,8 @@ if(interactive()){
     dashboardSidebar(side = "top", size = "thin", color = "teal",
                      menuItem("tab1", "Tab 1"),
                      menuItem("tab2", "Tab 2")),
-    dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-                  uitab(id = "tab2", p("Tab 2")))
+    dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+                  tabItem(tabName = "tab2", p("Tab 2")))
   )
 
   server <- function(input, output) {
