@@ -45,10 +45,10 @@ dashboardHeader <- function(..., color = "black"){
 #' @param  side Placement of the sidebar. One of \code{c("left", "right", "top", "bottom")}
 #' @param  size Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}
 #' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
-#' @param  type Type of displayed menu items. One of \code{c("", "labeled icon")}
+#' @param  center Schould label and icon be centerd on menu items. Default to \code{FALSE}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
-dashboard_sidebar <- function(..., side = "left", size = "", color = "black", type = ""){
+dashboard_sidebar <- function(..., side = "left", size = "", color = "black", center = FALSE){
   if (!(side %in% c("left", "right", "top", "bottom"))){
     warning("'side' argument should be one of 'left', 'right', 'top', 'bottom'")
   }
@@ -60,12 +60,10 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ty
     warning("'color' argument should be one of 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
             'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'")
   }
-  if (!(type %in% c("", "labeled icon"))){
-    warning("'type' argument should be one of '', 'labeled icon'")
-  }
+  display_type <- ifelse(center, "labeled icon", "")
   shiny::div(id = "uisidebar",
              class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
-                           type, "inverted menu sidebar push"), ...)
+                           display_type, "inverted menu sidebar push"), ...)
 }
 
 #' Create a sidebar of a dashboard.
@@ -74,7 +72,7 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ty
 #' @param  side Placement of the sidebar. One of \code{c("left", "right", "top", "bottom")}
 #' @param  size Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}
 #' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
-#' @param  type Type of displayed menu items. One of \code{c("", "labeled icon")}
+#' @param  center Schould label and icon be centerd on menu items. Default to \code{FALSE}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -97,8 +95,8 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ty
 #'
 #'   shinyApp(ui, server)
 #' }
-dashboardSidebar <- function(..., side = "left", size = "", color = "black", type = ""){
-  dashboard_sidebar(..., side = side, size = size, color = color, type = type)
+dashboardSidebar <- function(..., side = "left", size = "", color = "black", center = FALSE){
+  dashboard_sidebar(..., side = side, size = size, color = color, center = center)
 }
 
 #' Create a body of a dashboard.
@@ -158,6 +156,7 @@ sidebar_js <- "$('.sidebar.menu .item').tab({onVisible: function() {$(window).re
 #' @return Dashboard.
 #' @export
 dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
+  # Line below will be removed when it will be added to semanticPage() function
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")
   shiny.semantic::semanticPage(dashboardHeader, dashboardSidebar, dashboardBody,
                                shiny::tags$script(sidebar_js), title = title)
