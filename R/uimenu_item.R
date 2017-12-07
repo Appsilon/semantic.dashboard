@@ -16,6 +16,7 @@ icon <- function(type = "", ...){
 #' @param label Label of the menu item.
 #' @param icon Icon of the menu item. (Optional)
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
+#' @export
 uimenu_item <- function(id, label, icon = NULL){
   if (is.null(icon)) {
   shiny::tags$a(class = "item",
