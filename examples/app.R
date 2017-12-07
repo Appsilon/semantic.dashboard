@@ -12,13 +12,14 @@ if(interactive()){
                      menuItem("plot_tab", label = "My plot", icon = icon("home")),
                      menuItem("table_tab", label = "My table", icon = icon("smile"))),
     dashboardBody(tabItem(tabName = "plot_tab", active = TRUE,
+                          box(title = "Sample box", color = "blue",
                         selectInput(inputId =  "variable1", choices = names(mtcars),
                                     label = "Select first variable", selected = "mpg"),
                         selectInput(inputId =  "variable2", choices = names(mtcars),
                                     label = "Select second variable", selected = "cyl"),
-                        plotlyOutput("mtcars_plot")),
+                        plotlyOutput("mtcars_plot"))),
                   tabItem(tabName = "table_tab",
-                        dataTableOutput("mtcars_table")))
+                        box(color = "red", dataTableOutput("mtcars_table"))))
   )
 
   server <- function(input, output) {

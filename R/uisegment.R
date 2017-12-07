@@ -1,0 +1,47 @@
+#' Create a box.
+#' @description Create a box with additional UI elements.
+#' @param ... UI elements to include within the box.
+#' @param title Label of the box.
+#' @param  color Color of the sidebar. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+#' @export
+uisegment <- function(..., title = "", color = ""){
+  if (!(color %in% c("", "red", "orange", "yellow", "olive", "green", "teal",
+                     "blue", "violet", "purple", "pink", "brown", "grey", "black"))){
+    warning("'color' argument should be one of '', 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
+            'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'")
+  }
+  shiny::div(class = paste("ui segment raised compact", color),
+             shiny::div(class = "ui right floated header", title), ...)
+}
+
+#' Create a box.
+#' @description Create a box with additional UI elements.
+#' @param ... UI elements to include within the box.
+#' @param title Label of the box.
+#' @param  color Color of the sidebar. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+#' @export
+#' @examples
+#' if(interactive()){
+#'
+#'   library(shiny)
+#'   library(semantic.dashboard)
+#'
+#'   ui <- dashboardPage(
+#'     dashboardHeader(color = "blue"),
+#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
+#'                      menuItem("tab1", "Tab 1"),
+#'                      menuItem("tab2", "Tab 2")),
+#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+#'                   tabItem(tabName = "tab2", p("Tab 2")))
+#'   )
+#'
+#'   server <- function(input, output) {
+#'   }
+#'
+#'   shinyApp(ui, server)
+#' }
+box <- function(..., title = "", color = ""){
+  uisegment(..., title = title, color = color)
+}
