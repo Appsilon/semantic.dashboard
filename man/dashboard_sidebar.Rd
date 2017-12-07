@@ -5,7 +5,7 @@
 \title{Create a sidebar of a dashboard.}
 \usage{
 dashboard_sidebar(..., side = "left", size = "", color = "black",
-  type = "")
+  center = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}
@@ -16,7 +16,7 @@ dashboard_sidebar(..., side = "left", size = "", color = "black",
 
 \item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
-\item{type}{Type of displayed menu items. One of \code{c("", "labeled icon")}}
+\item{center}{Schould label and icon be centerd on menu items. Default to \code{FALSE}}
 }
 \value{
 A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}

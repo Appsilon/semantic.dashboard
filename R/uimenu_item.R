@@ -18,12 +18,11 @@ icon <- function(type = "", ...){
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
 uimenu_item <- function(id, label, icon = NULL){
+  data_tab <- paste0("shiny-tab-", id)
   if (is.null(icon)) {
-  shiny::tags$a(class = "item",
-                `data-tab` = paste0("shiny-tab-", id), label)
+  shiny::tags$a(class = "item", `data-tab` = data_tab, label)
   } else {
-    shiny::tags$a(class = "item", icon,
-                  `data-tab` = paste0("shiny-tab-", id), label)
+    shiny::tags$a(class = "item", `data-tab` = data_tab, icon, label)
   }
 }
 
