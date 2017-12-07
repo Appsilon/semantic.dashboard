@@ -12,7 +12,7 @@ uisegment <- function(..., title = "", color = ""){
             'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'")
   }
   shiny::div(class = paste("ui segment raised compact", color),
-             shiny::div(class = "ui right floated header", title), ...)
+             shiny::div(class = paste("ui right ribbon label", color), title), ...)
 }
 
 #' Create a box.
