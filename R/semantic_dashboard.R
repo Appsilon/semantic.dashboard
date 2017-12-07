@@ -48,7 +48,6 @@ dashboardHeader <- function(..., color = "black"){
 #' @param  center Schould label and icon be centerd on menu items. Default to \code{FALSE}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
-
 dashboard_sidebar <- function(..., side = "left", size = "", color = "black", center = FALSE){
   if (!(side %in% c("left", "right", "top", "bottom"))){
     warning("'side' argument should be one of 'left', 'right', 'top', 'bottom'")
