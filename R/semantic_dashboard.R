@@ -3,6 +3,7 @@
 #' @param ... UI elements to include within the header.
 #' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
+#' @export
 dashboard_header <- function(..., color = "black"){
   shiny::div(class = paste("ui top attached inverted", color, "demo menu"),
              shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"), ...)
@@ -46,6 +47,7 @@ dashboardHeader <- function(..., color = "black"){
 #' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @param  type Type of displayed menu items. One of \code{c("", "labeled icon")}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
+#' @export
 dashboard_sidebar <- function(..., side = "left", size = "", color = "black", type = ""){
   if (!(side %in% c("left", "right", "top", "bottom"))){
     warning("'side' argument should be one of 'left', 'right', 'top', 'bottom'")
@@ -95,7 +97,6 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ty
 #'
 #'   shinyApp(ui, server)
 #' }
-
 dashboardSidebar <- function(..., side = "left", size = "", color = "black", type = ""){
   dashboard_sidebar(..., side = side, size = size, color = color, type = type)
 }
@@ -104,6 +105,7 @@ dashboardSidebar <- function(..., side = "left", size = "", color = "black", typ
 #' @description Create a body of a dashboard with tabs and other additional UI elements.
 #' @param ... UI elements to include within the body.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
+#' @export
 dashboard_body <- function(...){
   shiny::div(class = "pusher", style = "height: 100%;",  ...)
 }
@@ -154,6 +156,7 @@ sidebar_js <- "$('.sidebar.menu .item').tab({onVisible: function() {$(window).re
 #' @param  title Title of a dashboard.
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
+#' @export
 dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")
   shiny.semantic::semanticPage(dashboardHeader, dashboardSidebar, dashboardBody,
