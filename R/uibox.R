@@ -7,7 +7,7 @@
 #' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right"){
+uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
   if (!(color %in% c("", "red", "orange", "yellow", "olive", "green", "teal",
                      "blue", "violet", "purple", "pink", "brown", "grey", "black"))){
     warning("'color' argument should be one of '', 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
@@ -21,12 +21,16 @@ uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "to
     warning("If 'ribbon' agrument is set to 'TRUE' 'title_side' argument should be one of 'top left', 'top right'")
   }
   if (is.null(title) | !is.character(title)){
-    shiny::div(class = paste("ui segment raised compact", color), ...)
+    label <- NULL
   } else {
+    minimize_btn <- NULL
     title_class <- paste("ui", title_side, ifelse(ribbon, "ribbon", "attached"), "label", color)
-    shiny::div(class = paste("ui segment raised compact", color),
-               shiny::div(class = title_class, title), ...)
+    if (collapsible){
+      minimize_btn <- shiny.semantic::uiicon("minimize window")
+    }
+    label <- shiny::div(class = title_class, minimize_btn, title)
   }
+  shiny::div(class = paste("ui segment raised compact", color), label,  ...)
 }
 
 #' Create a box.
@@ -58,6 +62,6 @@ uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "to
 #'
 #'   shinyApp(ui, server)
 #' }
-box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right"){
-  uibox(..., title = title, color = color, ribbon = ribbon, title_side = title_side)
+box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
+  uibox(..., title = title, color = color, ribbon = ribbon, title_side = title_side, collapsible = collapsible)
 }

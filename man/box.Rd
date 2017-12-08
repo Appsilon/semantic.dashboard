@@ -5,7 +5,7 @@
 \title{Create a box.}
 \usage{
 box(..., title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right")
+  title_side = "top right", collapsible = TRUE)
 }
 \arguments{
 \item{...}{UI elements to include within the box.}
