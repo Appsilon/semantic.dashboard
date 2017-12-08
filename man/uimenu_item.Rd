@@ -4,36 +4,18 @@
 \alias{uimenu_item}
 \title{Create a menu item.}
 \usage{
-uimenu_item(id, label)
+uimenu_item(id, label, icon = NULL)
 }
 \arguments{
 \item{id}{Id of the tab.}
 
 \item{label}{Label of the menu item.}
+
+\item{icon}{Icon of the menu item. (Optional)}
 }
 \value{
 A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 }
 \description{
 Create a menu item corresponding to a tab.
-}
-\examples{
-if(interactive()){
-
-  library(shiny)
-  library(semantic.dashboard)
-
-  ui <- dashboardPage(
-    dashboardSidebar(side = "top", size = "thin", color = "teal",
-                     uimenu_item("tab1", "Tab 1"),
-                     uimenu_item("tab2", "Tab 2")),
-    dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-                  uitab(id = "tab2", p("Tab 2")))
-  )
-
-  server <- function(input, output) {
-  }
-
-  shinyApp(ui, server)
-}
 }

@@ -1,14 +1,16 @@
 if(interactive()){
 
   library(shiny)
+  library(shiny.semantic)
   library(semantic.dashboard)
   library(plotly)
   library(DT)
 
   ui <- dashboardPage(
-    dashboardSidebar(side = "top", size = "thin", color = "teal",
-                     uimenu_item("plot_tab", "My plot"),
-                     uimenu_item("table_tab", "My table")),
+    dashboardHeader(color = "black"),
+    dashboardSidebar(side = "left", size = "thin", color = "black", center = TRUE,
+                     menuItem("plot_tab", label = "My plot", icon = icon("home")),
+                     menuItem("table_tab", label = "My table", icon = icon("smile"))),
     dashboardBody(uitab(id = "plot_tab", active = TRUE,
                         selectInput(inputId =  "variable1", choices = names(mtcars),
                                     label = "Select first variable", selected = "mpg"),

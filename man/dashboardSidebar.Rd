@@ -4,7 +4,8 @@
 \alias{dashboardSidebar}
 \title{Create a sidebar of a dashboard.}
 \usage{
-dashboardSidebar(..., side = "left", size = "", color = "black")
+dashboardSidebar(..., side = "left", size = "", color = "black",
+  center = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}
@@ -14,6 +15,8 @@ dashboardSidebar(..., side = "left", size = "", color = "black")
 \item{size}{Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}}
 
 \item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+
+\item{center}{Schould label and icon be centerd on menu items. Default to \code{FALSE}}
 }
 \value{
 A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
@@ -28,9 +31,10 @@ if(interactive()){
   library(semantic.dashboard)
 
   ui <- dashboardPage(
+    dashboardHeader(color = "blue"),
     dashboardSidebar(side = "top", size = "thin", color = "teal",
-                     uimenu_item("tab1", "Tab 1"),
-                     uimenu_item("tab2", "Tab 2")),
+                     menuItem("tab1", "Tab 1"),
+                     menuItem("tab2", "Tab 2")),
     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
                   uitab(id = "tab2", p("Tab 2")))
   )

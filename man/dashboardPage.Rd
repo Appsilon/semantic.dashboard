@@ -4,10 +4,12 @@
 \alias{dashboardPage}
 \title{Create a dashboard.}
 \usage{
-dashboardPage(dashboardSidebar, dashboardBody, title = "",
+dashboardPage(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
   suppress_bootstrap = TRUE)
 }
 \arguments{
+\item{dashboardHeader}{Header of a dashboard.}
+
 \item{dashboardSidebar}{Sidebar of a dashboard.}
 
 \item{dashboardBody}{Body of a dashboard.}
@@ -30,8 +32,8 @@ if(interactive()){
 
   ui <- dashboardPage(
     dashboardSidebar(side = "top", size = "thin", color = "teal",
-                     uimenu_item("tab1", "Tab 1"),
-                     uimenu_item("tab2", "Tab 2")),
+                     menuItem("tab1", "Tab 1"),
+                     menuItem("tab2", "Tab 2")),
     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
                   uitab(id = "tab2", p("Tab 2")))
   )
