@@ -12,6 +12,7 @@ if(interactive()){
                      menuItem("plot_tab", label = "My plot", icon = icon("home")),
                      menuItem("table_tab", label = "My table", icon = icon("smile"))),
     dashboardBody(tabItem(tabName = "plot_tab", active = TRUE,
+                          infoBox("Unread Mail", 44, icon("mail"), color = "blue"),
                           box(title = "Sample box", color = "blue",
                         selectInput(inputId =  "variable1", choices = names(mtcars),
                                     label = "Select first variable", selected = "mpg"),

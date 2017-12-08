@@ -5,6 +5,7 @@
 #' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @param ribbon Should label be presented as ribbon.
 #' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}
+#' @param collapsible Should minimize button be added to label.
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
@@ -40,6 +41,7 @@ uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "to
 #' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @param ribbon Should label be presented as ribbon.
 #' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}
+#' @param collapsible Should minimize button be added to label.
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples
