@@ -4,14 +4,19 @@
 \alias{box}
 \title{Create a box.}
 \usage{
-box(..., title = "", color = "")
+box(..., title = NULL, color = "", ribbon = TRUE,
+  title_side = "top right")
 }
 \arguments{
 \item{...}{UI elements to include within the box.}
 
 \item{title}{Label of the box.}
 
-\item{color}{Color of the sidebar. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+
+\item{ribbon}{Should label be presented as ribbon.}
+
+\item{title_side}{Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")}}
 }
 \value{
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

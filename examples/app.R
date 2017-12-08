@@ -19,7 +19,8 @@ if(interactive()){
                                     label = "Select second variable", selected = "cyl"),
                         plotlyOutput("mtcars_plot"))),
                   tabItem(tabName = "table_tab",
-                        box(color = "red", dataTableOutput("mtcars_table"))))
+                        box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "bottom",
+                            dataTableOutput("mtcars_table"))))
   )
 
   server <- function(input, output) {
