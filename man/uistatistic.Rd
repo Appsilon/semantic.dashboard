@@ -2,16 +2,16 @@
 % Please edit documentation in R/uistatistic.R
 \name{uistatistic}
 \alias{uistatistic}
-\title{Create a infoBox.}
+\title{Create a valueBox.}
 \usage{
 uistatistic(title, value, icon = NULL, color = "blue")
 }
 \arguments{
-\item{title}{Label of the infoBox.}
+\item{title}{Label of the valueBox.}
 
-\item{value}{Value of the infoBox.}
+\item{value}{Value of the valueBox.}
 
-\item{icon}{Icon of the infoBox.}
+\item{icon}{Icon of the valueBox.}
 
 \item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 }
@@ -19,5 +19,5 @@ uistatistic(title, value, icon = NULL, color = "blue")
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 }
 \description{
-Create a infoBox with additional UI elements.
+Create a valueBox with additional UI elements.
 }

@@ -12,7 +12,7 @@ if(interactive()){
                      menuItem("plot_tab", label = "My plot", icon = icon("home")),
                      menuItem("table_tab", label = "My table", icon = icon("smile"))),
     dashboardBody(tabItem(tabName = "plot_tab", active = TRUE,
-                          infoBox("Unreaded Mail", 44, icon("mail"), color = "blue"),
+                          valueBox("Unreaded Mail", 44, icon("mail"), color = "blue"),
                           box(title = "Sample box", color = "blue",
                         selectInput(inputId =  "variable1", choices = names(mtcars),
                                     label = "Select first variable", selected = "mpg"),
@@ -20,10 +20,10 @@ if(interactive()){
                                     label = "Select second variable", selected = "cyl"),
                         plotlyOutput("mtcars_plot"))),
                   tabItem(tabName = "table_tab",
-                          infoBoxes(
-                            infoBox("Unreaded Mail", 144, icon("mail"), color = "blue"),
-                            infoBox("Spam", 20, icon("mail"), color = "red"),
-                            infoBox("Readed Mail", 666, icon("mail"), color = "green")
+                          valueBoxes(
+                            valueBox("Unreaded Mail", 144, icon("mail"), color = "blue"),
+                            valueBox("Spam", 20, icon("mail"), color = "red"),
+                            valueBox("Readed Mail", 666, icon("mail"), color = "green")
                           ),
                         box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top",
                             dataTableOutput("mtcars_table"))))

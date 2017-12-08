@@ -1,8 +1,8 @@
-#' Create a infoBox.
-#' @description Create a infoBox with additional UI elements.
-#' @param title Label of the infoBox.
-#' @param value Value of the infoBox.
-#' @param icon Icon of the infoBox.
+#' Create a valueBox.
+#' @description Create a valueBox with additional UI elements.
+#' @param title Label of the valueBox.
+#' @param value Value of the valueBox.
+#' @param icon Icon of the valueBox.
 #' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
@@ -18,32 +18,32 @@ uistatistic <- function(title, value, icon = NULL, color = "blue"){
                         shiny::div(class = "label", title)))
 }
 
-#' Create a infoBox.
-#' @description Create a infoBox with additional UI elements.
-#' @param title Label of the infoBox.
-#' @param value Value of the infoBox.
-#' @param icon Icon of the infoBox.
+#' Create a valueBox.
+#' @description Create a valueBox with additional UI elements.
+#' @param title Label of the valueBox.
+#' @param value Value of the valueBox.
+#' @param icon Icon of the valueBox.
 #' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-infoBox <- function(title, value, icon = NULL, color = "blue"){
+valueBox <- function(title, value, icon = NULL, color = "blue"){
   uistatistic(title = title, value = value, icon = icon, color = color)
 }
 
-#' Create a group of stacked infoBoxes.
-#' @description Create a group of stacked infoBoxes.
-#' @param ... infoBoxes.
-#' @return A group of stacked infoBoxes that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+#' Create a group of stacked valueBoxes.
+#' @description Create a group of stacked valueBoxes.
+#' @param ... valueBoxes.
+#' @return A group of stacked valueBoxes that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 uistatistics <- function(...){
   shiny::div(class = "ui horizontal segments", ...)
 }
 
-#' Create a group of stacked infoBoxes.
-#' @description Create a group of stacked infoBoxes.
-#' @param ... infoBoxes.
-#' @return A group of stacked infoBoxes that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+#' Create a group of stacked valueBoxes.
+#' @description Create a group of stacked valueBoxes.
+#' @param ... valueBoxes.
+#' @return A group of stacked valueBoxes that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-infoBoxes <- function(...){
+valueBoxes <- function(...){
   uistatistics(...)
 }
