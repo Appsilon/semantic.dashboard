@@ -19,7 +19,7 @@ if(interactive()){
                                     label = "Select second variable", selected = "cyl"),
                         plotlyOutput("mtcars_plot"))),
                   tabItem(tabName = "table_tab",
-                        box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "bottom",
+                        box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top",
                             dataTableOutput("mtcars_table"))))
   )
 

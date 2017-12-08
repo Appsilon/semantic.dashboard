@@ -4,18 +4,21 @@
 #' @param title Label of the box.
 #' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @param ribbon Should label be presented as ribbon.
-#' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")}
+#' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uisegment <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top"){
+uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right"){
   if (!(color %in% c("", "red", "orange", "yellow", "olive", "green", "teal",
                      "blue", "violet", "purple", "pink", "brown", "grey", "black"))){
     warning("'color' argument should be one of '', 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
             'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'")
   }
-  if (!(title_side %in% c("top", "bottom", "top left", "top right", "bottom left", "bottom right"))){
-    warning("'title_side' argument should be one of 'top', 'bottom', 'top left', 'top right',
+  if (!ribbon & !(title_side %in% c("top", "bottom", "top left", "top right", "bottom left", "bottom right"))){
+    warning("If 'ribbon' agrument is set to 'FALSE' 'title_side' argument should be one of 'top', 'bottom', 'top left', 'top right',
             'bottom left', 'bottom right'")
+  }
+  if (ribbon & !(title_side %in% c("top", "bottom", "top left", "top right", "bottom left", "bottom right"))){
+    warning("If 'ribbon' agrument is set to 'TRUE' 'title_side' argument should be one of 'top left', 'top right'")
   }
   if (is.null(title) | !is.character(title)){
     shiny::div(class = paste("ui segment raised compact", color), ...)
@@ -32,7 +35,7 @@ uisegment <- function(..., title = NULL, color = "", ribbon = TRUE, title_side =
 #' @param title Label of the box.
 #' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @param ribbon Should label be presented as ribbon.
-#' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")}
+#' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples
@@ -56,5 +59,5 @@ uisegment <- function(..., title = NULL, color = "", ribbon = TRUE, title_side =
 #'   shinyApp(ui, server)
 #' }
 box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right"){
-  uisegment(..., title = title, color = color, ribbon = ribbon, title_side = title_side)
+  uibox(..., title = title, color = color, ribbon = ribbon, title_side = title_side)
 }

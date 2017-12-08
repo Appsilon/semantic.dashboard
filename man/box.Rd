@@ -16,7 +16,7 @@ box(..., title = NULL, color = "", ribbon = TRUE,
 
 \item{ribbon}{Should label be presented as ribbon.}
 
-\item{title_side}{Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")}}
+\item{title_side}{Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}}
 }
 \value{
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
