@@ -6,7 +6,7 @@
 #' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uistatistic <- function(title, value, icon = NULL, color = "blue"){
+uivalue_box <- function(title, value, icon = NULL, color = "blue"){
   if (!(color %in% c("red", "orange", "yellow", "olive", "green", "teal",
                      "blue", "violet", "purple", "pink", "brown", "grey", "black"))){
     warning("'color' argument should be one of 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
@@ -27,7 +27,7 @@ uistatistic <- function(title, value, icon = NULL, color = "blue"){
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 valueBox <- function(title, value, icon = NULL, color = "blue"){
-  uistatistic(title = title, value = value, icon = icon, color = color)
+  uivalue_box(title = title, value = value, icon = icon, color = color)
 }
 
 #' Create a group of stacked valueBoxes.
@@ -35,7 +35,7 @@ valueBox <- function(title, value, icon = NULL, color = "blue"){
 #' @param ... valueBoxes.
 #' @return A group of stacked valueBoxes that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uistatistics <- function(...){
+uivalue_boxes <- function(...){
   shiny::div(class = "ui horizontal segments", ...)
 }
 
@@ -45,5 +45,5 @@ uistatistics <- function(...){
 #' @return A group of stacked valueBoxes that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 valueBoxes <- function(...){
-  uistatistics(...)
+  uivalue_boxes(...)
 }
