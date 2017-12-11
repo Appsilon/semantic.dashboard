@@ -3,8 +3,8 @@
 #' @param title Label of the valueBox.
 #' @param value Value of the valueBox.
 #' @param icon Icon of the valueBox.
-#' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
-#' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+#' @param  color Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 uivalue_box <- function(title, value, icon = NULL, color = "blue"){
   if (!(color %in% c("red", "orange", "yellow", "olive", "green", "teal",
@@ -23,8 +23,8 @@ uivalue_box <- function(title, value, icon = NULL, color = "blue"){
 #' @param title Label of the valueBox.
 #' @param value Value of the valueBox.
 #' @param icon Icon of the valueBox.
-#' @param  color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
-#' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+#' @param  color Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 valueBox <- function(title, value, icon = NULL, color = "blue"){
   uivalue_box(title = title, value = value, icon = icon, color = color)

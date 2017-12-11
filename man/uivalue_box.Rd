@@ -13,10 +13,10 @@ uivalue_box(title, value, icon = NULL, color = "blue")
 
 \item{icon}{Icon of the valueBox.}
 
-\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 }
 \value{
-A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 }
 \description{
 Create a valueBox with additional UI elements.
