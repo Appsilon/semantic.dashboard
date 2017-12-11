@@ -31,7 +31,7 @@ uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "to
     }
     label <- shiny::div(class = title_class, minimize_btn, title)
   }
-  shiny::div(class = paste("ui segment raised compact", color), label,  ...)
+  shiny::div(class = paste("ui segment raised", color), label,  ...)
 }
 
 #' Create a box.
