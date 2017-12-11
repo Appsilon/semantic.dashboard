@@ -8,17 +8,19 @@ if(interactive()){
 
   ui <- dashboardPage(
     dashboardHeader(color = "black"),
-    dashboardSidebar(side = "left", size = "thin", color = "black", center = TRUE,
+    dashboardSidebar(side = "left", size = "", color = "black", center = TRUE,
                      menuItem("plot_tab", label = "My plot", icon = icon("home")),
                      menuItem("table_tab", label = "My table", icon = icon("smile"))),
     dashboardBody(tabItem(tabName = "plot_tab", active = TRUE,
-                          valueBox("Unreaded Mail", 44, icon("mail"), color = "blue"),
+                          fluidRow(
+                          valueBox("Unreaded Mail", 44, icon("mail"), color = "blue")),
+                          fluidRow(
                           box(title = "Sample box", color = "blue",
                         selectInput(inputId =  "variable1", choices = names(mtcars),
                                     label = "Select first variable", selected = "mpg"),
                         selectInput(inputId =  "variable2", choices = names(mtcars),
                                     label = "Select second variable", selected = "cyl"),
-                        plotlyOutput("mtcars_plot"))),
+                        plotlyOutput("mtcars_plot")))),
                   tabItem(tabName = "table_tab",
                           valueBoxes(
                             valueBox("Unreaded Mail", 144, icon("mail"), color = "blue"),

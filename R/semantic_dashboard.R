@@ -108,7 +108,9 @@ dashboardSidebar <- function(..., side = "left", size = "", color = "black", cen
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 dashboard_body <- function(...){
-  shiny::div(class = "pusher", style = "height: 100%;",  shiny::div(class = "ui segment", ...))
+  shiny::div(class = "pusher", style = "height: 100%;",
+             shiny::div(class = "ui segment",
+                        shiny::tags$div(class = "ui grid", ...)))
 }
 
 #' Create a body of a dashboard.
