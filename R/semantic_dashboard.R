@@ -5,6 +5,9 @@
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 dashboard_header <- function(..., color = "black"){
+  if (!(color %in% uicolors)){
+    warning(paste("'color' argument should be one of:", paste0("'", uicolors, "'", collapse = ", ")))
+  }
   shiny::div(class = paste("ui top attached inverted", color, "demo menu"),
              shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"), ...)
 }
@@ -56,10 +59,8 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ce
   if (!(size %in% c("", "thin", "very thin", "wide", "very wide"))){
     warning("'size' argument should be one of '', 'thin', 'very thin', 'wide', 'very wide'")
   }
-  if (!(color %in% c("red", "orange", "yellow", "olive", "green", "teal",
-                     "blue", "violet", "purple", "pink", "brown", "grey", "black"))){
-    warning("'color' argument should be one of 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
-            'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'")
+  if (!(color %in% uicolors)){
+    warning(paste("'color' argument should be one of:", paste0("'", uicolors, "'", collapse = ", ")))
   }
   display_type <- ifelse(center, "labeled icon", "")
   shiny::div(id = "uisidebar",

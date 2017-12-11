@@ -7,10 +7,8 @@
 #' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 uivalue_box <- function(title, value, icon = NULL, color = "blue"){
-  if (!(color %in% c("red", "orange", "yellow", "olive", "green", "teal",
-                     "blue", "violet", "purple", "pink", "brown", "grey", "black"))){
-    warning("'color' argument should be one of 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
-            'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'")
+  if (!(color %in% uicolors)){
+    warning(paste("'color' argument should be one of:", paste0("'", uicolors, "'", collapse = ", ")))
   }
   shiny::div(class = paste("ui compact inverted segment", color),
              shiny::div(class = "ui statistic",

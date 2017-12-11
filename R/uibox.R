@@ -9,10 +9,8 @@
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
-  if (!(color %in% c("", "red", "orange", "yellow", "olive", "green", "teal",
-                     "blue", "violet", "purple", "pink", "brown", "grey", "black"))){
-    warning("'color' argument should be one of '', 'red', 'orange', 'yellow', 'olive', 'green', 'teal',
-            'blue', 'violet', 'purple', 'pink', 'brown', 'grey', 'black'")
+  if (!(color %in% c("", uicolors))){
+    warning(paste("'color' argument should be one of:", paste0("'", c("", uicolors), "'", collapse = ", ")))
   }
   if (!ribbon & !(title_side %in% c("top", "bottom", "top left", "top right", "bottom left", "bottom right"))){
     warning("If 'ribbon' agrument is set to 'FALSE' 'title_side' argument should be one of 'top', 'bottom', 'top left', 'top right',
