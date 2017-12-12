@@ -10,7 +10,7 @@ uivalue_box <- function(title, value, icon = NULL, color = "blue"){
   if (!(color %in% uicolors)){
     warning(paste("'color' argument should be one of:", paste0("'", uicolors, "'", collapse = ", ")))
   }
-  shiny::div(class = paste("ui compact inverted segment", color),
+  shiny::div(class = paste("ui card", color),
              shiny::div(class = "ui statistic",
                         shiny::div(class = "value", icon, value),
                         shiny::div(class = "label", title)))
@@ -34,7 +34,7 @@ valueBox <- function(title, value, icon = NULL, color = "blue"){
 #' @return A group of stacked valueBoxes that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 uivalue_boxes <- function(...){
-  shiny::div(class = "ui horizontal segments", ...)
+  shiny::div(class = "ui cards", ...)
 }
 
 #' Create a group of stacked valueBoxes.
