@@ -1,6 +1,6 @@
 dashboardPage(title = "crandash-semantic",
               dashboardHeader(color = "blue"),
-              dashboardSidebar(side = "left", size = "thin", color = "black", center = TRUE,
+              dashboardSidebar(side = "left", size = "thin", color = "grey", center = TRUE,
                                sliderInput("rateThreshold", "Warn when rate exceeds",
                                            min = 0, max = 50, value = 3, step = 0.1
                                ),
