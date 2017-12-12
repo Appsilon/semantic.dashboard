@@ -23,11 +23,10 @@ if(interactive()){
                         plotlyOutput("mtcars_plot")))),
                   tabItem(tabName = "table_tab",
                           fluidRow(
-                          valueBoxes(
                             valueBox("Unreaded Mail", 144, icon("mail"), color = "blue"),
                             valueBox("Spam", 20, icon("mail"), color = "red"),
                             valueBox("Readed Mail", 666, icon("mail"), color = "green")
-                          )),
+                          ),
                           fluidRow(
                         box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top",
                             dataTableOutput("mtcars_table")))))

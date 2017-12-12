@@ -25,6 +25,38 @@ function(input, output, session) {
   # Record the time that the session started.
   startTime <- as.numeric(Sys.time())
 
+  output$rate <- uirender_value_box({
+    # The downloadRate is the number of rows in pkgData since
+    # either startTime or maxAgeSecs ago, whichever is later.
+    elapsed <- as.numeric(Sys.time()) - startTime
+    downloadRate <- nrow(pkgData()) / min(maxAgeSecs, elapsed)
+
+    valueBox(
+      value = formatC(downloadRate, digits = 1, format = "f"),
+      title = "Downloads per sec (last 5 min)",
+      icon = icon("smile"),
+      color = if (downloadRate >= input$rateThreshold) "yellow" else "blue"
+    )
+  })
+
+  output$count <- uirender_value_box({
+    valueBox(
+      value = dlCount(),
+      title = "Total downloads",
+      icon = icon("download"),
+      color = "blue"
+    )
+  })
+
+  output$users <- uirender_value_box({
+    valueBox(
+     value =  usrCount(),
+     title =  "Unique users",
+      icon = icon("users"),
+     color = "blue"
+    )
+  })
+
   output$packagePlot <- renderBubbles({
     if (nrow(pkgData()) == 0)
       return()

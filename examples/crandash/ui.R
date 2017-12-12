@@ -10,9 +10,10 @@ dashboardPage(title = "crandash-semantic",
               dashboardBody(
                 tabItem(tabName = "dashboard", active = TRUE,
                         fluidRow(
-                          column(5, valueBox("Unreaded Mail", 144, icon("mail"), color = "blue")),
-                          column(5, valueBox("Spam", 20, icon("mail"), color = "red")),
-                          column(5, valueBox("Readed Mail", 666, icon("mail"), color = "green"))),
+                          column(5, valueBoxOutput("rate")),
+                          column(5, valueBoxOutput("count")),
+                          column(5, valueBoxOutput("users"))
+                        ),
                         fluidRow(
                           column(width = 10,
                                  box(
