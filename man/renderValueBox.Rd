@@ -4,7 +4,7 @@
 \alias{renderValueBox}
 \title{Create a valueBox output.}
 \usage{
-renderValueBox(expr, env = parent.frame(), quoted = FALSE)
+renderValueBox(expr, env = parent.frame(n = 2), quoted = FALSE)
 }
 \arguments{
 \item{expr}{ValueBox.}

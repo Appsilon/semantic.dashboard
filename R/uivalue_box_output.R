@@ -3,7 +3,7 @@
 #' @param outputId Id of the output.
 #' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uivalue_box_output <- function (outputId){
+uivalue_box_output <- function(outputId){
   shiny::uiOutput(outputId)
 }
 
@@ -37,6 +37,6 @@ uirender_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
 #' @param quoted Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.
 #' @return A dynamic valueBox that can be passed to \code{\link[semantic.dashboard]{valueBoxOutput}}
 #' @export
-renderValueBox <- function(expr, env = parent.frame(), quoted = FALSE){
+renderValueBox <- function(expr, env = parent.frame(n = 2), quoted = FALSE){
   uirender_value_box(expr = expr, env = env, quoted = quoted)
 }
