@@ -4,14 +4,12 @@
 \alias{tabItem}
 \title{Create a tab panel.}
 \usage{
-tabItem(tabName, ..., active = FALSE)
+tabItem(tabName, ...)
 }
 \arguments{
 \item{tabName}{Id of the tab.}
 
 \item{...}{UI elements to include within the tab.}
-
-\item{active}{Should it be active.}
 }
 \value{
 A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

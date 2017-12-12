@@ -20,9 +20,11 @@ icon <- function(type = "", ...){
 uimenu_item <- function(tabName, label, icon = NULL){
   data_tab <- paste0("shiny-tab-", tabName)
   if (is.null(icon)) {
-  shiny::tags$a(class = "item", `data-tab` = data_tab, label)
+  shiny::tags$a(class = "item", href = paste0("#", data_tab), label, `data-tab` = data_tab,
+                `data-toggle`="tab", `data-value`="dashboard")
   } else {
-    shiny::tags$a(class = "item", `data-tab` = data_tab, icon, label)
+    shiny::tags$a(class = "item", href = paste0("#", data_tab), icon, label, `data-tab` = data_tab,
+                  `data-toggle`="tab", `data-value`="dashboard")
   }
 }
 
