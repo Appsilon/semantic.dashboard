@@ -2,9 +2,12 @@
 % Please edit documentation in R/uivalue_box_output.R
 \name{render_value_box}
 \alias{render_value_box}
+\alias{renderValueBox}
 \title{Create a valueBox output.}
 \usage{
 render_value_box(expr, env = parent.frame(), quoted = FALSE)
+
+renderValueBox(expr, env = parent.frame(), quoted = FALSE)
 }
 \arguments{
 \item{expr}{ValueBox.}
@@ -19,3 +22,8 @@ A dynamic valueBox that can be passed to \code{\link[semantic.dashboard]{valueBo
 \description{
 Server-side function for dynamic valueBox.
 }
+\section{Functions}{
+\itemize{
+\item \code{renderValueBox}: Create a valueBox output.
+}}
+

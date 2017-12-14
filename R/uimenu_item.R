@@ -26,6 +26,6 @@ menu_item <- function(tabName, label, icon = NULL){
   }
 }
 
-#' @describeIn uimenu_item Create a menu item.
+#' @describeIn menu_item Create a menu item.
 #' @export
 menuItem <- menu_item

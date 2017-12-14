@@ -7,7 +7,7 @@ value_box_output <- function(outputId){
   shiny::uiOutput(outputId)
 }
 
-#' @describeIn uivalue_box_output Create a valueBox output.
+#' @describeIn value_box_output Create a valueBox output.
 #' @export
 valueBoxOutput <- value_box_output
 
@@ -23,6 +23,6 @@ render_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
   shiny::renderUI(vbox_fun())
 }
 
-#' @describeIn uirender_value_box Create a valueBox output.
+#' @describeIn render_value_box Create a valueBox output.
 #' @export
 renderValueBox <- render_value_box

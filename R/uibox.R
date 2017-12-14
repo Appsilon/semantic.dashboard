@@ -15,15 +15,16 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   } else {
     verify_value_allowed("title_side", ALLOWED_BOX_SIDES_NONRIBBON)
   }
-  if (!is.character(title)){
-    label <- NULL
+  label <- if (!is.character(title)){
+    NULL
   } else {
-    minimize_button <- NULL
     title_class <- paste("ui", title_side, ifelse(ribbon, "ribbon", "attached"), "label", color)
-    if (collapsible){
-      minimize_button <- shiny.semantic::uiicon("minimize window")
+    minimize_button <- if (collapsible) {
+      shiny.semantic::uiicon("minimize window")
+    } else {
+      NULL
     }
-    label <- shiny::div(class = title_class, minimize_button, title)
+    shiny::div(class = title_class, minimize_button, title)
   }
   shiny::div(class = paste("ui segment raised", color), label,  ...)
 }

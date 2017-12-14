@@ -2,9 +2,12 @@
 % Please edit documentation in R/uivalue_box_output.R
 \name{value_box_output}
 \alias{value_box_output}
+\alias{valueBoxOutput}
 \title{Create a valueBox output.}
 \usage{
 value_box_output(outputId)
+
+valueBoxOutput(outputId)
 }
 \arguments{
 \item{outputId}{Id of the output.}
@@ -15,3 +18,8 @@ A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 \description{
 UI-side function for dynamic valueBox.
 }
+\section{Functions}{
+\itemize{
+\item \code{valueBoxOutput}: Create a valueBox output.
+}}
+

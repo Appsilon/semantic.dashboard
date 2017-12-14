@@ -11,7 +11,7 @@ tab <- function(tabName, ...){
              id = data_tab, `data-tab` = data_tab, shiny::tags$div(class = "ui equal width grid", ...))
 }
 
-#' @describeIn uitab Create a tab panel.
+#' @describeIn tab Create a tab panel.
 #' @export
 tabItem <- tab
 
@@ -33,6 +33,6 @@ tabs <- function(..., selected = 1){
   div(class = "tab-content", tabs)
 }
 
-#' @describeIn uitabs Create a panel with tabs.
+#' @describeIn tabs Create a panel with tabs.
 #' @export
 tabItems <- tabs

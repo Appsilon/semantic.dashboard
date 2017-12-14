@@ -14,6 +14,6 @@ value_box <- function(title, value, icon = NULL, color = "blue"){
                         shiny::div(class = "label", title)))
 }
 
-#' @describeIn uivalue_box Create a valueBox.
+#' @describeIn value_box Create a valueBox.
 #' @export
 valueBox <- value_box

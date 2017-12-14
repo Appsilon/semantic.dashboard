@@ -2,9 +2,12 @@
 % Please edit documentation in R/uitab.R
 \name{tabs}
 \alias{tabs}
+\alias{tabItems}
 \title{Create a panel with tabs.}
 \usage{
 tabs(..., selected = 1)
+
+tabItems(..., selected = 1)
 }
 \arguments{
 \item{...}{Tabs.}
@@ -17,3 +20,8 @@ A panel with tabs that can be passed to \code{\link[semantic.dashboard]{dashboar
 \description{
 Create a panel with tabs.
 }
+\section{Functions}{
+\itemize{
+\item \code{tabItems}: Create a panel with tabs.
+}}
+
