@@ -15,8 +15,7 @@ Imports:
     utils,
     shiny (>= 0.12.1),
     htmltools (>= 0.2.6),
-    shiny.semantic (>= 0.1.1),
-    dplyr
+    shiny.semantic (>= 0.1.1)
 Suggests:
     testthat,
     lintr,
