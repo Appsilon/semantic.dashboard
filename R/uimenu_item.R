@@ -28,33 +28,8 @@ uimenu_item <- function(tabName, label, icon = NULL){
   }
 }
 
-#' Create a menu item.
-#' @description Create a menu item corresponding to a tab.
-#' @param tabName Id of the tab.
-#' @param label Label of the menu item.
-#' @param icon Icon of the menu item. (Optional)
-#' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
+#' @describeIn uimenu_item Create a menu item.
 #' @export
-#' @examples
-#' if(interactive()){
-#'
-#'   library(shiny)
-#'   library(semantic.dashboard)
-#'
-#'   ui <- dashboardPage(
-#'     dashboardHeader(color = "blue"),
-#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      menuItem("tab1", "Tab 1"),
-#'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
-#'                   tabItem(tabName = "tab2", p("Tab 2")))
-#'   )
-#'
-#'   server <- function(input, output) {
-#'   }
-#'
-#'   shinyApp(ui, server)
-#' }
 menuItem <- function(tabName, label, icon = NULL){
   uimenu_item(tabName = tabName, label = label, icon = icon)
 }

@@ -2,9 +2,12 @@
 % Please edit documentation in R/uimenu_item.R
 \name{uimenu_item}
 \alias{uimenu_item}
+\alias{menuItem}
 \title{Create a menu item.}
 \usage{
 uimenu_item(tabName, label, icon = NULL)
+
+menuItem(tabName, label, icon = NULL)
 }
 \arguments{
 \item{tabName}{Id of the tab.}
@@ -19,3 +22,8 @@ A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}
 \description{
 Create a menu item corresponding to a tab.
 }
+\section{Functions}{
+\itemize{
+\item \code{menuItem}: Create a menu item.
+}}
+

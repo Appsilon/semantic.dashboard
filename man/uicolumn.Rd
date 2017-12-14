@@ -2,9 +2,12 @@
 % Please edit documentation in R/uicolumn.R
 \name{uicolumn}
 \alias{uicolumn}
+\alias{column}
 \title{Create a column.}
 \usage{
 uicolumn(width, ...)
+
+column(width, ...)
 }
 \arguments{
 \item{width}{Width of the column. Between 1 and 16.}
@@ -17,3 +20,8 @@ A column that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 \description{
 Create a column with additional UI elements.
 }
+\section{Functions}{
+\itemize{
+\item \code{column}: Create a column.
+}}
+

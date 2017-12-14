@@ -2,9 +2,13 @@
 % Please edit documentation in R/uibox.R
 \name{uibox}
 \alias{uibox}
+\alias{box}
 \title{Create a box.}
 \usage{
 uibox(..., title = NULL, color = "", ribbon = TRUE,
+  title_side = "top right", collapsible = TRUE)
+
+box(..., title = NULL, color = "", ribbon = TRUE,
   title_side = "top right", collapsible = TRUE)
 }
 \arguments{
@@ -26,3 +30,8 @@ A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 \description{
 Create a box with additional UI elements.
 }
+\section{Functions}{
+\itemize{
+\item \code{box}: Create a box.
+}}
+

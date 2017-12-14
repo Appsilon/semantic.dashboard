@@ -2,9 +2,13 @@
 % Please edit documentation in R/semantic_dashboard.R
 \name{dashboard_page}
 \alias{dashboard_page}
+\alias{dashboardPage}
 \title{Create a dashboard.}
 \usage{
 dashboard_page(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
+  suppress_bootstrap = TRUE)
+
+dashboardPage(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
   suppress_bootstrap = TRUE)
 }
 \arguments{
@@ -23,4 +27,29 @@ Dashboard.
 }
 \description{
 Create a page with menu item sidebar and body containing tabs and other additional elements.
+}
+\section{Functions}{
+\itemize{
+\item \code{dashboardPage}: Create a dashboard.
+}}
+
+\examples{
+if(interactive()){
+
+  library(shiny)
+  library(semantic.dashboard)
+
+  ui <- dashboardPage(
+    dashboardSidebar(side = "top", size = "thin", color = "teal",
+                     menuItem("tab1", "Tab 1"),
+                     menuItem("tab2", "Tab 2")),
+    dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+                  tabItem(tabName = "tab2", p("Tab 2")))
+  )
+
+  server <- function(input, output) {
+  }
+
+  shinyApp(ui, server)
+}
 }

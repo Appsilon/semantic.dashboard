@@ -33,5 +33,4 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 
-# shiny-examples folder
 shiny-examples/

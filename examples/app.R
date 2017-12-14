@@ -8,12 +8,13 @@ if(interactive()){
 
   ui <- dashboardPage(
     dashboardHeader(color = "black"),
-    dashboardSidebar(side = "left", size = "", color = "black", center = TRUE,
+    dashboardSidebar(side = "left", size = "", color = "black",
                      menuItem("plot_tab", label = "My plot", icon = icon("home")),
                      menuItem("table_tab", label = "My table", icon = icon("smile"))),
-    dashboardBody(tabItem(tabName = "plot_tab", active = TRUE,
+    dashboardBody(tabItems(
+      tabItem(tabName = "plot_tab",
                           fluidRow(
-                          valueBox("Unreaded Mail", 44, icon("mail"), color = "blue")),
+                          valueBox("Unread Mail", 44, icon("mail"), color = "blue")),
                           fluidRow(
                           box(title = "Sample box", color = "blue",
                         selectInput(inputId =  "variable1", choices = names(mtcars),
@@ -29,7 +30,7 @@ if(interactive()){
                           ),
                           fluidRow(
                         box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top",
-                            dataTableOutput("mtcars_table")))))
+                            dataTableOutput("mtcars_table"))))))
   )
 
   server <- function(input, output) {

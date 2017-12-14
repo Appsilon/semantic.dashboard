@@ -2,9 +2,12 @@
 % Please edit documentation in R/uitab.R
 \name{uitab}
 \alias{uitab}
+\alias{tabItem}
 \title{Create a tab panel.}
 \usage{
 uitab(tabName, ...)
+
+tabItem(tabName, ...)
 }
 \arguments{
 \item{tabName}{Id of the tab.}
@@ -17,3 +20,8 @@ A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 \description{
 Create a tab panel with additional UI elements.
 }
+\section{Functions}{
+\itemize{
+\item \code{tabItem}: Create a tab panel.
+}}
+

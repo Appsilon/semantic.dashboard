@@ -2,9 +2,12 @@
 % Please edit documentation in R/uivalue_box.R
 \name{uivalue_box}
 \alias{uivalue_box}
+\alias{valueBox}
 \title{Create a valueBox.}
 \usage{
 uivalue_box(title, value, icon = NULL, color = "blue")
+
+valueBox(title, value, icon = NULL, color = "blue")
 }
 \arguments{
 \item{title}{Label of the valueBox.}
@@ -21,3 +24,8 @@ A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 \description{
 Create a valueBox with additional UI elements.
 }
+\section{Functions}{
+\itemize{
+\item \code{valueBox}: Create a valueBox.
+}}
+
