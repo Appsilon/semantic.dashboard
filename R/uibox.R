@@ -30,6 +30,5 @@ uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "to
 
 #' @describeIn uibox Create a box.
 #' @export
-box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
-  uibox(..., title = title, color = color, ribbon = ribbon, title_side = title_side, collapsible = collapsible)
-}
+box <- uibox
+

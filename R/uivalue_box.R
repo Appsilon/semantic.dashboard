@@ -16,6 +16,4 @@ uivalue_box <- function(title, value, icon = NULL, color = "blue"){
 
 #' @describeIn uivalue_box Create a valueBox.
 #' @export
-valueBox <- function(title, value, icon = NULL, color = "blue"){
-  uivalue_box(title = title, value = value, icon = icon, color = color)
-}
+valueBox <- uivalue_box

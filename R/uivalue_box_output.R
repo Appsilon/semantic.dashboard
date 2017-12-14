@@ -9,9 +9,7 @@ uivalue_box_output <- function(outputId){
 
 #' @describeIn uivalue_box_output Create a valueBox output.
 #' @export
-valueBoxOutput <- function(outputId){
-  uivalue_box_output(outputId = outputId)
-}
+valueBoxOutput <- uivalue_box_output
 
 #' Create a valueBox output.
 #' @description Server-side function for dynamic valueBox.
@@ -27,6 +25,4 @@ uirender_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
 
 #' @describeIn uirender_value_box Create a valueBox output.
 #' @export
-renderValueBox <- function(expr, env = parent.frame(), quoted = FALSE){
-  uirender_value_box(expr = expr, env = env, quoted = quoted)
-}
+renderValueBox <- uirender_value_box

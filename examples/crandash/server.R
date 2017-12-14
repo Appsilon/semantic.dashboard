@@ -25,7 +25,7 @@ function(input, output, session) {
   # Record the time that the session started.
   startTime <- as.numeric(Sys.time())
 
-  output$rate <- uirender_value_box({
+  output$rate <- renderValueBox({
     # The downloadRate is the number of rows in pkgData since
     # either startTime or maxAgeSecs ago, whichever is later.
     elapsed <- as.numeric(Sys.time()) - startTime
@@ -39,7 +39,7 @@ function(input, output, session) {
     )
   })
 
-  output$count <- uirender_value_box({
+  output$count <- renderValueBox({
     valueBox(
       value = dlCount(),
       title = "Total downloads",
@@ -48,7 +48,7 @@ function(input, output, session) {
     )
   })
 
-  output$users <- uirender_value_box({
+  output$users <- renderValueBox({
     valueBox(
      value =  usrCount(),
      title =  "Unique users",

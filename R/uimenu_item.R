@@ -6,9 +6,7 @@
 #' @param ... Other arguments to be added as attributes of the tag (e.g. style, class etc.)
 #'
 #' @export
-icon <- function(type = "", ...){
-  shiny.semantic::uiicon(type = type, ...)
-}
+icon <- shiny.semantic::uiicon
 
 #' Create a menu item.
 #' @description Create a menu item corresponding to a tab.
@@ -30,6 +28,4 @@ uimenu_item <- function(tabName, label, icon = NULL){
 
 #' @describeIn uimenu_item Create a menu item.
 #' @export
-menuItem <- function(tabName, label, icon = NULL){
-  uimenu_item(tabName = tabName, label = label, icon = icon)
-}
+menuItem <- uimenu_item

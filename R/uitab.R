@@ -13,9 +13,7 @@ uitab <- function(tabName, ...){
 
 #' @describeIn uitab Create a tab panel.
 #' @export
-tabItem <- function(tabName, ...){
-  uitab(tabName = tabName, ...)
-}
+tabItem <- uitab
 
 #' Create a panel with tabs.
 #' @description Create a panel with tabs.
@@ -37,6 +35,4 @@ uitabs <- function(..., selected = 1){
 
 #' @describeIn uitabs Create a panel with tabs.
 #' @export
-tabItems <- function(..., selected = 1){
-  uitabs(..., selected = selected)
-}
+tabItems <- uitabs

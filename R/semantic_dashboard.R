@@ -32,9 +32,8 @@ dashboard_header <- function(..., color = "black"){
 
 #' @describeIn dashboard_header Create a header of a dashboard.
 #' @export
-dashboardHeader <- function(..., color = "black"){
-  dashboard_header(..., color = color)
-}
+dashboardHeader <- dashboard_header
+
 
 #' Create a sidebar of a dashboard.
 #' @description Create a pushable sidebar of a dashboard with menu items and other additional UI elements.
@@ -78,9 +77,8 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ce
 
 #' @describeIn dashboard_sidebar Create a sidebar of a dashboard.
 #' @export
-dashboardSidebar <- function(..., side = "left", size = "", color = "black", center = FALSE, visible = TRUE){
-  dashboard_sidebar(..., side = side, size = size, color = color, center = center, visible = visible)
-}
+dashboardSidebar <- dashboard_sidebar
+
 
 #' Create a body of a dashboard.
 #' @description Create a body of a dashboard with tabs and other additional UI elements.
@@ -115,9 +113,7 @@ dashboard_body <- function(...){
 
 #' @describeIn dashboard_body Create a body of a dashboard.
 #' @export
-dashboardBody <- function(...){
-  dashboard_body(...)
-}
+dashboardBody <- dashboard_body
 
 #' Create a dashboard.
 #' @description Create a page with menu item sidebar and body containing tabs and other additional elements.
@@ -156,8 +152,4 @@ dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, tit
 
 #' @describeIn dashboard_page Create a dashboard.
 #' @export
-dashboardPage <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
-  dashboard_page(dashboardHeader = dashboardHeader, dashboardSidebar = dashboardSidebar, dashboardBody = dashboardBody,
-                 title = title, suppress_bootstrap = suppress_bootstrap)
-
-}
+dashboardPage <- dashboard_page

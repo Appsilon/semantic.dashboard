@@ -29,7 +29,7 @@ if(interactive()){
                             valueBox("Readed Mail", 666, icon("mail"), color = "green")
                           ),
                           fluidRow(
-                        box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top",
+                        box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top left",
                             dataTableOutput("mtcars_table"))))))
   )
 
