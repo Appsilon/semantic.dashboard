@@ -15,7 +15,7 @@ icon <- shiny.semantic::uiicon
 #' @param icon Icon of the menu item. (Optional)
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
-uimenu_item <- function(tabName, label, icon = NULL){
+menu_item <- function(tabName, label, icon = NULL){
   data_tab <- paste0("shiny-tab-", tabName)
   if (is.null(icon)) {
   shiny::tags$a(class = "item", href = paste0("#", data_tab), label, `data-tab` = data_tab,
@@ -28,4 +28,4 @@ uimenu_item <- function(tabName, label, icon = NULL){
 
 #' @describeIn uimenu_item Create a menu item.
 #' @export
-menuItem <- uimenu_item
+menuItem <- menu_item

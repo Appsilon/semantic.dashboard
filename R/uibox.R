@@ -8,7 +8,7 @@
 #' @param collapsible Should minimize button be added to label.
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
+box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   if (ribbon){
     verify_value_allowed("title_side", ALLOWED_BOX_SIDES_RIBBON)
@@ -27,8 +27,4 @@ uibox <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "to
   }
   shiny::div(class = paste("ui segment raised", color), label,  ...)
 }
-
-#' @describeIn uibox Create a box.
-#' @export
-box <- uibox
 

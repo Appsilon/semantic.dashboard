@@ -6,7 +6,7 @@
 #' @param  color Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uivalue_box <- function(title, value, icon = NULL, color = "blue"){
+value_box <- function(title, value, icon = NULL, color = "blue"){
   verify_value_allowed("color", ALLOWED_COLORS)
   shiny::div(class = paste("ui fluid card", color),
              shiny::div(class = "ui statistic",
@@ -16,4 +16,4 @@ uivalue_box <- function(title, value, icon = NULL, color = "blue"){
 
 #' @describeIn uivalue_box Create a valueBox.
 #' @export
-valueBox <- uivalue_box
+valueBox <- value_box

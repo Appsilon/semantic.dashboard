@@ -4,7 +4,7 @@
 #' @param ... UI elements to include within the tab.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uitab <- function(tabName, ...){
+tab <- function(tabName, ...){
   data_tab <- paste0("shiny-tab-", tabName)
   shiny::div(role = "tabpanel", style = "height: 100%;",
              class = paste("ui", "tab tab-pane"),
@@ -13,7 +13,7 @@ uitab <- function(tabName, ...){
 
 #' @describeIn uitab Create a tab panel.
 #' @export
-tabItem <- uitab
+tabItem <- tab
 
 #' Create a panel with tabs.
 #' @description Create a panel with tabs.
@@ -21,7 +21,7 @@ tabItem <- uitab
 #' @param  selected Which tab should be active on start.
 #' @return A panel with tabs that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-uitabs <- function(..., selected = 1){
+tabs <- function(..., selected = 1){
   tabs <- list(...)
   if (round(selected) < 1 | round(selected) > length(tabs) | !is.numeric(selected)){
     warning("Wrong tabItem selected, switched to first one!")
@@ -35,4 +35,4 @@ uitabs <- function(..., selected = 1){
 
 #' @describeIn uitabs Create a panel with tabs.
 #' @export
-tabItems <- uitabs
+tabItems <- tabs
