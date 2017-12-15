@@ -24,4 +24,3 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   }
   shiny::div(class = paste("ui segment raised", color), label,  ...)
 }
-
