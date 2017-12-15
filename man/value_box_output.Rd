@@ -5,12 +5,14 @@
 \alias{valueBoxOutput}
 \title{Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})}
 \usage{
-value_box_output(outputId)
+value_box_output(outputId, width = 5)
 
-valueBoxOutput(outputId)
+valueBoxOutput(outputId, width = 5)
 }
 \arguments{
 \item{outputId}{Id of the output.}
+
+\item{width}{Width of the valueBox.}
 }
 \value{
 A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

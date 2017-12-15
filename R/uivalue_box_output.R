@@ -1,10 +1,14 @@
 #' Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})
 #' @description UI-side function for dynamic valueBox.
 #' @param outputId Id of the output.
+#' @param width Width of the valueBox.
 #' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
-value_box_output <- function(outputId){
-  shiny::uiOutput(outputId)
+value_box_output <- function(outputId, width = 5){
+  if (!is.numeric(width) || (width < MIN_COLUMN_WIDTH) || (width > MAX_COLUMN_WIDTH))
+    stop(paste("'value_box' width must be between"), MIN_COLUMN_WIDTH, "and", MAX_COLUMN_WIDTH)
+  shiny::div(class = paste(COLUMN_WIDTHS[width], "wide column"),
+             shiny::uiOutput(outputId))
 }
 
 #' @describeIn value_box_output Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})

@@ -14,9 +14,9 @@ if(interactive()){
     dashboardBody(tabItems(
       tabItem(tabName = "plot_tab",
                           fluidRow(
-                          valueBox("Unread Mail", 44, icon("mail"), color = "blue")),
+                          valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),
                           fluidRow(
-                          box(title = "Sample box", color = "blue",
+                          box(title = "Sample box", color = "blue", width = 14,
                         selectInput(inputId =  "variable1", choices = names(mtcars),
                                     label = "Select first variable", selected = "mpg"),
                         selectInput(inputId =  "variable2", choices = names(mtcars),
@@ -29,7 +29,8 @@ if(interactive()){
                             valueBox("Readed Mail", 666, icon("mail"), color = "green")
                           ),
                           fluidRow(
-                        box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top left",
+                        box(title = "Classic box", color = "red", ribbon = FALSE,
+                            title_side = "top left", width = 14,
                             dataTableOutput("mtcars_table"),
                             dataTableOutput("mtcars_table2"),
                             dataTableOutput("mtcars_table3")

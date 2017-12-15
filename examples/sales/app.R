@@ -13,25 +13,27 @@ sidebar <- dashboardSidebar(
 )
 
 frow1 <- fluidRow(
-  column(5, valueBoxOutput("value1")),
-  column(5, valueBoxOutput("value2")),
-  column(5, valueBoxOutput("value3"))
+  valueBoxOutput("value1"),
+  valueBoxOutput("value2"),
+  valueBoxOutput("value3")
 )
 frow2 <- fluidRow(
-  column(8, box(
+  box(
     title = "Revenue per Account",
     color = "blue",
     ribbon = TRUE,
     collapsible = TRUE,
+    width = 8,
     plotOutput("revenuebyPrd", height = "300px")
-  )),
-  column(8, box(
+  ),
+  box(
     title = "Revenue per Product",
     color = "blue",
     ribbon = TRUE,
     collapsible = TRUE,
+    width = 8,
     plotOutput("revenuebyRegion", height = "300px")
-  ))
+  )
 )
 # combine the two fluid rows to make the body
 body <- dashboardBody(title = "Basic Dashboard", frow1, frow2)
@@ -53,21 +55,24 @@ server <- function(input, output, session) {
       value = formatC(sales.account$value, format="d", big.mark=','),
       title = paste('Top Account:', sales.account$Account),
       icon = icon("bar chart"),
-      color = "purple")
+      color = "purple",
+      width = 5)
   })
   output$value2 <- renderValueBox({
     valueBox(
       value = formatC(total.revenue, format = "d", big.mark = ','),
       title = 'Total Expected Revenue',
       icon = icon("line chart"),
-      color = "green")
+      color = "green",
+      width = 5)
   })
   output$value3 <- renderValueBox({
     valueBox(
       value = formatC(prof.prod$value, format = "d", big.mark = ','),
       title = paste('Top Product:', prof.prod$Product),
       icon = icon("bar chart"),
-      color = "blue")
+      color = "blue",
+      width = 5)
   })
   #creating the plotOutput content
   output$revenuebyPrd <- renderPlot({
