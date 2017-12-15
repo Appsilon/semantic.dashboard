@@ -1,4 +1,4 @@
-#' Create Semantic UI icon tag
+#' Create Semantic UI icon tag (alias for \code{uiicon} for compatibility with \code{shinydashboard})
 #'
 #' This creates an icon tag using Semantic UI styles.
 #'
@@ -8,7 +8,7 @@
 #' @export
 icon <- shiny.semantic::uiicon
 
-#' Create a menu item.
+#' Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
 #' @description Create a menu item corresponding to a tab.
 #' @param tabName Id of the tab.
 #' @param label Label of the menu item.
@@ -21,6 +21,6 @@ menu_item <- function(tabName, label, icon = NULL){
                   `data-toggle` = "tab", `data-value` = "dashboard")
 }
 
-#' @describeIn menu_item Create a menu item.
+#' @describeIn menu_item Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
 #' @export
 menuItem <- menu_item

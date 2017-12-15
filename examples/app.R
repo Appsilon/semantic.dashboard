@@ -24,13 +24,16 @@ if(interactive()){
                         plotlyOutput("mtcars_plot")))),
                   tabItem(tabName = "table_tab",
                           fluidRow(
-                            valueBox("Unreaded Mail", 144, icon("mail"), color = "blue"),
+                            valueBox("Unread Mail", 144, icon("mail"), color = "blue"),
                             valueBox("Spam", 20, icon("mail"), color = "red"),
                             valueBox("Readed Mail", 666, icon("mail"), color = "green")
                           ),
                           fluidRow(
                         box(title = "Classic box", color = "red", ribbon = FALSE, title_side = "top left",
-                            dataTableOutput("mtcars_table"))))))
+                            dataTableOutput("mtcars_table"),
+                            dataTableOutput("mtcars_table2"),
+                            dataTableOutput("mtcars_table3")
+                            )))))
   )
 
   server <- function(input, output) {
@@ -39,8 +42,10 @@ if(interactive()){
                                                y = ~ mtcars[ , input$variable2], width = "100%",
                                                type = "scatter", mode = "markers"))
     output$mtcars_table <- renderDataTable(mtcars)
+    output$mtcars_table2 <- renderDataTable(mtcars)
+    output$mtcars_table3 <- renderDataTable(mtcars)
 
-    lapply(c("mtcars_plot", "mtcars_table"),
+    lapply(c("mtcars_plot", "mtcars_table", "mtcars_table2", "mtcars_table3"),
            function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
   }
 

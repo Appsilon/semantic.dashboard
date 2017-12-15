@@ -33,4 +33,3 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 
-shiny-examples/

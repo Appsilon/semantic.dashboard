@@ -3,7 +3,7 @@
 \name{dashboard_sidebar}
 \alias{dashboard_sidebar}
 \alias{dashboardSidebar}
-\title{Create a sidebar of a dashboard.}
+\title{Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})}
 \usage{
 dashboard_sidebar(..., side = "left", size = "", color = "black",
   center = FALSE, visible = TRUE)
@@ -32,7 +32,7 @@ Create a pushable sidebar of a dashboard with menu items and other additional UI
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardSidebar}: Create a sidebar of a dashboard.
+\item \code{dashboardSidebar}: Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})
 }}
 
 \examples{

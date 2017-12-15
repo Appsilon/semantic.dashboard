@@ -3,7 +3,7 @@
 \name{value_box}
 \alias{value_box}
 \alias{valueBox}
-\title{Create a valueBox.}
+\title{Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})}
 \usage{
 value_box(title, value, icon = NULL, color = "blue")
 
@@ -26,6 +26,6 @@ Create a valueBox with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{valueBox}: Create a valueBox.
+\item \code{valueBox}: Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
 }}
 

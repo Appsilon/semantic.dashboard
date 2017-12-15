@@ -6,12 +6,13 @@ ALLOWED_BOX_SIDES_NONRIBBON <- c("top", "bottom", "top left", "top right", "bott
 ALLOWED_BOX_SIDES_RIBBON <- c("top left", "top right")
 COLUMN_WIDTHS <-   c("", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
                      "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen")
-MIN_COLUMN_WIDTHS <- 1
-MAX_COLUMN_WIDTHS <- 16
+MIN_COLUMN_WIDTH <- 1
+MAX_COLUMN_WIDTH <- 16
 
 verify_value_allowed <- function(variable, values){
-  if (!(get(variable, envir = parent.frame()) %in% values)){
-    warning(paste(paste0("'", variable, "'", collapse = ", ") ,
+  var <- get(variable, envir = parent.frame())
+  if (!(var %in% values)){
+    warning(paste(paste0("'", variable, "'") ,
                   "argument should be one of:",
                   paste0("'", values, "'", collapse = ", ")))
   }

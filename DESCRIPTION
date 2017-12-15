@@ -20,5 +20,8 @@ Suggests:
     testthat,
     lintr,
     plotly,
-    DT
+    DT,
+    shinySignals,
+    bubbles,
+    leaflet
 RoxygenNote: 6.0.1

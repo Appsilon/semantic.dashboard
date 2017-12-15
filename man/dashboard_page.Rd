@@ -3,7 +3,7 @@
 \name{dashboard_page}
 \alias{dashboard_page}
 \alias{dashboardPage}
-\title{Create a dashboard.}
+\title{Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})}
 \usage{
 dashboard_page(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
   suppress_bootstrap = TRUE)
@@ -30,7 +30,7 @@ Create a page with menu item sidebar and body containing tabs and other addition
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardPage}: Create a dashboard.
+\item \code{dashboardPage}: Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
 }}
 
 \examples{

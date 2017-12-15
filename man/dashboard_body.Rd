@@ -3,7 +3,7 @@
 \name{dashboard_body}
 \alias{dashboard_body}
 \alias{dashboardBody}
-\title{Create a body of a dashboard.}
+\title{Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})}
 \usage{
 dashboard_body(...)
 
@@ -20,7 +20,7 @@ Create a body of a dashboard with tabs and other additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardBody}: Create a body of a dashboard.
+\item \code{dashboardBody}: Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
 }}
 
 \examples{

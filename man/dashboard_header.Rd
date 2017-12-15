@@ -3,7 +3,7 @@
 \name{dashboard_header}
 \alias{dashboard_header}
 \alias{dashboardHeader}
-\title{Create a header of a dashboard.}
+\title{Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})}
 \usage{
 dashboard_header(..., color = "black")
 
@@ -22,7 +22,7 @@ Create a header of a dashboard with other additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardHeader}: Create a header of a dashboard.
+\item \code{dashboardHeader}: Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
 }}
 
 \examples{

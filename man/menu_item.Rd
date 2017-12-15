@@ -3,7 +3,7 @@
 \name{menu_item}
 \alias{menu_item}
 \alias{menuItem}
-\title{Create a menu item.}
+\title{Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})}
 \usage{
 menu_item(tabName, label, icon = NULL)
 
@@ -24,6 +24,6 @@ Create a menu item corresponding to a tab.
 }
 \section{Functions}{
 \itemize{
-\item \code{menuItem}: Create a menu item.
+\item \code{menuItem}: Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
 }}
 

@@ -10,11 +10,7 @@
 #' @export
 box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE){
   verify_value_allowed("color", c("", ALLOWED_COLORS))
-  if (ribbon){
-    verify_value_allowed("title_side", ALLOWED_BOX_SIDES_RIBBON)
-  } else {
-    verify_value_allowed("title_side", ALLOWED_BOX_SIDES_NONRIBBON)
-  }
+  verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
   label <- if (!is.character(title)){
     NULL
   } else {

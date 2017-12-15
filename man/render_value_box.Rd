@@ -3,7 +3,7 @@
 \name{render_value_box}
 \alias{render_value_box}
 \alias{renderValueBox}
-\title{Create a valueBox output.}
+\title{Create a valueBox output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})}
 \usage{
 render_value_box(expr, env = parent.frame(), quoted = FALSE)
 
@@ -24,6 +24,6 @@ Server-side function for dynamic valueBox.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderValueBox}: Create a valueBox output.
+\item \code{renderValueBox}: Create a valueBox output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
 }}
 

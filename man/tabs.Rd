@@ -3,7 +3,7 @@
 \name{tabs}
 \alias{tabs}
 \alias{tabItems}
-\title{Create a panel with tabs.}
+\title{Create a panel with tabs (alias for \code{tabs} for compatibility with \code{shinydashboard})}
 \usage{
 tabs(..., selected = 1)
 
@@ -22,6 +22,6 @@ Create a panel with tabs.
 }
 \section{Functions}{
 \itemize{
-\item \code{tabItems}: Create a panel with tabs.
+\item \code{tabItems}: Create a panel with tabs (alias for \code{tabs} for compatibility with \code{shinydashboard})
 }}
 
