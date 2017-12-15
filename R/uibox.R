@@ -10,8 +10,6 @@
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE, width = 8){
-  if (!is.numeric(width) || (width < MIN_COLUMN_WIDTH) || (width > MAX_COLUMN_WIDTH))
-    stop(paste("'box' width must be between"), MIN_COLUMN_WIDTH, "and", MAX_COLUMN_WIDTH)
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
   label <- if (!is.character(title)){
@@ -25,6 +23,6 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
     }
     shiny::div(class = title_class, minimize_button, title)
   }
-  shiny::div(class = paste(COLUMN_WIDTHS[width], "wide column"),
-             shiny::div(class = paste("ui segment raised", color), label,  ...))
+  column(width = width,
+         shiny::div(class = paste("ui segment raised", color), label,  ...))
 }

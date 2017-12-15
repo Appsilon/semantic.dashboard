@@ -9,13 +9,11 @@
 #' @export
 value_box <- function(title, value, icon = NULL, color = "blue", width = 5){
   verify_value_allowed("color", ALLOWED_COLORS)
-  if (!is.numeric(width) || (width < MIN_COLUMN_WIDTH) || (width > MAX_COLUMN_WIDTH))
-    stop(paste("'value_box' width must be between"), MIN_COLUMN_WIDTH, "and", MAX_COLUMN_WIDTH)
-  shiny::div(class = paste(COLUMN_WIDTHS[width], "wide column"),
-             shiny::div(class = paste("ui fluid card", color),
-                        shiny::div(class = "ui statistic",
-                                   shiny::div(class = "value", icon, value),
-                                   shiny::div(class = "label", title))))
+  column(width = width,
+         shiny::div(class = paste("ui fluid card", color),
+                    shiny::div(class = "ui statistic",
+                               shiny::div(class = "value", icon, value),
+                               shiny::div(class = "label", title))))
 }
 
 #' @describeIn value_box Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
