@@ -2,9 +2,12 @@
 % Please edit documentation in R/semantic_dashboard.R
 \name{dashboard_header}
 \alias{dashboard_header}
-\title{Create a header of a dashboard.}
+\alias{dashboardHeader}
+\title{Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})}
 \usage{
 dashboard_header(..., color = "black")
+
+dashboardHeader(..., color = "black")
 }
 \arguments{
 \item{...}{UI elements to include within the header.}
@@ -16,4 +19,30 @@ A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 }
 \description{
 Create a header of a dashboard with other additional UI elements.
+}
+\section{Functions}{
+\itemize{
+\item \code{dashboardHeader}: Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
+}}
+
+\examples{
+if(interactive()){
+
+  library(shiny)
+  library(semantic.dashboard)
+
+  ui <- dashboardPage(
+    dashboardHeader(color = "blue"),
+    dashboardSidebar(side = "top", size = "thin", color = "teal",
+                     menuItem("tab1", "Tab 1"),
+                     menuItem("tab2", "Tab 2")),
+    dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+                  tabItem(tabName = "tab2", p("Tab 2")))
+  )
+
+  server <- function(input, output) {
+  }
+
+  shinyApp(ui, server)
+}
 }

@@ -1,4 +1,4 @@
-#' Create Semantic UI icon tag
+#' Create Semantic UI icon tag (alias for \code{uiicon} for compatibility with \code{shinydashboard})
 #'
 #' This creates an icon tag using Semantic UI styles.
 #'
@@ -6,53 +6,21 @@
 #' @param ... Other arguments to be added as attributes of the tag (e.g. style, class etc.)
 #'
 #' @export
-icon <- function(type = "", ...){
-  shiny.semantic::uiicon(type = type, ...)
-}
+icon <- shiny.semantic::uiicon
 
-#' Create a menu item.
+#' Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
 #' @description Create a menu item corresponding to a tab.
-#' @param id Id of the tab.
+#' @param tabName Id of the tab.
 #' @param label Label of the menu item.
 #' @param icon Icon of the menu item. (Optional)
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
-uimenu_item <- function(id, label, icon = NULL){
-  data_tab <- paste0("shiny-tab-", id)
-  if (is.null(icon)) {
-  shiny::tags$a(class = "item", `data-tab` = data_tab, label)
-  } else {
-    shiny::tags$a(class = "item", `data-tab` = data_tab, icon, label)
-  }
+menu_item <- function(tabName, label, icon = NULL){
+  data_tab <- paste0("shiny-tab-", tabName)
+    shiny::tags$a(class = "item", href = paste0("#", data_tab), icon, label, `data-tab` = data_tab,
+                  `data-toggle` = "tab", `data-value` = "dashboard")
 }
 
-#' Create a menu item.
-#' @description Create a menu item corresponding to a tab.
-#' @param id Id of the tab.
-#' @param label Label of the menu item.
-#' @param icon Icon of the menu item. (Optional)
-#' @return A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
+#' @describeIn menu_item Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
 #' @export
-#' @examples
-#' if(interactive()){
-#'
-#'   library(shiny)
-#'   library(semantic.dashboard)
-#'
-#'   ui <- dashboardPage(
-#'     dashboardHeader(color = "blue"),
-#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      menuItem("tab1", "Tab 1"),
-#'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(uitab(id = "tab1", active = TRUE, p("Tab 1")),
-#'                   uitab(id = "tab2", p("Tab 2")))
-#'   )
-#'
-#'   server <- function(input, output) {
-#'   }
-#'
-#'   shinyApp(ui, server)
-#' }
-menuItem <- function(id, label, icon = NULL){
-  uimenu_item(id = id, label = label, icon = icon)
-}
+menuItem <- menu_item

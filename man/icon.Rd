@@ -2,7 +2,7 @@
 % Please edit documentation in R/uimenu_item.R
 \name{icon}
 \alias{icon}
-\title{Create Semantic UI icon tag}
+\title{Create Semantic UI icon tag (alias for \code{uiicon} for compatibility with \code{shinydashboard})}
 \usage{
 icon(type = "", ...)
 }

@@ -2,9 +2,12 @@
 % Please edit documentation in R/semantic_dashboard.R
 \name{dashboard_body}
 \alias{dashboard_body}
-\title{Create a body of a dashboard.}
+\alias{dashboardBody}
+\title{Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})}
 \usage{
 dashboard_body(...)
+
+dashboardBody(...)
 }
 \arguments{
 \item{...}{UI elements to include within the body.}
@@ -14,4 +17,30 @@ A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 }
 \description{
 Create a body of a dashboard with tabs and other additional UI elements.
+}
+\section{Functions}{
+\itemize{
+\item \code{dashboardBody}: Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
+}}
+
+\examples{
+if(interactive()){
+
+  library(shiny)
+  library(semantic.dashboard)
+
+  ui <- dashboardPage(
+    dashboardHeader(color = "blue"),
+    dashboardSidebar(side = "top", size = "thin", color = "teal",
+                     menuItem("tab1", "Tab 1"),
+                     menuItem("tab2", "Tab 2")),
+    dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+                  tabItem(tabName = "tab2", p("Tab 2")))
+  )
+
+  server <- function(input, output) {
+  }
+
+  shinyApp(ui, server)
+}
 }

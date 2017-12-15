@@ -15,10 +15,13 @@ Imports:
     utils,
     shiny (>= 0.12.1),
     htmltools (>= 0.2.6),
-    shiny.semantic (>= 0.1.1),
-    testthat,
-    lintr
+    shiny.semantic (>= 0.1.1)
 Suggests:
+    testthat,
+    lintr,
     plotly,
-    DT
+    DT,
+    shinySignals,
+    bubbles,
+    leaflet
 RoxygenNote: 6.0.1

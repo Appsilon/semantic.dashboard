@@ -2,10 +2,14 @@
 % Please edit documentation in R/semantic_dashboard.R
 \name{dashboard_sidebar}
 \alias{dashboard_sidebar}
-\title{Create a sidebar of a dashboard.}
+\alias{dashboardSidebar}
+\title{Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})}
 \usage{
 dashboard_sidebar(..., side = "left", size = "", color = "black",
-  center = FALSE)
+  center = FALSE, visible = TRUE)
+
+dashboardSidebar(..., side = "left", size = "", color = "black",
+  center = FALSE, visible = TRUE)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}
@@ -16,11 +20,39 @@ dashboard_sidebar(..., side = "left", size = "", color = "black",
 
 \item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
-\item{center}{Schould label and icon be centerd on menu items. Default to \code{FALSE}}
+\item{center}{Should label and icon be centerd on menu items. Default to \code{FALSE}}
+
+\item{visible}{Should sidebar be visible on start. Default to \code{TRUE}}
 }
 \value{
 A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 }
 \description{
 Create a pushable sidebar of a dashboard with menu items and other additional UI elements.
+}
+\section{Functions}{
+\itemize{
+\item \code{dashboardSidebar}: Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})
+}}
+
+\examples{
+if(interactive()){
+
+  library(shiny)
+  library(semantic.dashboard)
+
+  ui <- dashboardPage(
+    dashboardHeader(color = "blue"),
+    dashboardSidebar(side = "top", size = "thin", color = "teal",
+                     menuItem("tab1", "Tab 1"),
+                     menuItem("tab2", "Tab 2")),
+    dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
+                  tabItem(tabName = "tab2", p("Tab 2")))
+  )
+
+  server <- function(input, output) {
+  }
+
+  shinyApp(ui, server)
+}
 }
