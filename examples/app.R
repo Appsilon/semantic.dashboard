@@ -9,8 +9,9 @@ if(interactive()){
   ui <- dashboardPage(
     dashboardHeader(color = "black"),
     dashboardSidebar(side = "left", size = "", color = "black",
-                     menuItem("plot_tab", label = "My plot", icon = icon("home")),
-                     menuItem("table_tab", label = "My table", icon = icon("smile"))),
+                     sidebarMenu(
+                     menuItem(tabName = "plot_tab", label = "My plot", icon = icon("home")),
+                     menuItem(tabName = "table_tab", label = "My table", icon = icon("smile")))),
     dashboardBody(tabItems(
       tabItem(tabName = "plot_tab",
                           fluidRow(
@@ -47,7 +48,7 @@ if(interactive()){
     output$mtcars_table3 <- renderDataTable(mtcars)
 
     lapply(c("mtcars_plot", "mtcars_table", "mtcars_table2", "mtcars_table3"),
-           function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
+            function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
   }
 
   shinyApp(ui, server)

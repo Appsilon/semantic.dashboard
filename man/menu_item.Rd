@@ -17,7 +17,7 @@ menuItem(tabName, label, icon = NULL)
 \item{icon}{Icon of the menu item. (Optional)}
 }
 \value{
-A menu item that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
+A menu item that can be passed \code{\link[semantic.dashboard]{sidebarMenu}}
 }
 \description{
 Create a menu item corresponding to a tab.

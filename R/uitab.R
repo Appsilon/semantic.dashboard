@@ -30,7 +30,7 @@ tabs <- function(..., selected = 1){
     selected_tab <- selected
   }
   tabs[[selected_tab]]$attribs$class <- paste(tabs[[selected_tab]]$attribs$class, "active")
-  div(class = "tab-content", tabs)
+  shiny::tags$div(class = "tab-content", tabs)
 }
 
 #' @describeIn tabs Create a panel with tabs (alias for \code{tabs} for compatibility with \code{shinydashboard})
