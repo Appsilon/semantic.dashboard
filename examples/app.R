@@ -10,32 +10,32 @@ if(interactive()){
     dashboardHeader(color = "black"),
     dashboardSidebar(side = "left", size = "", color = "black",
                      sidebarMenu(
-                     menuItem(tabName = "plot_tab", label = "My plot", icon = icon("home")),
-                     menuItem(tabName = "table_tab", label = "My table", icon = icon("smile")))),
+                       menuItem(tabName = "plot_tab", label = "My plot", icon = icon("home")),
+                       menuItem(tabName = "table_tab", label = "My table", icon = icon("smile")))),
     dashboardBody(tabItems(
       tabItem(tabName = "plot_tab",
-                          fluidRow(
-                          valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),
-                          fluidRow(
-                          box(title = "Sample box", color = "blue", width = 14,
-                        selectInput(inputId =  "variable1", choices = names(mtcars),
-                                    label = "Select first variable", selected = "mpg"),
-                        selectInput(inputId =  "variable2", choices = names(mtcars),
-                                    label = "Select second variable", selected = "cyl"),
-                        plotlyOutput("mtcars_plot")))),
-                  tabItem(tabName = "table_tab",
-                          fluidRow(
-                            valueBox("Unread Mail", 144, icon("mail"), color = "blue"),
-                            valueBox("Spam", 20, icon("mail"), color = "red"),
-                            valueBox("Readed Mail", 666, icon("mail"), color = "green")
-                          ),
-                          fluidRow(
-                        box(title = "Classic box", color = "red", ribbon = FALSE,
-                            title_side = "top left", width = 14,
-                            dataTableOutput("mtcars_table"),
-                            dataTableOutput("mtcars_table2"),
-                            dataTableOutput("mtcars_table3")
-                            )))))
+              fluidRow(
+                valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),
+              fluidRow(
+                box(title = "Sample box", color = "blue", width = 14,
+                    selectInput(inputId =  "variable1", choices = names(mtcars),
+                                label = "Select first variable", selected = "mpg"),
+                    selectInput(inputId =  "variable2", choices = names(mtcars),
+                                label = "Select second variable", selected = "cyl"),
+                    plotlyOutput("mtcars_plot")))),
+      tabItem(tabName = "table_tab",
+              fluidRow(
+                valueBox("Unread Mail", 144, icon("mail"), color = "blue"),
+                valueBox("Spam", 20, icon("mail"), color = "red"),
+                valueBox("Readed Mail", 666, icon("mail"), color = "green")
+              ),
+              fluidRow(
+                box(title = "Classic box", color = "red", ribbon = FALSE,
+                    title_side = "top left", width = 14,
+                    dataTableOutput("mtcars_table"),
+                    dataTableOutput("mtcars_table2"),
+                    dataTableOutput("mtcars_table3")
+                )))))
   )
 
   server <- function(input, output) {
@@ -48,7 +48,7 @@ if(interactive()){
     output$mtcars_table3 <- renderDataTable(mtcars)
 
     lapply(c("mtcars_plot", "mtcars_table", "mtcars_table2", "mtcars_table3"),
-            function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
+           function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
   }
 
   shinyApp(ui, server)

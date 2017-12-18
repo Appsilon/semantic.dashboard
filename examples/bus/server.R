@@ -6,9 +6,17 @@ dirColors <-c("1" = "#595490", "2" = "#527525", "3" = "#A93F35", "4" = "#BA48AA"
 
 # Download data from the Twin Cities Metro Transit API
 # http://svc.metrotransit.org/NexTrip/help
+
+## NOTE: Due to connection problem with above link, data from 'getMetroData' was simulated!
 getMetroData <- function(path) {
-  url <- paste0("http://svc.metrotransit.org/NexTrip/", path, "?format=json")
-  jsonlite::fromJSON(url)
+ ## url <- paste0("http://svc.metrotransit.org/NexTrip/", path, "?format=json")
+  ## jsonlite::fromJSON(url)
+  data.frame(
+    Route = sample(2:7, 100, replace = TRUE),
+    Direction = sample(1:4, 100, replace = TRUE),
+    VehicleLongitude = rnorm(100, -93.258133, 0.1),
+    VehicleLatitude = rnorm(100, 44.986656, 0.1)
+  )
 }
 
 # Load static trip and shape data
@@ -42,13 +50,7 @@ function(input, output, session) {
 
   # Route select input box
   output$routeSelect <- renderUI({
-    #live_vehicles <- getMetroData("VehicleLocations/0")
-    live_vehicles <- data.frame(
-      Route = sample(2:7, 100, replace = TRUE),
-      Direction = sample(1:4, 100, replace = TRUE),
-      VehicleLongitude = rnorm(100, -93.258133, 0.1),
-      VehicleLatitude = rnorm(100, 44.986656, 0.1)
-    )
+    live_vehicles <- getMetroData("VehicleLocations/0")
 
     routeNums <- sort(unique(as.numeric(live_vehicles$Route)))
     # Add names, so that we can add all=0
@@ -67,13 +69,7 @@ function(input, output, session) {
     # fetched again.
     invalidateLater(interval * 1000, session)
 
-   # getMetroData("VehicleLocations/0")
-    data.frame(
-      Route = sample(2:7, 100, replace = TRUE),
-      Direction = sample(1:4, 100, replace = TRUE),
-      VehicleLongitude = rnorm(100, -93.258133, 0.1),
-      VehicleLatitude = rnorm(100, 44.986656, 0.1)
-    )
+    getMetroData("VehicleLocations/0")
   })
 
   # Locations of vehicles for a particular route
