@@ -18,10 +18,5 @@ Imports:
     shiny.semantic (>= 0.1.1)
 Suggests:
     testthat,
-    lintr,
-    plotly,
-    DT,
-    shinySignals,
-    bubbles,
-    leaflet
+    lintr
 RoxygenNote: 6.0.1
