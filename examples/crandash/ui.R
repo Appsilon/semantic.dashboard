@@ -11,23 +11,21 @@ dashboardPage(title = "crandash-semantic",
                 tabItems(selected = 1,
                          tabItem(tabName = "dashboard",
                                  fluidRow(
-                                   column(5, valueBoxOutput("rate")),
-                                   column(5, valueBoxOutput("count")),
-                                   column(5, valueBoxOutput("users"))
+                                   valueBoxOutput("rate"),
+                                   valueBoxOutput("count"),
+                                   valueBoxOutput("users")
                                  ),
                                  fluidRow(
-                                   column(width = 10,
-                                          box(
+                                          box(width = 10,
                                             title = "Popularity by package (last 5 min)",
                                             color = "blue", ribbon = TRUE, title_side = "top right",
                                             bubblesOutput("packagePlot", width = "100%", height = 600)
-                                          )),
-                                   column(width = 6,
-                                          box(
+                                          ),
+                                          box(width = 6,
                                             title = "Top packages (last 5 min)",
                                             color = "blue", ribbon = TRUE, title_side = "top right",
                                             tableOutput("packageTable")
-                                          ))
+                                          )
                                  )),
                          tabItem(tabName = "rawdata",
                                  fluidRow(

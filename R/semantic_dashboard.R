@@ -4,26 +4,6 @@
 #' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
-#' @examples
-#' if(interactive()){
-#'
-#'   library(shiny)
-#'   library(semantic.dashboard)
-#'
-#'   ui <- dashboardPage(
-#'     dashboardHeader(color = "blue"),
-#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      menuItem("tab1", "Tab 1"),
-#'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
-#'                   tabItem(tabName = "tab2", p("Tab 2")))
-#'   )
-#'
-#'   server <- function(input, output) {
-#'   }
-#'
-#'   shinyApp(ui, server)
-#' }
 dashboard_header <- function(..., color = "black"){
   verify_value_allowed("color", ALLOWED_COLORS)
   shiny::div(class = paste("ui top attached inverted", color, "demo menu"),
@@ -45,26 +25,6 @@ dashboardHeader <- dashboard_header
 #' @param  visible Should sidebar be visible on start. Default to \code{TRUE}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
-#' @examples
-#' if(interactive()){
-#'
-#'   library(shiny)
-#'   library(semantic.dashboard)
-#'
-#'   ui <- dashboardPage(
-#'     dashboardHeader(color = "blue"),
-#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      menuItem("tab1", "Tab 1"),
-#'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
-#'                   tabItem(tabName = "tab2", p("Tab 2")))
-#'   )
-#'
-#'   server <- function(input, output) {
-#'   }
-#'
-#'   shinyApp(ui, server)
-#' }
 dashboard_sidebar <- function(..., side = "left", size = "", color = "black", center = FALSE, visible = TRUE){
   verify_value_allowed("side", ALLOWED_SIDEBAR_SIDES)
   verify_value_allowed("size", ALLOWED_SIDEBAR_SIZES)
@@ -85,26 +45,6 @@ dashboardSidebar <- dashboard_sidebar
 #' @param ... UI elements to include within the body.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
-#' @examples
-#' if(interactive()){
-#'
-#'   library(shiny)
-#'   library(semantic.dashboard)
-#'
-#'   ui <- dashboardPage(
-#'     dashboardHeader(color = "blue"),
-#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      menuItem("tab1", "Tab 1"),
-#'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
-#'                   tabItem(tabName = "tab2", p("Tab 2")))
-#'   )
-#'
-#'   server <- function(input, output) {
-#'   }
-#'
-#'   shinyApp(ui, server)
-#' }
 dashboard_body <- function(...){
   shiny::div(class = "pusher", style = "height: 100%;",
              shiny::div(class = "ui segment",
@@ -124,25 +64,6 @@ dashboardBody <- dashboard_body
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
 #' @export
-#' @examples
-#' if(interactive()){
-#'
-#'   library(shiny)
-#'   library(semantic.dashboard)
-#'
-#'   ui <- dashboardPage(
-#'     dashboardSidebar(side = "top", size = "thin", color = "teal",
-#'                      menuItem("tab1", "Tab 1"),
-#'                      menuItem("tab2", "Tab 2")),
-#'     dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
-#'                   tabItem(tabName = "tab2", p("Tab 2")))
-#'   )
-#'
-#'   server <- function(input, output) {
-#'   }
-#'
-#'   shinyApp(ui, server)
-#' }
 dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
   # TODO: Remove this line when it is added to semanticPage()
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")

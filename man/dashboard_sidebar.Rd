@@ -35,24 +35,3 @@ Create a pushable sidebar of a dashboard with menu items and other additional UI
 \item \code{dashboardSidebar}: Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})
 }}
 
-\examples{
-if(interactive()){
-
-  library(shiny)
-  library(semantic.dashboard)
-
-  ui <- dashboardPage(
-    dashboardHeader(color = "blue"),
-    dashboardSidebar(side = "top", size = "thin", color = "teal",
-                     menuItem("tab1", "Tab 1"),
-                     menuItem("tab2", "Tab 2")),
-    dashboardBody(tabItem(tabName = "tab1", active = TRUE, p("Tab 1")),
-                  tabItem(tabName = "tab2", p("Tab 2")))
-  )
-
-  server <- function(input, output) {
-  }
-
-  shinyApp(ui, server)
-}
-}

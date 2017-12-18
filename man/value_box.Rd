@@ -5,9 +5,9 @@
 \alias{valueBox}
 \title{Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})}
 \usage{
-value_box(title, value, icon = NULL, color = "blue")
+value_box(title, value, icon = NULL, color = "blue", width = 5)
 
-valueBox(title, value, icon = NULL, color = "blue")
+valueBox(title, value, icon = NULL, color = "blue", width = 5)
 }
 \arguments{
 \item{title}{Label of the valueBox.}
@@ -17,6 +17,8 @@ valueBox(title, value, icon = NULL, color = "blue")
 \item{icon}{Icon of the valueBox.}
 
 \item{color}{Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+
+\item{width}{Width of the valueBox.}
 }
 \value{
 A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
