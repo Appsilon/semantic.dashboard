@@ -7,12 +7,17 @@ if(interactive()){
   library(DT)
 
   ui <- dashboardPage(
-    dashboardHeader(color = "black"),
+    dashboardHeader(color = "blue",
+                    dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
+                                 messageItem("Marek", "Another test!", icon = "warning", color = "red")),
+                    dropdownMenu(type = "task",
+                    taskItem("Project progress...", 50.777, color = "red"))),
     dashboardSidebar(side = "left", size = "", color = "black",
                      sidebarMenu(
                        menuItem(tabName = "plot_tab", label = "My plot", icon = icon("home")),
                        menuItem(tabName = "table_tab", label = "My table", icon = icon("smile")))),
-    dashboardBody(tabItems(
+    dashboardBody(
+      tabItems(
       tabItem(tabName = "plot_tab",
               fluidRow(
                 valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),

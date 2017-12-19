@@ -6,8 +6,9 @@
 #' @export
 dashboard_header <- function(..., color = "black"){
   verify_value_allowed("color", ALLOWED_COLORS)
-  shiny::div(class = paste("ui top attached inverted", color, "demo menu"),
-             shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"), ...)
+  shiny::div(class = paste("ui top attached inverted", color, " menu"),
+             shiny::tags$a(id = "toggle_menu", class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"),
+             shiny::tags$div(style = "margin-left:auto", class = paste("ui icon buttons", color), ...))
 }
 
 #' @describeIn dashboard_header Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
@@ -30,7 +31,7 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ce
   verify_value_allowed("size", ALLOWED_SIDEBAR_SIZES)
   verify_value_allowed("color", ALLOWED_COLORS)
   display_type <- ifelse(center, "labeled icon", "")
-  shiny::div(id = "uisidebar",
+  shiny::div(id = "uisidebar", style = "min-height: 100vh",
              class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                            display_type, ifelse(visible, "visible", ""), "inverted menu sidebar"), ...)
 }
@@ -46,7 +47,7 @@ dashboardSidebar <- dashboard_sidebar
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 dashboard_body <- function(...){
-  shiny::div(class = "pusher", style = "height: 100%;",
+  shiny::div(class = "pusher", style = "min-height: 100vh;",
              shiny::div(class = "ui segment",
                         shiny::tags$div(class = "ui equal width grid", ...)))
 }

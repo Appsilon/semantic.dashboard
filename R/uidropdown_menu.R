@@ -1,0 +1,64 @@
+#' Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})
+#' @description Create a dropdown menu with additional UI elements.
+#' @param ... UI elements to include within the dropdown menu.
+#' @param type Type of the displayed items.
+#' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
+#' @export
+dropdown_menu <- function(..., type = "messages"){
+  icon <- if (type == "messages") {
+    icon("mail")
+  } else if (type == "notifications"){
+    icon("warning sign")
+  } else {
+    icon("tasks")
+  }
+  shiny::tags$button(class = "ui icon top right pointing dropdown button", icon,
+                     shiny::tags$div(class = "menu", ...),
+                     shiny::tags$script(dropdown_menu_js),
+                     shiny::tags$script(progress_bar_js))
+}
+
+#' @describeIn dropdown_menu Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})
+#' @export
+dropdownMenu <- dropdown_menu
+
+#' Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})
+#' @description Create a message item.
+#' @param from Who the message is from.
+#' @param message Text of the message.
+#' @param icon Additional icon.
+#' @param color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
+#' @export
+message_item <- function(from, message, icon = "user", color = ""){
+  verify_value_allowed("color", c("", ALLOWED_COLORS))
+  shiny::tags$div(class = paste("ui icon message", color), shiny::tags$i(class = paste("small", icon, "icon")),
+                  shiny::tags$div(class = "content",
+                                  shiny::tags$div(class = "header", from), message))
+}
+
+#' @describeIn message_item Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})
+#' @export
+messageItem <- message_item
+
+#' Create a task item (alias for \code{task_item} for compatibility with \code{shinydashboard})
+#' @description Create a task item.
+#' @param text Progress bar label.
+#' @param value Progress bar value.
+#' @param color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
+#' @export
+task_item <- function(text, value, color = ""){
+  if (!is.numeric(value) || (value < MIN_PROGRESS_VALUE) || (value > MAX_PROGRESS_VALUE))
+    stop(paste("'value' must be between", MIN_PROGRESS_VALUE, "and", MAX_PROGRESS_VALUE))
+  verify_value_allowed("color", c("", ALLOWED_COLORS))
+  shiny::tags$div(class = "item", style = "min-width:200px;",
+                  shiny::tags$div(class = paste("ui active progress", color),
+                                  `data-percent` = value, `data-total` = 100,
+                                  shiny::tags$div(class = "bar", shiny::tags$div(class = "progress")),
+                                  shiny::tags$div(class = "label", text)))
+}
+
+#' @describeIn task_item Create a task item (alias for \code{taks_item} for compatibility with \code{shinydashboard})
+#' @export
+taskItem <- task_item
