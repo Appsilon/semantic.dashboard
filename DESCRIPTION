@@ -18,5 +18,6 @@ Imports:
     shiny.semantic (>= 0.1.1)
 Suggests:
     testthat,
-    lintr
+    lintr,
+    shinydashboard
 RoxygenNote: 6.0.1
