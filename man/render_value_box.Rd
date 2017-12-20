@@ -3,7 +3,7 @@
 \name{render_value_box}
 \alias{render_value_box}
 \alias{renderValueBox}
-\title{Create a valueBox output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})}
+\title{Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})}
 \usage{
 render_value_box(expr, env = parent.frame(), quoted = FALSE)
 
@@ -17,13 +17,13 @@ renderValueBox(expr, env = parent.frame(), quoted = FALSE)
 \item{quoted}{Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.}
 }
 \value{
-A dynamic valueBox that can be passed to \code{\link[semantic.dashboard]{valueBoxOutput}}
+A dynamic valueBox that can be assign to output.
 }
 \description{
 Server-side function for dynamic valueBox.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderValueBox}: Create a valueBox output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
+\item \code{renderValueBox}: Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
 }}
 

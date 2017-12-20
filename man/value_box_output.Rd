@@ -3,7 +3,7 @@
 \name{value_box_output}
 \alias{value_box_output}
 \alias{valueBoxOutput}
-\title{Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})}
+\title{Create a value box output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})}
 \usage{
 value_box_output(outputId, width = 5)
 
@@ -15,7 +15,7 @@ valueBoxOutput(outputId, width = 5)
 \item{width}{Width of the valueBox.}
 }
 \value{
-A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
+A value box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 }
 \description{
 UI-side function for dynamic valueBox.

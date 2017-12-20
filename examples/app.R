@@ -8,8 +8,7 @@ if(interactive()){
 
   ui <- dashboardPage(
     dashboardHeader(color = "blue",
-                    dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
-                                 messageItem("Marek", "Another test!", icon = "warning", color = "red")),
+                    dropdownManuOutput("dropdown1"),
                     dropdownMenu(type = "task", taskItem("Project progress...", 50.777, color = "red")),
                     dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))),
     dashboardSidebar(side = "left", size = "", color = "black",
@@ -51,6 +50,11 @@ if(interactive()){
     output$mtcars_table <- renderDataTable(mtcars)
     output$mtcars_table2 <- renderDataTable(mtcars)
     output$mtcars_table3 <- renderDataTable(mtcars)
+
+    output$dropdown1 <- renderdropdownManu({
+      dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
+                   messageItem("Marek", "Another test!", icon = "warning", color = "red"))
+    })
 
     lapply(c("mtcars_plot", "mtcars_table", "mtcars_table2", "mtcars_table3"),
            function(x) outputOptions(output, x, suspendWhenHidden = FALSE))

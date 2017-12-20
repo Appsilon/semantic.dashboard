@@ -17,7 +17,7 @@ notificationItem(text, icon = "warning", color = "")
 \item{color}{Color of the notification item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 }
 \value{
-A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
+A notification item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 }
 \description{
 Create a notification item.
