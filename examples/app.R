@@ -10,8 +10,8 @@ if(interactive()){
     dashboardHeader(color = "blue",
                     dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
                                  messageItem("Marek", "Another test!", icon = "warning", color = "red")),
-                    dropdownMenu(type = "task",
-                    taskItem("Project progress...", 50.777, color = "red"))),
+                    dropdownMenu(type = "task", taskItem("Project progress...", 50.777, color = "red")),
+                    dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))),
     dashboardSidebar(side = "left", size = "", color = "black",
                      sidebarMenu(
                        menuItem(tabName = "plot_tab", label = "My plot", icon = icon("home")),
@@ -30,9 +30,9 @@ if(interactive()){
                     plotlyOutput("mtcars_plot")))),
       tabItem(tabName = "table_tab",
               fluidRow(
-                valueBox("Unread Mail", 144, icon("mail"), color = "blue"),
-                valueBox("Spam", 20, icon("mail"), color = "red"),
-                valueBox("Readed Mail", 666, icon("mail"), color = "green")
+                valueBox("Unread Mail", 144, icon("mail"), color = "blue", width = 6),
+                valueBox("Spam", 20, icon("mail"), color = "red", width = 5),
+                valueBox("Readed Mail", 666, icon("mail"), color = "green", width = 5)
               ),
               fluidRow(
                 box(title = "Classic box", color = "red", ribbon = FALSE,

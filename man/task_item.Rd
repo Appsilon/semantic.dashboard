@@ -14,7 +14,7 @@ taskItem(text, value, color = "")
 
 \item{value}{Progress bar value.}
 
-\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the task item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 }
 \value{
 A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}

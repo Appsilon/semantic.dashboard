@@ -27,7 +27,7 @@ dropdownMenu <- dropdown_menu
 #' @param from Who the message is from.
 #' @param message Text of the message.
 #' @param icon Additional icon.
-#' @param color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param color Color of the message item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
 message_item <- function(from, message, icon = "user", color = ""){
@@ -45,7 +45,7 @@ messageItem <- message_item
 #' @description Create a task item.
 #' @param text Progress bar label.
 #' @param value Progress bar value.
-#' @param color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param color Color of the task item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
 task_item <- function(text, value, color = ""){
@@ -62,3 +62,21 @@ task_item <- function(text, value, color = ""){
 #' @describeIn task_item Create a task item (alias for \code{taks_item} for compatibility with \code{shinydashboard})
 #' @export
 taskItem <- task_item
+
+#' Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})
+#' @description Create a notification item.
+#' @param text Text of the message.
+#' @param icon Additional icon.
+#' @param color Color of the notification item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
+#' @export
+notification_item <- function(text, icon = "warning", color = ""){
+  verify_value_allowed("color", c("", ALLOWED_COLORS))
+  shiny::tags$div(class = "item", style = "min-width:100px;",
+                  shiny::tags$div(class = paste("ui label", color),
+                                  shiny::tags$i(class = paste("small", icon, "icon")), text))
+}
+
+#' @describeIn notification_item Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})
+#' @export
+notificationItem <- notification_item

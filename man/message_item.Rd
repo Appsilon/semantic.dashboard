@@ -16,7 +16,7 @@ messageItem(from, message, icon = "user", color = "")
 
 \item{icon}{Additional icon.}
 
-\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the message item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 }
 \value{
 A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
