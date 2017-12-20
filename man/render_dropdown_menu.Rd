@@ -2,28 +2,28 @@
 % Please edit documentation in R/uidropdown_menu_output.R
 \name{render_dropdown_menu}
 \alias{render_dropdown_menu}
-\alias{renderdropdownManu}
-\title{Create a dropdown manu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})}
+\alias{renderDropdownMenu}
+\title{Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})}
 \usage{
 render_dropdown_menu(expr, env = parent.frame(), quoted = FALSE)
 
-renderdropdownManu(expr, env = parent.frame(), quoted = FALSE)
+renderDropdownMenu(expr, env = parent.frame(), quoted = FALSE)
 }
 \arguments{
-\item{expr}{dropdownManu.}
+\item{expr}{dropdownMenu.}
 
 \item{env}{The environment in which to evaluate expr.}
 
 \item{quoted}{Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.}
 }
 \value{
-A dynamic dropdown manu that can be assign to output.
+A dynamic dropdown menu that can be assign to output.
 }
 \description{
-Server-side function for dynamic dropdownManu.
+Server-side function for dynamic dropdownMenu.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderdropdownManu}: Create a valueBox output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+\item \code{renderDropdownMenu}: Create a valueBox output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
 }}
 

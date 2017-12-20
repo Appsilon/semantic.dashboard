@@ -2,24 +2,24 @@
 % Please edit documentation in R/uidropdown_menu_output.R
 \name{dropdown_menu_output}
 \alias{dropdown_menu_output}
-\alias{dropdownManuOutput}
-\title{Create a dropdown manu output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})}
+\alias{dropdownMenuOutput}
+\title{Create a dropdown menu output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})}
 \usage{
 dropdown_menu_output(outputId)
 
-dropdownManuOutput(outputId)
+dropdownMenuOutput(outputId)
 }
 \arguments{
 \item{outputId}{Id of the output.}
 }
 \value{
-A dropdown manu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
+A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 }
 \description{
 UI-side function for dynamic valueBox.
 }
 \section{Functions}{
 \itemize{
-\item \code{dropdownManuOutput}: Create a value box output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
+\item \code{dropdownMenuOutput}: Create a value box output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
 }}
 
