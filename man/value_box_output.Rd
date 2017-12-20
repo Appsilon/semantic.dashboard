@@ -3,11 +3,14 @@
 \name{value_box_output}
 \alias{value_box_output}
 \alias{valueBoxOutput}
+\alias{infoBoxOutput}
 \title{Create a value box output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})}
 \usage{
 value_box_output(outputId, width = 5)
 
 valueBoxOutput(outputId, width = 5)
+
+infoBoxOutput(outputId, width = 5)
 }
 \arguments{
 \item{outputId}{Id of the output.}
@@ -23,5 +26,7 @@ UI-side function for dynamic valueBox.
 \section{Functions}{
 \itemize{
 \item \code{valueBoxOutput}: Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})
+
+\item \code{infoBoxOutput}: Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})
 }}
 

@@ -3,11 +3,14 @@
 \name{render_value_box}
 \alias{render_value_box}
 \alias{renderValueBox}
+\alias{renderInfoBox}
 \title{Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})}
 \usage{
 render_value_box(expr, env = parent.frame(), quoted = FALSE)
 
 renderValueBox(expr, env = parent.frame(), quoted = FALSE)
+
+renderInfoBox(expr, env = parent.frame(), quoted = FALSE)
 }
 \arguments{
 \item{expr}{ValueBox.}
@@ -25,5 +28,7 @@ Server-side function for dynamic valueBox.
 \section{Functions}{
 \itemize{
 \item \code{renderValueBox}: Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
+
+\item \code{renderInfoBox}: Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
 }}
 

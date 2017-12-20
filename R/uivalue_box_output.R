@@ -12,6 +12,10 @@ value_box_output <- function(outputId, width = 5){
 #' @export
 valueBoxOutput <- value_box_output
 
+#' @describeIn value_box_output Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})
+#' @export
+infoBoxOutput <- value_box_output
+
 #' Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
 #' @description Server-side function for dynamic valueBox.
 #' @param expr ValueBox.
@@ -27,3 +31,7 @@ render_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
 #' @describeIn render_value_box Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
 #' @export
 renderValueBox <- render_value_box
+
+#' @describeIn render_value_box Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
+#' @export
+renderInfoBox <- render_value_box

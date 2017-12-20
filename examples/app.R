@@ -7,7 +7,7 @@ if(interactive()){
   library(DT)
 
   ui <- dashboardPage(
-    dashboardHeader(color = "blue",
+    dashboardHeader(color = "black",
                     dropdownManuOutput("dropdown1"),
                     dropdownMenu(type = "task", taskItem("Project progress...", 50.777, color = "red")),
                     dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))),
