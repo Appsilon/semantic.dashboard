@@ -1,10 +1,12 @@
 library(semantic.dashboard)
+library(shinydashboard)
 context("Function names")
 
-test_that("Fucntion names from shinydashboard are identical to names from semantic.dashboard",
-expect_equal(sum(!(c("box", "dashboardBody", "dashboardHeader", "dashboardPage",
-                         "dashboardSidebar", "dropdownMenu", "dropdownMenuOutput", "infoBox",
-                         "infoBoxOutput", "menuItem", "messageItem", "notificationItem",
-                         "renderDropdownMenu", "renderInfoBox", "renderValueBox", "sidebarMenu",
-                         "tabItem", "tabItems", "taskItem", "valueBox", "valueBoxOutput"
-) %in% ls("package:semantic.dashboard"))), 0))
+test_that("Fucntion names from shinydashboard are identical to names from semantic.dashboard", {
+  to_be_implemented <- c("menuItemOutput", "menuSubItem", "renderMenu", "sidebarMenuOutput",
+                         "sidebarSearchForm", "sidebarUserPanel", "tabBox", "updateTabItems")
+  not_implemented <- setdiff(setdiff(ls("package:shinydashboard"), ls("package:semantic.dashboard")),
+                             to_be_implemented)
+  expect_equal(length(not_implemented), 0)
+}
+)
