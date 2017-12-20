@@ -2,9 +2,12 @@
 % Please edit documentation in R/menu_item.R
 \name{sidebar_menu}
 \alias{sidebar_menu}
+\alias{sidebarMenu}
 \title{Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})}
 \usage{
 sidebar_menu(...)
+
+sidebarMenu(...)
 }
 \arguments{
 \item{...}{Menu items.}
@@ -15,3 +18,8 @@ A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSideb
 \description{
 Create a sidebar menu with menu items.
 }
+\section{Functions}{
+\itemize{
+\item \code{sidebarMenu}: Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
+}}
+

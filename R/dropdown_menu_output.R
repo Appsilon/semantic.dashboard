@@ -1,5 +1,5 @@
 #' Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
-#' @description UI-side function for dynamic valueBox.
+#' @description UI-side function for dynamic dropdownMenu.
 #' @param outputId Id of the output.
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
@@ -19,8 +19,8 @@ dropdownMenuOutput <- dropdown_menu_output
 #' @return A dynamic dropdown menu that can be assigned to output.
 #' @export
 render_dropdown_menu <- function(expr, env = parent.frame(), quoted = FALSE){
-  vbox_fun <- shiny::exprToFunction(expr, env, quoted)
-  shiny::renderUI(vbox_fun())
+  fun <- shiny::exprToFunction(expr, env, quoted)
+  shiny::renderUI(fun())
 }
 
 #' @describeIn render_dropdown_menu Create a valueBox output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})

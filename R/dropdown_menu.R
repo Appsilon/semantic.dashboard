@@ -49,8 +49,9 @@ messageItem <- message_item
 #' @return A task item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
 task_item <- function(text, value, color = ""){
-  if (!is.numeric(value) || (value < MIN_PROGRESS_VALUE) || (value > MAX_PROGRESS_VALUE))
+  if (!is.numeric(value) || (value < MIN_PROGRESS_VALUE) || (value > MAX_PROGRESS_VALUE)){
     warning(paste("'value' must be between", MIN_PROGRESS_VALUE, "and", MAX_PROGRESS_VALUE))
+  }
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   shiny::tags$div(class = "item", style = "min-width: 200px;",
                   shiny::tags$div(class = paste("ui active progress", color),
@@ -65,7 +66,7 @@ taskItem <- task_item
 
 #' Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})
 #' @description Create a notification item.
-#' @param text Text of the message.
+#' @param text Text of the notification.
 #' @param icon Additional icon.
 #' @param color Color of the notification item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A notification item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}

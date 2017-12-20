@@ -24,8 +24,8 @@ infoBoxOutput <- value_box_output
 #' @return A dynamic valueBox that can be assigned to output.
 #' @export
 render_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
-  vbox_fun <- shiny::exprToFunction(expr, env, quoted)
-  shiny::renderUI(vbox_fun())
+  fun <- shiny::exprToFunction(expr, env, quoted)
+  shiny::renderUI(fun())
 }
 
 #' @describeIn render_value_box Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})

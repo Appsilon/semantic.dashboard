@@ -16,7 +16,7 @@ dropdownMenuOutput(outputId)
 A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 }
 \description{
-UI-side function for dynamic valueBox.
+UI-side function for dynamic dropdownMenu.
 }
 \section{Functions}{
 \itemize{

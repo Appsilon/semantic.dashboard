@@ -34,9 +34,6 @@ sidebar_menu <- function(...) {
   shiny::tags$div(class = "sidebar-menu", ...)
 }
 
-#' Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
-#' @description Create a sidebar menu with menu items.
-#' @param ... Menu items.
-#' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
+#' @describeIn sidebar_menu Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
 #' @export
 sidebarMenu <- sidebar_menu

@@ -10,7 +10,7 @@ notification_item(text, icon = "warning", color = "")
 notificationItem(text, icon = "warning", color = "")
 }
 \arguments{
-\item{text}{Text of the message.}
+\item{text}{Text of the notification.}
 
 \item{icon}{Additional icon.}
 
