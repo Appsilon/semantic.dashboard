@@ -8,7 +8,7 @@ dashboard_header <- function(..., color = "black"){
   verify_value_allowed("color", ALLOWED_COLORS)
   shiny::div(class = paste("ui top attached inverted", color, " menu"),
              shiny::tags$a(id = "toggle_menu", class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"),
-             shiny::tags$div(style = "margin-left:auto", class = paste("ui icon buttons", color), ...))
+             shiny::tags$div(style = "margin-left: auto", class = paste("ui icon buttons", color), ...))
 }
 
 #' @describeIn dashboard_header Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})

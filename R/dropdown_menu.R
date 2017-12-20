@@ -50,9 +50,9 @@ messageItem <- message_item
 #' @export
 task_item <- function(text, value, color = ""){
   if (!is.numeric(value) || (value < MIN_PROGRESS_VALUE) || (value > MAX_PROGRESS_VALUE))
-    stop(paste("'value' must be between", MIN_PROGRESS_VALUE, "and", MAX_PROGRESS_VALUE))
+    warning(paste("'value' must be between", MIN_PROGRESS_VALUE, "and", MAX_PROGRESS_VALUE))
   verify_value_allowed("color", c("", ALLOWED_COLORS))
-  shiny::tags$div(class = "item", style = "min-width:200px;",
+  shiny::tags$div(class = "item", style = "min-width: 200px;",
                   shiny::tags$div(class = paste("ui active progress", color),
                                   `data-percent` = value, `data-total` = 100,
                                   shiny::tags$div(class = "bar", shiny::tags$div(class = "progress")),

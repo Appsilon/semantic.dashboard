@@ -21,7 +21,7 @@ infoBoxOutput <- value_box_output
 #' @param expr ValueBox.
 #' @param env The environment in which to evaluate expr.
 #' @param quoted Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.
-#' @return A dynamic valueBox that can be assign to output.
+#' @return A dynamic valueBox that can be assigned to output.
 #' @export
 render_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
   vbox_fun <- shiny::exprToFunction(expr, env, quoted)

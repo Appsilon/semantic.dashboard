@@ -2,7 +2,7 @@ library(semantic.dashboard)
 library(shinydashboard)
 context("Function names")
 
-test_that("Fucntion names from shinydashboard are identical to names from semantic.dashboard", {
+test_that("All functions from shinydashboard are implemented except functions known to be missing", {
   to_be_implemented <- c("menuItemOutput", "menuSubItem", "renderMenu", "sidebarMenuOutput",
                          "sidebarSearchForm", "sidebarUserPanel", "tabBox", "updateTabItems")
   not_implemented <- setdiff(setdiff(ls("package:shinydashboard"), ls("package:semantic.dashboard")),
