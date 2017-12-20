@@ -11,8 +11,6 @@ dropdownManuOutput(outputId)
 }
 \arguments{
 \item{outputId}{Id of the output.}
-
-\item{width}{Width of the dropdownManu.}
 }
 \value{
 A dropdown manu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}

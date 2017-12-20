@@ -1,7 +1,6 @@
 #' Create a dropdown manu output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})
 #' @description UI-side function for dynamic valueBox.
 #' @param outputId Id of the output.
-#' @param width Width of the dropdownManu.
 #' @return A dropdown manu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
 dropdown_menu_output <- function(outputId){
