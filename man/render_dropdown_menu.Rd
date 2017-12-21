@@ -3,7 +3,7 @@
 \name{render_dropdown_menu}
 \alias{render_dropdown_menu}
 \alias{renderDropdownMenu}
-\title{Create a dropdown menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})}
+\title{Create a dropdown menu output.}
 \usage{
 render_dropdown_menu(expr, env = parent.frame(), quoted = FALSE)
 

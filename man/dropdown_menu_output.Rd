@@ -3,7 +3,7 @@
 \name{dropdown_menu_output}
 \alias{dropdown_menu_output}
 \alias{dropdownMenuOutput}
-\title{Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})}
+\title{Create a dropdown menu output.}
 \usage{
 dropdown_menu_output(outputId)
 

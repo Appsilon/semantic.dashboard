@@ -1,4 +1,4 @@
-#' Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
+#' Create a valueBox.
 #' @description Create a valueBox with additional UI elements.
 #' @param title Label of the valueBox.
 #' @param value Value of the valueBox.

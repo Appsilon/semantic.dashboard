@@ -11,6 +11,8 @@ MAX_COLUMN_WIDTH <- 16
 MIN_PROGRESS_VALUE <- 0
 MAX_PROGRESS_VALUE <- 100
 
+DROPDOWN_MENU_ICONS <- list(messages = "mail", notifications = "warning sign", tasks = "tasks")
+
 sidebar_js <- "$('#uisidebar .item').tab({onVisible: function() {$(window).resize()} });
      $('#uisidebar')
   .sidebar({

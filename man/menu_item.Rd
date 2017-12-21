@@ -3,7 +3,7 @@
 \name{menu_item}
 \alias{menu_item}
 \alias{menuItem}
-\title{Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})}
+\title{Create a menu item.}
 \usage{
 menu_item(tabName, label, icon = NULL)
 

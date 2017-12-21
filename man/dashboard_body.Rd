@@ -3,7 +3,7 @@
 \name{dashboard_body}
 \alias{dashboard_body}
 \alias{dashboardBody}
-\title{Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})}
+\title{Create a body of a dashboard.}
 \usage{
 dashboard_body(...)
 

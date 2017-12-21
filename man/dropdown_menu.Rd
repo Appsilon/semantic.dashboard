@@ -3,16 +3,18 @@
 \name{dropdown_menu}
 \alias{dropdown_menu}
 \alias{dropdownMenu}
-\title{Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})}
+\title{Create a dropdown menu.}
 \usage{
-dropdown_menu(..., type = "messages")
+dropdown_menu(..., type = "messages", icon = NULL)
 
-dropdownMenu(..., type = "messages")
+dropdownMenu(..., type = "messages", icon = NULL)
 }
 \arguments{
 \item{...}{UI elements to include within the dropdown menu.}
 
 \item{type}{Type of the displayed items.}
+
+\item{icon}{Icon of the dropdown menu. If not specyfied created based on \code{type} agrument.}
 }
 \value{
 A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}

@@ -3,7 +3,7 @@
 \name{task_item}
 \alias{task_item}
 \alias{taskItem}
-\title{Create a task item (alias for \code{task_item} for compatibility with \code{shinydashboard})}
+\title{Create a task item.}
 \usage{
 task_item(text, value, color = "")
 
