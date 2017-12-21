@@ -21,7 +21,7 @@ dashboardPage(title = "crandash-semantic",
                                             color = "blue", ribbon = TRUE, title_side = "top right",
                                             bubblesOutput("packagePlot", width = "100%", height = 600)
                                           ),
-                                          box(width = 6,
+                                          box(width = 3,
                                             title = "Top packages (last 5 min)",
                                             color = "blue", ribbon = TRUE, title_side = "top right",
                                             tableOutput("packageTable")

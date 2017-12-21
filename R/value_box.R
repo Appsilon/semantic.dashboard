@@ -1,4 +1,4 @@
-#' Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
+#' Create a valueBox.
 #' @description Create a valueBox with additional UI elements.
 #' @param title Label of the valueBox.
 #' @param value Value of the valueBox.
@@ -19,3 +19,7 @@ value_box <- function(title, value, icon = NULL, color = "blue", width = 5){
 #' @describeIn value_box Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
 #' @export
 valueBox <- value_box
+
+#' @describeIn value_box Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
+#' @export
+infoBox <- value_box

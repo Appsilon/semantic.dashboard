@@ -1,4 +1,4 @@
-#' Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
+#' Create a header of a dashboard.
 #' @description Create a header of a dashboard with other additional UI elements.
 #' @param ... UI elements to include within the header.
 #' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
@@ -6,8 +6,9 @@
 #' @export
 dashboard_header <- function(..., color = "black"){
   verify_value_allowed("color", ALLOWED_COLORS)
-  shiny::div(class = paste("ui top attached inverted", color, "demo menu"),
-             shiny::tags$a(class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"), ...)
+  shiny::div(class = paste("ui top attached inverted", color, " menu"),
+             shiny::tags$a(id = "toggle_menu", class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"),
+             shiny::tags$div(style = "margin-left: auto", class = paste("ui icon buttons", color), ...))
 }
 
 #' @describeIn dashboard_header Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
@@ -15,7 +16,7 @@ dashboard_header <- function(..., color = "black"){
 dashboardHeader <- dashboard_header
 
 
-#' Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})
+#' Create a sidebar of a dashboard.
 #' @description Create a pushable sidebar of a dashboard with menu items and other additional UI elements.
 #' @param ... UI elements to include within the sidebar.
 #' @param  side Placement of the sidebar. One of \code{c("left", "right", "top", "bottom")}
@@ -30,7 +31,7 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ce
   verify_value_allowed("size", ALLOWED_SIDEBAR_SIZES)
   verify_value_allowed("color", ALLOWED_COLORS)
   display_type <- ifelse(center, "labeled icon", "")
-  shiny::div(id = "uisidebar",
+  shiny::div(id = "uisidebar", style = "min-height: 100vh",
              class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                            display_type, ifelse(visible, "visible", ""), "inverted menu sidebar"), ...)
 }
@@ -40,13 +41,13 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "black", ce
 dashboardSidebar <- dashboard_sidebar
 
 
-#' Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
+#' Create a body of a dashboard.
 #' @description Create a body of a dashboard with tabs and other additional UI elements.
 #' @param ... UI elements to include within the body.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 dashboard_body <- function(...){
-  shiny::div(class = "pusher", style = "height: 100%;",
+  shiny::div(class = "pusher", style = "min-height: 100vh;",
              shiny::div(class = "ui segment",
                         shiny::tags$div(class = "ui equal width grid", ...)))
 }
@@ -55,7 +56,7 @@ dashboard_body <- function(...){
 #' @export
 dashboardBody <- dashboard_body
 
-#' Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
+#' Create a dashboard.
 #' @description Create a page with menu item sidebar and body containing tabs and other additional elements.
 #' @param  dashboardHeader Header of a dashboard.
 #' @param  dashboardSidebar Sidebar of a dashboard.
