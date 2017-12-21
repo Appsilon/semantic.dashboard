@@ -9,7 +9,7 @@ dropdown_menu <- function(..., type = "messages", icon = NULL){
   icon <- if (!is.null(icon)) {
     icon
   } else {
-    icon(DROPDOWN_MENU_ICONS[type])
+    icon(DROPDOWN_MENU_ICONS[[type]])
   }
   shiny::tags$button(class = "ui icon top right pointing dropdown button", icon,
                      shiny::tags$div(class = "menu", ...),
