@@ -1,16 +1,15 @@
-#' Create a dropdown menu
+#' Create a dropdown menu.
 #' @description Create a dropdown menu with additional UI elements.
 #' @param ... UI elements to include within the dropdown menu.
 #' @param type Type of the displayed items.
+#' @param icon Icon of the dropdown menu. If not specyfied created based on \code{type} agrument.
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
-dropdown_menu <- function(..., type = "messages"){
-  icon <- if (type == "messages") {
-    icon("mail")
-  } else if (type == "notifications"){
-    icon("warning sign")
+dropdown_menu <- function(..., type = "messages", icon = NULL){
+  icon <- if (!is.null(icon)) {
+    icon
   } else {
-    icon("tasks")
+    icon(DROPDOWN_MENU_ICONS[[type]])
   }
   shiny::tags$button(class = "ui icon top right pointing dropdown button", icon,
                      shiny::tags$div(class = "menu", ...),
@@ -22,7 +21,7 @@ dropdown_menu <- function(..., type = "messages"){
 #' @export
 dropdownMenu <- dropdown_menu
 
-#' Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})
+#' Create a message item.
 #' @description Create a message item.
 #' @param from Who the message is from.
 #' @param message Text of the message.
@@ -41,7 +40,7 @@ message_item <- function(from, message, icon = "user", color = ""){
 #' @export
 messageItem <- message_item
 
-#' Create a task item (alias for \code{task_item} for compatibility with \code{shinydashboard})
+#' Create a task item.
 #' @description Create a task item.
 #' @param text Progress bar label.
 #' @param value Progress bar value.
@@ -64,7 +63,7 @@ task_item <- function(text, value, color = ""){
 #' @export
 taskItem <- task_item
 
-#' Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})
+#' Create a notification item.
 #' @description Create a notification item.
 #' @param text Text of the notification.
 #' @param icon Additional icon.

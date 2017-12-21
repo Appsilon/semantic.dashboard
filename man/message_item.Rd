@@ -3,7 +3,7 @@
 \name{message_item}
 \alias{message_item}
 \alias{messageItem}
-\title{Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})}
+\title{Create a message item.}
 \usage{
 message_item(from, message, icon = "user", color = "")
 

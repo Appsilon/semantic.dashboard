@@ -8,7 +8,7 @@
 #' @export
 icon <- shiny.semantic::uiicon
 
-#' Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
+#' Create a menu item.
 #' @description Create a menu item corresponding to a tab.
 #' @param tabName Id of the tab.
 #' @param label Label of the menu item.
@@ -25,7 +25,7 @@ menu_item <- function(tabName, label, icon = NULL){
 #' @export
 menuItem <- menu_item
 
-#' Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
+#' Create a sidebar menu.
 #' @description Create a sidebar menu with menu items.
 #' @param ... Menu items.
 #' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}

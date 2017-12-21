@@ -4,7 +4,7 @@
 \alias{value_box}
 \alias{valueBox}
 \alias{infoBox}
-\title{Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})}
+\title{Create a valueBox.}
 \usage{
 value_box(title, value, icon = NULL, color = "blue", width = 5)
 

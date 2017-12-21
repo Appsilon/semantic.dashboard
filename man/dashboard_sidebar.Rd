@@ -3,7 +3,7 @@
 \name{dashboard_sidebar}
 \alias{dashboard_sidebar}
 \alias{dashboardSidebar}
-\title{Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})}
+\title{Create a sidebar of a dashboard.}
 \usage{
 dashboard_sidebar(..., side = "left", size = "", color = "black",
   center = FALSE, visible = TRUE, disable = FALSE)

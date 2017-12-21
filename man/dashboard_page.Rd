@@ -3,7 +3,7 @@
 \name{dashboard_page}
 \alias{dashboard_page}
 \alias{dashboardPage}
-\title{Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})}
+\title{Create a dashboard.}
 \usage{
 dashboard_page(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
   suppress_bootstrap = TRUE)

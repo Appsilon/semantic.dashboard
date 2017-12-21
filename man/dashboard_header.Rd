@@ -3,7 +3,7 @@
 \name{dashboard_header}
 \alias{dashboard_header}
 \alias{dashboardHeader}
-\title{Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})}
+\title{Create a header of a dashboard.}
 \usage{
 dashboard_header(..., color = "black", disable = FALSE)
 

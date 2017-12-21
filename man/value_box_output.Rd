@@ -4,7 +4,7 @@
 \alias{value_box_output}
 \alias{valueBoxOutput}
 \alias{infoBoxOutput}
-\title{Create a value box output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})}
+\title{Create a value box output.}
 \usage{
 value_box_output(outputId, width = 5)
 

@@ -1,4 +1,4 @@
-#' Create a tab panel (alias for \code{tab_item} for compatibility with \code{shinydashboard})
+#' Create a tab.
 #' @description Create a tab panel with additional UI elements.
 #' @param tabName Id of the tab.
 #' @param ... UI elements to include within the tab.
@@ -11,11 +11,11 @@ tab_item <- function(tabName, ...){
              id = data_tab, `data-tab` = data_tab, shiny::tags$div(class = "ui equal width padded grid", ...))
 }
 
-#' @describeIn tab Create a tab panel (alias for \code{tab_item} for compatibility with \code{shinydashboard})
+#' @describeIn tab_item Create a tab (alias for \code{tab_item} for compatibility with \code{shinydashboard})
 #' @export
 tabItem <- tab_item
 
-#' Create a panel with tabs (alias for \code{tab_items} for compatibility with \code{shinydashboard})
+#' Create a panel with tabs.
 #' @description Create a panel with tabs.
 #' @param ... Tabs.
 #' @param  selected Which tab should be active on start.
@@ -33,6 +33,6 @@ tab_items <- function(..., selected = 1){
   shiny::tags$div(class = "tab-content", tabs)
 }
 
-#' @describeIn tabs Create a panel with tabs (alias for \code{tab_items} for compatibility with \code{shinydashboard})
+#' @describeIn tab_items Create a panel with tabs (alias for \code{tab_items} for compatibility with \code{shinydashboard})
 #' @export
 tabItems <- tab_items

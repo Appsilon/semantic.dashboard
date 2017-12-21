@@ -3,7 +3,7 @@
 \name{sidebar_menu}
 \alias{sidebar_menu}
 \alias{sidebarMenu}
-\title{Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})}
+\title{Create a sidebar menu.}
 \usage{
 sidebar_menu(...)
 

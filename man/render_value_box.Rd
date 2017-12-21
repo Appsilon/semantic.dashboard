@@ -4,7 +4,7 @@
 \alias{render_value_box}
 \alias{renderValueBox}
 \alias{renderInfoBox}
-\title{Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})}
+\title{Create a value box output.}
 \usage{
 render_value_box(expr, env = parent.frame(), quoted = FALSE)
 

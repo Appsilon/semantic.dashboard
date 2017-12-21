@@ -3,7 +3,7 @@
 \name{notification_item}
 \alias{notification_item}
 \alias{notificationItem}
-\title{Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})}
+\title{Create a notification item.}
 \usage{
 notification_item(text, icon = "warning", color = "")
 

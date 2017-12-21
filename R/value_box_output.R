@@ -1,4 +1,4 @@
-#' Create a value box output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})
+#' Create a value box output.
 #' @description UI-side function for dynamic valueBox.
 #' @param outputId Id of the output.
 #' @param width Width of the valueBox.
@@ -16,7 +16,7 @@ valueBoxOutput <- value_box_output
 #' @export
 infoBoxOutput <- value_box_output
 
-#' Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
+#' Create a value box output.
 #' @description Server-side function for dynamic valueBox.
 #' @param expr ValueBox.
 #' @param env The environment in which to evaluate expr.

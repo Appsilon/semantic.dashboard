@@ -1,4 +1,4 @@
-#' Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
+#' Create a dropdown menu output.
 #' @description UI-side function for dynamic dropdownMenu.
 #' @param outputId Id of the output.
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
@@ -11,7 +11,7 @@ dropdown_menu_output <- function(outputId){
 #' @export
 dropdownMenuOutput <- dropdown_menu_output
 
-#' Create a dropdown menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+#' Create a dropdown menu output.
 #' @description Server-side function for dynamic dropdownMenu.
 #' @param expr dropdownMenu.
 #' @param env The environment in which to evaluate expr.

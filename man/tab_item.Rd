@@ -2,9 +2,12 @@
 % Please edit documentation in R/tab.R
 \name{tab_item}
 \alias{tab_item}
-\title{Create a tab panel (alias for \code{tab_item} for compatibility with \code{shinydashboard})}
+\alias{tabItem}
+\title{Create a tab.}
 \usage{
 tab_item(tabName, ...)
+
+tabItem(tabName, ...)
 }
 \arguments{
 \item{tabName}{Id of the tab.}
@@ -17,3 +20,8 @@ A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 \description{
 Create a tab panel with additional UI elements.
 }
+\section{Functions}{
+\itemize{
+\item \code{tabItem}: Create a tab (alias for \code{tab_item} for compatibility with \code{shinydashboard})
+}}
+
