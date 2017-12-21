@@ -21,13 +21,13 @@ if(interactive()){
               fluidRow(
                 valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),
               fluidRow(
-                box(title = "Sample box", color = "blue", width = 10,
+                box(title = "Sample box", color = "blue", width = 11,
                     selectInput(inputId =  "variable1", choices = names(mtcars),
                                 label = "Select first variable", selected = "mpg"),
                     selectInput(inputId =  "variable2", choices = names(mtcars),
                                 label = "Select second variable", selected = "cyl"),
                     plotlyOutput("mtcars_plot")),
-                tabBox(title = "Sample box", color = "blue", width = 6,
+                tabBox(title = "Sample box", color = "blue", width = 5,
                     tabs = list(
                       list(menu = "First Tab", content = "Some text..."),
                       list(menu = "Second Tab", content = plotlyOutput("mtcars_plot2"))

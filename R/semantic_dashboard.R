@@ -59,7 +59,7 @@ dashboardSidebar <- dashboard_sidebar
 dashboard_body <- function(...){
   shiny::div(class = "pusher", style = "min-height: 100vh;",
              shiny::div(class = "ui segment",
-                        shiny::tags$div(class = "ui equal width grid", ...)))
+                        shiny::tags$div(class = "ui grid", ...)))
 }
 
 #' @describeIn dashboard_body Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
