@@ -5,14 +5,16 @@
 \alias{dashboardHeader}
 \title{Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})}
 \usage{
-dashboard_header(..., color = "black")
+dashboard_header(..., color = "black", disable = FALSE)
 
-dashboardHeader(..., color = "black")
+dashboardHeader(..., color = "black", disable = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the header.}
 
 \item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+
+\item{disable}{If \code{TRUE}, don't display the header.}
 }
 \value{
 A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}

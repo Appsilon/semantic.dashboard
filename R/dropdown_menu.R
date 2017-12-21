@@ -1,4 +1,4 @@
-#' Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})
+#' Create a dropdown menu
 #' @description Create a dropdown menu with additional UI elements.
 #' @param ... UI elements to include within the dropdown menu.
 #' @param type Type of the displayed items.

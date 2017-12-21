@@ -3,7 +3,7 @@
 \name{dropdown_menu}
 \alias{dropdown_menu}
 \alias{dropdownMenu}
-\title{Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})}
+\title{Create a dropdown menu}
 \usage{
 dropdown_menu(..., type = "messages")
 
