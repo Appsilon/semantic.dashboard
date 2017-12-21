@@ -12,6 +12,8 @@ tabBox(tabs, title = NULL, color = "", ribbon = TRUE,
   title_side = "top right", collapsible = TRUE, width = 8)
 }
 \arguments{
+\item{tabs}{Tabs to include within the box.}
+
 \item{title}{Label of the box.}
 
 \item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
@@ -23,8 +25,6 @@ tabBox(tabs, title = NULL, color = "", ribbon = TRUE,
 \item{collapsible}{Should minimize button be added to label.}
 
 \item{width}{Width of the box.}
-
-\item{...}{Tabs to include within the box.}
 }
 \value{
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
@@ -34,6 +34,6 @@ Create a tab box with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{tabBox}: Create a tab box.
+\item \code{tabBox}: Create a tab box (alias for \code{tab_box} for compatibility with \code{shinydashboard})
 }}
 

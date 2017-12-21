@@ -21,12 +21,17 @@ if(interactive()){
               fluidRow(
                 valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),
               fluidRow(
-                box(title = "Sample box", color = "blue", width = 14,
+                box(title = "Sample box", color = "blue", width = 10,
                     selectInput(inputId =  "variable1", choices = names(mtcars),
                                 label = "Select first variable", selected = "mpg"),
                     selectInput(inputId =  "variable2", choices = names(mtcars),
                                 label = "Select second variable", selected = "cyl"),
-                    plotlyOutput("mtcars_plot")))),
+                    plotlyOutput("mtcars_plot")),
+                tabBox(title = "Sample box", color = "blue", width = 6,
+                    tabs = list(
+                      list(menu = "First Tab", content = "Some text..."),
+                      list(menu = "Second Tab", content = plotlyOutput("mtcars_plot2"))
+                    )))),
       tabItem(tabName = "table_tab",
               fluidRow(
                 valueBox("Unread Mail", 144, icon("mail"), color = "blue", width = 6),
@@ -47,6 +52,9 @@ if(interactive()){
     output$mtcars_plot <- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
                                                y = ~ mtcars[ , input$variable2], width = "100%",
                                                type = "scatter", mode = "markers"))
+    output$mtcars_plot2 <- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
+                                               y = ~ mtcars[ , input$variable2], width = "100%",
+                                               type = "scatter", mode = "markers"))
     output$mtcars_table <- renderDataTable(mtcars)
     output$mtcars_table2 <- renderDataTable(mtcars)
     output$mtcars_table3 <- renderDataTable(mtcars)
@@ -56,7 +64,7 @@ if(interactive()){
                    messageItem("Marek", "Another test!", icon = "warning", color = "red"))
     })
 
-    lapply(c("mtcars_plot", "mtcars_table", "mtcars_table2", "mtcars_table3"),
+    lapply(c("mtcars_plot", "mtcars_plot2", "mtcars_table", "mtcars_table2", "mtcars_table3"),
            function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
   }
 
