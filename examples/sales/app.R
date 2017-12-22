@@ -9,8 +9,8 @@ header <- dashboardHeader()
 # Sidebar content of the dashboard
 sidebar <- dashboardSidebar(
   sidebarMenu(
-  menuItem(label = "Dashboard", tabName = "dashboard", icon = icon("bar chart")),
-  menuItem(label = "Visit-us", tabName = "link", icon = icon("at")))
+    menuItem(label = "Dashboard", tabName = "dashboard", icon = icon("bar chart")),
+    menuItem(label = "Visit-us", tabName = "link", icon = icon("at")))
 )
 
 frow1 <- fluidRow(
