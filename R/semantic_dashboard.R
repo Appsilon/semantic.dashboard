@@ -32,7 +32,8 @@ dashboardHeader <- dashboard_header
 #' @param disable If \code{TRUE}, don't display the sidebar.
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
-dashboard_sidebar <- function(..., side = "left", size = "", color = "black", center = FALSE, visible = TRUE, disable = FALSE){
+dashboard_sidebar <- function(..., side = "left", size = "", color = "black",
+                              center = FALSE, visible = TRUE, disable = FALSE){
   if (disable) {
     NULL
   } else {
