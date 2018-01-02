@@ -7,11 +7,11 @@ if(interactive()){
   library(DT)
 
   ui <- dashboardPage(
-    dashboardHeader(color = "black", disable = FALSE,
+    dashboardHeader(color = "black",
                     dropdownMenuOutput("dropdown1"),
                     dropdownMenu(icon = icon("warning sign"), taskItem("Project progress...", 50.777, color = "red")),
                     dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))),
-    dashboardSidebar(side = "left", size = "", color = "black", disable = FALSE,
+    dashboardSidebar(side = "left", size = "", color = "black",
                      sidebarMenu(
                        menuItem(tabName = "plot_tab", label = "My plot", icon = icon("home")),
                        menuItem(tabName = "table_tab", label = "My table", icon = icon("smile")))),
