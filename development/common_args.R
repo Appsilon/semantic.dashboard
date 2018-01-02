@@ -4,6 +4,8 @@ library(tidyverse)
 library(knitr)
 library(kableExtra)
 
+# Arguments comparison between functions from shinydashboard and semantic.dashboard
+
 common_functions <- intersect(ls("package:shinydashboard"), ls("package:semantic.dashboard"))
 common_functions %>% map(~ {
   shiny <- names(formals(get(.x, envir = as.environment("package:shinydashboard"))))
