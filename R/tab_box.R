@@ -10,7 +10,7 @@
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 tab_box <- function(tabs, title = NULL, color = "", ribbon = TRUE,
-                    title_side = "top right", collapsible = TRUE, width = 8){
+                    title_side = "top right", collapsible = TRUE, width = 8) {
   box(shiny.semantic::tabset(tabs), title = title, color = color, ribbon = ribbon, title_side = title_side,
       collapsible = collapsible, width = width)
 }
