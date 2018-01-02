@@ -2,6 +2,7 @@
 ^\.Rproj\.user$
 .circleci
 examples
+development
 build_readme.R
 CHANGELOG.md
 docs
