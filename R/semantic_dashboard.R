@@ -79,6 +79,7 @@ dashboardBody <- dashboard_body
 dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
   # TODO: Remove this line when it is added to semanticPage()
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")
+  if (is.null(dashboardSidebar)) dashboardHeader$children[[1]] <- NULL
   shiny.semantic::semanticPage(dashboardHeader, dashboardSidebar, dashboardBody,
                                shiny::tags$script(sidebar_js), title = title)
 }
