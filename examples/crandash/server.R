@@ -33,7 +33,7 @@ function(input, output, session) {
 
     valueBox(
       value = formatC(downloadRate, digits = 1, format = "f"),
-      title = "Downloads per sec (last 5 min)",
+      subtitle = "Downloads per sec (last 5 min)",
       icon = icon("smile"),
       color = if (downloadRate >= input$rateThreshold) "yellow" else "blue"
     )
@@ -42,7 +42,7 @@ function(input, output, session) {
   output$count <- renderValueBox({
     valueBox(
       value = dlCount(),
-      title = "Total downloads",
+      subtitle = "Total downloads",
       icon = icon("download"),
       color = "blue"
     )
@@ -51,7 +51,7 @@ function(input, output, session) {
   output$users <- renderValueBox({
     valueBox(
      value =  usrCount(),
-     title =  "Unique users",
+     subtitle =  "Unique users",
       icon = icon("users"),
      color = "blue"
     )

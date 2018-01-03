@@ -54,7 +54,7 @@ server <- function(input, output, session) {
   output$value1 <- renderValueBox({
     valueBox(
       value = formatC(sales.account$value, format="d", big.mark=','),
-      title = paste('Top Account:', sales.account$Account),
+      subtitle = paste('Top Account:', sales.account$Account),
       icon = icon("bar chart"),
       color = "purple",
       width = 5)
@@ -62,7 +62,7 @@ server <- function(input, output, session) {
   output$value2 <- renderValueBox({
     valueBox(
       value = formatC(total.revenue, format = "d", big.mark = ','),
-      title = 'Total Expected Revenue',
+      subtitle = 'Total Expected Revenue',
       icon = icon("line chart"),
       color = "green",
       width = 5)
@@ -70,7 +70,7 @@ server <- function(input, output, session) {
   output$value3 <- renderValueBox({
     valueBox(
       value = formatC(prof.prod$value, format = "d", big.mark = ','),
-      title = paste('Top Product:', prof.prod$Product),
+      subtitle = paste('Top Product:', prof.prod$Product),
       icon = icon("bar chart"),
       color = "blue",
       width = 5)
