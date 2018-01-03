@@ -13,8 +13,8 @@ if(interactive()){
                     dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))),
     dashboardSidebar(side = "left", size = "", color = "black",
                      sidebarMenu(
-                       menuItem(tabName = "plot_tab", label = "My plot", icon = icon("home")),
-                       menuItem(tabName = "table_tab", label = "My table", icon = icon("smile")))),
+                       menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
+                       menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
     dashboardBody(
       tabItems(
         tabItem(tabName = "plot_tab",
