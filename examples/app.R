@@ -50,10 +50,10 @@ if(interactive()){
   server <- function(input, output) {
 
     output$mtcars_plot <- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
-                                               y = ~ mtcars[ , input$variable2], width = "100%",
+                                               y = ~ mtcars[ , input$variable2],
                                                type = "scatter", mode = "markers"))
     output$mtcars_plot2 <- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
-                                                y = ~ mtcars[ , input$variable2], width = "100%",
+                                                y = ~ mtcars[ , input$variable2],
                                                 type = "scatter", mode = "markers"))
     output$mtcars_table <- renderDataTable(mtcars)
     output$mtcars_table2 <- renderDataTable(mtcars)
