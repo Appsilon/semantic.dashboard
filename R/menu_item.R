@@ -66,6 +66,10 @@ menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newta
 #' @export
 menuItem <- menu_item
 
+#' @describeIn menu_item Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
+#' @export
+menuSubItem <- menu_item
+
 #' Create a sidebar menu.
 #' @description Create a sidebar menu with menu items.
 #' @param ... Menu items.
