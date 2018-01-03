@@ -63,9 +63,6 @@ if(interactive()){
       dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
                    messageItem("Marek", "Another test!", icon = "warning", color = "red"))
     })
-
-    lapply(c("mtcars_plot", "mtcars_plot2", "mtcars_table", "mtcars_table2", "mtcars_table3"),
-           function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
   }
 
   shinyApp(ui, server)

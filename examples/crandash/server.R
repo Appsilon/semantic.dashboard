@@ -96,7 +96,4 @@ function(input, output, session) {
     print(tail(pkgData(), input$maxrows))
     options(orig)
   })
-
-  lapply(c("rate", "count", "users", "packagePlot", "packageTable"),
-         function(x) outputOptions(output, x, suspendWhenHidden = FALSE))
 }
