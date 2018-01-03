@@ -3,3 +3,9 @@
 .circleci
 examples
 development
+build_readme.R
+CHANGELOG.md
+docs
+README.Rmd
+README.md
+readme_rmd_template
