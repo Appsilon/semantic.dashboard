@@ -69,18 +69,18 @@ dashboardBody <- dashboard_body
 
 #' Create a dashboard.
 #' @description Create a page with menu item sidebar and body containing tabs and other additional elements.
-#' @param  dashboardHeader Header of a dashboard.
-#' @param  dashboardSidebar Sidebar of a dashboard.
-#' @param  dashboardBody Body of a dashboard.
+#' @param  header Header of a dashboard.
+#' @param  sidebar Sidebar of a dashboard.
+#' @param  body Body of a dashboard.
 #' @param  title Title of a dashboard.
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
 #' @export
-dashboard_page <- function(dashboardHeader, dashboardSidebar, dashboardBody, title = "", suppress_bootstrap = TRUE){
+dashboard_page <- function(header, sidebar, body, title = "", suppress_bootstrap = TRUE){
   # TODO: Remove this line when it is added to semanticPage()
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")
-  if (is.null(dashboardSidebar)) dashboardHeader$children[[1]] <- NULL
-  shiny.semantic::semanticPage(dashboardHeader, dashboardSidebar, dashboardBody,
+  if (is.null(sidebar)) header$children[[1]] <- NULL
+  shiny.semantic::semanticPage(header, sidebar, body,
                                shiny::tags$script(sidebar_js), title = title)
 }
 
