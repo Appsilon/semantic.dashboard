@@ -3,18 +3,30 @@
 \name{menu_item}
 \alias{menu_item}
 \alias{menuItem}
+\alias{menuSubItem}
 \title{Create a menu item.}
 \usage{
-menu_item(tabName, label, icon = NULL)
+menu_item(text, ..., icon = NULL, tabName = NULL, href = NULL,
+  newtab = TRUE)
 
-menuItem(tabName, label, icon = NULL)
+menuItem(text, ..., icon = NULL, tabName = NULL, href = NULL,
+  newtab = TRUE)
+
+menuSubItem(text, ..., icon = NULL, tabName = NULL, href = NULL,
+  newtab = TRUE)
 }
 \arguments{
-\item{tabName}{Id of the tab.}
+\item{text}{Text to show for the menu item.}
 
-\item{label}{Label of the menu item.}
+\item{...}{This may consist of menuSubItems.}
 
 \item{icon}{Icon of the menu item. (Optional)}
+
+\item{tabName}{Id of the tab. Not compatible with href.}
+
+\item{href}{A link address. Not compatible with tabName.}
+
+\item{newtab}{If href is supplied, should the link open in a new browser tab?}
 }
 \value{
 A menu item that can be passed \code{\link[semantic.dashboard]{sidebarMenu}}
@@ -25,5 +37,7 @@ Create a menu item corresponding to a tab.
 \section{Functions}{
 \itemize{
 \item \code{menuItem}: Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
+
+\item \code{menuSubItem}: Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
 }}
 

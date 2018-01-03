@@ -5,18 +5,16 @@
 \alias{dashboardPage}
 \title{Create a dashboard.}
 \usage{
-dashboard_page(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
-  suppress_bootstrap = TRUE)
+dashboard_page(header, sidebar, body, title = "", suppress_bootstrap = TRUE)
 
-dashboardPage(dashboardHeader, dashboardSidebar, dashboardBody, title = "",
-  suppress_bootstrap = TRUE)
+dashboardPage(header, sidebar, body, title = "", suppress_bootstrap = TRUE)
 }
 \arguments{
-\item{dashboardHeader}{Header of a dashboard.}
+\item{header}{Header of a dashboard.}
 
-\item{dashboardSidebar}{Sidebar of a dashboard.}
+\item{sidebar}{Sidebar of a dashboard.}
 
-\item{dashboardBody}{Body of a dashboard.}
+\item{body}{Body of a dashboard.}
 
 \item{title}{Title of a dashboard.}
 
