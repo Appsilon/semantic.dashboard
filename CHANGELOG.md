@@ -34,5 +34,5 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - tabBox
 - taskItem
 
-[Unreleased]: https://github.com/Appsilon/your_repo_url/compare/0.1.0...HEAD
-[0.1.0]: https://github.com/Appsilon/your_repo_url/compare/your_repo_init_comit_hash...0.1.0
+[Unreleased]: https://github.com/Appsilon/semantic.dashboard/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/Appsilon/semantic.dashboard/compare/efb5ed9abfd48be547e4ff191925dd5b02f971b2...0.1.0

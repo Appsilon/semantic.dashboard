@@ -4,9 +4,8 @@ params:
    website_url: http://appsilondatascience.com
    logo_url: https://cdn.rawgit.com/Appsilon/website-cdn/gh-pages/logo-white.png
    repo_name: semantic.dashboard
-   repo_url: http://appsilondatascience.com/repo
-   demo_url: http://appsilondatascience.com/demo
-   chagelog_url: http://appsilondatascience.com/repo_changelog
+   repo_url: https://github.com/Appsilon/semantic.dashboard
+   chagelog_url: https://github.com/Appsilon/semantic.dashboard/blob/master/CHANGELOG.md
 ---
 
 <link href="http://fonts.googleapis.com/css?family=Lato:300,700,300italic|Inconsolata" rel="stylesheet" type="text/css">
@@ -23,11 +22,11 @@ Basic functions for creating dashboard with Semantic UI.
 <!-- #Basic tutorial article is available on [Appsilon Data Science blog](your_future_art_link). -->
 
 <!-- Live demo link below -->
-<p style="text-align: center; font-size: x-large;">
+<!--<p style="text-align: center; font-size: x-large;">
 <a href="`r params$demo_url`">Live demo</a>
-</p>
+</p> -->
 
-</div>
+#</div>
 
 Source code {.darkslide}
 -----------

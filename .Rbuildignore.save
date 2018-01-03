@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+.circleci
+examples
+build_readme.R
+CHANGELOG.md
+docs
+README.Rmd
+warning: p
+readme_rmd_template

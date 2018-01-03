@@ -10,14 +10,15 @@ Basic functions for creating dashboard with Semantic UI.
 
 <!-- #Basic tutorial article is available on [Appsilon Data Science blog](your_future_art_link). -->
 <!-- Live demo link below -->
-<p style="text-align: center; font-size: x-large;">
-<a href="http://appsilondatascience.com/demo">Live demo</a>
-</p>
+<!--<p style="text-align: center; font-size: x-large;">
+<a href="">Live demo</a>
+</p> -->
+\#
 
 Source code
 -----------
 
-This library source code can be found on [Appsilon Data Science's](http://appsilondatascience.com) Github: <br> <http://appsilondatascience.com/repo>
+This library source code can be found on [Appsilon Data Science's](http://appsilondatascience.com) Github: <br> <https://github.com/Appsilon/semantic.dashboard>
 
 How to install?
 ---------------
