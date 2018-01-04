@@ -134,7 +134,6 @@ Dashboard with Semantic UI Support for Shiny
 <!--<p style="text-align: center; font-size: x-large;">
 <a href="">Live demo</a>
 </p> -->
-#
 </div>
 <div id="source-code" class="section level2 darkslide">
 <h2>Source code</h2>
@@ -153,6 +152,71 @@ Dashboard with Semantic UI Support for Shiny
 </div>
 <div id="example" class="section level2 firebrick">
 <h2>Example</h2>
+<pre><code>if(interactive()){
+
+  library(shiny)
+  library(shiny.semantic)
+  library(semantic.dashboard)
+  library(plotly)
+  library(DT)
+
+  ui &lt;- dashboardPage(
+    dashboardHeader(color = &quot;black&quot;,
+                    dropdownMenuOutput(&quot;dropdown1&quot;),
+                    dropdownMenu(icon = icon(&quot;warning sign&quot;), taskItem(&quot;Project progress...&quot;, 50.777, color = &quot;red&quot;)),
+                    dropdownMenu(type = &quot;notifications&quot;, notificationItem(&quot;This is notification!&quot;, color = &quot;red&quot;))),
+    dashboardSidebar(side = &quot;left&quot;, size = &quot;&quot;, color = &quot;black&quot;,
+                     sidebarMenu(
+                       menuItem(tabName = &quot;plot_tab&quot;, text = &quot;My plot&quot;, icon = icon(&quot;home&quot;)),
+                       menuItem(tabName = &quot;table_tab&quot;, text = &quot;My table&quot;, icon = icon(&quot;smile&quot;)))),
+    dashboardBody(
+      tabItems(
+        tabItem(tabName = &quot;plot_tab&quot;,
+                fluidRow(
+                  valueBox(&quot;Unread Mail&quot;, 44, icon(&quot;mail&quot;), color = &quot;blue&quot;, width = 5)),
+                fluidRow(
+                  box(title = &quot;Sample box&quot;, color = &quot;blue&quot;, width = 11,
+                      selectInput(inputId =  &quot;variable1&quot;, choices = names(mtcars),
+                                  label = &quot;Select first variable&quot;, selected = &quot;mpg&quot;),
+                      selectInput(inputId =  &quot;variable2&quot;, choices = names(mtcars),
+                                  label = &quot;Select second variable&quot;, selected = &quot;cyl&quot;),
+                      plotlyOutput(&quot;mtcars_plot&quot;)),
+                  tabBox(title = &quot;Sample box&quot;, color = &quot;blue&quot;, width = 5,
+                         tabs = list(
+                           list(menu = &quot;First Tab&quot;, content = &quot;Some text...&quot;),
+                           list(menu = &quot;Second Tab&quot;, content = plotlyOutput(&quot;mtcars_plot2&quot;))
+                         )))),
+        tabItem(tabName = &quot;table_tab&quot;,
+                fluidRow(
+                  valueBox(&quot;Unread Mail&quot;, 144, icon(&quot;mail&quot;), color = &quot;blue&quot;, width = 6),
+                  valueBox(&quot;Spam&quot;, 20, icon(&quot;mail&quot;), color = &quot;red&quot;, width = 5),
+                  valueBox(&quot;Readed Mail&quot;, 666, icon(&quot;mail&quot;), color = &quot;green&quot;, width = 5)
+                ),
+                fluidRow(
+                  box(title = &quot;Classic box&quot;, color = &quot;red&quot;, ribbon = FALSE,
+                      title_side = &quot;top left&quot;, width = 14,
+                      dataTableOutput(&quot;mtcars_table&quot;)
+                  )))))
+  )
+
+  server &lt;- function(input, output) {
+
+    output$mtcars_plot &lt;- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
+                                               y = ~ mtcars[ , input$variable2],
+                                               type = &quot;scatter&quot;, mode = &quot;markers&quot;))
+    output$mtcars_plot2 &lt;- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
+                                                y = ~ mtcars[ , input$variable2],
+                                                type = &quot;scatter&quot;, mode = &quot;markers&quot;))
+    output$mtcars_table &lt;- renderDataTable(mtcars)
+
+    output$dropdown1 &lt;- renderDropdownMenu({
+      dropdownMenu(messageItem(&quot;Michał&quot;, &quot;Test message&quot;, color = &quot;teal&quot;),
+                   messageItem(&quot;Marek&quot;, &quot;Another test!&quot;, icon = &quot;warning&quot;, color = &quot;red&quot;))
+    })
+  }
+
+  shinyApp(ui, server)
+}</code></pre>
 </div>
 <div id="how-to-contribute" class="section level2">
 <h2>How to contribute?</h2>
