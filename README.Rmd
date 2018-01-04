@@ -24,9 +24,9 @@ Basic functions for creating dashboard with Semantic UI.
 <!-- Live demo link below -->
 <!--<p style="text-align: center; font-size: x-large;">
 <a href="`r params$demo_url`">Live demo</a>
-</p>
+</p> -->
 
-</div> -->
+</div>
 
 Source code {.darkslide}
 -----------
@@ -61,8 +61,8 @@ devtools::install_github("Appsilon/`r params$repo_name`", ref = "0.1.0")
 Example {.firebrick}
 -------
 
-```{r, echo = FALSE, eval = TRUE}
-cat(readLines("examples/app.R"), sep = "\n" )
+```{r, echo = FALSE, eval = TRUE, results = 'asis'}
+cat(paste("    ", readLines("examples/app.R")), sep = "\n" )
 ```
 
 
