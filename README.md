@@ -6,15 +6,16 @@ semantic.dashboard
 
 Dashboard with Semantic UI Support for Shiny
 
+<div class="section level2">
 Basic functions for creating dashboard with Semantic UI.
 
 <!-- #Basic tutorial article is available on [Appsilon Data Science blog](your_future_art_link). -->
 <!-- Live demo link below -->
 <!--<p style="text-align: center; font-size: x-large;">
 <a href="">Live demo</a>
-</p> -->
-\#
+</p>
 
+</div> -->
 Source code
 -----------
 
@@ -35,6 +36,8 @@ To install [previous version]() you can run:
 
 Example
 -------
+
+    ## [1] 0
 
 How to contribute?
 ------------------
