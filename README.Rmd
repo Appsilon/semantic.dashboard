@@ -62,7 +62,7 @@ Example {.firebrick}
 -------
 
 ```{r, echo = FALSE, eval = TRUE, results = 'asis'}
-cat(paste("    ", readLines("examples/app.R")), sep = "\n" )
+cat(paste("   ", readLines("examples/app.R")), sep = "\n" )
 ```
 
 
