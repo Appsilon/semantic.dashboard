@@ -12,6 +12,7 @@ dropdown_menu <- function(..., type = "messages", icon = NULL){
     icon(DROPDOWN_MENU_ICONS[[type]])
   }
   shiny::tags$button(class = "ui icon top right pointing dropdown button", icon,
+                     style = "height: 100%;",
                      shiny::tags$div(class = "menu", ...),
                      shiny::tags$script(dropdown_menu_js),
                      shiny::tags$script(progress_bar_js))
