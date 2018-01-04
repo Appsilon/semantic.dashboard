@@ -13,15 +13,30 @@ MAX_PROGRESS_VALUE <- 100
 
 DROPDOWN_MENU_ICONS <- list(messages = "mail", notifications = "warning sign", tasks = "tasks")
 
-sidebar_js <- "$('#uisidebar .item').tab({onVisible: function() {$(window).resize()} });
-     $('#uisidebar')
-  .sidebar({
-    context: $('.pusher'),
-    transition: 'push',
-    dimPage: false,
-    closable: false
-  })
-  .sidebar('attach events', '#toggle_menu');"
+sidebar_js <- "
+  /* Code below is needed to trigger visibility on reactive Shiny outputs. */
+  /* Thanks to that users do not have to set suspendWhenHidden to FALSE.   */
+  var previous_tab;
+  $('#uisidebar .item').tab({
+    onVisible: function(target) {
+      if (previous_tab) {
+        $(this).trigger('hidden');
+      }
+      $(window).resize();
+      $(this).trigger('shown');
+      previous_tab = this;
+    }
+  });
+
+  $('#uisidebar')
+    .sidebar({
+      context: $('.pusher'),
+      transition: 'push',
+      dimPage: false,
+      closable: false
+    })
+    .sidebar('attach events', '#toggle_menu');
+"
 
 dropdown_menu_js <- "$('.ui.dropdown').dropdown();"
 
