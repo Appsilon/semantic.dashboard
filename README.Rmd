@@ -62,7 +62,7 @@ Example {.firebrick}
 -------
 
 ```{r, echo = FALSE, eval = TRUE}
-print(system("cat examples/app.R"))
+cat(readLines("examples/app.R"), sep = "\n" )
 ```
 
 
