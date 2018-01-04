@@ -13,10 +13,10 @@ common_functions %>% map(~ {
   common <- intersect(shiny, semantic)
   only_shiny <- setdiff(shiny, semantic)
   only_semantic <- setdiff(semantic, shiny)
-  tibble(fun = .x,
-         common = paste(common, collapse = ", "),
-         only_shiny = paste(only_shiny, collapse = ", "),
-         only_semantic = paste(only_semantic, collapse = ", "))
+  tibble("function" = .x,
+         "common arguments" = paste(common, collapse = ", "),
+         "only in shinydashboard" = paste(only_shiny, collapse = ", "),
+         "only in semantic.dashboard" = paste(only_semantic, collapse = ", "))
 }) %>% do.call(rbind, .) -> arg_compare
 
 kable(arg_compare, "html") %>%
