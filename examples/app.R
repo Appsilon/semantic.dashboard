@@ -41,9 +41,7 @@ if(interactive()){
                 fluidRow(
                   box(title = "Classic box", color = "red", ribbon = FALSE,
                       title_side = "top left", width = 14,
-                      dataTableOutput("mtcars_table"),
-                      dataTableOutput("mtcars_table2"),
-                      dataTableOutput("mtcars_table3")
+                      dataTableOutput("mtcars_table")
                   )))))
   )
 
@@ -56,8 +54,6 @@ if(interactive()){
                                                 y = ~ mtcars[ , input$variable2],
                                                 type = "scatter", mode = "markers"))
     output$mtcars_table <- renderDataTable(mtcars)
-    output$mtcars_table2 <- renderDataTable(mtcars)
-    output$mtcars_table3 <- renderDataTable(mtcars)
 
     output$dropdown1 <- renderDropdownMenu({
       dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
