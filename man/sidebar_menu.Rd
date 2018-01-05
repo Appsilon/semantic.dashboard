@@ -26,5 +26,6 @@ Create a sidebar menu with menu items.
 \examples{
 sidebarMenu(
   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
-  menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))
+  menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"))
+  )
 }

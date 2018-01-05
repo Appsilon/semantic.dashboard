@@ -5,9 +5,10 @@
 #' @return A value box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples
-#' valueBoxOutput("value1")
+#' \dontrun{
+#' valueBoxOutput("value_box")
 #'
-#' renderValueBox({
+#' output$value_box <- renderValueBox({
 #'   valueBox(
 #'     value = 33.45,
 #'     subtitle = "Simple valuebox",
@@ -15,6 +16,7 @@
 #'     color = "purple",
 #'     width = 5)
 #' })
+#' }
 value_box_output <- function(outputId, width = 5){
   column(width = width, shiny::uiOutput(outputId))
 }
@@ -35,9 +37,10 @@ infoBoxOutput <- value_box_output
 #' @return A dynamic valueBox that can be assigned to output.
 #' @export
 #' @examples
-#' valueBoxOutput("value1")
+#' \dontrun{
+#' valueBoxOutput("value_box")
 #'
-#' renderValueBox({
+#' output$value_box <- renderValueBox({
 #'   valueBox(
 #'     value = 33.45,
 #'     subtitle = "Simple valuebox",
@@ -45,6 +48,7 @@ infoBoxOutput <- value_box_output
 #'     color = "purple",
 #'     width = 5)
 #' })
+#' }
 render_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
   fun <- shiny::exprToFunction(expr, env, quoted)
   shiny::renderUI(fun())

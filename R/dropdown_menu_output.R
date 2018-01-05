@@ -4,12 +4,14 @@
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
 #' @examples
-#' dropdownMenuOutput("dropdown1")
+#' \dontrun{
+#' dropdownMenuOutput("dropdown")
 #'
-#' renderDropdownMenu({
+#' output$dropdown <- renderDropdownMenu({
 #'   dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
 #'               messageItem("Marek", "Another test!", icon = "warning", color = "red"))
 #' })
+#' }
 dropdown_menu_output <- function(outputId){
   shiny::uiOutput(outputId)
 }
@@ -26,12 +28,14 @@ dropdownMenuOutput <- dropdown_menu_output
 #' @return A dynamic dropdown menu that can be assigned to output.
 #' @export
 #' @examples
-#' dropdownMenuOutput("dropdown1")
+#' \dontrun{
+#' dropdownMenuOutput("dropdown")
 #'
-#' renderDropdownMenu({
+#' output$dropdown <- renderDropdownMenu({
 #'   dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
 #'               messageItem("Marek", "Another test!", icon = "warning", color = "red"))
 #' })
+#' }
 render_dropdown_menu <- function(expr, env = parent.frame(), quoted = FALSE){
   fun <- shiny::exprToFunction(expr, env, quoted)
   shiny::renderUI(fun())

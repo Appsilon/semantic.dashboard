@@ -80,7 +80,8 @@ menuSubItem <- menu_item
 #' @examples
 #' sidebarMenu(
 #'   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
-#'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))
+#'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"))
+#'   )
 sidebar_menu <- function(...) {
   shiny::tags$div(class = "sidebar-menu", ...)
 }

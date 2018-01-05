@@ -28,10 +28,12 @@ Server-side function for dynamic dropdownMenu.
 }}
 
 \examples{
-dropdownMenuOutput("dropdown1")
+\dontrun{
+dropdownMenuOutput("dropdown")
 
-renderDropdownMenu({
+output$dropdown <- renderDropdownMenu({
   dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
               messageItem("Marek", "Another test!", icon = "warning", color = "red"))
 })
+}
 }

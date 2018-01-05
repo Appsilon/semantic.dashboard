@@ -33,9 +33,10 @@ Server-side function for dynamic valueBox.
 }}
 
 \examples{
-valueBoxOutput("value1")
+\dontrun{
+valueBoxOutput("value_box")
 
-renderValueBox({
+output$value_box <- renderValueBox({
   valueBox(
     value = 33.45,
     subtitle = "Simple valuebox",
@@ -43,4 +44,5 @@ renderValueBox({
     color = "purple",
     width = 5)
 })
+}
 }
