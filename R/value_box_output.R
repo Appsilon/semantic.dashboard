@@ -4,6 +4,17 @@
 #' @param width Width of the valueBox.
 #' @return A value box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
+#' @examples
+#' valueBoxOutput("value1")
+#'
+#' renderValueBox({
+#'   valueBox(
+#'     value = 33.45,
+#'     subtitle = "Simple valuebox",
+#'     icon = icon("bar chart"),
+#'     color = "purple",
+#'     width = 5)
+#' })
 value_box_output <- function(outputId, width = 5){
   column(width = width, shiny::uiOutput(outputId))
 }
@@ -23,6 +34,17 @@ infoBoxOutput <- value_box_output
 #' @param quoted Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.
 #' @return A dynamic valueBox that can be assigned to output.
 #' @export
+#' @examples
+#' valueBoxOutput("value1")
+#'
+#' renderValueBox({
+#'   valueBox(
+#'     value = 33.45,
+#'     subtitle = "Simple valuebox",
+#'     icon = icon("bar chart"),
+#'     color = "purple",
+#'     width = 5)
+#' })
 render_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
   fun <- shiny::exprToFunction(expr, env, quoted)
   shiny::renderUI(fun())

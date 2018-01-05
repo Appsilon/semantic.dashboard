@@ -29,3 +29,6 @@ Create a message item.
 \item \code{messageItem}: Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+messageItem("Marek", "Another test!", icon = "warning", color = "red")
+}

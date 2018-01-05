@@ -32,3 +32,15 @@ Server-side function for dynamic valueBox.
 \item \code{renderInfoBox}: Create a value box output (alias for \code{render_value_box} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+valueBoxOutput("value1")
+
+renderValueBox({
+  valueBox(
+    value = 33.45,
+    subtitle = "Simple valuebox",
+    icon = icon("bar chart"),
+    color = "purple",
+    width = 5)
+})
+}

@@ -25,3 +25,6 @@ Create a tab panel with additional UI elements.
 \item \code{tabItem}: Create a tab (alias for \code{tab_item} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+tabItem(tabName = "tab1", "Tab 1")
+}

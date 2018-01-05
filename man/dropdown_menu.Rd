@@ -27,3 +27,7 @@ Create a dropdown menu with additional UI elements.
 \item \code{dropdownMenu}: Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+dropdownMenu(icon = icon("warning sign"), taskItem("Project progress...", 50.777, color = "red"))
+dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))
+}

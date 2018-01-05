@@ -23,3 +23,8 @@ Create a sidebar menu with menu items.
 \item \code{sidebarMenu}: Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+sidebarMenu(
+  menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
+  menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))
+}

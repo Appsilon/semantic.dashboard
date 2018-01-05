@@ -37,3 +37,10 @@ Create a tab box with additional UI elements.
 \item \code{tabBox}: Create a tab box (alias for \code{tab_box} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+tabBox(title = "Sample tab box", color = "blue", width = 5,
+       tabs = list(
+         list(menu = "First Tab", content = "This is first tab"),
+         list(menu = "Second Tab", content = "This is second tab")
+       ))
+}

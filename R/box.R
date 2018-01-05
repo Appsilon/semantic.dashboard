@@ -9,6 +9,10 @@
 #' @param width Width of the box.
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
+#' @examples
+#' box(title = "Sample box", color = "blue", width = 11,
+#'     "This is a box content"
+#' )
 box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE, width = 8) {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
