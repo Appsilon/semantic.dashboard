@@ -8,7 +8,7 @@ params:
    chagelog_url: https://github.com/Appsilon/semantic.dashboard/blob/master/CHANGELOG.md
 ---
 
-<link href="http://fonts.googleapis.com/css?family=Lato:300,700,300italic|Inconsolata" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css">
 <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
 `r params$repo_name`
@@ -58,7 +58,7 @@ To install [previous version](`r params$changelog_url`) you can run:
 devtools::install_github("Appsilon/`r params$repo_name`", ref = "0.1.0")
 ```
 
-Example {.firebrick}
+Example {.darkorange}
 -------
 
 ```{r, echo = FALSE, eval = TRUE, results = 'asis'}
@@ -74,7 +74,7 @@ If you want to contribute to this project please submit a regular PR, once you'r
 
 Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file  and run a **build_readme.R** script to compile it.
 
-Troubleshooting {.darkorange}
+Troubleshooting {.darkslide}
 -----------------
 We used the latest versions of dependencies for this library, so please update your R environment before installation.
 
@@ -93,11 +93,12 @@ Future enhacements
 * CRAN release
 
 Appsilon Data Science {.footer}
-=====================
+------------------
+
 ```{r, echo = F, results='asis'}
 if (params$type == "web") {
   cat(paste0('<script>
-    document.write(\'<div class="subheader"> We Provide End-to-End Data Science Solutions </div>  <div class="logo"><a href="', params$website_url, '"><img alt="Appsilon Data Science" src="', params$logo_url, '" /></a></div>\');
+    document.write(\'<div class="logo"><a href="', params$website_url, '"><img alt="Appsilon Data Science" src="', params$logo_url, '" /></a></div><div class="subheader"> We Provide End-to-End Data Science Solutions </div>  \');
     </script>
   '))
 }
