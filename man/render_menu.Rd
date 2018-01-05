@@ -24,6 +24,6 @@ Server-side function for dynamic sidebarMenu.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderMenu}: Create a menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+\item \code{renderMenu}: Create a menu output (alias for \code{render_menu} for compatibility with \code{shinydashboard})
 }}
 

@@ -36,6 +36,6 @@ render_menu <- function(expr, env = parent.frame(), quoted = FALSE){
   shiny::renderUI(fun())
 }
 
-#' @describeIn render_menu Create a menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+#' @describeIn render_menu Create a menu output (alias for \code{render_menu} for compatibility with \code{shinydashboard})
 #' @export
-renderMenu <- render_dropdown_menu
+renderMenu <- render_menu
