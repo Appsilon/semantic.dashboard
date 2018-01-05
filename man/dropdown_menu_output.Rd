@@ -20,6 +20,6 @@ UI-side function for dynamic dropdownMenu.
 }
 \section{Functions}{
 \itemize{
-\item \code{dropdownMenuOutput}: Create a value box output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
+\item \code{dropdownMenuOutput}: Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
 }}
 

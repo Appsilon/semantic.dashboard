@@ -7,7 +7,7 @@ dropdown_menu_output <- function(outputId){
   shiny::uiOutput(outputId)
 }
 
-#' @describeIn dropdown_menu_output Create a value box output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
+#' @describeIn dropdown_menu_output Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
 #' @export
 dropdownMenuOutput <- dropdown_menu_output
 
@@ -23,6 +23,6 @@ render_dropdown_menu <- function(expr, env = parent.frame(), quoted = FALSE){
   shiny::renderUI(fun())
 }
 
-#' @describeIn render_dropdown_menu Create a valueBox output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+#' @describeIn render_dropdown_menu Create a dropdown menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
 #' @export
 renderDropdownMenu <- render_dropdown_menu
