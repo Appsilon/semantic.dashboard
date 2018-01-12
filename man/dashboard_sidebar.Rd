@@ -5,11 +5,11 @@
 \alias{dashboardSidebar}
 \title{Create a sidebar of a dashboard.}
 \usage{
-dashboard_sidebar(..., side = "left", size = "", color = "black",
-  center = FALSE, visible = TRUE, disable = FALSE)
+dashboard_sidebar(..., side = "left", size = "", color = "",
+  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
 
-dashboardSidebar(..., side = "left", size = "", color = "black",
-  center = FALSE, visible = TRUE, disable = FALSE)
+dashboardSidebar(..., side = "left", size = "", color = "",
+  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}
@@ -19,6 +19,8 @@ dashboardSidebar(..., side = "left", size = "", color = "black",
 \item{size}{Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}}
 
 \item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+
+\item{inverted}{Should color be inverted.}
 
 \item{center}{Should label and icon be centerd on menu items. Default to \code{FALSE}}
 
