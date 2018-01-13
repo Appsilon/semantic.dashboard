@@ -4,7 +4,7 @@
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
 dropdown_menu_output <- function(outputId){
-  shiny::uiOutput(outputId)
+  shiny::uiOutput(outputId, class = "right icon menu")
 }
 
 #' @describeIn dropdown_menu_output Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})

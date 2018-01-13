@@ -19,7 +19,8 @@ dashboard_header <- function(..., color = "", inverted = FALSE, disable = FALSE)
     inverted_value = get_inverted_value(inverted)
     shiny::div(class = paste("ui top attached", inverted_value, color, " menu"),
                shiny::tags$a(id = "toggle_menu", class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"),
-               shiny::tags$div(style = "margin-left: auto", class = paste("ui icon buttons", color), ...))
+               shiny::div(class = "right icon menu", ...)
+    )
   }
 }
 
