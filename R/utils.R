@@ -6,3 +6,7 @@ verify_value_allowed <- function(variable, values){
                   paste0("'", values, "'", collapse = ", ")))
   }
 }
+
+get_inverted_class <- function(inverted) {
+  ifelse(inverted, "inverted", "")
+}
