@@ -1,12 +1,10 @@
-get_inverted_value <- function(inverted) {
-  ifelse(inverted, "inverted", "")
-}
-
 #' Create a header of a dashboard.
 #' @description Create a header of a dashboard with other additional UI elements.
 #' @param ... UI elements to include within the header.
-#' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
-#' @param inverted Should color be inverted.
+#' @param  color Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
+#'   One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param inverted If FALSE sidebar will be white and text will be colored. \
+#'   If TRUE text will be white and background will be colored. Default is \code{FALSE}.
 #' @param disable If \code{TRUE}, don't display the header.
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
@@ -16,7 +14,7 @@ dashboard_header <- function(..., color = "", inverted = FALSE, disable = FALSE)
   } else {
     verify_value_allowed("color", ALLOWED_COLORS)
 
-    inverted_value = get_inverted_value(inverted)
+    inverted_value = get_inverted_class(inverted)
     shiny::div(class = paste("ui top attached", inverted_value, color, " menu"),
                shiny::tags$a(id = "toggle_menu", class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"),
                shiny::tags$div(style = "margin-left: auto", class = paste("ui icon buttons", color), ...))
@@ -33,8 +31,10 @@ dashboardHeader <- dashboard_header
 #' @param ... UI elements to include within the sidebar.
 #' @param  side Placement of the sidebar. One of \code{c("left", "right", "top", "bottom")}
 #' @param  size Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}
-#' @param  color Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
-#' @param  inverted Should color be inverted.
+#' @param  color Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
+#'   One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param inverted If FALSE sidebar will be white and text will be colored. \
+#'   If TRUE text will be white and background will be colored. Default is \code{FALSE}.
 #' @param  center Should label and icon be centerd on menu items. Default to \code{FALSE}
 #' @param  visible Should sidebar be visible on start. Default to \code{TRUE}
 #' @param disable If \code{TRUE}, don't display the sidebar.
@@ -50,7 +50,7 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "", inverte
     verify_value_allowed("color", ALLOWED_COLORS)
 
     display_type <- ifelse(center, "labeled icon", "")
-    inverted_value = get_inverted_value(inverted)
+    inverted_value = get_inverted_class(inverted)
     shiny::div(id = "uisidebar", style = "min-height: 100vh",
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                              display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar"), ...)

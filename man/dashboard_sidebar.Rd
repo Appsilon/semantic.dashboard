@@ -18,9 +18,11 @@ dashboardSidebar(..., side = "left", size = "", color = "",
 
 \item{size}{Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}}
 
-\item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
+One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
-\item{inverted}{Should color be inverted.}
+\item{inverted}{If FALSE sidebar will be white and text will be colored. \
+If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
 
 \item{center}{Should label and icon be centerd on menu items. Default to \code{FALSE}}
 
