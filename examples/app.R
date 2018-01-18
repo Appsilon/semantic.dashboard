@@ -5,9 +5,11 @@ library(plotly)
 library(DT)
 
 ui <- dashboardPage(
-  dashboardHeader(dropdownMenuOutput("dropdown1"),
-                  dropdownMenu(icon = icon("warning sign"), taskItem("Project progress...", 50.777, color = "red")),
-                  dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))),
+  dashboardHeader(dropdownMenuOutput("dropdown"),
+                  dropdownMenu(type = "notifications",
+                               taskItem("Project progress...", 50.777, color = "red")),
+                  dropdownMenu(icon = uiicon("red warning sign"),
+                               notificationItem("This is an important notification!", color = "red"))),
   dashboardSidebar(side = "left", size = "",
                    sidebarMenu(
                      menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
@@ -52,9 +54,10 @@ server <- function(input, output) {
                                               type = "scatter", mode = "markers"))
   output$mtcars_table <- renderDataTable(mtcars)
 
-  output$dropdown1 <- renderDropdownMenu({
-    dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
-                 messageItem("Marek", "Another test!", icon = "warning", color = "red"))
+  output$dropdown <- renderDropdownMenu({
+    dropdownMenu(messageItem("User", "Test message", color = "teal", style = "min-width: 200px"),
+                 messageItem("Users", "Test message", color = "teal", icon = "users"),
+                 messageItem("See this", "Another test", icon = "warning", color = "red"))
   })
 }
 
