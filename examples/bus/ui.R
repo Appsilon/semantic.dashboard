@@ -59,6 +59,6 @@ body <- dashboardBody(
 
 dashboardPage(title = "Twin Cities Buses",
   header,
-  dashboardSidebar(side = "left", size = "thin", visible = FALSE),
+  dashboardSidebar(side = "left", size = "thin", visible = FALSE, disable = TRUE),
   body
 )
