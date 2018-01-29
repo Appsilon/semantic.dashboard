@@ -27,3 +27,13 @@ Server-side function for dynamic dropdownMenu.
 \item \code{renderDropdownMenu}: Create a dropdown menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+\dontrun{
+dropdownMenuOutput("dropdown")
+
+output$dropdown <- renderDropdownMenu({
+  dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
+              messageItem("Marek", "Another test!", icon = "warning", color = "red"))
+})
+}
+}

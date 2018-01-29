@@ -41,3 +41,6 @@ Create a menu item corresponding to a tab.
 \item \code{menuSubItem}: Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home"))
+}

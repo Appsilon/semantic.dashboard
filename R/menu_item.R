@@ -26,6 +26,8 @@ validate_tab_name <- function(name) {
 #' @param newtab If href is supplied, should the link open in a new browser tab?
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{sidebarMenu}}
 #' @export
+#' @examples
+#' menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home"))
 menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE) {
   sub_items <- list(...)
   if (!is.null(href) + (!is.null(tabName) + (length(sub_items) > 0) != 1)) {
@@ -75,6 +77,11 @@ menuSubItem <- menu_item
 #' @param ... Menu items.
 #' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
+#' @examples
+#' sidebarMenu(
+#'   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
+#'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"))
+#'   )
 sidebar_menu <- function(...) {
   shiny::tags$div(class = "sidebar-menu", ...)
 }

@@ -27,3 +27,6 @@ Create a notification item.
 \item \code{notificationItem}: Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+notificationItem("This is notification!", color = "red")
+}

@@ -30,3 +30,17 @@ UI-side function for dynamic valueBox.
 \item \code{infoBoxOutput}: Create a valueBox output (alias for \code{value_box_output} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+\dontrun{
+valueBoxOutput("value_box")
+
+output$value_box <- renderValueBox({
+  valueBox(
+    value = 33.45,
+    subtitle = "Simple valuebox",
+    icon = icon("bar chart"),
+    color = "purple",
+    width = 5)
+})
+}
+}
