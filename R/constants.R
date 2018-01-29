@@ -1,4 +1,4 @@
-ALLOWED_COLORS <- c("red", "orange", "yellow", "olive", "green", "teal",
+ALLOWED_COLORS <- c("", "red", "orange", "yellow", "olive", "green", "teal",
                     "blue", "violet", "purple", "pink", "brown", "grey", "black")
 ALLOWED_SIDEBAR_SIZES <- c("", "thin", "very thin", "wide", "very wide")
 ALLOWED_SIDEBAR_SIDES <- c("left", "right", "top", "bottom")

@@ -5,14 +5,18 @@
 \alias{dashboardHeader}
 \title{Create a header of a dashboard.}
 \usage{
-dashboard_header(..., color = "black", disable = FALSE)
+dashboard_header(..., color = "", inverted = FALSE, disable = FALSE)
 
-dashboardHeader(..., color = "black", disable = FALSE)
+dashboardHeader(..., color = "", inverted = FALSE, disable = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the header.}
 
-\item{color}{Color of the sidebar. One of \code{c("red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
+One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+
+\item{inverted}{If FALSE sidebar will be white and text will be colored. \
+If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
 
 \item{disable}{If \code{TRUE}, don't display the header.}
 }

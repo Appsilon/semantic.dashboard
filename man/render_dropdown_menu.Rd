@@ -24,7 +24,7 @@ Server-side function for dynamic dropdownMenu.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderDropdownMenu}: Create a valueBox output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+\item \code{renderDropdownMenu}: Create a dropdown menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
 }}
 
 \examples{

@@ -1,5 +1,5 @@
 
-<link href="http://fonts.googleapis.com/css?family=Lato:300,700,300italic|Inconsolata" rel="stylesheet" type="text/css"> <link href='docs/style.css' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css"> <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
 semantic.dashboard
 ==================
@@ -44,11 +44,11 @@ Example
       library(DT)
 
       ui <- dashboardPage(
-        dashboardHeader(color = "black",
+        dashboardHeader(color = "",
                         dropdownMenuOutput("dropdown1"),
                         dropdownMenu(icon = icon("warning sign"), taskItem("Project progress...", 50.777, color = "red")),
                         dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))),
-        dashboardSidebar(side = "left", size = "", color = "black",
+        dashboardSidebar(side = "left", size = "", color = "",
                          sidebarMenu(
                            menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
                            menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
@@ -129,6 +129,6 @@ Future enhacements
 -   CRAN release
 
 Appsilon Data Science
-=====================
+---------------------
 
 Get in touch [dev@appsilondatascience.com](dev@appsilondatascience.com)

@@ -1,16 +1,19 @@
 body {
-  background: oldlace;
-  font-family: "Lato", sans-serif;
+  background: #fcd73d22;
+  font-family: "Maven Pro", sans-serif;
 }
 h1 {
   text-align: center;
   font-size: 80px;
-  font-weight: 300;
+  font-weight: 400;
   padding-top: 1em;
   margin: 0;
 }
-.footer h1 {
-  font-size: 50px;
+.section.level2.footer * {
+  text-align: center;
+}
+.footer h2 {
+  display: none;
 }
 .footer a {
   color: white;
@@ -25,10 +28,9 @@ h2, .subheader {
   font-size: 22px;
   text-align: center;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
-
 .main-container {
   max-width: 100%;
   padding: 0;
@@ -40,31 +42,22 @@ h2, .subheader {
   text-align: center;
   padding: 1em 0;
 }
-.section.level2 * {
+.section.level2 > div, .section.level2 > p, .section.level2 > pre,
+.section.level2 > ol, .section.level2 > ul, .section.level2 > h2 {
   text-align: left;
   margin: 1em auto;
   width: 50%;
   max-width: 940px;
 }
-@media (max-width: 1440px) {
-  .section.level2 * {
-    width:75%;
-  }
-}
-
-
 .section.level1.footer * {
   text-align: center;
 }
-.section.level2 * * {
-  width: 100%;
-}
 .darkslide {
-  background-color: #343434;
-  color: darkorange;
+  background-color: #15354a;
+  color: #fcd73d;
 }
 .footer {
-  background-color: #343434;
+  background-color: #15354a;
   color: white;
   padding-bottom: 2em;
 }
@@ -72,14 +65,14 @@ h2, .subheader {
   color: white;
 }
 .firebrick {
-  background-color: firebrick;
+  background-color: #ff364a;
   color: white;
 }
 .firebrick a{
-  color: darkorange;
+  color: #fcd73d;
 }
 .darkorange {
-  background-color: darkorange;
+  background-color: #fcd73d;
   color: #343434;
 }
 .logo img {
