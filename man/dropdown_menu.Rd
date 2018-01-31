@@ -5,9 +5,9 @@
 \alias{dropdownMenu}
 \title{Create a dropdown menu.}
 \usage{
-dropdown_menu(..., type = "messages", icon = NULL)
+dropdown_menu(..., type = "messages", icon = NULL, show_counter = TRUE)
 
-dropdownMenu(..., type = "messages", icon = NULL)
+dropdownMenu(..., type = "messages", icon = NULL, show_counter = TRUE)
 }
 \arguments{
 \item{...}{UI elements to include within the dropdown menu.}
@@ -15,6 +15,8 @@ dropdownMenu(..., type = "messages", icon = NULL)
 \item{type}{Type of the displayed items.}
 
 \item{icon}{Icon of the dropdown menu. If not specyfied created based on \code{type} agrument.}
+
+\item{show_counter}{If true circular label with counter is going to be shown for dropdown.}
 }
 \value{
 A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}

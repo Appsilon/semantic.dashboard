@@ -5,18 +5,18 @@
 \alias{messageItem}
 \title{Create a message item.}
 \usage{
-message_item(from, message, icon = "user", color = "")
+message_item(from, message, ..., icon = "user")
 
-messageItem(from, message, icon = "user", color = "")
+messageItem(from, message, ..., icon = "user")
 }
 \arguments{
 \item{from}{Who the message is from.}
 
 \item{message}{Text of the message.}
 
-\item{icon}{Additional icon.}
+\item{...}{Additional UI elements to include within the dropdown menu.}
 
-\item{color}{Color of the message item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{icon}{Additional icon.}
 }
 \value{
 A message item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
@@ -30,5 +30,5 @@ Create a message item.
 }}
 
 \examples{
-messageItem("Marek", "Another test!", icon = "warning", color = "red")
+messageItem("Marek", "Another test!", icon = "warning")
 }
