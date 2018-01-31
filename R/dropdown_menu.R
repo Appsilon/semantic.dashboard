@@ -6,6 +6,9 @@
 #' @param show_counter If true circular label with counter is going to be shown for dropdown.
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
+#' @examples
+#' dropdownMenu(icon = icon("warning sign"), taskItem("Project progress...", 50.777, color = "red"))
+#' dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))
 dropdown_menu <- function(..., type = "messages", icon = NULL, show_counter = TRUE) {
   icon <- if (!is.null(icon)) {
     icon
@@ -38,10 +41,11 @@ dropdownMenu <- dropdown_menu
 #' @param message Text of the message.
 #' @param ... Additional UI elements to include within the dropdown menu.
 #' @param icon Additional icon.
-#' @param color Color of the message item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A message item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
-message_item <- function(from, message, ..., icon = "user", color = "") {
+#' @examples
+#' messageItem("Marek", "Another test!", icon = "warning")
+message_item <- function(from, message, ..., icon = "user") {
   shiny::tags$a(class = "item",
                 shiny::tags$span(class = "description", message),
                 shiny::tags$span(class = "text",
@@ -61,6 +65,8 @@ messageItem <- message_item
 #' @param color Color of the task item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A task item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
+#' @examples
+#' taskItem("Project progress...", 50.777, color = "red")
 task_item <- function(text, value, color = ""){
   if (!is.numeric(value) || (value < MIN_PROGRESS_VALUE) || (value > MAX_PROGRESS_VALUE)){
     warning(paste("'value' must be between", MIN_PROGRESS_VALUE, "and", MAX_PROGRESS_VALUE))
@@ -84,6 +90,8 @@ taskItem <- task_item
 #' @param color Color of the notification item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A notification item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
+#' @examples
+#' notificationItem("This is notification!", color = "red")
 notification_item <- function(text, icon = "warning", color = ""){
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   shiny::tags$div(class = "item",

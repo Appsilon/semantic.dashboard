@@ -23,3 +23,13 @@ UI-side function for dynamic dropdownMenu.
 \item \code{dropdownMenuOutput}: Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+\dontrun{
+dropdownMenuOutput("dropdown")
+
+output$dropdown <- renderDropdownMenu({
+  dropdownMenu(messageItem("Michał", "Test message", color = "teal"),
+              messageItem("Marek", "Another test!", icon = "warning", color = "red"))
+})
+}
+}

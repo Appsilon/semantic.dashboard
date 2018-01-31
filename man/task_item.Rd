@@ -27,3 +27,6 @@ Create a task item.
 \item \code{taskItem}: Create a task item (alias for \code{taks_item} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+taskItem("Project progress...", 50.777, color = "red")
+}

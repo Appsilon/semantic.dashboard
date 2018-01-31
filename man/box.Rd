@@ -28,3 +28,8 @@ A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 \description{
 Create a box with additional UI elements.
 }
+\examples{
+box(title = "Sample box", color = "blue", width = 11,
+    "This is a box content"
+)
+}

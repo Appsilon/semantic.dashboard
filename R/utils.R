@@ -16,6 +16,5 @@ get_inverted_class <- function(inverted) {
 #' Interlace elements with dividers between each pair of elements.
 interlace_dividers <- function(elements) {
   dividers <- lapply(1:length(elements), function(i) shiny::tags$div(class = "divider"))
-  c(rbind(elements, dividers)) %>%
-    head(-1) # Skips last divider.
+  head(c(rbind(elements, dividers)), -1) # Skips last divider with head.
 }

@@ -7,6 +7,8 @@
 #' @param width Width of the valueBox.
 #' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
+#' @examples
+#' valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)
 value_box <- function(subtitle, value, icon = NULL, color = "blue", width = 5){
   verify_value_allowed("color", ALLOWED_COLORS)
   column(width = width,

@@ -36,3 +36,6 @@ Create a valueBox with additional UI elements.
 \item \code{infoBox}: Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
 }}
 
+\examples{
+valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)
+}
