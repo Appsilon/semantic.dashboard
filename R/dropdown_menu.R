@@ -3,21 +3,30 @@
 #' @param ... UI elements to include within the dropdown menu.
 #' @param type Type of the displayed items.
 #' @param icon Icon of the dropdown menu. If not specyfied created based on \code{type} agrument.
+#' @param show_counter If true circular label with counter is going to be shown for dropdown.
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
 #' @examples
 #' dropdownMenu(icon = icon("warning sign"), taskItem("Project progress...", 50.777, color = "red"))
 #' dropdownMenu(type = "notifications", notificationItem("This is notification!", color = "red"))
-dropdown_menu <- function(..., type = "messages", icon = NULL){
+dropdown_menu <- function(..., type = "messages", icon = NULL, show_counter = TRUE) {
   icon <- if (!is.null(icon)) {
     icon
   } else {
     icon(DROPDOWN_MENU_ICONS[[type]])
   }
-  shiny::tags$button(class = "ui icon top right pointing item dropdown button",
+  notifications <- list(...)
+  counter <- if (show_counter) {
+    shiny::tags$div(class = "ui circular mini label", length(notifications), style = "")
+  } else {
+    NULL
+  }
+
+  shiny::tags$button(class = "ui icon top right inline item dropdown button",
                      style = "margin-right: 0",
                      icon,
-                     shiny::tags$div(class = "menu", ...),
+                     counter,
+                     shiny::tags$div(class = "menu", interlace_dividers(notifications)),
                      shiny::tags$script(dropdown_menu_js),
                      shiny::tags$script(progress_bar_js))
 }
@@ -30,17 +39,19 @@ dropdownMenu <- dropdown_menu
 #' @description Create a message item.
 #' @param from Who the message is from.
 #' @param message Text of the message.
+#' @param ... Additional UI elements to include within the dropdown menu.
 #' @param icon Additional icon.
-#' @param color Color of the message item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A message item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
 #' @examples
-#' messageItem("Marek", "Another test!", icon = "warning", color = "red")
-message_item <- function(from, message, icon = "user", color = ""){
-  verify_value_allowed("color", c("", ALLOWED_COLORS))
-  shiny::tags$div(class = paste("ui icon message", color), shiny::tags$i(class = paste("small", icon, "icon")),
-                  shiny::tags$div(class = "content",
-                                  shiny::tags$div(class = "header", from), message))
+#' messageItem("Marek", "Another test!", icon = "warning")
+message_item <- function(from, message, ..., icon = "user") {
+  shiny::tags$a(class = "item",
+                shiny::tags$span(class = "description", message),
+                shiny::tags$span(class = "text",
+                                 shiny::tags$i(class = paste(icon, "icon")),
+                                 from),
+                ...)
 }
 
 #' @describeIn message_item Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})
