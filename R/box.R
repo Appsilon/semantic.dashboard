@@ -12,6 +12,7 @@
 box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE, width = 8) {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
+  box_id <- paste0("box_", sample(1:10000000, 1))
   label <- if (!is.character(title)) {
     NULL
   } else {
@@ -23,17 +24,17 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
     }
     shiny::div(class = title_class, minimize_button, title)
   }
-  js_script <- "$('.ui.accordion').accordion({
+  js_script <- paste0("$('#", box_id, "').accordion({
     onOpening: function() { $(this.context).find('.label .icon').removeClass('expand').addClass('minimize window'); },
     onClosing: function() { $(this.context).find('.label .icon').removeClass('minimize window').addClass('expand'); }
-  });"
+});")
   column(width = width,
-    shiny::div(class = paste("ui segment raised", color),
-      shiny::div(class = "ui accordion",
-        shiny::div(class = "title", label),
-        shiny::div(class = "content active", shiny::div(...))
-      )
-    ),
-    shiny::singleton(shiny::tags$script(paste0("$(document).ready(function() { ", js_script, " })")))
+         shiny::div(class = paste("ui segment raised", color),
+                    shiny::div(id = box_id, class = "ui accordion",
+                               shiny::div(class = "title", label),
+                               shiny::div(class = "content active", shiny::div(...))
+                    )
+         ),
+         if (collapsible) shiny::singleton(shiny::tags$script(paste0("$(document).ready(function() { ", js_script, " })")))
   )
 }
