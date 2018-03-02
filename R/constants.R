@@ -41,3 +41,9 @@ sidebar_js <- "
 dropdown_menu_js <- "$('.ui.dropdown').dropdown();"
 
 progress_bar_js <- "$('.progress').progress();"
+
+#' Semantic colors
+#' @export
+semantic_palette <- c("#0E6EB8", "#016936", "#B03060", "#EE82EE", "#FE9A76",
+                      "#A0A0A0", "#FFD700", "#32CD32", "#008080", "#B413EC",
+                      "#A52A2A", "#FF1493", "#000000")
