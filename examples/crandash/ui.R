@@ -1,8 +1,10 @@
 dashboardPage(title = "crandash-semantic",
               dashboardHeader(color = "blue"),
-              dashboardSidebar(side = "left", size = "thin", color = "grey", center = TRUE,
-                               sliderInput("rateThreshold", "Warn when rate exceeds",
-                                           min = 0, max = 50, value = 3, step = 0.1
+              dashboardSidebar(side = "left", size = "wide", color = "grey", center = TRUE,
+                               div(
+                                 sliderInput("rateThreshold", "Warn when rate exceeds",
+                                             min = 0, max = 50, value = 3, step = 0.1
+                                 ), align="center"
                                ),
                                menuItem("Dashboard", tabName = "dashboard"),
                                menuItem("Raw data", tabName = "rawdata")
