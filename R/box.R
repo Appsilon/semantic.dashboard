@@ -18,7 +18,7 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
   box_id <- if (!is.character(id)) {
-    random_id_generator()
+    paste0("box_", random_id_generator())
   } else {
     id
   }
