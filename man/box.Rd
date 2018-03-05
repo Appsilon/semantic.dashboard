@@ -5,7 +5,7 @@
 \title{Create a box.}
 \usage{
 box(..., title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right", collapsible = TRUE, width = 8)
+  title_side = "top right", collapsible = TRUE, width = 8, id = NULL)
 }
 \arguments{
 \item{...}{UI elements to include within the box.}
@@ -21,6 +21,8 @@ box(..., title = NULL, color = "", ribbon = TRUE,
 \item{collapsible}{Should minimize button be added to label.}
 
 \item{width}{Width of the box.}
+
+\item{id}{ID of the box.}
 }
 \value{
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

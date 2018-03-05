@@ -7,16 +7,21 @@
 #' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}
 #' @param collapsible Should minimize button be added to label.
 #' @param width Width of the box.
+#' @param id ID of the box.
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples
 #' box(title = "Sample box", color = "blue", width = 11,
 #'     "This is a box content"
 #' )
-box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE, width = 8) {
+box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE, width = 8, id = NULL) {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
-  box_id <- paste0("box_", sample(1:10000000, 1))
+  box_id <- if (!is.character(id)) {
+    random_id_generator()
+  } else {
+    id
+  }
   label <- if (!is.character(title)) {
     NULL
   } else {
