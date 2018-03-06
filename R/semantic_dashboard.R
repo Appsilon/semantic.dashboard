@@ -98,7 +98,7 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "", inverte
     inverted_value = get_inverted_class(inverted)
     shiny::div(id = "uisidebar", style = "min-height: 100vh",
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
-                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar"), ...)
+                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu overlay sidebar"), ...)
   }
 }
 
@@ -137,7 +137,7 @@ dashboardSidebar <- dashboard_sidebar
 dashboard_body <- function(...){
   shiny::div(class = "pusher container", style = "min-height: 100vh;",
              shiny::div(class = "ui segment", style = "min-height: 100vh;",
-                        shiny::tags$div(class = "ui grid", ...)))
+                        shiny::tags$div(class = "ui container grid", ...)))
 }
 
 #' @describeIn dashboard_body Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
