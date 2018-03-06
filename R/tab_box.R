@@ -19,7 +19,7 @@
 tab_box <- function(tabs, title = NULL, color = "", ribbon = TRUE,
                     title_side = "top right", collapsible = TRUE, width = 8, id = NULL) {
   box(shiny.semantic::tabset(tabs), title = title, color = color, ribbon = ribbon, title_side = title_side,
-      collapsible = collapsible, width = width)
+      collapsible = collapsible, width = width, id = id)
 }
 
 #' @describeIn tab_box Create a tab box (alias for \code{tab_box} for compatibility with \code{shinydashboard})
