@@ -27,6 +27,7 @@ ui <- dashboardPage(
                                 label = "Select second variable", selected = "cyl"),
                     plotlyOutput("mtcars_plot")),
                 tabBox(title = "Sample box", color = "blue", width = 5,
+                       collapsible = FALSE,
                        tabs = list(
                          list(menu = "First Tab", content = "Some text..."),
                          list(menu = "Second Tab", content = plotlyOutput("mtcars_plot2"))
