@@ -4,7 +4,7 @@ dashboardPage(title = "crandash-semantic",
                                div(
                                  sliderInput("rateThreshold", "Warn when rate exceeds",
                                              min = 0, max = 50, value = 3, step = 0.1
-                                 ), align="center"
+                                 ), align = "center", style = "margin: 0.5em;"
                                ),
                                menuItem("Dashboard", tabName = "dashboard"),
                                menuItem("Raw data", tabName = "rawdata")
