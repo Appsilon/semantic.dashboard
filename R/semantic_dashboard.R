@@ -96,7 +96,7 @@ dashboard_sidebar <- function(..., side = "left", size = "", color = "", inverte
 
     display_type <- ifelse(center, "labeled icon", "")
     inverted_value <- get_inverted_class(inverted)
-    shiny::div(id = "uisidebar", style = "min-height: 100vh",
+    shiny::div(id = "uisidebar", style = ifelse(side %in% c("top", "bottom"), "", "min-height: 100vh"),
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                              display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar"), ...)
   }
