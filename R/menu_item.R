@@ -83,7 +83,7 @@ menuSubItem <- menu_item
 #'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"))
 #'   )
 sidebar_menu <- function(...) {
-  shiny::tags$div(class = "sidebar-menu", ...)
+  list(...)
 }
 
 #' @describeIn sidebar_menu Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
