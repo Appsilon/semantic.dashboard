@@ -79,7 +79,7 @@ server <- function(input, output, session) {
   output$revenuebyPrd <- renderPlot({
     ggplot(data = recommendation,
            aes( x= Product, y = Revenue, fill = factor(Region))) +
-      scale_fill_manual(values = semantic_palette) +
+      scale_fill_manual(values = as.vector(semantic_palette)) +
       geom_bar(position = "dodge", stat = "identity") + ylab("Revenue (in Euros)") +
       xlab("Product") + theme(legend.position="bottom",
                               plot.title = element_text(size = 15, face = "bold")) +
@@ -88,7 +88,7 @@ server <- function(input, output, session) {
   output$revenuebyRegion <- renderPlot({
     ggplot(data = recommendation,
            aes(x = Account, y = Revenue, fill = factor(Region))) +
-      scale_fill_manual(values = semantic_palette) +
+      scale_fill_manual(values = as.vector(semantic_palette)) +
       geom_bar(position = "dodge", stat = "identity") + ylab("Revenue (in Euros)") +
       xlab("Account") + theme(legend.position="bottom",
                               plot.title = element_text(size = 15, face = "bold")) +
