@@ -27,20 +27,21 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   } else {
     title_class <- paste("ui", title_side, ifelse(ribbon, "ribbon", "attached"), "label", color)
     minimize_button <- if (collapsible) {
-      shiny.semantic::uiicon("minimize window")
+      shiny.semantic::uiicon("minimize window", style = "cursor: pointer;")
     } else {
       NULL
     }
     shiny::div(class = title_class, minimize_button, title)
   }
   js_script <- paste0("$('#", box_id, "').accordion({
+    selector: { trigger: '.title .icon' },
     onOpening: function() { $(this.context).find('.label .icon').removeClass('expand').addClass('minimize window'); },
     onClosing: function() { $(this.context).find('.label .icon').removeClass('minimize window').addClass('expand'); }
   });")
   column(width = width,
     shiny::div(class = paste("ui segment raised", color),
       shiny::div(id = box_id, class = "ui accordion",
-        shiny::div(class = "title", label),
+        shiny::div(class = "title", style = "cursor: auto", label),
         shiny::div(class = "content active", shiny::div(...))
       )
     ),
