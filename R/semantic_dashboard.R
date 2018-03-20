@@ -85,7 +85,7 @@ dashboardHeader <- dashboard_header
 #'
 #'   shinyApp(ui, server)
 #' }
-dashboard_sidebar <- function(..., side = "left", size = "", color = "", inverted = FALSE,
+dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inverted = FALSE,
                               center = FALSE, visible = TRUE, disable = FALSE){
   if (disable) {
     NULL

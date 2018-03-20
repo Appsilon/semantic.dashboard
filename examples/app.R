@@ -10,7 +10,7 @@ ui <- dashboardPage(
                                taskItem("Project progress...", 50.777, color = "red")),
                   dropdownMenu(icon = uiicon("red warning sign"),
                                notificationItem("This is an important notification!", color = "red"))),
-  dashboardSidebar(side = "left", size = "",
+  dashboardSidebar(side = "left",
                    sidebarMenu(
                      menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
                      menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
