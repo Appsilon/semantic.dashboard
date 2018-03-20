@@ -6,11 +6,14 @@
 \alias{infoBox}
 \title{Create a valueBox.}
 \usage{
-value_box(subtitle, value, icon = NULL, color = "blue", width = 5)
+value_box(subtitle, value, icon = NULL, color = "blue", width = 5,
+  size = "")
 
-valueBox(subtitle, value, icon = NULL, color = "blue", width = 5)
+valueBox(subtitle, value, icon = NULL, color = "blue", width = 5,
+  size = "")
 
-infoBox(subtitle, value, icon = NULL, color = "blue", width = 5)
+infoBox(subtitle, value, icon = NULL, color = "blue", width = 5,
+  size = "")
 }
 \arguments{
 \item{subtitle}{Label of the valueBox.}
@@ -22,6 +25,8 @@ infoBox(subtitle, value, icon = NULL, color = "blue", width = 5)
 \item{color}{Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
 \item{width}{Width of the valueBox.}
+
+\item{size}{Size of value. One of \code{c("mini", "tiny", "small", "", "large", "huge")}. Default is "".}
 }
 \value{
 A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
@@ -37,5 +42,5 @@ Create a valueBox with additional UI elements.
 }}
 
 \examples{
-valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)
+valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5, size = "tiny")
 }
