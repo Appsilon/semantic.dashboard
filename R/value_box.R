@@ -10,9 +10,8 @@
 #' @export
 #' @examples
 #' valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5, size = "tiny")
-value_box <- function(subtitle, value, icon = NULL, color = "blue", width = 5, size){
+value_box <- function(subtitle, value, icon = NULL, color = "blue", width = 5, size = ""){
   verify_value_allowed("color", ALLOWED_COLORS)
-  if (missing(size)) size <- ""
   verify_value_allowed("size", ALLOWED_VALUEBOX_SIZES)
   column(width = width,
          shiny::div(class = paste("ui fluid card", color),
