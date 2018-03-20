@@ -34,9 +34,9 @@ ui <- dashboardPage(
                        )))),
       tabItem(tabName = "table_tab",
               fluidRow(
-                valueBox("Unread Mail", 144, icon("mail"), color = "blue", width = 6),
-                valueBox("Spam", 20, icon("mail"), color = "red", width = 5),
-                valueBox("Readed Mail", 666, icon("mail"), color = "green", width = 5)
+                valueBox("Unread Mail", 144, icon("mail"), color = "blue", width = 6, size = "small"),
+                valueBox("Spam", 20, icon("mail"), color = "red", width = 5, size = "small"),
+                valueBox("Readed Mail", 666, icon("mail"), color = "green", width = 5, size = "small")
               ),
               fluidRow(
                 box(title = "Classic box", color = "red", ribbon = FALSE,
