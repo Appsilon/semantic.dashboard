@@ -6,7 +6,50 @@ semantic.dashboard
 
 Dashboard with Semantic UI Support for Shiny
 
-Basic functions for creating dashboard with Semantic UI.
+Are you fed up with ordinary `shinydashboard` look?
+
+Give your app a new life with Semantic UI support. It cannot be any easier! Just install `semantic.dashboard` and load it instead to your app. Thanks to the compatibility with classical dashboard you don't have to start from scratch:
+
+``` r
+#########################
+library(shinydashboard) # <-- You want to change it to: library(semantic.dashboard)
+#########################
+ui <- dashboardPage(
+  dashboardHeader(title = "Basic dashboard"),
+  dashboardSidebar(sidebarMenu(
+      menuItem(tabName = "home", text = "Home", icon = icon("home")),
+      menuItem(tabName = "another", text = "Another Tab", icon = icon("heart"))
+  )),
+  dashboardBody(
+    fluidRow(
+      box(plotOutput("plot1", height = 250)),
+      box(
+        title = "Controls",
+        sliderInput("slider", "Number of observations:", 1, 100, 50)
+      )
+    )
+  )
+)
+
+server <- function(input, output) {
+  set.seed(122)
+  histdata <- rnorm(500)
+  output$plot1 <- renderPlot({
+    data <- histdata[seq_len(input$slider)]
+    hist(data)
+  })
+}
+
+shinyApp(ui, server)
+```
+
+![Semantic dashboards comparison](inst/compare.png)
+
+`semantic.dashboard` offers basic functions for creating dashboard with Semantic UI but not only. You can select from number of [Semantic UI Themes](http://semantic-ui-forest.com/themes/) and easily adjust the look of your dashboard.
+
+![Semantic Dashboard Themes](inst/themes.png)
+
+Check more examples below or in the `examples` folder.
 
 <!-- #Basic tutorial article is available on [Appsilon Data Science blog](your_future_art_link). -->
 <!-- Live demo link below -->
@@ -22,7 +65,7 @@ This library source code can be found on [Appsilon Data Science's](http://appsil
 How to install?
 ---------------
 
-**Note! This library is still in its infancy. Api might change in the future.**
+Install `shiny.semantic` library first. [Here](https://github.com/Appsilon/shiny.semantic) you can find how.
 
 At the moment it's possible to install this library through [devtools](https://github.com/hadley/devtools).
 
@@ -100,6 +143,8 @@ Example
     }
 
     shinyApp(ui, server)
+
+For more examples check `examples/` folder.
 
 How to contribute?
 ------------------
