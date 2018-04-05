@@ -5,10 +5,10 @@
 \alias{dashboardSidebar}
 \title{Create a sidebar of a dashboard.}
 \usage{
-dashboard_sidebar(..., side = "left", size = "", color = "",
+dashboard_sidebar(..., side = "left", size = "thin", color = "",
   inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
 
-dashboardSidebar(..., side = "left", size = "", color = "",
+dashboardSidebar(..., side = "left", size = "thin", color = "",
   inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
 }
 \arguments{
