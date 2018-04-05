@@ -43,7 +43,7 @@ ui <- dashboardPage(
                     title_side = "top left", width = 14,
                     tags$div(
                       dataTableOutput("mtcars_table")
-                    , style=paste0("color:",semantic_palette[["blue"]],";"))
+                    , style = paste0("color:", semantic_palette[["blue"]], ";"))
                 ))))
     ), theme = "darkly"
 )
