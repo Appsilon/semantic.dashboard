@@ -129,9 +129,9 @@ Dashboard with Semantic UI Support for Shiny
 </div>
 <div class="section level2">
 <p>Are you fed up with ordinary <code>shinydashboard</code> look?</p>
-<p>Give your app a new life with Semantic UI support. It cannot be any easier! Just install <code>semantic.dashboard</code> and load it instead to your app. Thanks to the compatibility with classical dashboard you don’t have to start from scratch:</p>
+<p>Give your app a new life with Semantic UI support. It cannot be any easier! Just install <code>semantic.dashboard</code> and load it instead to your app. Thanks to the compatibility with classical dashboard you don’t have to start from scratch.</p>
 <pre class="r"><code>#########################
-library(shinydashboard) # &lt;-- You want to change it to: library(semantic.dashboard)
+library(shinydashboard) # &lt;-- You only need to change this line to: library(semantic.dashboard)
 #########################
 ui &lt;- dashboardPage(
   dashboardHeader(title = &quot;Basic dashboard&quot;),
@@ -193,72 +193,7 @@ shinyApp(ui, server)</code></pre>
 </div>
 <div id="example" class="section level2 darkorange">
 <h2>Example</h2>
-<pre><code>library(shiny)
-library(shiny.semantic)
-library(semantic.dashboard)
-library(plotly)
-library(DT)
-
-ui &lt;- dashboardPage(
-  dashboardHeader(dropdownMenuOutput(&quot;dropdown&quot;),
-                  dropdownMenu(type = &quot;notifications&quot;,
-                               taskItem(&quot;Project progress...&quot;, 50.777, color = &quot;red&quot;)),
-                  dropdownMenu(icon = uiicon(&quot;red warning sign&quot;),
-                               notificationItem(&quot;This is an important notification!&quot;, color = &quot;red&quot;))),
-  dashboardSidebar(side = &quot;left&quot;,
-                   sidebarMenu(
-                     menuItem(tabName = &quot;plot_tab&quot;, text = &quot;My plot&quot;, icon = icon(&quot;home&quot;)),
-                     menuItem(tabName = &quot;table_tab&quot;, text = &quot;My table&quot;, icon = icon(&quot;smile&quot;)))),
-  dashboardBody(
-    tabItems(
-      tabItem(tabName = &quot;plot_tab&quot;,
-              fluidRow(
-                valueBox(&quot;Unread Mail&quot;, 44, icon(&quot;mail&quot;), color = &quot;blue&quot;, width = 5)),
-              fluidRow(
-                box(title = &quot;Sample box&quot;, color = &quot;blue&quot;, width = 11,
-                    selectInput(inputId =  &quot;variable1&quot;, choices = names(mtcars),
-                                label = &quot;Select first variable&quot;, selected = &quot;mpg&quot;),
-                    selectInput(inputId =  &quot;variable2&quot;, choices = names(mtcars),
-                                label = &quot;Select second variable&quot;, selected = &quot;cyl&quot;),
-                    plotlyOutput(&quot;mtcars_plot&quot;)),
-                tabBox(title = &quot;Sample box&quot;, color = &quot;blue&quot;, width = 5,
-                       collapsible = FALSE,
-                       tabs = list(
-                         list(menu = &quot;First Tab&quot;, content = &quot;Some text...&quot;),
-                         list(menu = &quot;Second Tab&quot;, content = plotlyOutput(&quot;mtcars_plot2&quot;))
-                       )))),
-      tabItem(tabName = &quot;table_tab&quot;,
-              fluidRow(
-                valueBox(&quot;Unread Mail&quot;, 144, icon(&quot;mail&quot;), color = &quot;blue&quot;, width = 6, size = &quot;small&quot;),
-                valueBox(&quot;Spam&quot;, 20, icon(&quot;mail&quot;), color = &quot;red&quot;, width = 5, size = &quot;small&quot;),
-                valueBox(&quot;Readed Mail&quot;, 666, icon(&quot;mail&quot;), color = &quot;green&quot;, width = 5, size = &quot;small&quot;)
-              ),
-              fluidRow(
-                box(title = &quot;Classic box&quot;, color = &quot;red&quot;, ribbon = FALSE,
-                    title_side = &quot;top left&quot;, width = 14,
-                    dataTableOutput(&quot;mtcars_table&quot;)
-                )))))
-)
-
-server &lt;- function(input, output) {
-
-  output$mtcars_plot &lt;- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
-                                             y = ~ mtcars[ , input$variable2],
-                                             type = &quot;scatter&quot;, mode = &quot;markers&quot;))
-  output$mtcars_plot2 &lt;- renderPlotly(plot_ly(mtcars, x = ~ mtcars[ , input$variable1],
-                                              y = ~ mtcars[ , input$variable2],
-                                              type = &quot;scatter&quot;, mode = &quot;markers&quot;))
-  output$mtcars_table &lt;- renderDataTable(mtcars)
-
-  output$dropdown &lt;- renderDropdownMenu({
-    dropdownMenu(messageItem(&quot;User&quot;, &quot;Test message&quot;, color = &quot;teal&quot;, style = &quot;min-width: 200px&quot;),
-                 messageItem(&quot;Users&quot;, &quot;Test message&quot;, color = &quot;teal&quot;, icon = &quot;users&quot;),
-                 messageItem(&quot;See this&quot;, &quot;Another test&quot;, icon = &quot;warning&quot;, color = &quot;red&quot;))
-  })
-}
-
-shinyApp(ui, server)</code></pre>
-<p>For more examples check <code>examples/</code> folder.</p>
+<p>More examples you can find in the <code>examples/</code> folder from the <a href="https://github.com/Appsilon/semantic.dashboard">GitHub repository</a>.</p>
 </div>
 <div id="how-to-contribute" class="section level2">
 <h2>How to contribute?</h2>

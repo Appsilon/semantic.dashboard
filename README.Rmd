@@ -20,7 +20,7 @@ params:
 
 Are you fed up with ordinary `shinydashboard` look?
 
-Give your app a new life with Semantic UI support. It cannot be any easier! Just install `semantic.dashboard` and load it instead to your app. Thanks to the compatibility with classical dashboard you don't have to start from scratch:
+Give your app a new life with Semantic UI support. It cannot be any easier! Just install `semantic.dashboard` and load it instead to your app. Thanks to the compatibility with classical dashboard you don't have to start from scratch.
 
 ```{r eval=FALSE, include=TRUE}
 #########################
@@ -107,11 +107,7 @@ devtools::install_github("Appsilon/`r params$repo_name`", ref = "0.1.0")
 Example {.darkorange}
 -------
 
-```{r, echo = FALSE, eval = TRUE, results = 'asis'}
-cat(paste("   ", readLines("examples/app.R")), sep = "\n" )
-```
-
-For more examples check `examples/` folder.
+More examples you can find in the `examples/` folder from the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
 
 How to contribute?
 -----------------
