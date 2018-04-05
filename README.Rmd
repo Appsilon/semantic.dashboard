@@ -24,7 +24,7 @@ Give your app a new life with Semantic UI support. It cannot be any easier! Just
 
 ```{r eval=FALSE, include=TRUE}
 #########################
-library(shinydashboard) # <-- You want to change it to: library(semantic.dashboard)
+library(shinydashboard) # <-- You only need to change this line to: library(semantic.dashboard)
 #########################
 ui <- dashboardPage(
   dashboardHeader(title = "Basic dashboard"),
