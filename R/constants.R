@@ -39,6 +39,28 @@ sidebar_js <- "
     .sidebar('attach events', '#toggle_menu');
 "
 
+body_js <- shiny::HTML("
+  <script>
+    var set_pusher_size = function(on_click) {
+      var sidebar = $('#uisidebar');
+      var window_width = $(window).width();
+      var pusher = $('.container > .pusher');
+      var is_sidebar_visible_after_transition = sidebar.hasClass('visible')
+      if (on_click) {
+        is_sidebar_visible_after_transition = !is_sidebar_visible_after_transition
+      };
+      if (is_sidebar_visible_after_transition) {sidebar_width = sidebar.width()} else {sidebar_width = 0};
+      if (sidebar.hasClass('left')) {margin_left = sidebar_width} else {margin_left = 0};
+      if (sidebar.hasClass('right')) {margin_right = sidebar_width} else {margin_right = 0};
+      pusher.width(window_width - sidebar_width);
+      pusher.css({'margin-left' : margin_left, 'margin-right' : margin_right});
+    };
+    $('#toggle_menu').click(function() {set_pusher_size(true)});
+    $(document).ready(function() {set_pusher_size(false)});
+    $(window).resize(function() {set_pusher_size(false)});
+  </script>
+")
+
 dropdown_menu_js <- "$('.ui.dropdown').dropdown();"
 
 progress_bar_js <- "$('.progress').progress();"
