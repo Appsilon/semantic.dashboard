@@ -7,7 +7,7 @@ recommendation <- read.csv('recommendation.csv', stringsAsFactors = FALSE, heade
 # Dashboard header carrying the title of the dashboard
 header <- dashboardHeader()
 # Sidebar content of the dashboard
-sidebar <- dashboardSidebar(
+sidebar <- dashboardSidebar(size = "wide",
   sidebarMenu(
     menuItem(text = "Dashboard", tabName = "dashboard", icon = icon("bar chart")),
     menuItem(text = "Visit-us", href = "https://www.appsilondatascience.com", icon = icon("at")))
