@@ -4,7 +4,9 @@ Title: Dashboard with Semantic UI Support for Shiny
 Version: 0.1.1
 Organization: Appsilon Data Science
 Authors@R: c(person("Michal", "Maj", email = "michal.maj@appsilondatascience.com",
-  role = c("aut", "cre")),
+  role = "aut"),
+  person("Dominik", "Krzeminski", email = "dominik@appsilondatascience.com",
+  role = "cre")
   person(family = "Appsilon Data Science", role = "cph"))
 Description: Basic functions for creating dashboard with Semantic UI. 
 BugReports: https://github.com/Appsilon/semantic.dashboard/issues
@@ -14,7 +16,7 @@ License: MIT + file LICENSE
 Imports:
     utils,
     shiny (>= 0.12.1),
-    shiny.semantic (>= 0.1.1)
+    shiny.semantic (>= 0.1.2)
 Suggests:
     testthat,
     lintr,
