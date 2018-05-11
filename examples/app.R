@@ -5,7 +5,9 @@ library(plotly)
 library(DT)
 
 ui <- dashboardPage(
-  dashboardHeader(dropdownMenuOutput("dropdown"),
+  dashboardHeader(logo_align = "center",
+                  logo_url = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",
+                  dropdownMenuOutput("dropdown"),
                   dropdownMenu(type = "notifications",
                                taskItem("Project progress...", 50.777, color = "red")),
                   dropdownMenu(icon = uiicon("red warning sign"),
