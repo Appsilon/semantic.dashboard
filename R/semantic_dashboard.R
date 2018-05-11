@@ -44,7 +44,7 @@ dashboard_header <- function(..., logo_align = "center", logo_url = "",
 
     shiny::div(class = paste("ui top attached", inverted_value, color, " menu"),
                shiny::tags$a(id = "toggle_menu", class = "item", shiny::tags$i(class = "sidebar icon"), "Menu"),
-               shiny::tags$img(style = paste("height: 38px; margin: 1px;", logo_align_css_style), src = logo_url),
+               if (logo_url != "") shiny::tags$img(style = paste("height: 38px; margin: 1px;", logo_align_css_style), src = logo_url),
                shiny::div(class = "right icon menu", ...)
     )
   }
