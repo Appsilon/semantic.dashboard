@@ -6,7 +6,7 @@ library(DT)
 
 ui <- dashboardPage(
   dashboardHeader(logo_align = "center",
-                  logo_url = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",
+                  logo_path = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",
                   dropdownMenuOutput("dropdown"),
                   dropdownMenu(type = "notifications",
                                taskItem("Project progress...", 50.777, color = "red")),
