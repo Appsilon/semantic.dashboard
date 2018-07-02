@@ -78,7 +78,9 @@ To install [previous version]() you can run:
 Example
 -------
 
-More examples you can find in the `examples/` folder from the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
+More examples are in the `examples/` folder from the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
+
+You can also read [this tutorial](https://appsilondatascience.com/blog/rstats/2018/06/11/dashboard-tutorial.html) to learn how to build your first semantic.dashboard app.
 
 How to contribute?
 ------------------
