@@ -5,12 +5,18 @@
 \alias{dashboardHeader}
 \title{Create a header of a dashboard.}
 \usage{
-dashboard_header(..., color = "", inverted = FALSE, disable = FALSE)
+dashboard_header(..., logo_align = "center", logo_path = "", color = "",
+  inverted = FALSE, disable = FALSE)
 
-dashboardHeader(..., color = "", inverted = FALSE, disable = FALSE)
+dashboardHeader(..., logo_align = "center", logo_path = "", color = "",
+  inverted = FALSE, disable = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the header.}
+
+\item{logo_align}{Where should logo be placed. One of \code{c("left", "center")}}
+
+\item{logo_path}{Path or URL of the logo to be shown in the header.}
 
 \item{color}{Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
 One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
