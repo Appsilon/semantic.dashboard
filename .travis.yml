@@ -2,3 +2,8 @@ language: r
 sudo: true
 dist: trusty
 
+git:
+  submodules: false
+
+before_install:
+  - git submodule update --init
