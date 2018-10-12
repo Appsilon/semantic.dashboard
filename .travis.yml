@@ -1,4 +1,4 @@
 language: r
-
+sudo: true
 dist: trusty
 
