@@ -9,3 +9,5 @@ build_readme\.R
 ^\.git.*$
 docs
 \.circleci
+examples
+development
