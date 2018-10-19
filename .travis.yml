@@ -1,0 +1,7 @@
+language: r
+sudo: true
+dist: trusty
+
+git:
+  submodules: false
+

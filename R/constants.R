@@ -80,7 +80,7 @@ light_semantic_palette <- c("#DC73FF", "#2ECC40", "#54C8FF", "#FF695E", "#FF851B
                             "#D9E778", "#6DFFFF", "#A291FB", "#FF8EDF", "#D67C1C", "#DCDDDE",
                             "#545454")
 
-names(light_semantic_palette) <- c("lightPurple" , "lightGreen", "lightBlue", "lightRed",
+names(light_semantic_palette) <- c("lightPurple", "lightGreen", "lightBlue", "lightRed",
                                    "lightOrange", "lightYellow", "lightOlive", "lightTeal",
                                    "lightViolet", "lightPink", "lightBrown", "lightGrey",
                                    "lightBlack")

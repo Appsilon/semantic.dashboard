@@ -14,7 +14,8 @@
 #' box(title = "Sample box", color = "blue", width = 11,
 #'     "This is a box content"
 #' )
-box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right", collapsible = TRUE, width = 8, id = NULL) {
+box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right",
+                collapsible = TRUE, width = 8, id = NULL) {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
   box_id <- if (!is.character(id)) {
