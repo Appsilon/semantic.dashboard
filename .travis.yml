@@ -5,3 +5,5 @@ dist: trusty
 git:
   submodules: false
 
+after_success:
+  - Rscript -e 'covr::codecov()'

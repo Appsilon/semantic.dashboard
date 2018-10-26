@@ -20,5 +20,6 @@ Imports:
 Suggests:
     testthat,
     lintr,
-    shinydashboard
+    shinydashboard,
+    covr
 RoxygenNote: 6.0.1
