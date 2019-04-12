@@ -57,7 +57,7 @@ shinyApp(ui, server)
 Source code
 -----------
 
-This library source code can be found on [Appsilon Data Science's](http://appsilondatascience.com) Github: <br> <https://github.com/Appsilon/semantic.dashboard>
+This library source code can be found on [Appsilon Data Science's](http://appsilon.com) Github: <br> <https://github.com/Appsilon/semantic.dashboard>
 
 How to install?
 ---------------
@@ -77,7 +77,7 @@ Example
 
 More examples are in the `examples` folder from the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
 
-You can also read [this tutorial](https://appsilondatascience.com/blog/rstats/2018/06/11/dashboard-tutorial.html) to learn how to build your first semantic.dashboard app.
+You can also read [this tutorial](https://appsilon.com/blog/rstats/2018/06/11/dashboard-tutorial.html) to learn how to build your first semantic.dashboard app.
 
 How to contribute?
 ------------------
@@ -87,7 +87,13 @@ If you want to contribute to this project please submit a regular PR, once you'r
 Changes in documentation
 ------------------------
 
-Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file and run a **build\_readme.R** script to compile it.
+Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file and use [readmebuilder](https://github.com/Appsilon/readmebuilder) package to render the new README.
+
+In most cases a simple call of:
+
+``` r
+readmebuilder::build_readme()
+```
 
 Troubleshooting
 ---------------
@@ -110,4 +116,4 @@ Future enhacements
 Appsilon Data Science
 ---------------------
 
-Get in touch [dev@appsilondatascience.com](dev@appsilondatascience.com)
+Get in touch [dev@appsilon.com](dev@appsilon.com)
