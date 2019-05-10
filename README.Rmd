@@ -1,7 +1,7 @@
 ---
 output: html_document
 params:
-   website_url: http://appsilondatascience.com
+   website_url: http://appsilon.com
    logo_url: https://cdn.rawgit.com/Appsilon/website-cdn/gh-pages/logo-white.png
    repo_name: semantic.dashboard
    repo_url: https://github.com/Appsilon/semantic.dashboard
@@ -62,10 +62,6 @@ shinyApp(ui, server)
 
 ![Semantic Dashboard Themes](inst/themes.png)
 
-Check more examples below or in the `examples` folder.
-
-<!-- #Basic tutorial article is available on [Appsilon Data Science blog](your_future_art_link). -->
-
 <!-- Live demo link below -->
 <!--<p style="text-align: center; font-size: x-large;">
 <a href="`r params$demo_url`">Live demo</a>
@@ -94,7 +90,14 @@ How to install?
 
 Install `shiny.semantic` library first. [Here](https://github.com/Appsilon/shiny.semantic) you can find how.
 
-At the moment it's possible to install this library through [devtools](https://github.com/hadley/devtools).
+You can install a stable version `semantic.dashboard` from CRAN repository:
+
+```
+install.packages("`r params$repo_name`")
+```
+
+
+The development version can be installed from GitHub using [devtools](https://github.com/hadley/devtools).
 ```
 devtools::install_github("Appsilon/`r params$repo_name`")
 ```
@@ -107,18 +110,24 @@ devtools::install_github("Appsilon/`r params$repo_name`", ref = "0.1.0")
 Example {.darkorange}
 -------
 
-More examples are in the `examples/` folder from the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
+You can find examples in the `examples/` folder of the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
 
-You can also read [this tutorial](https://appsilondatascience.com/blog/rstats/2018/06/11/dashboard-tutorial.html) to learn how to build your first semantic.dashboard app.
+You can also read [this tutorial](https://appsilon.com/blog/rstats/2018/06/11/dashboard-tutorial.html) to learn how to build your first semantic.dashboard app.
 
 
 How to contribute?
 -----------------
 If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix.<br>
 
-**Changes in documentation**
+## Changes in documentation
 
-Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file  and run a **build_readme.R** script to compile it.
+Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file  and use [readmebuilder](https://github.com/Appsilon/readmebuilder) package to render the new README.
+
+In most cases a simple call of: 
+
+```r
+readmebuilder::build_readme()
+```
 
 Troubleshooting {.darkslide}
 -----------------
@@ -136,7 +145,7 @@ However, if you encounter any problems, try the following:
 
 Future enhacements
 ------------------
-* CRAN release
+* Release of a stable 1.0 version
 
 Appsilon Data Science {.footer}
 ------------------
@@ -150,7 +159,7 @@ if (params$type == "web") {
 }
 ```
 
-Get in touch [dev@appsilondatascience.com](dev@appsilondatascience.com)
+Get in touch [dev@appsilon.com](dev@appsilon.com)
 
 ```{r, echo = F, results='asis'}
 if (params$type == "web") {

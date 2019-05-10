@@ -49,9 +49,6 @@ shinyApp(ui, server)
 
 ![Semantic Dashboard Themes](inst/themes.png)
 
-Check more examples below or in the `examples` folder.
-
-<!-- #Basic tutorial article is available on [Appsilon Data Science blog](your_future_art_link). -->
 <!-- Live demo link below -->
 <!--<p style="text-align: center; font-size: x-large;">
 <a href="">Live demo</a>
@@ -67,7 +64,11 @@ How to install?
 
 Install `shiny.semantic` library first. [Here](https://github.com/Appsilon/shiny.semantic) you can find how.
 
-At the moment it's possible to install this library through [devtools](https://github.com/hadley/devtools).
+You can install a stable version `semantic.dashboard` from CRAN repository:
+
+    install.packages("semantic.dashboard")
+
+The development version can be installed from GitHub using [devtools](https://github.com/hadley/devtools).
 
     devtools::install_github("Appsilon/semantic.dashboard")
 
@@ -78,7 +79,7 @@ To install [previous version]() you can run:
 Example
 -------
 
-More examples are in the `examples/` folder from the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
+You can find examples in the `examples/` folder of the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
 
 You can also read [this tutorial](https://appsilon.com/blog/rstats/2018/06/11/dashboard-tutorial.html) to learn how to build your first semantic.dashboard app.
 
@@ -87,9 +88,16 @@ How to contribute?
 
 If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix.<br>
 
-**Changes in documentation**
+Changes in documentation
+------------------------
 
-Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file and run a **build\_readme.R** script to compile it.
+Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file and use [readmebuilder](https://github.com/Appsilon/readmebuilder) package to render the new README.
+
+In most cases a simple call of:
+
+``` r
+readmebuilder::build_readme()
+```
 
 Troubleshooting
 ---------------
@@ -107,7 +115,7 @@ However, if you encounter any problems, try the following:
 Future enhacements
 ------------------
 
--   CRAN release
+-   Release of a stable 1.0 version
 
 Appsilon Data Science
 ---------------------
