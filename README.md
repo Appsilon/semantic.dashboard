@@ -64,7 +64,11 @@ How to install?
 
 Install `shiny.semantic` library first. [Here](https://github.com/Appsilon/shiny.semantic) you can find how.
 
-At the moment it's possible to install this library through [devtools](https://github.com/hadley/devtools).
+You can install a stable version `semantic.dashboard` from CRAN repository:
+
+    install.packages("semantic.dashboard")
+
+The development version can be installed from GitHub using [devtools](https://github.com/hadley/devtools).
 
     devtools::install_github("Appsilon/semantic.dashboard")
 
