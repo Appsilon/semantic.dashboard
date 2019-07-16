@@ -144,7 +144,7 @@ dashboardSidebar <- dashboard_sidebar
 #'   shinyApp(ui, server)
 #' }
 dashboard_body <- function(...){
-  shiny::div(class = "pusher container", style = "min-height: 100vh;",
+  shiny::div(class = "pusher container", style = "min-height: 100vh; margin-left: 0",
              shiny::div(class = "ui segment", style = "min-height: 100vh;",
                         shiny::tags$div(class = "ui stackable container grid", ...)),
              body_js)
