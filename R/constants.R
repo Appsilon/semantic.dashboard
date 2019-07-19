@@ -50,7 +50,11 @@ body_js <- shiny::HTML("
       if (on_click) {
         is_sidebar_visible_after_transition = !is_sidebar_visible_after_transition
       };
-      if (is_sidebar_visible_after_transition & !is_sidebar_top) {sidebar_width = sidebar.width()} else {sidebar_width = 0};
+      if (is_sidebar_visible_after_transition & !is_sidebar_top) {
+         sidebar_width = sidebar.width()
+      } else {
+         sidebar_width = 0
+      };
       if (sidebar.hasClass('left')) {margin_left = sidebar_width} else {margin_left = 0};
       if (sidebar.hasClass('right')) {margin_right = sidebar_width} else {margin_right = 0};
       pusher.width(window_width - sidebar_width);
