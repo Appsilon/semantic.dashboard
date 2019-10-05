@@ -8,6 +8,7 @@
 #' @param collapsible Should minimize button be added to label.
 #' @param width Width of the box.
 #' @param id ID of the box.
+#' @param ... other elements of the box.
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples
@@ -17,9 +18,9 @@
 #'          list(menu = "Second Tab", content = "This is second tab")
 #'        ))
 tab_box <- function(tabs, title = NULL, color = "", ribbon = TRUE,
-                    title_side = "top right", collapsible = TRUE, width = 8, id = NULL) {
+                    title_side = "top right", collapsible = TRUE, width = 8, id = NULL, ...) {
   box(shiny.semantic::tabset(tabs), title = title, color = color, ribbon = ribbon, title_side = title_side,
-      collapsible = collapsible, width = width, id = id)
+      collapsible = collapsible, width = width, id = id, ...)
 }
 
 #' @describeIn tab_box Create a tab box (alias for \code{tab_box} for compatibility with \code{shinydashboard})
