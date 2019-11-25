@@ -1,3 +1,10 @@
+#' semantic.dashboard
+#'
+#' @name semantic.dashboard
+#' @import htmltools
+#' @import glue
+NULL
+
 #' Create a header of a dashboard.
 #' @description Create a header of a dashboard with other additional UI elements.
 #' @param ... UI elements to include within the header.
@@ -105,9 +112,10 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
 
     display_type <- ifelse(center, "labeled icon", "")
     inverted_value <- get_inverted_class(inverted)
-    shiny::div(id = "uisidebar", style = ifelse(side %in% c("top", "bottom"), "", "min-height: 100vh"),
+    shiny::div(id = ..1$id, style = ifelse(side %in% c("top", "bottom"), "", "min-height: 100vh"),
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
-                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu overlay sidebar"), ...)
+                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu overlay sidebar"),
+               ..1[-1])
   }
 }
 
@@ -147,8 +155,7 @@ dashboard_body <- function(...){
   shiny::div(class = "pusher container", style = "min-height: 100vh; margin-left: 0",
              shiny::tags$style(HTML(".tab-content, .ui.grid.container, .container {width:100%!important}")),
              shiny::div(class = "ui segment", style = "min-height: 100vh;",
-                        shiny::tags$div(class = "ui stackable container grid", ...)),
-             body_js)
+                        shiny::tags$div(class = "ui stackable container grid", ...)))
 }
 
 #' @describeIn dashboard_body Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
@@ -188,13 +195,13 @@ dashboardBody <- dashboard_body
 #'   shinyApp(ui, server)
 #' }
 dashboard_page <- function(header, sidebar, body, title = "",
-                           suppress_bootstrap = TRUE, theme = NULL){
+                           suppress_bootstrap = TRUE, theme = NULL) {
   # TODO: Remove this line when it is added to semanticPage()
   if (suppress_bootstrap) shiny::suppressDependencies("bootstrap")
   if (is.null(sidebar)) header$children[[1]] <- NULL
-  shiny.semantic::semanticPage(header, sidebar, body,
-                               shiny::tags$script(sidebar_js), title = title,
-                               theme = theme)
+  shiny.semantic::semanticPage(header, sidebar, body, title = title,
+                               theme = theme, get_dashboard_dependencies(),
+                               shiny::tags$script(paste0("sidebar_observer('",sidebar$attribs$id,"')")))
 }
 
 #' @describeIn dashboard_page Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})

@@ -6,10 +6,12 @@
 \title{Create a sidebar of a dashboard.}
 \usage{
 dashboard_sidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
+  inverted = FALSE, center = FALSE, visible = TRUE,
+  disable = FALSE)
 
 dashboardSidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
+  inverted = FALSE, center = FALSE, visible = TRUE,
+  disable = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}
