@@ -201,7 +201,7 @@ dashboard_page <- function(header, sidebar, body, title = "",
   if (is.null(sidebar)) header$children[[1]] <- NULL
   shiny.semantic::semanticPage(header, sidebar, body, title = title,
                                theme = theme, get_dashboard_dependencies(),
-                               shiny::tags$script(paste0("sidebar_observer('",sidebar$attribs$id,"')")))
+                               shiny::tags$script(glue("sidebar_observer('{sidebar$attribs$id}')")))
 }
 
 #' @describeIn dashboard_page Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
