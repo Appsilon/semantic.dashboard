@@ -77,6 +77,8 @@ dashboardHeader <- dashboard_header
 #' @param  center Should label and icon be centerd on menu items. Default to \code{FALSE}
 #' @param  visible Should sidebar be visible on start. Default to \code{TRUE}
 #' @param disable If \code{TRUE}, don't display the sidebar.
+#' @param closable If \code{TRUE} allow to close clik in body. Default to \code{FALSE}
+#' @param pushable If \code{TRUE} the menu button is active. Default to \code{TRUE}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -102,7 +104,8 @@ dashboardHeader <- dashboard_header
 #'   shinyApp(ui, server)
 #' }
 dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inverted = FALSE,
-                              center = FALSE, visible = TRUE, disable = FALSE){
+                              closable = FALSE, pushable = TRUE, center = FALSE, visible = TRUE,
+                              disable = FALSE){
   if (disable) {
     NULL
   } else {
@@ -112,7 +115,8 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
 
     display_type <- ifelse(center, "labeled icon", "")
     inverted_value <- get_inverted_class(inverted)
-    shiny::div(id = ..1$id, style = ifelse(side %in% c("top", "bottom"), "", "min-height: 100vh"),
+    shiny::div(closable = ifelse(closable, quote(true), quote(false)), pushable = ifelse(pushable, quote(true), quote(false)),
+               id = ..1$id, style = ifelse(side %in% c("top", "bottom"), "", "min-height: 100vh"),
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                              display_type, ifelse(visible, "visible", ""), inverted_value, "menu overlay sidebar"),
                ..1[-1])

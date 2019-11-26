@@ -1,6 +1,7 @@
 function sidebar_observer(id) {
   /* Code below is needed to trigger visibility on reactive Shiny outputs. */
   /* Thanks to that users do not have to set suspendWhenHidden to FALSE.   */
+  let sidebar_dom = $(`#${id}`);
   let previous_tab;
   $(`#${id} .item`).tab({
     onVisible: function(target) {
@@ -20,26 +21,28 @@ function sidebar_observer(id) {
       context: $('.pusher'),
       transition: 'push',
       dimPage: false,
-      closable: false
+      closable: (sidebar_dom.attr('closable') === 'true'),
+      onVisible: function() {set_pusher_size(true);},
+      onHide: function() {set_pusher_size(true);}
     })
-    .sidebar('attach events', '#toggle_menu');
+
+  if (sidebar_dom.attr('pushable') === 'true')
+    sidebar_dom.sidebar('attach events', '#toggle_menu');
 
 
     let set_pusher_size = function(on_click) {
-      let sidebar = $(`#${id}`);
       let window_width = $(window).width();
       let pusher = $('.container > .pusher');
-      let is_sidebar_visible_after_transition = sidebar.hasClass('visible')
+      let is_sidebar_visible_after_transition = sidebar_dom.hasClass('visible')
       if (on_click) {
         is_sidebar_visible_after_transition = !is_sidebar_visible_after_transition
       };
-      if (is_sidebar_visible_after_transition) {sidebar_width = sidebar.width()} else {sidebar_width = 0};
-      if (sidebar.hasClass('left')) {margin_left = sidebar_width} else {margin_left = 0};
-      if (sidebar.hasClass('right')) {margin_right = sidebar_width} else {margin_right = 0};
+      if (is_sidebar_visible_after_transition) {sidebar_width = sidebar_dom.width()} else {sidebar_width = 0};
+      if (sidebar_dom.hasClass('left')) {margin_left = sidebar_width} else {margin_left = 0};
+      if (sidebar_dom.hasClass('right')) {margin_right = sidebar_width} else {margin_right = 0};
       pusher.width(window_width - sidebar_width);
       pusher.css({'margin-left' : margin_left, 'margin-right' : margin_right});
     };
-    $('#toggle_menu').click(function() {set_pusher_size(true)});
     $(document).ready(function() {set_pusher_size(false)});
     $(window).resize(function() {set_pusher_size(false)});
 }
