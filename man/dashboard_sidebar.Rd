@@ -26,7 +26,7 @@ One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", 
 \item{inverted}{If FALSE sidebar will be white and text will be colored. \
 If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
 
-\item{closable}{If \code{TRUE} allow to close clik in body. Default to \code{FALSE}}
+\item{closable}{If \code{TRUE} allow close sidebar by clicking in the body. Default to \code{FALSE}}
 
 \item{pushable}{If \code{TRUE} the menu button is active. Default to \code{TRUE}}
 

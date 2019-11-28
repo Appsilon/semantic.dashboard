@@ -2,7 +2,7 @@
 % Please edit documentation in R/deps.R
 \name{get_dashboard_dependencies}
 \alias{get_dashboard_dependencies}
-\title{Get the dependencies}
+\title{Get the semantic.dashboard dependencies}
 \usage{
 get_dashboard_dependencies()
 }
@@ -10,5 +10,5 @@ get_dashboard_dependencies()
 semantic.dashboard dependencies
 }
 \description{
-Get the dependencies
+To add dependencies in the future follow the \code{\link[htmltools]{htmlDependency}} help.
 }
