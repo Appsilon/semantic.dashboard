@@ -3,7 +3,7 @@ library(semantic.dashboard)
 
 ui <- dashboardPage(
   dashboardHeader(color = "blue"),
-  dashboardSidebar(
+  dashboardSidebar(side = "left", size = "thin", color = "teal",
                    sidebarMenu(
                      menuItem(tabName = "tab1", "Tab 1"),
                      menuItem(tabName = "tab2", "Tab 2"))),
