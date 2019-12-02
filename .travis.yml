@@ -2,6 +2,10 @@ language: r
 sudo: true
 dist: trusty
 
+env:
+  global:
+    - LINTR_COMMENT_BOT=false
+
 git:
   submodules: false
 
