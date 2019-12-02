@@ -6,10 +6,12 @@
 \title{Create a sidebar of a dashboard.}
 \usage{
 dashboard_sidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
+  inverted = FALSE, closable = FALSE, pushable = TRUE,
+  center = FALSE, visible = TRUE, disable = FALSE)
 
 dashboardSidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
+  inverted = FALSE, closable = FALSE, pushable = TRUE,
+  center = FALSE, visible = TRUE, disable = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}
@@ -23,6 +25,10 @@ One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", 
 
 \item{inverted}{If FALSE sidebar will be white and text will be colored. \
 If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
+
+\item{closable}{If \code{TRUE} allow close sidebar by clicking in the body. Default to \code{FALSE}}
+
+\item{pushable}{If \code{TRUE} the menu button is active. Default to \code{TRUE}}
 
 \item{center}{Should label and icon be centerd on menu items. Default to \code{FALSE}}
 

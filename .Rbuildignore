@@ -12,3 +12,5 @@ docs
 \.circleci
 examples
 development
+^tools$
+^srcjs$

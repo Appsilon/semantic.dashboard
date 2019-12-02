@@ -16,10 +16,12 @@ License: MIT + file LICENSE
 Imports:
     utils,
     shiny (>= 0.12.1),
-    shiny.semantic (>= 0.1.2)
+    shiny.semantic (>= 0.1.2),
+    htmltools,
+    glue
 Suggests:
     testthat,
     lintr,
     shinydashboard,
     covr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
