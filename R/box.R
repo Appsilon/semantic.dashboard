@@ -36,8 +36,8 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   }
   js_script <- paste0("$('#", box_id, "').accordion({
     selector: { trigger: '.title .icon' },
-    onOpening: function() { $(this.context).find('.label .icon').removeClass('expand').addClass('minimize window'); },
-    onClosing: function() { $(this.context).find('.label .icon').removeClass('minimize window').addClass('expand'); }
+    onOpening: function() { $('#", box_id, "').find('.label .icon').removeClass('expand').addClass('minimize window'); },
+    onClosing: function() { $('#", box_id, "').find('.label .icon').removeClass('minimize window').addClass('expand'); }
   });")
   column(width = width,
     shiny::div(class = paste("ui segment raised", color),
