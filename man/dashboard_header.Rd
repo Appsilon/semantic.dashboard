@@ -5,11 +5,23 @@
 \alias{dashboardHeader}
 \title{Create a header of a dashboard.}
 \usage{
-dashboard_header(..., logo_align = "center", logo_path = "",
-  color = "", inverted = FALSE, disable = FALSE)
+dashboard_header(
+  ...,
+  logo_align = "center",
+  logo_path = "",
+  color = "",
+  inverted = FALSE,
+  disable = FALSE
+)
 
-dashboardHeader(..., logo_align = "center", logo_path = "",
-  color = "", inverted = FALSE, disable = FALSE)
+dashboardHeader(
+  ...,
+  logo_align = "center",
+  logo_path = "",
+  color = "",
+  inverted = FALSE,
+  disable = FALSE
+)
 }
 \arguments{
 \item{...}{UI elements to include within the header.}

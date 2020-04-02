@@ -4,9 +4,18 @@
 \alias{box}
 \title{Create a box.}
 \usage{
-box(..., title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right", collapsible = TRUE, width = 8,
-  id = NULL)
+box(
+  ...,
+  title = NULL,
+  color = "",
+  ribbon = TRUE,
+  title_side = "top right",
+  collapsible = TRUE,
+  width = 8,
+  id = NULL,
+  collapse_icon = "minimize window",
+  expand_icon = "plus"
+)
 }
 \arguments{
 \item{...}{UI elements to include within the box.}
@@ -24,6 +33,10 @@ box(..., title = NULL, color = "", ribbon = TRUE,
 \item{width}{Width of the box.}
 
 \item{id}{ID of the box.}
+
+\item{collapse_icon}{Icon class to be used for collapsing (when \code{collapsible = TRUE}).}
+
+\item{expand_icon}{Icon class to be used for expanding (when \code{collapsible = TRUE}).}
 }
 \value{
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

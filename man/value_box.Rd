@@ -6,14 +6,11 @@
 \alias{infoBox}
 \title{Create a valueBox.}
 \usage{
-value_box(subtitle, value, icon = NULL, color = "blue", width = 5,
-  size = "")
+value_box(subtitle, value, icon = NULL, color = "blue", width = 5, size = "")
 
-valueBox(subtitle, value, icon = NULL, color = "blue", width = 5,
-  size = "")
+valueBox(subtitle, value, icon = NULL, color = "blue", width = 5, size = "")
 
-infoBox(subtitle, value, icon = NULL, color = "blue", width = 5,
-  size = "")
+infoBox(subtitle, value, icon = NULL, color = "blue", width = 5, size = "")
 }
 \arguments{
 \item{subtitle}{Label of the valueBox.}

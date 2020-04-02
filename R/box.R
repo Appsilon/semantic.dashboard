@@ -8,6 +8,8 @@
 #' @param collapsible Should minimize button be added to label.
 #' @param width Width of the box.
 #' @param id ID of the box.
+#' @param collapse_icon Icon class to be used for collapsing (when \code{collapsible = TRUE}).
+#' @param expand_icon Icon class to be used for expanding (when \code{collapsible = TRUE}).
 #' @return A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples
@@ -15,7 +17,8 @@
 #'     "This is a box content"
 #' )
 box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right",
-                collapsible = TRUE, width = 8, id = NULL) {
+                collapsible = TRUE, width = 8, id = NULL, collapse_icon = "minimize window",
+                expand_icon = "plus") {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
   box_id <- if (!is.character(id)) {
@@ -36,8 +39,8 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   }
   js_script <- paste0("$('#", box_id, "').accordion({
     selector: { trigger: '.title .icon' },
-    onOpening: function() { $('#", box_id, "').find('.label .icon').removeClass('expand').addClass('minimize window'); },
-    onClosing: function() { $('#", box_id, "').find('.label .icon').removeClass('minimize window').addClass('expand'); }
+    onOpening: function() { $('#", box_id, "').find('.label .icon').removeClass('", expand_icon, "').addClass('", collapse_icon, "'); },
+    onClosing: function() { $('#", box_id, "').find('.label .icon').removeClass('", collapse_icon, "').addClass('", expand_icon, "'); }
   });")
   column(width = width,
     shiny::div(class = paste("ui segment raised", color),

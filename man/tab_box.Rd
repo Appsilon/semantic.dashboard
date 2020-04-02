@@ -5,13 +5,29 @@
 \alias{tabBox}
 \title{Create a tab box.}
 \usage{
-tab_box(tabs, title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right", collapsible = TRUE, width = 8,
-  id = NULL, ...)
+tab_box(
+  tabs,
+  title = NULL,
+  color = "",
+  ribbon = TRUE,
+  title_side = "top right",
+  collapsible = TRUE,
+  width = 8,
+  id = NULL,
+  ...
+)
 
-tabBox(tabs, title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right", collapsible = TRUE, width = 8,
-  id = NULL, ...)
+tabBox(
+  tabs,
+  title = NULL,
+  color = "",
+  ribbon = TRUE,
+  title_side = "top right",
+  collapsible = TRUE,
+  width = 8,
+  id = NULL,
+  ...
+)
 }
 \arguments{
 \item{tabs}{Tabs to include within the box.}
