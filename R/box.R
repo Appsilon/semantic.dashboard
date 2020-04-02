@@ -37,11 +37,11 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
     }
     shiny::div(class = title_class, minimize_button, title)
   }
-  js_script <- paste0("$('#", box_id, "').accordion({
+  js_script <- glue::glue("$('#{{box_id}}').accordion({
     selector: { trigger: '.title .icon' },
-    onOpening: function() { $('#", box_id, "').find('.label .icon').removeClass('", expand_icon, "').addClass('", collapse_icon, "'); },
-    onClosing: function() { $('#", box_id, "').find('.label .icon').removeClass('", collapse_icon, "').addClass('", expand_icon, "'); }
-  });")
+    onOpening: function() { $('#{{box_id}}').find('.label .icon').removeClass('{{expand_icon}}').addClass('{{collapse_icon}}'); },
+    onClosing: function() { $('#{{box_id}}').find('.label .icon').removeClass('{{collapse_icon}}').addClass('{{expand_icon}}'); }
+  });", .open = "{{", .close = "}}")
   column(width = width,
     shiny::div(class = paste("ui segment raised", color),
       shiny::div(id = box_id, class = "ui accordion",
