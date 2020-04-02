@@ -5,11 +5,9 @@
 \alias{dropdownMenu}
 \title{Create a dropdown menu.}
 \usage{
-dropdown_menu(..., type = "messages", icon = NULL,
-  show_counter = TRUE)
+dropdown_menu(..., type = "messages", icon = NULL, show_counter = TRUE)
 
-dropdownMenu(..., type = "messages", icon = NULL,
-  show_counter = TRUE)
+dropdownMenu(..., type = "messages", icon = NULL, show_counter = TRUE)
 }
 \arguments{
 \item{...}{UI elements to include within the dropdown menu.}

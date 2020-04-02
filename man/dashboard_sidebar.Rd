@@ -5,13 +5,31 @@
 \alias{dashboardSidebar}
 \title{Create a sidebar of a dashboard.}
 \usage{
-dashboard_sidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, closable = FALSE, pushable = TRUE,
-  center = FALSE, visible = TRUE, disable = FALSE)
+dashboard_sidebar(
+  ...,
+  side = "left",
+  size = "thin",
+  color = "",
+  inverted = FALSE,
+  closable = FALSE,
+  pushable = TRUE,
+  center = FALSE,
+  visible = TRUE,
+  disable = FALSE
+)
 
-dashboardSidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, closable = FALSE, pushable = TRUE,
-  center = FALSE, visible = TRUE, disable = FALSE)
+dashboardSidebar(
+  ...,
+  side = "left",
+  size = "thin",
+  color = "",
+  inverted = FALSE,
+  closable = FALSE,
+  pushable = TRUE,
+  center = FALSE,
+  visible = TRUE,
+  disable = FALSE
+)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}

@@ -6,14 +6,11 @@
 \alias{menuSubItem}
 \title{Create a menu item.}
 \usage{
-menu_item(text, ..., icon = NULL, tabName = NULL, href = NULL,
-  newtab = TRUE)
+menu_item(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE)
 
-menuItem(text, ..., icon = NULL, tabName = NULL, href = NULL,
-  newtab = TRUE)
+menuItem(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE)
 
-menuSubItem(text, ..., icon = NULL, tabName = NULL, href = NULL,
-  newtab = TRUE)
+menuSubItem(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE)
 }
 \arguments{
 \item{text}{Text to show for the menu item.}
