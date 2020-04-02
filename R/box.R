@@ -17,7 +17,7 @@
 #'     "This is a box content"
 #' )
 box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top right",
-                collapsible = TRUE, width = 8, id = NULL, collapse_icon = "minimize window",
+                collapsible = TRUE, width = 8, id = NULL, collapse_icon = "minus",
                 expand_icon = "plus") {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
@@ -31,7 +31,7 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   } else {
     title_class <- paste("ui", title_side, ifelse(ribbon, "ribbon", "attached"), "label", color)
     minimize_button <- if (collapsible) {
-      shiny.semantic::uiicon("minimize window", style = "cursor: pointer;")
+      shiny.semantic::uiicon(collapse_icon, style = "cursor: pointer;")
     } else {
       NULL
     }
