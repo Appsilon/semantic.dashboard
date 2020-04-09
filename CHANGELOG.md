@@ -9,6 +9,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 ### Removed
 
+## [0.1.5] - 2020-03-30
+### Added
+- option for collapsible icon
+- themes support
+- conditionPanel
+- logo in top panel
+
+### Changed
+- extended sidebar options
+- width values for semantic classes forces
+- README
+
+### Fixed
+- collapsible box 
+- dashboard body without left margin
+
 ## [0.1.0] - 2018-01-02
 ### Added
 - box
