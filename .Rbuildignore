@@ -5,6 +5,7 @@
 readme_rmd_template
 CHANGELOG\.md
 README\.Rmd
+README\.md
 build_readme\.R
 \.travis\.yml
 ^\.git.*$

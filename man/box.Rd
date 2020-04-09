@@ -13,7 +13,7 @@ box(
   collapsible = TRUE,
   width = 8,
   id = NULL,
-  collapse_icon = "minimize window",
+  collapse_icon = "minus",
   expand_icon = "plus"
 )
 }
