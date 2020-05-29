@@ -39,9 +39,10 @@ NULL
 #'
 #'   shinyApp(ui, server)
 #' }
-dashboard_header <- function(..., logo_align = "center", logo_path = "",
-                             color = "", inverted = FALSE, disable = FALSE){
-  if (disable){
+dashboard_header <- function(..., title = NULL, titleWidth = NULL,
+                             logo_align = "center", logo_path = "",
+                             color = "", inverted = FALSE, disable = FALSE) {
+  if (disable) {
     NULL
   } else {
     verify_value_allowed("color", ALLOWED_COLORS)
@@ -49,13 +50,22 @@ dashboard_header <- function(..., logo_align = "center", logo_path = "",
     inverted_value <- get_inverted_class(inverted)
     logo_align_css_style <- ifelse(logo_align == "center", "margin-left: auto;", "")
 
-    shiny::div(class = paste("ui top attached", inverted_value, color, " menu"),
-               shiny::tags$a(id = "toggle_menu", class = "item",
-                             shiny::tags$i(class = "sidebar icon"),
-                             "Menu"),
-               if (logo_path != "") shiny::tags$img(style = paste("height: 30px; margin: 5px;",
-                                                                  logo_align_css_style), src = logo_path),
-               shiny::div(class = "right icon menu", ...)
+    shiny::div(
+      class = paste("ui top attached", inverted_value, color, " menu"),
+      shiny::tags$a(
+        id = "toggle_menu", class = "item",
+        shiny::tags$i(class = "sidebar icon"),
+        "Menu"
+      ),
+      if (logo_path != "") {
+        shiny::tags$img(
+          style = paste("height: 30px; margin: 5px;", logo_align_css_style),
+          src = logo_path)
+      },
+      shiny::div(
+        class = "right icon menu",
+        ...
+      )
     )
   }
 }
