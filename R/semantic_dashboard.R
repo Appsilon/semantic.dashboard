@@ -3,11 +3,14 @@
 #' @name semantic.dashboard
 #' @import htmltools
 #' @import glue
+#' @import checkmate
 NULL
 
 #' Create a header of a dashboard.
 #' @description Create a header of a dashboard with other additional UI elements.
 #' @param ... UI elements to include within the header.
+#' @param  title Dashboard title to be displayed in the upper left corner
+#' @param  titleWidth Title field width, one of \code{c(NULL, "very thin", "thin", "wide", "very wide")}
 #' @param  logo_align Where should logo be placed. One of \code{c("left", "center")}
 #' @param  logo_path Path or URL of the logo to be shown in the header.
 #' @param  color Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
@@ -47,11 +50,20 @@ dashboard_header <- function(..., title = NULL, titleWidth = NULL,
   } else {
     verify_value_allowed("color", ALLOWED_COLORS)
 
+    checkmate::assert(
+      checkmate::check_null(titleWidth),
+      checkmate::check_choice(titleWidth, c("very thin", "thin", "wide", "very wide")),
+      combine = "or"
+    )
+
     inverted_value <- get_inverted_class(inverted)
     logo_align_css_style <- ifelse(logo_align == "center", "margin-left: auto;", "")
 
+    title_class <- paste(c("ui menu dashboard-title", titleWidth, inverted_value, color), collapse = " ")
+
     shiny::div(
       class = paste("ui top attached", inverted_value, color, " menu"),
+      shiny::span(title, class = title_class),
       shiny::tags$a(
         id = "toggle_menu", class = "item",
         shiny::tags$i(class = "sidebar icon"),
@@ -115,7 +127,7 @@ dashboardHeader <- dashboard_header
 #' }
 dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inverted = FALSE,
                               closable = FALSE, pushable = TRUE, center = FALSE, visible = TRUE,
-                              disable = FALSE){
+                              disable = FALSE) {
   if (disable) {
     NULL
   } else {
