@@ -17,7 +17,8 @@ Imports:
     shiny (>= 0.12.1),
     shiny.semantic (>= 0.1.2),
     htmltools,
-    glue
+    glue,
+    checkmate
 Suggests:
     testthat,
     lintr,
