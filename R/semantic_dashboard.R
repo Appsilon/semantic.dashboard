@@ -9,7 +9,7 @@ NULL
 #' Create a header of a dashboard.
 #' @description Create a header of a dashboard with other additional UI elements.
 #' @param ... UI elements to include within the header.
-#' @param  title Dashboard title to be displayed in the upper left corner
+#' @param  title Dashboard title to be displayed in the upper left corner. If NULL, will not display any title field. Use "" for an empty title.
 #' @param  titleWidth Title field width, one of \code{c(NULL, "very thin", "thin", "wide", "very wide")}
 #' @param  logo_align Where should logo be placed. One of \code{c("left", "center")}
 #' @param  logo_path Path or URL of the logo to be shown in the header.
@@ -21,13 +21,13 @@ NULL
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
-#' if(interactive()){
+#' if(interactive()) {
 #'
 #'   library(shiny)
 #'   library(semantic.dashboard)
 #'
 #'   ui <- dashboardPage(
-#'     dashboardHeader(color = "blue"),
+#'     dashboardHeader(color = "blue", inverted = TRUE),
 #'     dashboardSidebar(side = "left", size = "thin", color = "teal",
 #'                      sidebarMenu(
 #'                        menuItem(tabName = "tab1", "Tab 1"),
@@ -59,11 +59,16 @@ dashboard_header <- function(..., title = NULL, titleWidth = NULL,
     inverted_value <- get_inverted_class(inverted)
     logo_align_css_style <- ifelse(logo_align == "center", "margin-left: auto;", "")
 
-    title_class <- paste(c("ui menu dashboard-title", titleWidth, inverted_value, color), collapse = " ")
+    if (!is.null(title)) {
+      title_class <- paste(c("ui menu dashboard-title", titleWidth, inverted_value, color), collapse = " ")
+      title_span <- shiny::span(title, class = title_class)
+    } else {
+      title_span <- NULL
+    }
 
     shiny::div(
       class = paste("ui top attached", inverted_value, color, " menu"),
-      shiny::span(title, class = title_class),
+      title_span,
       shiny::tags$a(
         id = "toggle_menu", class = "item",
         shiny::tags$i(class = "sidebar icon"),
