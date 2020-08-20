@@ -1,7 +1,7 @@
 Package: semantic.dashboard
 Type: Package
 Title: Dashboard with Semantic UI Support for Shiny
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: c(person("Filip", "Stachura", email = "filip@appsilon.com", role = "aut"),
   person("Dominik", "Krzeminski", email = "dominik@appsilon.com", role = "cre"),
   person("Krystian", "Igras", role = "ctb"),
@@ -15,7 +15,7 @@ License: MIT + file LICENSE
 Imports:
     utils,
     shiny (>= 0.12.1),
-    shiny.semantic (>= 0.1.2),
+    shiny.semantic (>= 0.3.3),
     htmltools,
     glue
 Suggests:
@@ -23,4 +23,4 @@ Suggests:
     lintr,
     shinydashboard,
     covr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
