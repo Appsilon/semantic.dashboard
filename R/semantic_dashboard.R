@@ -174,7 +174,7 @@ dashboardBody <- dashboard_body
 #' @param sidebar Sidebar of a dashboard.
 #' @param body Body of a dashboard.
 #' @param title Title of a dashboard.
-#' @param theme Theme name or path. For possiible options see \code{\link[shiny.semantic]{semanticPage}}.
+#' @param theme Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
 #' @export
