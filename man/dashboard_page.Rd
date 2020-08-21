@@ -34,7 +34,7 @@ dashboardPage(
 
 \item{suppress_bootstrap}{There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
 
-\item{theme}{Theme name or path TODO list of themes}
+\item{theme}{Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.}
 }
 \value{
 Dashboard.

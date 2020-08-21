@@ -31,7 +31,7 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
   } else {
     title_class <- paste("ui", title_side, ifelse(ribbon, "ribbon", "attached"), "label", color)
     minimize_button <- if (collapsible) {
-      shiny.semantic::uiicon(collapse_icon, style = "cursor: pointer;")
+      shiny.semantic::icon(collapse_icon, style = "cursor: pointer;")
     } else {
       NULL
     }

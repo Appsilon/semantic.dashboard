@@ -5,7 +5,9 @@
 \alias{light_semantic_palette}
 \title{Semantic light colors
 https://github.com/Semantic-Org/Semantic-UI/blob/master/src/themes/default/globals/site.variables}
-\format{An object of class \code{character} of length 13.}
+\format{
+An object of class \code{character} of length 13.
+}
 \usage{
 light_semantic_palette
 }

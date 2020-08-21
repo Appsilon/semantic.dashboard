@@ -6,7 +6,7 @@
 #' @param ... Other arguments to be added as attributes of the tag (e.g. style, class etc.)
 #'
 #' @export
-icon <- shiny.semantic::uiicon
+icon <- shiny.semantic::icon
 
 #' Valid tab name should not containt dot character '.'.
 #' @param name Tab name to validate.
