@@ -160,7 +160,7 @@ dashboardSidebar <- dashboard_sidebar
 dashboard_body <- function(...){
   shiny::div(class = "pusher container", style = "min-height: 100vh; margin-left: 0",
              shiny::tags$style(HTML(".tab-content, .ui.grid.container, .container {width:100%!important}")),
-             shiny::div(class = "ui segment", style = "min-height: 100vh;",
+             shiny::div(class = "ui content", style = "min-height: 100vh;",
                         shiny::tags$div(class = "ui stackable container grid", ...)))
 }
 
