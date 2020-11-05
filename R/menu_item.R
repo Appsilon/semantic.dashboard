@@ -1,4 +1,4 @@
-#' Create Semantic UI icon tag (alias for \code{uiicon} for compatibility with \code{shinydashboard})
+#' Create Semantic UI icon tag (alias for \code{icon} for compatibility with \code{shinydashboard})
 #'
 #' This creates an icon tag using Semantic UI styles.
 #'
@@ -6,7 +6,11 @@
 #' @param ... Other arguments to be added as attributes of the tag (e.g. style, class etc.)
 #'
 #' @export
-icon <- shiny.semantic::icon
+#' @examples
+#' icon("dog")
+icon <- function(type, ...) {
+  shiny.semantic::icon(type, ...)
+}
 
 #' Valid tab name should not containt dot character '.'.
 #' @param name Tab name to validate.
