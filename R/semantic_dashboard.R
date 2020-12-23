@@ -79,6 +79,7 @@ dashboardHeader <- dashboard_header
 #' @param disable If \code{TRUE}, don't display the sidebar.
 #' @param closable If \code{TRUE} allow close sidebar by clicking in the body. Default to \code{FALSE}
 #' @param pushable If \code{TRUE} the menu button is active. Default to \code{TRUE}
+#' @param on_top If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content. Default to \code{FALSE}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -105,7 +106,7 @@ dashboardHeader <- dashboard_header
 #' }
 dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inverted = FALSE,
                               closable = FALSE, pushable = TRUE, center = FALSE, visible = TRUE,
-                              disable = FALSE){
+                              disable = FALSE, on_top = FALSE){
   if (disable) {
     NULL
   } else {
@@ -120,7 +121,8 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
     shiny::div(closable = closable, pushable = pushable,
                id = ..1$id,
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
-                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu overlay sidebar"),
+                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu overlay sidebar",
+                             ifelse(!on_top, "relative", "")),
                ..1[-1])
   }
 }

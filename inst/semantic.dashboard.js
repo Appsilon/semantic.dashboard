@@ -16,33 +16,33 @@ function sidebar_observer(id) {
     }
   });
 
-  $(`#${id}`)
-    .sidebar({
-      context: $('.pusher'),
-      transition: 'push',
-      dimPage: false,
-      closable: (sidebar_dom.attr('closable') === 'true'),
-      onVisible: function() {set_pusher_size(true);},
-      onHide: function() {set_pusher_size(true);}
-    })
+  // $(`#${id}`)
+  //   .sidebar({
+  //     context: $('.pusher'),
+  //     transition: 'push',
+  //     dimPage: false,
+  //     closable: (sidebar_dom.attr('closable') === 'true'),
+  //     onVisible: function() {set_pusher_size(true);},
+  //     onHide: function() {set_pusher_size(true);}
+  //   })
 
-  if (sidebar_dom.attr('pushable') === 'true')
-    sidebar_dom.sidebar('attach events', '#toggle_menu');
+  // if (sidebar_dom.attr('pushable') === 'true')
+  //   sidebar_dom.sidebar('attach events', '#toggle_menu');
 
 
-    let set_pusher_size = function(on_click) {
-      let window_width = $(window).width();
-      let pusher = $('.container > .pusher');
-      let is_sidebar_visible_after_transition = sidebar_dom.hasClass('visible')
-      if (on_click) {
-        is_sidebar_visible_after_transition = !is_sidebar_visible_after_transition
-      };
-      if (is_sidebar_visible_after_transition) {sidebar_width = sidebar_dom.width()} else {sidebar_width = 0};
-      if (sidebar_dom.hasClass('left')) {margin_left = sidebar_width} else {margin_left = 0};
-      if (sidebar_dom.hasClass('right')) {margin_right = sidebar_width} else {margin_right = 0};
-      pusher.width(window_width - sidebar_width);
-      pusher.css({'margin-left' : margin_left, 'margin-right' : margin_right});
-    };
-    $(document).ready(function() {set_pusher_size(false)});
-    $(window).resize(function() {set_pusher_size(false)});
+  //   let set_pusher_size = function(on_click) {
+  //     let window_width = $(window).width();
+  //     let pusher = $('.container > .pusher');
+  //     let is_sidebar_visible_after_transition = sidebar_dom.hasClass('visible')
+  //     if (on_click) {
+  //       is_sidebar_visible_after_transition = !is_sidebar_visible_after_transition
+  //     };
+  //     if (is_sidebar_visible_after_transition) {sidebar_width = sidebar_dom.width()} else {sidebar_width = 0};
+  //     if (sidebar_dom.hasClass('left')) {margin_left = sidebar_width} else {margin_left = 0};
+  //     if (sidebar_dom.hasClass('right')) {margin_right = sidebar_width} else {margin_right = 0};
+  //     pusher.width(window_width - sidebar_width);
+  //     pusher.css({'margin-left' : margin_left, 'margin-right' : margin_right});
+  //   };
+  //   $(document).ready(function() {set_pusher_size(false)});
+  //   $(window).resize(function() {set_pusher_size(false)});
 }

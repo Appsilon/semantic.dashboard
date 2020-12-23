@@ -8,13 +8,34 @@ body {
 body > .pusher {
   flex: 1;
   height: calc(100vh - 45px);
+  display: flex;
 }
 
 .content > .pusher {
   height: 100%;
   overflow: auto;
+  flex: 1;
 }
 
+/* 
+  SIDEBAR 
+*/
 .ui.menu.sidebar.bottom:not(.visible) {
   display: none;
+}
+
+.ui.sidebar.relative + .pusher {
+  transition: margin .5s ease;
+}
+
+.ui.sidebar.relative.left + .pusher {
+  margin: 0 0 0 150px;
+}
+
+.ui.sidebar.relative.right + .pusher {
+  margin: 0 150px 0 0;
+}
+
+.ui.sidebar.relative:not(.visible) + .pusher {
+  margin: 0;
 }
