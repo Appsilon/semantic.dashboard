@@ -6,7 +6,7 @@ Authors@R: c(person("Filip", "Stachura", email = "filip@appsilon.com", role = "a
   person("Dominik", "Krzeminski", email = "dominik@appsilon.com", role = "cre"),
   person("Krystian", "Igras", role = "aut"),
   person("Michał", "Maj", role = "ctb"),
-  person(family = "Appsilon Data Science", role = "cph"))
+  person(family = "Appsilon", role = "cph"))
 Description: It offers functions for creating dashboard with Fomantic UI. 
 BugReports: https://github.com/Appsilon/semantic.dashboard/issues
 Encoding: UTF-8
