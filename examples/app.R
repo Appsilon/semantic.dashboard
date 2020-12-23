@@ -34,7 +34,7 @@ ui <- dashboardPage(
                          list(menu = "First Tab", content = "Some text..."),
                          list(menu = "Second Tab", content = plotlyOutput("mtcars_plot2"))
                        )))),
-      tabItem(tabName = "table_tab",
+      tabItem(tabName = "table_tab", fluid = FALSE,
               fluidRow(
                 valueBox("Unread Mail", 144, icon("mail"), color = "blue", width = 6, size = "small"),
                 valueBox("Spam", 20, icon("mail"), color = "red", width = 5, size = "small"),
