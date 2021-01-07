@@ -1,0 +1,105 @@
+.dashboard-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-title[class*="very thin"] {
+  width: 60px;
+}
+
+.dashboard-title.thin {
+  width: 150px;
+}
+
+.dashboard-title {
+  width: 260px;
+}
+
+.dashboard-title.wide {
+  width: 350px;
+}
+
+.dashboard-title[class*="very wide"] {
+  width: 475px;
+}
+
+/*--------------
+     Colors
+-------------- */
+
+.ui.dashboard-title {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.ui.inverted.dashboard-title {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #1B1C1D;
+}
+
+.ui.inverted.red.dashboard-title {
+  background-color: #DB2828;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.orange.dashboard-title {
+  background-color: #F2711C;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.yellow.dashboard-title {
+  background-color: #FBBD08;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.olive.dashboard-title {
+  background-color: #B5CC18;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.ui.inverted.green.dashboard-title {
+  background-color: #21BA45;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.teal.dashboard-title {
+  background-color: #00B5AD;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.blue.dashboard-title {
+  background-color: #2185D0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.violet.dashboard-title {
+  background-color: #6435C9;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.purple.dashboard-title {
+  background-color: #A333C8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.pink.dashboard-title {
+  background-color: #E03997;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.brown.dashboard-title {
+  background-color: #A5673F;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.grey.dashboard-title {
+  background-color: #767676;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.black.dashboard-title {
+  background-color: #1B1C1D;
+  color: rgba(255, 255, 255, 0.9);
+}
