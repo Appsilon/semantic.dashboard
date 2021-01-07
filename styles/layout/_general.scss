@@ -1,0 +1,18 @@
+body {
+  min-height: unset !important;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 0 10px;
+}
+
+body > .pusher {
+  flex: 1;
+  height: calc(100vh - 45px);
+  display: flex;
+}
+
+.content > .pusher {
+  height: 100%;
+  overflow: auto;
+  flex: 1;
+}
