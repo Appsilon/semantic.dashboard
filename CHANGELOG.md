@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 ### Removed
 
+## [0.2.0] - 
+### Added
+- `title` and `titleWidth` parameters for `dashboard_header`
+
 ## [0.1.5] - 2020-03-30
 ### Added
 - option for collapsible icon
