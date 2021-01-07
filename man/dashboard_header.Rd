@@ -5,26 +5,20 @@
 \alias{dashboardHeader}
 \title{Create a header of a dashboard.}
 \usage{
-dashboard_header(
-  ...,
-  logo_align = "center",
-  logo_path = "",
-  color = "",
-  inverted = FALSE,
-  disable = FALSE
-)
+dashboard_header(..., title = NULL, titleWidth = NULL,
+  logo_align = "center", logo_path = "", color = "",
+  inverted = FALSE, disable = FALSE)
 
-dashboardHeader(
-  ...,
-  logo_align = "center",
-  logo_path = "",
-  color = "",
-  inverted = FALSE,
-  disable = FALSE
-)
+dashboardHeader(..., title = NULL, titleWidth = NULL,
+  logo_align = "center", logo_path = "", color = "",
+  inverted = FALSE, disable = FALSE)
 }
 \arguments{
 \item{...}{UI elements to include within the header.}
+
+\item{title}{Dashboard title to be displayed in the upper left corner. If NULL, will not display any title field. Use "" for an empty title.}
+
+\item{titleWidth}{Title field width, one of \code{c(NULL, "very thin", "thin", "wide", "very wide")}}
 
 \item{logo_align}{Where should logo be placed. One of \code{c("left", "center")}}
 
@@ -50,13 +44,13 @@ Create a header of a dashboard with other additional UI elements.
 }}
 
 \examples{
-if(interactive()){
+if(interactive()) {
 
   library(shiny)
   library(semantic.dashboard)
 
   ui <- dashboardPage(
-    dashboardHeader(color = "blue"),
+    dashboardHeader(color = "blue", inverted = TRUE),
     dashboardSidebar(side = "left", size = "thin", color = "teal",
                      sidebarMenu(
                        menuItem(tabName = "tab1", "Tab 1"),
