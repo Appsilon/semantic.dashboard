@@ -13,3 +13,13 @@ $sidebar-positions: "left", "right";
     }
   }
 }
+
+// Fix double borders
+$opposite-sides: ("left": "right", "right": "left", "top": "bottom", "bottom": "top");
+
+@each $side, $opposide-side in $opposite-sides {
+  .ui.sidebar.#{$side} {
+    border-width: 0;
+    border-#{$opposide-side}-width: 1px;
+  }
+}
