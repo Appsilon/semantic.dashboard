@@ -9,8 +9,8 @@ get_dashboard_dependencies <- function() {
       "semantic.dashboard",
       as.character(utils::packageVersion("semantic.dashboard")),
       c(file = system.file(package = "semantic.dashboard")),
-      script = glue("semantic.dashboard.js"),
-      stylesheet = "semantic.dashboard.css"
+      script = "semantic.dashboard.min.js",
+      stylesheet = "semantic.dashboard.min.css"
     )
   )
 }
