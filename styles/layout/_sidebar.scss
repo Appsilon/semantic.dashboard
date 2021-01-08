@@ -8,7 +8,7 @@ $sidebar-positions: "left", "right";
 
 @each $position in $sidebar-positions {
   @each $size, $width in $sizes {
-    .ui.sidebar.visible.#{$position}[class*="#{$size}"] + .pusher {
+    .ui.sidebar.visible.#{$position}#{generate-size-selector($size)} + .pusher {
       margin-#{$position}: #{$width}px;
     }
   }

@@ -4,24 +4,10 @@
   align-items: center;
 }
 
-.dashboard-title[class*="very thin"] {
-  width: 60px;
-}
-
-.dashboard-title.thin {
-  width: 150px;
-}
-
-.dashboard-title {
-  width: 260px;
-}
-
-.dashboard-title.wide {
-  width: 350px;
-}
-
-.dashboard-title[class*="very wide"] {
-  width: 475px;
+@each $size, $width in $sizes {
+  .dashboard-title#{generate-size-selector($size)} {
+    width: #{$width}px;
+  }
 }
 
 /*--------------
