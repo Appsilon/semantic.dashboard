@@ -13,6 +13,12 @@ ui <- dashboardPage(
                   dropdownMenu(icon = icon("red warning sign"),
                                notificationItem("This is an important notification!", color = "red"))),
   dashboardSidebar(side = "left",
+                  size = "thin",
+                  overlay = TRUE,
+                  visible = FALSE,
+                  dim_page = FALSE,
+                  pushable = TRUE,
+                  closable = FALSE,
                    sidebarMenu(
                      menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
                      menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
@@ -33,7 +39,8 @@ ui <- dashboardPage(
                        tabs = list(
                          list(menu = "First Tab", content = "Some text..."),
                          list(menu = "Second Tab", content = plotlyOutput("mtcars_plot2"))
-                       )))),
+                       )))
+              ),
       tabItem(tabName = "table_tab", fluid = FALSE,
               fluidRow(
                 valueBox("Unread Mail", 144, icon("mail"), color = "blue", width = 6, size = "small"),

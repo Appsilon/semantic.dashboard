@@ -5,14 +5,11 @@ body {
   padding: 10px 10px 0 10px;
 }
 
-body > .pusher {
-  flex: 1;
-  height: calc(100vh - 45px);
+body > .ui.segment.pushable {
   display: flex;
 }
 
-.content > .pusher {
-  height: 100%;
+body > .ui.segment.pushable > .pusher {
   overflow: auto;
-  flex: 1;
+  width: 100%;
 }

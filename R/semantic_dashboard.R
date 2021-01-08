@@ -106,7 +106,9 @@ dashboardHeader <- dashboard_header
 #' @param disable If \code{TRUE}, don't display the sidebar.
 #' @param closable If \code{TRUE} allow close sidebar by clicking in the body. Default to \code{FALSE}
 #' @param pushable If \code{TRUE} the menu button is active. Default to \code{TRUE}
-#' @param on_top If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content. Default to \code{FALSE}
+#' @param overlay If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content. 
+#'    Relevant only for sidebar positioned on left or right. Default to \code{FALSE}
+#' @param dim_page If \code{TRUE}, page content will be darkened when sidebr is open. Default to \code{FALSE}
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -133,7 +135,7 @@ dashboardHeader <- dashboard_header
 #' }
 dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inverted = FALSE,
                               closable = FALSE, pushable = TRUE, center = FALSE, visible = TRUE,
-                              disable = FALSE, on_top = FALSE) {
+                              disable = FALSE, overlay = FALSE, dim_page = FALSE) {
   if (disable) {
     NULL
   } else {
@@ -145,12 +147,17 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
     inverted_value <- get_inverted_class(inverted)
     closable <- ifelse(closable, quote(true), quote(false))
     pushable <- ifelse(pushable, quote(true), quote(false))
-    shiny::div(closable = closable, pushable = pushable,
+    overlay <- ifelse(overlay, quote(true), quote(false))
+    dim_page <- ifelse(dim_page, quote(true), quote(false))
+
+    shiny::div(closable = closable,
                id = ..1$id,
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
-                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu overlay sidebar",
-                             ifelse(!on_top, "relative", "")),
-               ..1[-1])
+                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar"),
+               ..1[-1],
+               shiny::tags$script(glue("initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})"))
+               )
+
   }
 }
 
@@ -187,7 +194,7 @@ dashboardSidebar <- dashboard_sidebar
 #'   shinyApp(ui, server)
 #' }
 dashboard_body <- function(...){
-  shiny::div(class = "pusher content", ...)
+  shiny::div(class = "pusher", ...)
 }
 
 #' @describeIn dashboard_body Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
@@ -230,9 +237,12 @@ dashboard_page <- function(header, sidebar, body, title = "",
                            suppress_bootstrap = TRUE, theme = NULL) {
   # TODO: Remove this line when it is added to semanticPage()
   if (is.null(sidebar)) header$children[[1]] <- NULL
-  shiny.semantic::semanticPage(header, sidebar, body, get_dashboard_dependencies(), margin = "0",
-                               title = title, theme = theme, suppress_bootstrap = suppress_bootstrap,
-                               shiny::tags$script(glue("sidebar_observer('{sidebar$attribs$id}')")))
+  sidebar_and_body <- div(class="ui bottom attached segment pushable",
+                             sidebar,
+                              body)
+  shiny.semantic::semanticPage(header, sidebar_and_body, get_dashboard_dependencies(), margin = "0",
+                               title = title, theme = theme, suppress_bootstrap = suppress_bootstrap
+                               )
 }
 
 #' @describeIn dashboard_page Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})

@@ -1,19 +1,15 @@
-.ui.menu.sidebar.bottom:not(.visible) {
-  display: none;
+.ui.sidebar ~ .pusher {
+  transform: none !important;
+  transition: margin-left .5s ease, margin-right .5s ease;
 }
 
-.ui.sidebar.relative + .pusher {
-  transition: margin .5s ease;
-}
+$sidebar-sizes: ("very thin": 60,  "thin": 150, "": 260, "wide": 350, "very wide": 475);
+$sidebar-positions: "left", "right";
 
-.ui.sidebar.relative.left + .pusher {
-  margin: 0 0 0 150px;
-}
-
-.ui.sidebar.relative.right + .pusher {
-  margin: 0 150px 0 0;
-}
-
-.ui.sidebar.relative:not(.visible) + .pusher {
-  margin: 0;
+@each $position in $sidebar-positions {
+  @each $size, $width in $sidebar-sizes {
+    .ui.sidebar.visible.#{$position}[class*="#{$size}"] + .pusher {
+      margin-#{$position}: #{$width}px;
+    }
+  }
 }
