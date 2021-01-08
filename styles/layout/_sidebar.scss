@@ -3,11 +3,11 @@
   transition: margin-left .5s ease, margin-right .5s ease;
 }
 
-$sidebar-sizes: ("very thin": 60,  "thin": 150, "": 260, "wide": 350, "very wide": 475);
+// Apply margin to content
 $sidebar-positions: "left", "right";
 
 @each $position in $sidebar-positions {
-  @each $size, $width in $sidebar-sizes {
+  @each $size, $width in $sizes {
     .ui.sidebar.visible.#{$position}[class*="#{$size}"] + .pusher {
       margin-#{$position}: #{$width}px;
     }

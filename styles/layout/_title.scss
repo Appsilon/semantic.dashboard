@@ -41,54 +41,8 @@
   background-color: #1B1C1D;
 }
 
-.ui.inverted.red.dashboard-title {
-  background-color: #DB2828;
-}
-
-.ui.inverted.orange.dashboard-title {
-  background-color: #F2711C;
-}
-
-.ui.inverted.yellow.dashboard-title {
-  background-color: #FBBD08;
-}
-
-.ui.inverted.olive.dashboard-title {
-  background-color: #B5CC18;
-}
-
-.ui.inverted.green.dashboard-title {
-  background-color: #21BA45;
-}
-
-.ui.inverted.teal.dashboard-title {
-  background-color: #00B5AD;
-}
-
-.ui.inverted.blue.dashboard-title {
-  background-color: #2185D0;
-}
-
-.ui.inverted.violet.dashboard-title {
-  background-color: #6435C9;
-}
-
-.ui.inverted.purple.dashboard-title {
-  background-color: #A333C8;
-}
-
-.ui.inverted.pink.dashboard-title {
-  background-color: #E03997;
-}
-
-.ui.inverted.brown.dashboard-title {
-  background-color: #A5673F;
-}
-
-.ui.inverted.grey.dashboard-title {
-  background-color: #767676;
-}
-
-.ui.inverted.black.dashboard-title {
-  background-color: #1B1C1D;
+@each $color, $hash in $colors-map {
+  .ui.inverted.#{$color}.dashboard-title {
+    background-color: $hash;
+  }
 }
