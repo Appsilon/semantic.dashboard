@@ -49,12 +49,7 @@ dashboard_header <- function(..., title = NULL, titleWidth = NULL,
     NULL
   } else {
     verify_value_allowed("color", ALLOWED_COLORS)
-
-    checkmate::assert(
-      checkmate::check_null(titleWidth),
-      checkmate::check_choice(titleWidth, c("very thin", "thin", "wide", "very wide")),
-      combine = "or"
-    )
+    verify_value_allowed("titleWidth", ALLOWED_SIDEBAR_SIZES)
 
     inverted_value <- get_inverted_class(inverted)
     logo_align_css_style <- ifelse(logo_align == "center", "margin-left: auto;", "")
