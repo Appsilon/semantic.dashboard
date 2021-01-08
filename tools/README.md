@@ -27,5 +27,5 @@ gulp
 ```
 or
 ```
-npm run-script build
+npm run build
 ```
