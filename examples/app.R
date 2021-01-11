@@ -15,10 +15,10 @@ ui <- dashboardPage(
                   dropdownMenu(icon = icon("red warning sign"),
                                notificationItem("This is an important notification!", color = "red"))),
 
-  dashboardSidebar(side = "right",
+  dashboardSidebar(side = "left",
                   size = "thin",
-                  overlay = TRUE,
-                  visible = FALSE,
+                  overlay = FALSE,
+                  visible = TRUE,
                   dim_page = FALSE,
                   pushable = TRUE,
                   closable = FALSE,
