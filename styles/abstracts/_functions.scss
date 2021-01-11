@@ -1,5 +1,3 @@
-@use "sass:string";
-
 @function generate-size-selector($size) {
   @if $size == "" {
     @return "";
