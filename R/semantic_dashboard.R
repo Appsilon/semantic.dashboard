@@ -147,7 +147,9 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
     verify_value_allowed("color", ALLOWED_COLORS)
 
     display_type <- ifelse(center, "labeled icon", "")
+    uncover_class <- ifelse(isTRUE(visible) & isFALSE(overlay), "uncover", "")
     inverted_value <- get_inverted_class(inverted)
+
     closable <- ifelse(closable, quote(true), quote(false))
     pushable <- ifelse(pushable, quote(true), quote(false))
     overlay <- ifelse(overlay, quote(true), quote(false))
@@ -156,7 +158,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
     shiny::div(closable = closable,
                id = ..1$id,
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
-                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar"),
+                             display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar", uncover_class),
                ..1[-1],
                shiny::tags$script(glue("initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})"))
                )

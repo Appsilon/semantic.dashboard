@@ -10,6 +10,7 @@ ui <- dashboardPage(
                   dropdownMenuOutput("dropdown"),
                   title = "Appsilon",
                   titleWidth = "thin",
+                  menu_button = TRUE,
                   dropdownMenu(type = "notifications",
                                taskItem("Project progress...", 50.777, color = "red")),
                   dropdownMenu(icon = icon("red warning sign"),
@@ -18,13 +19,14 @@ ui <- dashboardPage(
   dashboardSidebar(side = "left",
                   size = "thin",
                   overlay = FALSE,
+                  pushable = TRUE,
                   visible = TRUE,
                   dim_page = FALSE,
-                  pushable = TRUE,
                   closable = FALSE,
                    sidebarMenu(
                      menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
                      menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
+
   dashboardBody(
     tabItems(
       tabItem(tabName = "plot_tab",
