@@ -18,7 +18,8 @@ NULL
 #' @param inverted If FALSE sidebar will be white and text will be colored. \
 #'   If TRUE text will be white and background will be colored. Default is \code{FALSE}.
 #' @param disable If \code{TRUE}, don't display the header.
-#' @param menu_button If \code{FALSE}, don't display the menu button. Default is \code{TRUE}.
+#' @param show_menu_button If \code{FALSE}, don't display the menu button. Default is \code{TRUE}.
+#' @param menu_button_label Text of the menu button. Default is \code{"Menu"}.
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -46,7 +47,7 @@ NULL
 dashboard_header <- function(..., title = NULL, titleWidth = "thin",
                              logo_align = "center", logo_path = "",
                              color = "", inverted = FALSE, disable = FALSE,
-                             menu_button = TRUE) {
+                             show_menu_button = TRUE, menu_button_label = "Menu") {
   if (disable) {
     NULL
   } else {
@@ -63,11 +64,11 @@ dashboard_header <- function(..., title = NULL, titleWidth = "thin",
       title_span <- NULL
     }
 
-    menu_button <- if (isTRUE(menu_button)) {
+    menu_button <- if (isTRUE(show_menu_button)) {
       shiny::tags$a(
         id = "toggle_menu", class = "item",
         shiny::tags$i(class = "sidebar icon"),
-        "Menu"
+        menu_button_label
       )
     } else {
       NULL

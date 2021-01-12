@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [0.2.0] - 
 ### Added
-- `title`, `titleWidth` and `menu_button` parameters for `dashboardHeader`
+- `title`, `titleWidth`, `show_menu_button` and `menu_button_label` parameters for `dashboardHeader`
 - `overlay` and `dim_page` parameters for `dashboardSidebar`
 - `fluid` param for `tabItem`
 

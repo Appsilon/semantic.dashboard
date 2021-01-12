@@ -1,4 +1,4 @@
-# Contributing guidelines of `semantic.dashboard`
+# Contributing Guidelines of `semantic.dashboard`
 
 ## Modifying JS
 The library's JS file `semantic.dashboard.min.js` is an output of compilation, concatenation and minification of various JS files contained in the `srcjs` directory. The compilation is made with [gulp](https://gulpjs.com/).

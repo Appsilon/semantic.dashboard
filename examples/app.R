@@ -10,7 +10,7 @@ ui <- dashboardPage(
                   dropdownMenuOutput("dropdown"),
                   title = "Appsilon",
                   titleWidth = "thin",
-                  menu_button = TRUE,
+                  show_menu_button = TRUE,
                   dropdownMenu(type = "notifications",
                                taskItem("Project progress...", 50.777, color = "red")),
                   dropdownMenu(icon = icon("red warning sign"),
