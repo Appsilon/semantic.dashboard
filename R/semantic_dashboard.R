@@ -43,7 +43,7 @@ NULL
 #'
 #'   shinyApp(ui, server)
 #' }
-dashboard_header <- function(..., title = NULL, titleWidth = NULL,
+dashboard_header <- function(..., title = NULL, titleWidth = "thin",
                              logo_align = "center", logo_path = "",
                              color = "", inverted = FALSE, disable = FALSE,
                              menu_button = TRUE) {
