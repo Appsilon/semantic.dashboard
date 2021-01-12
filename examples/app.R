@@ -29,7 +29,7 @@ ui <- dashboardPage(
 
   dashboardBody(
     tabItems(
-      tabItem(tabName = "plot_tab",
+      tabItem(tabName = "plot_tab", fluid = TRUE,
               fluidRow(
                 valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),
               fluidRow(
