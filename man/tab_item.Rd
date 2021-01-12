@@ -5,14 +5,16 @@
 \alias{tabItem}
 \title{Create a tab.}
 \usage{
-tab_item(tabName, ...)
+tab_item(tabName, ..., fluid = TRUE)
 
-tabItem(tabName, ...)
+tabItem(tabName, ..., fluid = TRUE)
 }
 \arguments{
 \item{tabName}{Id of the tab.}
 
 \item{...}{UI elements to include within the tab.}
+
+\item{fluid}{Controls whether tab width should be 100% (TRUE) or limited by Foomantic UI breakpoints (FALSE).}
 }
 \value{
 A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

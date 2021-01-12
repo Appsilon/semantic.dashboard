@@ -5,13 +5,29 @@
 \alias{dashboardHeader}
 \title{Create a header of a dashboard.}
 \usage{
-dashboard_header(..., title = NULL, titleWidth = NULL,
-  logo_align = "center", logo_path = "", color = "",
-  inverted = FALSE, disable = FALSE)
+dashboard_header(
+  ...,
+  title = NULL,
+  titleWidth = "thin",
+  logo_align = "center",
+  logo_path = "",
+  color = "",
+  inverted = FALSE,
+  disable = FALSE,
+  menu_button = TRUE
+)
 
-dashboardHeader(..., title = NULL, titleWidth = NULL,
-  logo_align = "center", logo_path = "", color = "",
-  inverted = FALSE, disable = FALSE)
+dashboardHeader(
+  ...,
+  title = NULL,
+  titleWidth = "thin",
+  logo_align = "center",
+  logo_path = "",
+  color = "",
+  inverted = FALSE,
+  disable = FALSE,
+  menu_button = TRUE
+)
 }
 \arguments{
 \item{...}{UI elements to include within the header.}
@@ -31,6 +47,8 @@ One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", 
 If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
 
 \item{disable}{If \code{TRUE}, don't display the header.}
+
+\item{menu_button}{If \code{FALSE}, don't display the menu button. Default is \code{TRUE}.}
 }
 \value{
 A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
