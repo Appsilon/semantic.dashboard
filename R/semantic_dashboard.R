@@ -18,6 +18,7 @@ NULL
 #' @param inverted If FALSE sidebar will be white and text will be colored. \
 #'   If TRUE text will be white and background will be colored. Default is \code{FALSE}.
 #' @param disable If \code{TRUE}, don't display the header.
+#' @param menu_button If \code{FALSE}, don't display the menu button. Default is \code{TRUE}.
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -44,7 +45,8 @@ NULL
 #' }
 dashboard_header <- function(..., title = NULL, titleWidth = NULL,
                              logo_align = "center", logo_path = "",
-                             color = "", inverted = FALSE, disable = FALSE) {
+                             color = "", inverted = FALSE, disable = FALSE,
+                             menu_button = TRUE) {
   if (disable) {
     NULL
   } else {
@@ -61,14 +63,20 @@ dashboard_header <- function(..., title = NULL, titleWidth = NULL,
       title_span <- NULL
     }
 
-    shiny::div(
-      class = paste("ui top attached", inverted_value, color, " menu"),
-      title_span,
+    menu_button <- if (isTRUE(menu_button)) {
       shiny::tags$a(
         id = "toggle_menu", class = "item",
         shiny::tags$i(class = "sidebar icon"),
         "Menu"
-      ),
+      )
+    } else {
+      NULL
+    }
+
+    shiny::div(
+      class = paste("ui top attached", inverted_value, color, " menu"),
+      title_span,
+      menu_button,
       if (logo_path != "") {
         shiny::tags$img(
           style = paste("height: 30px; margin: 5px;", logo_align_css_style),
