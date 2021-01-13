@@ -18,7 +18,7 @@ body.no-margin {
   }
 }
 
-body > .ui.segment.pushable {
+body > .ui.segment.pushable.attached {
   display: flex;
   overflow: hidden;
   margin-bottom: 0;

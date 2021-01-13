@@ -1,7 +1,7 @@
 library(shiny)
 library(semantic.dashboard)
 
-ui <- dashboardPage(
+ui <- dashboardPage(margin = TRUE,
   dashboardHeader(title = "Sample app",
                   titleWidth = "thin",
                   logo_path = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",

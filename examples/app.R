@@ -5,7 +5,7 @@ library(plotly)
 library(DT)
 
 ui <- dashboardPage(
-  margin = FALSE,
+  margin = TRUE,
   dashboardHeader(logo_align = "center",
                   logo_path = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",
                   dropdownMenuOutput("dropdown"),
