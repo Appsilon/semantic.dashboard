@@ -175,7 +175,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
 
     shiny::div(closable = closable,
                id = ..1$id,
-               class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
+               class = paste("dashboard-sidebar ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                              display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar", uncover_class,
                              overlay_class, class),
                ..1[-1],
@@ -219,7 +219,7 @@ dashboardSidebar <- dashboard_sidebar
 #'   shinyApp(ui, server)
 #' }
 dashboard_body <- function(..., class = ""){
-  shiny::div(class = paste("pusher", class), ...)
+  shiny::div(class = paste("pusher dashboard-body", class), ...)
 }
 
 #' @describeIn dashboard_body Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
@@ -271,7 +271,7 @@ dashboard_page <- function(header, sidebar, body, title = "",
                               body)
 
   margin_class <- ifelse(isFALSE(margin), "no-margin", "")
-  class <- paste(margin_class, class)
+  class <- paste("dashboard-page", margin_class, class)
   shiny.semantic::semanticPage(header, sidebar_and_body, get_dashboard_dependencies(), margin = "0",
                                title = title, theme = theme, suppress_bootstrap = suppress_bootstrap,
                                class = class)
