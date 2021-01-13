@@ -27,30 +27,57 @@ body > .ui.segment.pushable > .pusher {
   width: 100%;
 }
 
-.dashboard-title {
+.ui.menu.dashboard-title {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: none;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: transparent;
 }
 
 .dashboard-title[class*='very thin'] {
   width: 60px;
 }
 
+body.no-margin .dashboard-title[class*='very thin'] {
+  width: calc(60px - 1px);
+}
+
 .dashboard-title.thin {
   width: 150px;
+}
+
+body.no-margin .dashboard-title.thin {
+  width: calc(150px - 1px);
 }
 
 .dashboard-title {
   width: 260px;
 }
 
+body.no-margin .dashboard-title {
+  width: calc(260px - 1px);
+}
+
 .dashboard-title.wide {
   width: 350px;
 }
 
+body.no-margin .dashboard-title.wide {
+  width: calc(350px - 1px);
+}
+
 .dashboard-title[class*='very wide'] {
   width: 475px;
+}
+
+body.no-margin .dashboard-title[class*='very wide'] {
+  width: calc(475px - 1px);
 }
 
 /*--------------
