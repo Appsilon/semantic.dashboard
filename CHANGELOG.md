@@ -15,6 +15,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - `overlay` and `dim_page` parameters for `dashboardSidebar`
 - `margin` param for `dashboardPage`
 - `fluid` param for `tabItem`
+- `class` param for `dashboardPage`, `dashboardBody`, `dashboardSidebar` and `dashboardHeader` 
+- `dashboardPage`, `dashboardBody`, `dashboardSidebar` and `dashboardHeader` have now built-in CSS classes of syntax `dashboard-<component>` e.g. `dashboard-page`. Thanks to that it's easy to write selectors for DOM nodes related to them
 
 ### Changed
 - Main content will shrink, not move when sidebar is opened and `overlay = FALSE`
