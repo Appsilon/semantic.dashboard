@@ -148,6 +148,28 @@ body.no-margin .dashboard-title[class*='very wide'] {
   background-color: #1B1C1D;
 }
 
+.ui.top.menu.dashboard-header {
+  justify-content: space-between;
+}
+
+.ui.top.menu.dashboard-header h1, .ui.top.menu.dashboard-header h2, .ui.top.menu.dashboard-header h3, .ui.top.menu.dashboard-header h4, .ui.top.menu.dashboard-header h5, .ui.top.menu.dashboard-header h6 {
+  margin: 0;
+}
+
+.ui.top.menu.dashboard-header:after {
+  content: none;
+}
+
+.ui.top.menu.dashboard-header .logo {
+  height: 30px;
+  margin: 5px;
+}
+
+.ui.top.menu.dashboard-header .header-part {
+  display: flex;
+  align-items: center;
+}
+
 .ui.sidebar ~ .pusher {
   transform: none !important;
   transition: margin-left .5s ease, margin-right .5s ease;

@@ -6,6 +6,7 @@ APP_TO_RUN <- "examples"
 # APP_TO_RUN <- "examples/minimal/app_sidebar_condition_panel.R"
 # APP_TO_RUN <- "examples/minimal/app_no_sidebar.R"
 # APP_TO_RUN <- "examples/minimal/app_no_header.R"
+# APP_TO_RUN <- "examples/minimal/app_header_elements.R"
 # APP_TO_RUN <- "examples/themes/app-darktheme.R"
 
 # Generate CSS
