@@ -2,12 +2,26 @@ body {
   min-height: unset !important;
   display: flex;
   flex-direction: column;
-  padding: 10px 10px 0 10px;
+
+  &:not(.no-margin) {
+    padding: 10px;
+  }
+}
+
+body.no-margin {
+  & > .ui.top.menu {
+    border-top: 0
+  }
+
+  & > .ui.segment.pushable {
+    border: 0;
+  }
 }
 
 body > .ui.segment.pushable {
   display: flex;
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 body > .ui.segment.pushable > .pusher {

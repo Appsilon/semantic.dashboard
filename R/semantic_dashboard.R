@@ -215,6 +215,7 @@ dashboardBody <- dashboard_body
 #' @param sidebar Sidebar of a dashboard.
 #' @param body Body of a dashboard.
 #' @param title Title of a dashboard.
+#' @param margin If \code{TRUE}, margin to be applied to the whole dashboard. Defaults to \code{TRUE}.
 #' @param theme Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
@@ -242,15 +243,18 @@ dashboardBody <- dashboard_body
 #'   shinyApp(ui, server)
 #' }
 dashboard_page <- function(header, sidebar, body, title = "",
-                           suppress_bootstrap = TRUE, theme = NULL) {
+                           suppress_bootstrap = TRUE, theme = NULL,
+                           margin = TRUE) {
   # TODO: Remove this line when it is added to semanticPage()
   if (is.null(sidebar)) header$children[[1]] <- NULL
   sidebar_and_body <- div(class="ui bottom attached segment pushable",
                              sidebar,
                               body)
+
+  class <- ifelse(isFALSE(margin), "no-margin", "")
   shiny.semantic::semanticPage(header, sidebar_and_body, get_dashboard_dependencies(), margin = "0",
-                               title = title, theme = theme, suppress_bootstrap = suppress_bootstrap
-                               )
+                               title = title, theme = theme, suppress_bootstrap = suppress_bootstrap,
+                               class = class)
 }
 
 #' @describeIn dashboard_page Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
