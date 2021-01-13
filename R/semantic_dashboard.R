@@ -24,6 +24,7 @@ NULL
 #' @param disable If \code{TRUE}, don't display the header.
 #' @param show_menu_button If \code{FALSE}, don't display the menu button. Default is \code{TRUE}.
 #' @param menu_button_label Text of the menu button. Default is \code{"Menu"}.
+#' @param class CSS class to be applied to the container of \code{dashboardHeader}.
 #' @return A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -52,7 +53,8 @@ dashboard_header <- function(..., left = NULL, center = NULL, right = NULL,
                              title = NULL, titleWidth = "thin",
                              logo_align = "center", logo_path = "",
                              color = "", inverted = FALSE, disable = FALSE,
-                             show_menu_button = TRUE, menu_button_label = "Menu") {
+                             show_menu_button = TRUE, menu_button_label = "Menu",
+                             class = "") {
   if (disable) {
     NULL
   } else {
@@ -96,7 +98,7 @@ dashboard_header <- function(..., left = NULL, center = NULL, right = NULL,
     right_content <- div(class="header-part header-part__right", logo_right, right, ...)
 
     shiny::div(
-      class = paste("ui top attached dashboard-header", inverted_value, color, " menu"),
+      class = paste("ui top attached dashboard-header", inverted_value, color, "menu", class),
       left_content,
       center_content,
       right_content
@@ -126,6 +128,7 @@ dashboardHeader <- dashboard_header
 #' @param overlay If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content. 
 #'    Relevant only for sidebar positioned on left or right. Default to \code{FALSE}
 #' @param dim_page If \code{TRUE}, page content will be darkened when sidebr is open. Default to \code{FALSE}
+#' @param class CSS class to be applied to the container of \code{dashboardSidebar}.
 #' @return A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -152,7 +155,7 @@ dashboardHeader <- dashboard_header
 #' }
 dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inverted = FALSE,
                               closable = FALSE, pushable = TRUE, center = FALSE, visible = TRUE,
-                              disable = FALSE, overlay = FALSE, dim_page = FALSE) {
+                              disable = FALSE, overlay = FALSE, dim_page = FALSE, class = "") {
   if (disable) {
     NULL
   } else {
@@ -174,7 +177,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
                id = ..1$id,
                class = paste("ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                              display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar", uncover_class,
-                             overlay_class),
+                             overlay_class, class),
                ..1[-1],
                shiny::tags$script(glue("initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})"))
                )
@@ -190,6 +193,7 @@ dashboardSidebar <- dashboard_sidebar
 #' Create a body of a dashboard.
 #' @description Create a body of a dashboard with tabs and other additional UI elements.
 #' @param ... UI elements to include within the body.
+#' @param class CSS class to be applied to the container of \code{dashboardBody}. Note it's not the \code{<body>} tag.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 #' @export
 #' @examples
@@ -214,8 +218,8 @@ dashboardSidebar <- dashboard_sidebar
 #'
 #'   shinyApp(ui, server)
 #' }
-dashboard_body <- function(...){
-  shiny::div(class = "pusher", ...)
+dashboard_body <- function(..., class = ""){
+  shiny::div(class = paste("pusher", class), ...)
 }
 
 #' @describeIn dashboard_body Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
@@ -230,6 +234,8 @@ dashboardBody <- dashboard_body
 #' @param title Title of a dashboard.
 #' @param margin If \code{TRUE}, margin to be applied to the whole dashboard. Defaults to \code{TRUE}.
 #' @param theme Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.
+#' @param class CSS class to be applied to the page container (\code{<body>} tag).
+#' @param sidebar_body_class CSS class to be applied to the \code{div} containing \code{dashboardSidebar} and \code{dashboardBody}.
 #' @param suppress_bootstrap There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.
 #' @return Dashboard.
 #' @export
@@ -257,14 +263,15 @@ dashboardBody <- dashboard_body
 #' }
 dashboard_page <- function(header, sidebar, body, title = "",
                            suppress_bootstrap = TRUE, theme = NULL,
-                           margin = TRUE) {
+                           margin = TRUE, class = "", sidebar_body_class = "") {
   # TODO: Remove this line when it is added to semanticPage()
   if (is.null(sidebar)) header$children[[1]] <- NULL
-  sidebar_and_body <- div(class="ui bottom attached segment pushable",
+  sidebar_and_body <- div(class = paste("ui bottom attached segment pushable", sidebar_body_class),
                              sidebar,
                               body)
 
-  class <- ifelse(isFALSE(margin), "no-margin", "")
+  margin_class <- ifelse(isFALSE(margin), "no-margin", "")
+  class <- paste(margin_class, class)
   shiny.semantic::semanticPage(header, sidebar_and_body, get_dashboard_dependencies(), margin = "0",
                                title = title, theme = theme, suppress_bootstrap = suppress_bootstrap,
                                class = class)

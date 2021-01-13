@@ -18,7 +18,8 @@ dashboard_header(
   inverted = FALSE,
   disable = FALSE,
   show_menu_button = TRUE,
-  menu_button_label = "Menu"
+  menu_button_label = "Menu",
+  class = ""
 )
 
 dashboardHeader(
@@ -34,7 +35,8 @@ dashboardHeader(
   inverted = FALSE,
   disable = FALSE,
   show_menu_button = TRUE,
-  menu_button_label = "Menu"
+  menu_button_label = "Menu",
+  class = ""
 )
 }
 \arguments{
@@ -65,6 +67,8 @@ If TRUE text will be white and background will be colored. Default is \code{FALS
 \item{show_menu_button}{If \code{FALSE}, don't display the menu button. Default is \code{TRUE}.}
 
 \item{menu_button_label}{Text of the menu button. Default is \code{"Menu"}.}
+
+\item{class}{CSS class to be applied to the container of \code{dashboardHeader}.}
 }
 \value{
 A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}

@@ -12,7 +12,9 @@ dashboard_page(
   title = "",
   suppress_bootstrap = TRUE,
   theme = NULL,
-  margin = TRUE
+  margin = TRUE,
+  class = "",
+  sidebar_body_class = ""
 )
 
 dashboardPage(
@@ -22,7 +24,9 @@ dashboardPage(
   title = "",
   suppress_bootstrap = TRUE,
   theme = NULL,
-  margin = TRUE
+  margin = TRUE,
+  class = "",
+  sidebar_body_class = ""
 )
 }
 \arguments{
@@ -39,6 +43,10 @@ dashboardPage(
 \item{theme}{Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.}
 
 \item{margin}{If \code{TRUE}, margin to be applied to the whole dashboard. Defaults to \code{TRUE}.}
+
+\item{class}{CSS class to be applied to the page container (\code{<body>} tag).}
+
+\item{sidebar_body_class}{CSS class to be applied to the \code{div} containing \code{dashboardSidebar} and \code{dashboardBody}.}
 }
 \value{
 Dashboard.
