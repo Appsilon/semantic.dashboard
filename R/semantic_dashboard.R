@@ -156,7 +156,7 @@ dashboardHeader <- dashboard_header
 dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inverted = FALSE,
                               closable = FALSE, pushable = TRUE, center = FALSE, visible = TRUE,
                               disable = FALSE, overlay = FALSE, dim_page = FALSE, class = "") {
-  if (disable) {
+  if (disable || length(list(...)) < 1) {
     NULL
   } else {
     verify_value_allowed("side", ALLOWED_SIDEBAR_SIDES)
