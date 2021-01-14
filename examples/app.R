@@ -55,7 +55,7 @@ ui <- dashboardPage(
               ),
               fluidRow(
                 box(title = "Classic box", color = "red", ribbon = FALSE,
-                    title_side = "top left", width = 14,
+                    title_side = "top left", width = 16,
                     dataTableOutput("mtcars_table")
                 )))))
 )
