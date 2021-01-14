@@ -60,7 +60,7 @@ If TRUE text will be white and background will be colored. Default is \code{FALS
 
 \item{disable}{If \code{TRUE}, don't display the sidebar.}
 
-\item{overlay}{If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content. 
+\item{overlay}{If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content.
 Relevant only for sidebar positioned on left or right. Default to \code{FALSE}}
 
 \item{dim_page}{If \code{TRUE}, page content will be darkened when sidebr is open. Default to \code{FALSE}}
