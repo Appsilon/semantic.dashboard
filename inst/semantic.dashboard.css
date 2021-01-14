@@ -170,6 +170,10 @@ body.no-margin .dashboard-title[class*='very wide'] {
   align-items: center;
 }
 
+body.no-margin .ui.top.menu.dashboard-header {
+  border-radius: 0;
+}
+
 .ui.sidebar ~ .pusher {
   transform: none !important;
   transition: margin-left .5s ease, margin-right .5s ease;

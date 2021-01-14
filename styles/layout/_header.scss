@@ -19,3 +19,7 @@
     align-items: center;
   }
 }
+
+body.no-margin .ui.top.menu.dashboard-header {
+  border-radius: 0;
+}
