@@ -27,6 +27,16 @@ body > .ui.segment.pushable > .pusher {
   width: 100%;
 }
 
+.dashboard-body.ui.grid {
+  margin: 0;
+}
+
+.dashboard-body.ui.grid .tab-content {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
 .ui.menu.dashboard-title {
   display: flex;
   justify-content: center;

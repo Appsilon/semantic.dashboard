@@ -219,7 +219,7 @@ dashboardSidebar <- dashboard_sidebar
 #'   shinyApp(ui, server)
 #' }
 dashboard_body <- function(..., class = ""){
-  shiny::div(class = paste("pusher dashboard-body", class), ...)
+  shiny::div(class = paste("ui grid pusher dashboard-body", class), ...)
 }
 
 #' @describeIn dashboard_body Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
