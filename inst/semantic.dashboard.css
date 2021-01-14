@@ -40,14 +40,6 @@ body > .ui.segment.pushable > .pusher {
   background: transparent;
 }
 
-.dashboard-title[class*='very thin'] {
-  width: 60px;
-}
-
-body.no-margin .dashboard-title[class*='very thin'] {
-  width: calc(60px - 1px);
-}
-
 .dashboard-title.thin {
   width: 150px;
 }
@@ -70,6 +62,14 @@ body.no-margin .dashboard-title {
 
 body.no-margin .dashboard-title.wide {
   width: calc(350px - 1px);
+}
+
+.dashboard-title[class*='very thin'] {
+  width: 60px;
+}
+
+body.no-margin .dashboard-title[class*='very thin'] {
+  width: calc(60px - 1px);
 }
 
 .dashboard-title[class*='very wide'] {
@@ -179,11 +179,6 @@ body.no-margin .ui.top.menu.dashboard-header {
   transition: margin-left .5s ease, margin-right .5s ease;
 }
 
-.ui.sidebar.visible:not(.pushable):not(.overlay).left[class*='very thin'] + .pusher,
-.ui.sidebar.visible.uncover.pushable.left[class*='very thin'] + .pusher {
-  margin-left: 60px;
-}
-
 .ui.sidebar.visible:not(.pushable):not(.overlay).left.thin + .pusher,
 .ui.sidebar.visible.uncover.pushable.left.thin + .pusher {
   margin-left: 150px;
@@ -199,14 +194,14 @@ body.no-margin .ui.top.menu.dashboard-header {
   margin-left: 350px;
 }
 
+.ui.sidebar.visible:not(.pushable):not(.overlay).left[class*='very thin'] + .pusher,
+.ui.sidebar.visible.uncover.pushable.left[class*='very thin'] + .pusher {
+  margin-left: 60px;
+}
+
 .ui.sidebar.visible:not(.pushable):not(.overlay).left[class*='very wide'] + .pusher,
 .ui.sidebar.visible.uncover.pushable.left[class*='very wide'] + .pusher {
   margin-left: 475px;
-}
-
-.ui.sidebar.visible:not(.pushable):not(.overlay).right[class*='very thin'] + .pusher,
-.ui.sidebar.visible.uncover.pushable.right[class*='very thin'] + .pusher {
-  margin-right: 60px;
 }
 
 .ui.sidebar.visible:not(.pushable):not(.overlay).right.thin + .pusher,
@@ -222,6 +217,11 @@ body.no-margin .ui.top.menu.dashboard-header {
 .ui.sidebar.visible:not(.pushable):not(.overlay).right.wide + .pusher,
 .ui.sidebar.visible.uncover.pushable.right.wide + .pusher {
   margin-right: 350px;
+}
+
+.ui.sidebar.visible:not(.pushable):not(.overlay).right[class*='very thin'] + .pusher,
+.ui.sidebar.visible.uncover.pushable.right[class*='very thin'] + .pusher {
+  margin-right: 60px;
 }
 
 .ui.sidebar.visible:not(.pushable):not(.overlay).right[class*='very wide'] + .pusher,
