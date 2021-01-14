@@ -1,4 +1,5 @@
 APP_TO_RUN <- "examples"
+# APP_TO_RUN <- "examples/from_readme.R"
 # APP_TO_RUN <- "examples/bus"
 # APP_TO_RUN <- "examples/crandash"
 # APP_TO_RUN <- "examples/sales"
