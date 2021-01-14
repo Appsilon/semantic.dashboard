@@ -3,7 +3,7 @@
 ## Modifying JS
 The library's JS file `semantic.dashboard.min.js` is an output of compilation, concatenation and minification of various JS files contained in the `srcjs` directory. The compilation is made with [gulp](https://gulpjs.com/).
 
-If you want to add some JS to the library, simply create or modify one of the files in the `srcjs` directory and then go to `tool` directory and tun `gulp` command. 
+If you want to add some JS to the library, simply create or modify one of the files in the `srcjs` directory and then go to `tool` directory and run `gulp` command. 
 
 Keep in mind that in order to run this command need to have gulp-cli (`npm i --global gulp-cli`) and the dependencies in `tools` directory (`npm i`) installed.
 

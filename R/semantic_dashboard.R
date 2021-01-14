@@ -236,7 +236,7 @@ dashboardBody <- dashboard_body
 #' Defaults to \code{TRUE}.
 #' @param theme Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.
 #' @param class CSS class to be applied to the page container (\code{<body>} tag).
-#' @param sidebar_body_class CSS class to be applied to the \code{div} containing
+#' @param sidebar_and_body_container_class CSS class to be applied to the \code{div} containing
 #' \code{dashboardSidebar} and \code{dashboardBody}.
 #' @param suppress_bootstrap There are some conflicts in CSS styles between
 #' FomanticUI and Bootstrap. For the time being it's better to suppress Bootstrap.
@@ -267,10 +267,10 @@ dashboardBody <- dashboard_body
 #' }
 dashboard_page <- function(header, sidebar, body, title = "",
                            suppress_bootstrap = TRUE, theme = NULL,
-                           margin = TRUE, class = "", sidebar_body_class = "") {
+                           margin = TRUE, class = "", sidebar_and_body_container_class = "") {
   # TODO: Remove this line when it is added to semanticPage()
   if (is.null(sidebar)) header$children[[1]] <- NULL
-  sidebar_and_body <- div(class = paste("ui bottom attached segment pushable", sidebar_body_class),
+  sidebar_and_body <- div(class = paste("ui bottom attached segment pushable", sidebar_and_body_container_class),
                              sidebar,
                               body)
 

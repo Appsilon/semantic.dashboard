@@ -14,7 +14,7 @@ dashboard_page(
   theme = NULL,
   margin = TRUE,
   class = "",
-  sidebar_body_class = ""
+  sidebar_and_body_container_class = ""
 )
 
 dashboardPage(
@@ -26,7 +26,7 @@ dashboardPage(
   theme = NULL,
   margin = TRUE,
   class = "",
-  sidebar_body_class = ""
+  sidebar_and_body_container_class = ""
 )
 }
 \arguments{
@@ -49,7 +49,7 @@ Defaults to \code{TRUE}.}
 
 \item{class}{CSS class to be applied to the page container (\code{<body>} tag).}
 
-\item{sidebar_body_class}{CSS class to be applied to the \code{div} containing
+\item{sidebar_and_body_container_class}{CSS class to be applied to the \code{div} containing
 \code{dashboardSidebar} and \code{dashboardBody}.}
 }
 \value{
