@@ -35,9 +35,9 @@ Create a valueBox with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{valueBox}: Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
+\item \code{valueBox}: Create a valueBox (alias for \code{value_box})
 
-\item \code{infoBox}: Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
+\item \code{infoBox}: Create a valueBox (alias for \code{value_box})
 }}
 
 \examples{

@@ -10,13 +10,14 @@ semantic.dashboard
 [![cranlogs](https://cranlogs.r-pkg.org/badges/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
 [![total](https://cranlogs.r-pkg.org/badges/grand-total/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
 
-Dashboard with Semantic UI Support for Shiny
+Dashboard with Semantic UI Support for Shiny.
 
 Are you fed up with ordinary `shinydashboard` look?
 
 Give your app a new fresh look with [Fomantic UI](https://fomantic-ui.com/) support.
 
 ``` r
+library(shiny)
 library(shinydashboard) # <-- Change this line to: library(semantic.dashboard)
 
 ui <- dashboardPage(
@@ -50,7 +51,7 @@ shinyApp(ui, server)
 
 ![Semantic dashboards comparison](man/figures/compare.png)
 
-`semantic.dashboard` offers basic functions for creating dashboard with Fomantic UI but not only.
+`semantic.dashboard` offers basic functions for creating dashboard with Fomantic UI.
 
 How to install?
 ---------------
@@ -79,7 +80,8 @@ You can check [documentation](https://appsilon.github.io/semantic.dashboard/) fo
 How to contribute?
 ------------------
 
-If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix.
+If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix. Please check `development/README.md` first! It contains useful
+information that will help you run your dev environment for `semantic.dashboard`.
 
 Changes in documentation
 ------------------------
