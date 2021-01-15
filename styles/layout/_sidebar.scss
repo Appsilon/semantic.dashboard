@@ -1,0 +1,26 @@
+.ui.sidebar ~ .pusher {
+  transform: none !important;
+  transition: margin-left .5s ease, margin-right .5s ease;
+}
+
+// Apply margin to content
+$sidebar-positions: "left", "right";
+
+@each $position in $sidebar-positions {
+  @each $size, $width in $sizes {
+    .ui.sidebar.visible:not(.pushable):not(.overlay).#{$position}#{generate-size-selector($size)} + .pusher,
+    .ui.sidebar.visible.uncover.pushable.#{$position}#{generate-size-selector($size)} + .pusher {
+      margin-#{$position}: #{$width}px;
+    }
+  }
+}
+
+// Fix double borders
+$opposite-sides: ("left": "right", "right": "left", "top": "bottom", "bottom": "top");
+
+@each $side, $opposide-side in $opposite-sides {
+  .ui.sidebar.#{$side} {
+    border-width: 0;
+    border-#{$opposide-side}-width: 1px;
+  }
+}

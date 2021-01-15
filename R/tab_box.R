@@ -2,9 +2,12 @@
 #' @description Create a tab box with additional UI elements.
 #' @param tabs Tabs to include within the box.
 #' @param title Label of the box.
-#' @param color Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param color Color of the box. One of \code{c("", "red", "orange", "yellow",
+#' "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @param ribbon Should label be presented as ribbon.
-#' @param title_side Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}
+#' @param title_side Side of a label. One of \code{c("top", "bottom", "top left",
+#' "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of
+#' \code{c("top left", "top right")} if \code{ribbon = TRUE}
 #' @param collapsible Should minimize button be added to label.
 #' @param width Width of the box.
 #' @param id ID of the box.

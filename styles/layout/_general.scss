@@ -1,0 +1,30 @@
+body {
+  min-height: unset !important;
+  display: flex;
+  flex-direction: column;
+
+  &:not(.no-margin) {
+    padding: 10px;
+  }
+}
+
+body.no-margin {
+  & > .ui.top.menu {
+    border-top: 0
+  }
+
+  & > .ui.segment.pushable {
+    border: 0;
+  }
+}
+
+body > .ui.segment.pushable.attached {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+body > .ui.segment.pushable > .pusher {
+  overflow: auto;
+  width: 100%;
+}

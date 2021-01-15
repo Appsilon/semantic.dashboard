@@ -5,12 +5,14 @@
 \alias{dashboardBody}
 \title{Create a body of a dashboard.}
 \usage{
-dashboard_body(...)
+dashboard_body(..., class = "")
 
-dashboardBody(...)
+dashboardBody(..., class = "")
 }
 \arguments{
 \item{...}{UI elements to include within the body.}
+
+\item{class}{CSS class to be applied to the container of \code{dashboardBody}. Note it's not the \code{<body>} tag.}
 }
 \value{
 A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}

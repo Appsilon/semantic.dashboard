@@ -15,3 +15,4 @@ examples
 development
 ^tools$
 ^srcjs$
+^styles$

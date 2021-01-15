@@ -15,7 +15,10 @@ dashboard_sidebar(
   pushable = TRUE,
   center = FALSE,
   visible = TRUE,
-  disable = FALSE
+  disable = FALSE,
+  overlay = FALSE,
+  dim_page = FALSE,
+  class = ""
 )
 
 dashboardSidebar(
@@ -28,7 +31,10 @@ dashboardSidebar(
   pushable = TRUE,
   center = FALSE,
   visible = TRUE,
-  disable = FALSE
+  disable = FALSE,
+  overlay = FALSE,
+  dim_page = FALSE,
+  class = ""
 )
 }
 \arguments{
@@ -53,6 +59,13 @@ If TRUE text will be white and background will be colored. Default is \code{FALS
 \item{visible}{Should sidebar be visible on start. Default to \code{TRUE}}
 
 \item{disable}{If \code{TRUE}, don't display the sidebar.}
+
+\item{overlay}{If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content.
+Relevant only for sidebar positioned on left or right. Default to \code{FALSE}}
+
+\item{dim_page}{If \code{TRUE}, page content will be darkened when sidebr is open. Default to \code{FALSE}}
+
+\item{class}{CSS class to be applied to the container of \code{dashboardSidebar}.}
 }
 \value{
 A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}

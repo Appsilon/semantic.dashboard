@@ -19,11 +19,13 @@ infoBox(subtitle, value, icon = NULL, color = "blue", width = 5, size = "")
 
 \item{icon}{Icon of the valueBox.}
 
-\item{color}{Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the valueBox. One of \code{c("", "red", "orange", "yellow",
+"olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
 \item{width}{Width of the valueBox.}
 
-\item{size}{Size of value. One of \code{c("mini", "tiny", "small", "", "large", "huge")}. Default is "".}
+\item{size}{Size of value. One of \code{c("mini", "tiny", "small", "", "large", "huge")}.
+Default is "".}
 }
 \value{
 A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

@@ -11,7 +11,10 @@ dashboard_page(
   body,
   title = "",
   suppress_bootstrap = TRUE,
-  theme = NULL
+  theme = NULL,
+  margin = TRUE,
+  class = "",
+  sidebar_and_body_container_class = ""
 )
 
 dashboardPage(
@@ -20,7 +23,10 @@ dashboardPage(
   body,
   title = "",
   suppress_bootstrap = TRUE,
-  theme = NULL
+  theme = NULL,
+  margin = TRUE,
+  class = "",
+  sidebar_and_body_container_class = ""
 )
 }
 \arguments{
@@ -32,9 +38,19 @@ dashboardPage(
 
 \item{title}{Title of a dashboard.}
 
-\item{suppress_bootstrap}{There are some conflicts in CSS styles between SemanticUI and Bootstrap. For the time being it's better to suppress Bootstrap. If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
+\item{suppress_bootstrap}{There are some conflicts in CSS styles between
+FomanticUI and Bootstrap. For the time being it's better to suppress Bootstrap.
+If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
 
 \item{theme}{Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.}
+
+\item{margin}{If \code{TRUE}, margin to be applied to the whole dashboard.
+Defaults to \code{TRUE}.}
+
+\item{class}{CSS class to be applied to the page container (\code{<body>} tag).}
+
+\item{sidebar_and_body_container_class}{CSS class to be applied to the \code{div} containing
+\code{dashboardSidebar} and \code{dashboardBody}.}
 }
 \value{
 Dashboard.

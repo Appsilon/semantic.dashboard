@@ -1,0 +1,11 @@
+.dashboard-body {
+  &.ui.grid {
+    margin: 0;
+
+    .tab-content {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+}

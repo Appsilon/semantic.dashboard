@@ -3,9 +3,11 @@
 #' @param subtitle Label of the valueBox.
 #' @param value Value of the valueBox.
 #' @param icon Icon of the valueBox.
-#' @param  color Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param  color Color of the valueBox. One of \code{c("", "red", "orange", "yellow",
+#' "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
 #' @param width Width of the valueBox.
-#' @param size Size of value. One of \code{c("mini", "tiny", "small", "", "large", "huge")}. Default is "".
+#' @param size Size of value. One of \code{c("mini", "tiny", "small", "", "large", "huge")}.
+#' Default is "".
 #' @return A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples

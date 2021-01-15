@@ -5,16 +5,48 @@
 \alias{dashboardHeader}
 \title{Create a header of a dashboard.}
 \usage{
-dashboard_header(..., title = NULL, titleWidth = NULL,
-  logo_align = "center", logo_path = "", color = "",
-  inverted = FALSE, disable = FALSE)
+dashboard_header(
+  ...,
+  left = NULL,
+  center = NULL,
+  right = NULL,
+  title = NULL,
+  titleWidth = "thin",
+  logo_align = "center",
+  logo_path = "",
+  color = "",
+  inverted = FALSE,
+  disable = FALSE,
+  show_menu_button = TRUE,
+  menu_button_label = "Menu",
+  class = ""
+)
 
-dashboardHeader(..., title = NULL, titleWidth = NULL,
-  logo_align = "center", logo_path = "", color = "",
-  inverted = FALSE, disable = FALSE)
+dashboardHeader(
+  ...,
+  left = NULL,
+  center = NULL,
+  right = NULL,
+  title = NULL,
+  titleWidth = "thin",
+  logo_align = "center",
+  logo_path = "",
+  color = "",
+  inverted = FALSE,
+  disable = FALSE,
+  show_menu_button = TRUE,
+  menu_button_label = "Menu",
+  class = ""
+)
 }
 \arguments{
-\item{...}{UI elements to include within the header.}
+\item{...}{UI elements to include within the header. They will be displayed on the right side.}
+
+\item{left}{UI element to put on the left of the header. It will be placed after (to the right) the title and menu button (if they exist).}
+
+\item{center}{UI element to put in the center of the header.}
+
+\item{right}{UI element to put to the right of the header. It will be placed before elements defined in \code{...} (if there are any).}
 
 \item{title}{Dashboard title to be displayed in the upper left corner. If NULL, will not display any title field. Use "" for an empty title.}
 
@@ -31,12 +63,19 @@ One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", 
 If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
 
 \item{disable}{If \code{TRUE}, don't display the header.}
+
+\item{show_menu_button}{If \code{FALSE}, don't display the menu button. Default is \code{TRUE}.}
+
+\item{menu_button_label}{Text of the menu button. Default is \code{"Menu"}.}
+
+\item{class}{CSS class to be applied to the container of \code{dashboardHeader}.}
 }
 \value{
 A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 }
 \description{
 Create a header of a dashboard with other additional UI elements.
+             Hint: use \code{shiny::tagList()} if you want to add multiple elements in \code{left} / \code{center} or \code{right}.
 }
 \section{Functions}{
 \itemize{
