@@ -16,3 +16,4 @@ development
 ^tools$
 ^srcjs$
 ^styles$
++^_pkgdown\.yml$
