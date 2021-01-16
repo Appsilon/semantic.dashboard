@@ -1,19 +1,25 @@
+<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
 
-<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css"> <link href='docs/style.css' rel='stylesheet' type='text/css'>
+<img src="man/figures/hexsticker.png" align="right" alt="" width="130" />
 
 semantic.dashboard
 ==================
 
-Dashboard with Semantic UI Support for Shiny
+![R-CMD-check](https://github.com/Appsilon/semantic.dashboard/workflows/R-CMD-check/badge.svg)
+[![codecov](https://codecov.io/gh/Appsilon/semantic.dashboard/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/semantic.dashboard)
+[![cranlogs](https://cranlogs.r-pkg.org/badges/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
+[![total](https://cranlogs.r-pkg.org/badges/grand-total/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
+
+Dashboard with Semantic UI Support for Shiny.
 
 Are you fed up with ordinary `shinydashboard` look?
 
-Give your app a new life with Semantic UI support. It cannot be any easier! Just install `semantic.dashboard` and load it instead to your app. Thanks to the compatibility with classical dashboard you don't have to start from scratch.
+Give your app a new fresh look with [Fomantic UI](https://fomantic-ui.com/) support.
 
 ``` r
-#########################
-library(shinydashboard) # <-- You only need to change this line to: library(semantic.dashboard)
-#########################
+library(shiny)
+library(shinydashboard) # <-- Change this line to: library(semantic.dashboard)
+
 ui <- dashboardPage(
   dashboardHeader(title = "Basic dashboard"),
   dashboardSidebar(sidebarMenu(
@@ -43,21 +49,9 @@ server <- function(input, output) {
 shinyApp(ui, server)
 ```
 
-![Semantic dashboards comparison](inst/compare.png)
+![Semantic dashboards comparison](man/figures/compare.png)
 
-`semantic.dashboard` offers basic functions for creating dashboard with Semantic UI but not only. You can select from number of [Semantic UI Themes](http://semantic-ui-forest.com/themes/) and easily adjust the look of your dashboard.
-
-![Semantic Dashboard Themes](inst/themes.png)
-
-<!-- Live demo link below -->
-<!--<p style="text-align: center; font-size: x-large;">
-<a href="">Live demo</a>
-</p> -->
-
-Source code
------------
-
-This library source code can be found on [Appsilon Data Science's](http://appsilon.com) Github: <br> <https://github.com/Appsilon/semantic.dashboard>
+`semantic.dashboard` offers basic functions for creating dashboard with Fomantic UI.
 
 How to install?
 ---------------
@@ -68,36 +62,36 @@ You can install a stable version `semantic.dashboard` from CRAN repository:
 
     install.packages("semantic.dashboard")
 
-The development version can be installed from GitHub using [devtools](https://github.com/hadley/devtools).
+The development version can be installed from GitHub using `remotes`.
 
-    devtools::install_github("Appsilon/semantic.dashboard")
+    remotes::install_github("Appsilon/semantic.dashboard")
 
 To install [previous version]() you can run:
 
-    devtools::install_github("Appsilon/semantic.dashboard", ref = "0.1.0")
+    remotes::install_github("Appsilon/semantic.dashboard", ref = "0.1.0")
 
 Example
 -------
 
 You can find examples in the `examples/` folder of the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
 
-You can also read [this tutorial](https://appsilon.com/blog/rstats/2018/06/11/dashboard-tutorial.html) to learn how to build your first semantic.dashboard app.
+You can check [documentation](https://appsilon.github.io/semantic.dashboard/) for tutorials.
 
 How to contribute?
 ------------------
 
-If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix.<br>
+If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix. Please check `development/README.md` first! It contains useful
+information that will help you run your dev environment for `semantic.dashboard`.
 
 Changes in documentation
 ------------------------
 
-Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file and use [readmebuilder](https://github.com/Appsilon/readmebuilder) package to render the new README.
+Both repository **README.md** file and an official documentation page
+are generated with Rmarkdown, so if there is a need to update them,
+please modify accordingly a **README.Rmd** file and use “Knit”.
 
-In most cases a simple call of:
-
-``` r
-readmebuilder::build_readme()
-```
+Documentation is rendered with `pkgdown`. Just run
+`pkgdown::build_site()` after rendering new **README.md**.
 
 Troubleshooting
 ---------------
@@ -110,14 +104,19 @@ However, if you encounter any problems, try the following:
 2.  Installing specific dependent libraries versions
     -   shiny.semantic
 
-            devtools::install_github("Appsilon/shiny.semantic")
-
 Future enhacements
 ------------------
 
--   Release of a stable 1.0 version
+-   Release of a stable 1.0.0 version
+-   Closer integration with shinydashboard
 
-Appsilon Data Science
----------------------
+Appsilon
+--------
+
+
+<img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%" />
+
+Appsilon is the **Full Service Certified RStudio Partner**. Learn more
+at [appsilon.com](https://appsilon.com).
 
 Get in touch [dev@appsilon.com](dev@appsilon.com)

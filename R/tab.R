@@ -1,12 +1,14 @@
-#' Create a tab.
-#' @description Create a tab panel with additional UI elements.
+#' Create a tab
+#'
+#' Create a tab panel with additional UI elements.
+#'
 #' @param tabName Id of the tab.
-#' @param fluid Controls whether tab width should be 100% (TRUE) or limited by Foomantic UI breakpoints (FALSE).
+#' @param fluid Controls whether tab width should be 100\% (TRUE) or limited by Foomantic UI breakpoints (FALSE).
 #' @param ... UI elements to include within the tab.
 #' @return A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples
-#' tabItem(tabName = "tab1", "Tab 1")
+#' tab_item(tabName = "tab1", "Tab 1")
 tab_item <- function(tabName, ..., fluid = TRUE){
   data_tab <- paste0("shiny-tab-", tabName)
   shiny::div(role = "tabpanel", style = "height: 100%;",
