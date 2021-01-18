@@ -5,28 +5,51 @@
 \alias{tabBox}
 \title{Create a tab box.}
 \usage{
-tab_box(tabs, title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right", collapsible = TRUE, width = 8, id = NULL)
+tab_box(
+  tabs,
+  title = NULL,
+  color = "",
+  ribbon = TRUE,
+  title_side = "top right",
+  collapsible = TRUE,
+  width = 8,
+  id = NULL,
+  ...
+)
 
-tabBox(tabs, title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right", collapsible = TRUE, width = 8, id = NULL)
+tabBox(
+  tabs,
+  title = NULL,
+  color = "",
+  ribbon = TRUE,
+  title_side = "top right",
+  collapsible = TRUE,
+  width = 8,
+  id = NULL,
+  ...
+)
 }
 \arguments{
 \item{tabs}{Tabs to include within the box.}
 
 \item{title}{Label of the box.}
 
-\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow",
+"olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
 \item{ribbon}{Should label be presented as ribbon.}
 
-\item{title_side}{Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}}
+\item{title_side}{Side of a label. One of \code{c("top", "bottom", "top left",
+"top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of
+\code{c("top left", "top right")} if \code{ribbon = TRUE}}
 
 \item{collapsible}{Should minimize button be added to label.}
 
 \item{width}{Width of the box.}
 
 \item{id}{ID of the box.}
+
+\item{...}{other elements of the box.}
 }
 \value{
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

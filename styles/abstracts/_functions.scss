@@ -1,0 +1,10 @@
+@function generate-size-selector($size) {
+  @if $size == "" {
+    @return "";
+  }
+  @if str-index($size, " ") {
+      @return "[class*='" + $size + "']";
+  } @else {
+      @return "." + $size;
+  }
+}

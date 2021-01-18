@@ -1,0 +1,48 @@
+.ui.menu.dashboard-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background: transparent;
+}
+
+@each $size, $width in $sizes {
+  .dashboard-title#{generate-size-selector($size)} {
+    width: #{$width}px;
+  }
+
+  // Hack necessary to align title right border and sidebar right border.
+  // For some reason they are not in line eve thoug DevTools shows same widths
+  body.no-margin .dashboard-title#{generate-size-selector($size)} {
+    width: calc(#{$width}px - 1px);
+  }
+}
+
+/*--------------
+     Colors
+-------------- */
+
+.ui.dashboard-title {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.ui.inverted.dashboard-title {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.inverted.dashboard-title {
+  background-color: #1B1C1D;
+}
+
+// Might be unnecessary. Investigation needed when themes are fixed.
+@each $color, $hash in $colors-map {
+  .ui.inverted.#{$color}.dashboard-title {
+    background-color: $hash;
+  }
+}

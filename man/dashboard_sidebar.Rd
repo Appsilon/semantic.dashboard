@@ -5,11 +5,37 @@
 \alias{dashboardSidebar}
 \title{Create a sidebar of a dashboard.}
 \usage{
-dashboard_sidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
+dashboard_sidebar(
+  ...,
+  side = "left",
+  size = "thin",
+  color = "",
+  inverted = FALSE,
+  closable = FALSE,
+  pushable = TRUE,
+  center = FALSE,
+  visible = TRUE,
+  disable = FALSE,
+  overlay = FALSE,
+  dim_page = FALSE,
+  class = ""
+)
 
-dashboardSidebar(..., side = "left", size = "thin", color = "",
-  inverted = FALSE, center = FALSE, visible = TRUE, disable = FALSE)
+dashboardSidebar(
+  ...,
+  side = "left",
+  size = "thin",
+  color = "",
+  inverted = FALSE,
+  closable = FALSE,
+  pushable = TRUE,
+  center = FALSE,
+  visible = TRUE,
+  disable = FALSE,
+  overlay = FALSE,
+  dim_page = FALSE,
+  class = ""
+)
 }
 \arguments{
 \item{...}{UI elements to include within the sidebar.}
@@ -24,11 +50,22 @@ One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", 
 \item{inverted}{If FALSE sidebar will be white and text will be colored. \
 If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
 
+\item{closable}{If \code{TRUE} allow close sidebar by clicking in the body. Default to \code{FALSE}}
+
+\item{pushable}{If \code{TRUE} the menu button is active. Default to \code{TRUE}}
+
 \item{center}{Should label and icon be centerd on menu items. Default to \code{FALSE}}
 
 \item{visible}{Should sidebar be visible on start. Default to \code{TRUE}}
 
 \item{disable}{If \code{TRUE}, don't display the sidebar.}
+
+\item{overlay}{If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content.
+Relevant only for sidebar positioned on left or right. Default to \code{FALSE}}
+
+\item{dim_page}{If \code{TRUE}, page content will be darkened when sidebr is open. Default to \code{FALSE}}
+
+\item{class}{CSS class to be applied to the container of \code{dashboardSidebar}.}
 }
 \value{
 A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}

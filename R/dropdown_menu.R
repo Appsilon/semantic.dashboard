@@ -62,7 +62,9 @@ messageItem <- message_item
 #' @description Create a task item.
 #' @param text Progress bar label.
 #' @param value Progress bar value.
-#' @param color Color of the task item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param color Color of the task item. One of \code{c("", "red", "orange",
+#' "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink",
+#' "brown", "grey", "black")}
 #' @return A task item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
 #' @examples
@@ -87,7 +89,9 @@ taskItem <- task_item
 #' @description Create a notification item.
 #' @param text Text of the notification.
 #' @param icon Additional icon.
-#' @param color Color of the notification item. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}
+#' @param color Color of the notification item. One of
+#' \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue",
+#' "violet", "purple", "pink", "brown", "grey", "black")}
 #' @return A notification item that can be passed to \code{\link[semantic.dashboard]{dropdownMenu}}
 #' @export
 #' @examples

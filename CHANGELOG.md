@@ -9,6 +9,39 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 ### Removed
 
+## [0.2.0] - 15.01.2021
+### Added
+- `title`, `titleWidth`, `left`, `center`, `right`, `show_menu_button` and `menu_button_label` parameters for `dashboardHeader`
+- `overlay` and `dim_page` parameters for `dashboardSidebar`
+- `margin` param for `dashboardPage`
+- `fluid` param for `tabItem`
+- `class` param for `dashboardPage`, `dashboardBody`, `dashboardSidebar` and `dashboardHeader` 
+- `dashboardPage`, `dashboardBody`, `dashboardSidebar` and `dashboardHeader` have now built-in CSS classes of syntax `dashboard-<component>` e.g. `dashboard-page`. Thanks to that it's easy to write selectors for DOM nodes related to them
+- pkgdown docuemntation
+- tests for dropdown menu, utils and value box
+
+### Changed
+- Main content will shrink, not move when sidebar is opened and `overlay = FALSE`
+### Fixed
+- Issues with layout responsiveness
+- Issues with sidebar position and overflow
+
+## [0.1.5] - 2020-03-30
+### Added
+- option for collapsible icon
+- themes support
+- conditionPanel
+- logo in top panel
+
+### Changed
+- extended sidebar options
+- width values for semantic classes forces
+- README
+
+### Fixed
+- collapsible box 
+- dashboard body without left margin
+
 ## [0.1.0] - 2018-01-02
 ### Added
 - box

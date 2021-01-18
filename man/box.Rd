@@ -4,25 +4,42 @@
 \alias{box}
 \title{Create a box.}
 \usage{
-box(..., title = NULL, color = "", ribbon = TRUE,
-  title_side = "top right", collapsible = TRUE, width = 8, id = NULL)
+box(
+  ...,
+  title = NULL,
+  color = "",
+  ribbon = TRUE,
+  title_side = "top right",
+  collapsible = TRUE,
+  width = 8,
+  id = NULL,
+  collapse_icon = "minus",
+  expand_icon = "plus"
+)
 }
 \arguments{
 \item{...}{UI elements to include within the box.}
 
 \item{title}{Label of the box.}
 
-\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the box. One of \code{c("", "red", "orange", "yellow",
+"olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
 \item{ribbon}{Should label be presented as ribbon.}
 
-\item{title_side}{Side of a label. One of \code{c("top", "bottom", "top left", "top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of \code{c("top left", "top right")} if \code{ribbon = TRUE}}
+\item{title_side}{Side of a label. One of \code{c("top", "bottom", "top left",
+"top right", "bottom left", "bottom right")} if \code{ribbon = FALSE}, or one of
+\code{c("top left", "top right")} if \code{ribbon = TRUE}}
 
 \item{collapsible}{Should minimize button be added to label.}
 
 \item{width}{Width of the box.}
 
 \item{id}{ID of the box.}
+
+\item{collapse_icon}{Icon class to be used for collapsing (when \code{collapsible = TRUE}).}
+
+\item{expand_icon}{Icon class to be used for expanding (when \code{collapsible = TRUE}).}
 }
 \value{
 A box that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

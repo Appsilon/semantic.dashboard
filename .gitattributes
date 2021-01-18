@@ -1,0 +1,2 @@
+/inst/semantic.dashboard.js -merge -diff
+*.min.js -merge -diff

@@ -1,4 +1,4 @@
-#' Create Semantic UI icon tag (alias for \code{uiicon} for compatibility with \code{shinydashboard})
+#' Create Semantic UI icon tag (alias for \code{icon} for compatibility with \code{shinydashboard})
 #'
 #' This creates an icon tag using Semantic UI styles.
 #'
@@ -6,7 +6,11 @@
 #' @param ... Other arguments to be added as attributes of the tag (e.g. style, class etc.)
 #'
 #' @export
-icon <- shiny.semantic::uiicon
+#' @examples
+#' icon("dog")
+icon <- function(type, ...) {
+  shiny.semantic::icon(type, ...)
+}
 
 #' Valid tab name should not containt dot character '.'.
 #' @param name Tab name to validate.
@@ -74,6 +78,7 @@ menuSubItem <- menu_item
 
 #' Create a sidebar menu.
 #' @description Create a sidebar menu with menu items.
+#' @param id The sidebar id class also used for update input on server side. Default is \code{uisidebar}
 #' @param ... Menu items.
 #' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
@@ -82,8 +87,8 @@ menuSubItem <- menu_item
 #'   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
 #'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"))
 #'   )
-sidebar_menu <- function(...) {
-  list(...)
+sidebar_menu <- function(..., id = "uisidebar") {
+  c(as.list(environment()), list(...))
 }
 
 #' @describeIn sidebar_menu Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})

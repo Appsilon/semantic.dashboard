@@ -6,14 +6,11 @@
 \alias{infoBox}
 \title{Create a valueBox.}
 \usage{
-value_box(subtitle, value, icon = NULL, color = "blue", width = 5,
-  size = "")
+value_box(subtitle, value, icon = NULL, color = "blue", width = 5, size = "")
 
-valueBox(subtitle, value, icon = NULL, color = "blue", width = 5,
-  size = "")
+valueBox(subtitle, value, icon = NULL, color = "blue", width = 5, size = "")
 
-infoBox(subtitle, value, icon = NULL, color = "blue", width = 5,
-  size = "")
+infoBox(subtitle, value, icon = NULL, color = "blue", width = 5, size = "")
 }
 \arguments{
 \item{subtitle}{Label of the valueBox.}
@@ -22,11 +19,13 @@ infoBox(subtitle, value, icon = NULL, color = "blue", width = 5,
 
 \item{icon}{Icon of the valueBox.}
 
-\item{color}{Color of the valueBox. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the valueBox. One of \code{c("", "red", "orange", "yellow",
+"olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
 
 \item{width}{Width of the valueBox.}
 
-\item{size}{Size of value. One of \code{c("mini", "tiny", "small", "", "large", "huge")}. Default is "".}
+\item{size}{Size of value. One of \code{c("mini", "tiny", "small", "", "large", "huge")}.
+Default is "".}
 }
 \value{
 A valueBox that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
@@ -36,9 +35,9 @@ Create a valueBox with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{valueBox}: Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
+\item \code{valueBox}: Create a valueBox (alias for \code{value_box})
 
-\item \code{infoBox}: Create a valueBox (alias for \code{value_box} for compatibility with \code{shinydashboard})
+\item \code{infoBox}: Create a valueBox (alias for \code{value_box})
 }}
 
 \examples{

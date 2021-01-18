@@ -5,18 +5,32 @@ library(plotly)
 library(DT)
 
 ui <- dashboardPage(
-  dashboardHeader(dropdownMenuOutput("dropdown"),
+  margin = TRUE,
+  dashboardHeader(logo_align = "center",
+                  logo_path = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",
+                  dropdownMenuOutput("dropdown"),
+                  title = "Appsilon",
+                  titleWidth = "thin",
+                  show_menu_button = TRUE,
                   dropdownMenu(type = "notifications",
                                taskItem("Project progress...", 50.777, color = "red")),
-                  dropdownMenu(icon = uiicon("red warning sign"),
+                  dropdownMenu(icon = icon("red warning sign"),
                                notificationItem("This is an important notification!", color = "red"))),
+
   dashboardSidebar(side = "left",
+                  size = "thin",
+                  overlay = FALSE,
+                  pushable = TRUE,
+                  visible = TRUE,
+                  dim_page = FALSE,
+                  closable = FALSE,
                    sidebarMenu(
                      menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
                      menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
+
   dashboardBody(
     tabItems(
-      tabItem(tabName = "plot_tab",
+      tabItem(tabName = "plot_tab", fluid = TRUE,
               fluidRow(
                 valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5)),
               fluidRow(
@@ -31,8 +45,9 @@ ui <- dashboardPage(
                        tabs = list(
                          list(menu = "First Tab", content = "Some text..."),
                          list(menu = "Second Tab", content = plotlyOutput("mtcars_plot2"))
-                       )))),
-      tabItem(tabName = "table_tab",
+                       )))
+              ),
+      tabItem(tabName = "table_tab", fluid = FALSE,
               fluidRow(
                 valueBox("Unread Mail", 144, icon("mail"), color = "blue", width = 6, size = "small"),
                 valueBox("Spam", 20, icon("mail"), color = "red", width = 5, size = "small"),
@@ -40,7 +55,7 @@ ui <- dashboardPage(
               ),
               fluidRow(
                 box(title = "Classic box", color = "red", ribbon = FALSE,
-                    title_side = "top left", width = 14,
+                    title_side = "top left", width = 16,
                     dataTableOutput("mtcars_table")
                 )))))
 )

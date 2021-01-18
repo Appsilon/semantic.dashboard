@@ -2,9 +2,9 @@
 % Please edit documentation in R/menu_item.R
 \name{icon}
 \alias{icon}
-\title{Create Semantic UI icon tag (alias for \code{uiicon} for compatibility with \code{shinydashboard})}
+\title{Create Semantic UI icon tag (alias for \code{icon} for compatibility with \code{shinydashboard})}
 \usage{
-icon(type = "", ...)
+icon(type, ...)
 }
 \arguments{
 \item{type}{A name of an icon. Look at http://semantic-ui.com/elements/icon.html for all possibilities.}
@@ -13,4 +13,7 @@ icon(type = "", ...)
 }
 \description{
 This creates an icon tag using Semantic UI styles.
+}
+\examples{
+icon("dog")
 }
