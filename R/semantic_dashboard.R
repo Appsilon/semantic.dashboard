@@ -165,6 +165,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
 
     display_type <- ifelse(center, "labeled icon", "")
     uncover_class <- ifelse(isTRUE(visible) & isFALSE(overlay), "uncover", "")
+    if (side %in% c("top", "bottom")) uncover_class <- ""
     overlay_class <- ifelse(isTRUE(visible) & isTRUE(overlay), "overlay", "")
     inverted_value <- get_inverted_class(inverted)
 
