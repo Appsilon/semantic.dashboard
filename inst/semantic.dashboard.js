@@ -3,7 +3,7 @@
 */
 const initialize_sidebar = (closable, pushable, overlay, dimPage) => {
   transitionLeftRight = overlay ? 'overlay' : 'uncover';
-  $(document).ready(function() {
+  $(document).on('shiny:sessioninitialized', function(event) {
     $('.ui.sidebar')
     .sidebar({
       context: $('.bottom.segment'),
