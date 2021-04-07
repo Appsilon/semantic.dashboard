@@ -32,7 +32,7 @@ validate_tab_name <- function(name) {
 #' @export
 #' @examples
 #' menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home"))
-menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE) {
+menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE, selected = FALSE) {
   sub_items <- list(...)
   if (!is.null(href) + (!is.null(tabName) + (length(sub_items) > 0) != 1)) {
     stop("Must have either href, tabName, or sub-items (contained in ...).")
@@ -55,11 +55,21 @@ menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newta
   }
 
   if (length(sub_items) == 0) {
-    shiny::tags$a(class = "item", href = href, icon, text,
-                  `data-tab` = data_tab,
-                  `data-toggle` = if (isTabItem) "tab",
-                  `data-value` = if (!is.null(tabName)) tabName,
-                  target = target)
+    shiny::tags$a(
+      class = "item", href = href, icon, text,
+      `data-tab` = data_tab,
+      `data-toggle` = if (isTabItem) "tab",
+      `data-value` = if (!is.null(tabName)) tabName,
+      target = target,
+      if (selected) shiny::singleton(shiny::tags$script(shiny::HTML(glue::glue("
+        $(function() {{
+          ['.dashboard-sidebar > a', '.tab-content > div'].forEach(function(tag) {{
+            $(`${{tag}}[data-tab]`).removeClass('active');
+            $(`${{tag}}[data-tab=\"{data_tab}\"]`).addClass('active');
+          }})
+        }})
+      "))))
+    )
   } else {
     shiny::tags$div(class = "item",
       shiny::tags$div(class = "header", text),

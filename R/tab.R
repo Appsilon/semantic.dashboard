@@ -30,16 +30,8 @@ tabItem <- tab_item
 #' tabItems(
 #'  tabItem(tabName = "tab1", "Tab 1"),
 #'  tabItem(tabName = "tab2", "Tab 2"))
-tab_items <- function(..., selected = 1){
-  tabs <- list(...)
-  if (round(selected) < 1 | round(selected) > length(tabs) | !is.numeric(selected)){
-    warning("Wrong tabItem selected, switched to first one!")
-    selected_tab <- 1
-  } else {
-    selected_tab <- selected
-  }
-  tabs[[selected_tab]]$attribs$class <- paste(tabs[[selected_tab]]$attribs$class, "active")
-  shiny::tags$div(class = "tab-content", tabs)
+tab_items <- function(...){
+  shiny::tags$div(class = "tab-content", list(...))
 }
 
 #' @describeIn tab_items Create a panel with tabs (alias for \code{tab_items} for compatibility with \code{shinydashboard})
