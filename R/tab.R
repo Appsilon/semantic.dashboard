@@ -23,7 +23,6 @@ tabItem <- tab_item
 #' Create a panel with tabs.
 #' @description Create a panel with tabs.
 #' @param ... Tabs.
-#' @param  selected Which tab should be active on start.
 #' @return A panel with tabs that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
 #' @export
 #' @examples

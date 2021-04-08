@@ -28,6 +28,7 @@ validate_tab_name <- function(name) {
 #' @param tabName Id of the tab. Not compatible with href.
 #' @param href A link address. Not compatible with tabName.
 #' @param newtab If href is supplied, should the link open in a new browser tab?
+#' @param  selected If TRUE, this menuItem will start selected.
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{sidebarMenu}}
 #' @export
 #' @examples
