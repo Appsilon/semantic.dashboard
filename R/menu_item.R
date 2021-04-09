@@ -64,7 +64,7 @@ menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newta
       target = target,
       if (selected) shiny::singleton(shiny::tags$script(shiny::HTML(glue::glue("
         $(function() {{
-          ['.dashboard-sidebar > a', '.tab-content > div'].forEach(function(tag) {{
+          ['.dashboard-sidebar a', '.tab-content > div'].forEach(function(tag) {{
             $(`${{tag}}[data-tab]`).removeClass('active');
             $(`${{tag}}[data-tab=\"{data_tab}\"]`).addClass('active');
           }})
@@ -93,10 +93,12 @@ menuSubItem <- menu_item
 #' @param ... Menu items.
 #' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
+#' @details
+#' It's possible to set selected menu item by setting `selected = TRUE` in `menuItem`.
 #' @examples
 #' sidebarMenu(
 #'   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
-#'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"))
+#'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"), selected = TRUE)
 #'   )
 sidebar_menu <- function(..., id = "uisidebar") {
   c(as.list(environment()), list(...))
