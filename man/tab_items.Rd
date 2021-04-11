@@ -5,14 +5,12 @@
 \alias{tabItems}
 \title{Create a panel with tabs.}
 \usage{
-tab_items(..., selected = 1)
+tab_items(...)
 
-tabItems(..., selected = 1)
+tabItems(...)
 }
 \arguments{
 \item{...}{Tabs.}
-
-\item{selected}{Which tab should be active on start.}
 }
 \value{
 A panel with tabs that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}

@@ -28,11 +28,12 @@ validate_tab_name <- function(name) {
 #' @param tabName Id of the tab. Not compatible with href.
 #' @param href A link address. Not compatible with tabName.
 #' @param newtab If href is supplied, should the link open in a new browser tab?
+#' @param  selected If TRUE, this menuItem will start selected.
 #' @return A menu item that can be passed \code{\link[semantic.dashboard]{sidebarMenu}}
 #' @export
 #' @examples
 #' menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home"))
-menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE) {
+menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE, selected = FALSE) {
   sub_items <- list(...)
   if (!is.null(href) + (!is.null(tabName) + (length(sub_items) > 0) != 1)) {
     stop("Must have either href, tabName, or sub-items (contained in ...).")
@@ -55,11 +56,21 @@ menu_item <- function(text, ..., icon = NULL, tabName = NULL, href = NULL, newta
   }
 
   if (length(sub_items) == 0) {
-    shiny::tags$a(class = "item", href = href, icon, text,
-                  `data-tab` = data_tab,
-                  `data-toggle` = if (isTabItem) "tab",
-                  `data-value` = if (!is.null(tabName)) tabName,
-                  target = target)
+    shiny::tags$a(
+      class = "item", href = href, icon, text,
+      `data-tab` = data_tab,
+      `data-toggle` = if (isTabItem) "tab",
+      `data-value` = if (!is.null(tabName)) tabName,
+      target = target,
+      if (selected) shiny::singleton(shiny::tags$script(shiny::HTML(glue::glue("
+        $(function() {{
+          ['.dashboard-sidebar a', '.tab-content > div'].forEach(function(tag) {{
+            $(`${{tag}}[data-tab]`).removeClass('active');
+            $(`${{tag}}[data-tab=\"{data_tab}\"]`).addClass('active');
+          }})
+        }})
+      "))))
+    )
   } else {
     shiny::tags$div(class = "item",
       shiny::tags$div(class = "header", text),
@@ -82,10 +93,12 @@ menuSubItem <- menu_item
 #' @param ... Menu items.
 #' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
+#' @details
+#' It's possible to set selected menu item by setting `selected = TRUE` in `menuItem`.
 #' @examples
 #' sidebarMenu(
 #'   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
-#'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"))
+#'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"), selected = TRUE)
 #'   )
 sidebar_menu <- function(..., id = "uisidebar") {
   c(as.list(environment()), list(...))

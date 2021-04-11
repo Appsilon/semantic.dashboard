@@ -6,11 +6,35 @@
 \alias{menuSubItem}
 \title{Create a menu item.}
 \usage{
-menu_item(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE)
+menu_item(
+  text,
+  ...,
+  icon = NULL,
+  tabName = NULL,
+  href = NULL,
+  newtab = TRUE,
+  selected = FALSE
+)
 
-menuItem(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE)
+menuItem(
+  text,
+  ...,
+  icon = NULL,
+  tabName = NULL,
+  href = NULL,
+  newtab = TRUE,
+  selected = FALSE
+)
 
-menuSubItem(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE)
+menuSubItem(
+  text,
+  ...,
+  icon = NULL,
+  tabName = NULL,
+  href = NULL,
+  newtab = TRUE,
+  selected = FALSE
+)
 }
 \arguments{
 \item{text}{Text to show for the menu item.}
@@ -24,6 +48,8 @@ menuSubItem(text, ..., icon = NULL, tabName = NULL, href = NULL, newtab = TRUE)
 \item{href}{A link address. Not compatible with tabName.}
 
 \item{newtab}{If href is supplied, should the link open in a new browser tab?}
+
+\item{selected}{If TRUE, this menuItem will start selected.}
 }
 \value{
 A menu item that can be passed \code{\link[semantic.dashboard]{sidebarMenu}}
