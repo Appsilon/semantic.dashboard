@@ -28,9 +28,9 @@ Dashboards provide a solution. They allow the developer to intuitively structure
 
 # Why Semantic Dashboard?
 
-Semantic Dashboard offers an alternative look of your dashboard based on the [Fomantic UI](fomantic-ui.com/). Historically, we built this package around *Semantic UI*
+Semantic Dashboard offers an alternative look of your dashboard based on the [Fomantic UI](https://fomantic-ui.com/). Historically, we built this package around *Semantic UI*
 library, but it got deprecated and now (since December 2019) we base on the well-supported
-and maintained community fork called [Fomantic UI](fomantic-ui.com/).
+and maintained community fork called [Fomantic UI](https://fomantic-ui.com/).
 
 It relies and uses components from the mother package [shiny.semantic](https://github.com/Appsilon/shiny.semantic/).
 
