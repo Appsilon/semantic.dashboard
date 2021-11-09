@@ -25,7 +25,8 @@ Suggests:
     lintr,
     shinydashboard,
     covr,
-    knitr
+    knitr,
+    rmarkdown
 RoxygenNote: 7.1.2
 VignetteBuilder:
     knitr
