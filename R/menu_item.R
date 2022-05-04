@@ -107,3 +107,40 @@ sidebar_menu <- function(..., id = "uisidebar") {
 #' @describeIn sidebar_menu Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
 #' @export
 sidebarMenu <- sidebar_menu
+
+#' Change the selected tab on the client
+#' @param session The session object passed to function given to shinyServer
+#' @param tab The name of the tab that should be selected
+#' @examples
+#' if (interactive()) {
+#'   ui <- dashboardPage(
+#'     dashboardSidebar(
+#'       sidebarMenu(
+#'         menuItem("Tab 1", tabName = "tab1"),
+#'         menuItem("Tab 2", tabName = "tab2")
+#'       )
+#'     ),
+#'     dashboardBody(
+#'       tabItems(
+#'         tabItem(tabName = "tab1", h2("Tab 1")),
+#'         tabItem(tabName = "tab2", h2("Tab 2"))
+#'      )
+#'    )
+#'   )
+#'
+#'   server <- function(input, output, session) {
+#'     update_tab_items(tab = "tab2")
+#'   }
+#'
+#'   shinyApp(ui, server)
+#' }
+#' @export
+update_tab_items <- function(session = shiny::getDefaultReactiveDomain(), tab) {
+  validate_session_object(session)
+  session$sendCustomMessage("update_tab", tab)
+}
+
+#' @describeIn update_tab_items Change the selected item on the client (alias for \code{update_tab_items} for
+#' compatibility with \code{shinydashboard})
+#' @export
+updateTabItems <- update_tab_items
