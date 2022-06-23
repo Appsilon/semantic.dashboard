@@ -144,3 +144,13 @@ update_tab_items <- function(session = shiny::getDefaultReactiveDomain(), tab) {
 #' compatibility with \code{shinydashboard})
 #' @export
 updateTabItems <- update_tab_items
+
+sidebar_user_panel <- function(name, subtitle = NULL, image = NULL,
+                               image_size = "mini") {
+  div(class = "user-panel", if (!is.null(image)) {
+    div(class = "pull-left image",
+        img(src = image, class = glue("ui {image_size} circular image",
+                                       alt = "User Image")))
+  }, div(class = "pull-left info", style = if (is.null(image))
+    "left: 4px", p(name), subtitle))
+}
