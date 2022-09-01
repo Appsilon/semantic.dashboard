@@ -259,3 +259,6 @@ body.no-margin .ui.top.menu.dashboard-header {
   border-top-width: 1px;
 }
 
+section.sidebar .user-panel{
+  min-height: 65px;
+}

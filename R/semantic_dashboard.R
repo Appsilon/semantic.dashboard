@@ -159,6 +159,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
   if (disable || length(list(...)) < 1) {
     NULL
   } else {
+    arguments <- list(...)
     verify_value_allowed("side", ALLOWED_SIDEBAR_SIDES)
     verify_value_allowed("size", ALLOWED_SIDEBAR_SIZES)
     verify_value_allowed("color", ALLOWED_COLORS)
@@ -174,15 +175,16 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
     overlay <- ifelse(overlay, quote(true), quote(false))
     dim_page <- ifelse(dim_page, quote(true), quote(false))
 
-    shiny::div(closable = closable,
-               id = ..1$id,
+    do.call(shiny::div, list(closable = glue("{closable}"),
+               id = arguments$id,
                class = paste("dashboard-sidebar ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                              display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar", uncover_class,
                              overlay_class, class),
-               ...,
+               arguments,
                shiny::tags$script(glue("initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})")),
                shiny::tags$script(src = "src/updateTabItems.js")
                )
+    )
 
   }
 }
@@ -280,6 +282,7 @@ dashboard_page <- function(header, sidebar, body, title = "",
   class <- paste("dashboard-page", margin_class, class)
   shiny.semantic::semanticPage(header, sidebar_and_body, get_dashboard_dependencies(), margin = "0",
                                title = title, theme = theme, suppress_bootstrap = suppress_bootstrap,
+                               class = class)
 }
 
 #' @describeIn dashboard_page Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
