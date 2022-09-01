@@ -179,7 +179,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
                class = paste("dashboard-sidebar ui", size, side, color, ifelse(side %in% c("top", "bottom"), "", "vertical"),
                              display_type, ifelse(visible, "visible", ""), inverted_value, "menu sidebar", uncover_class,
                              overlay_class, class),
-               ..1[-1],
+               ...,
                shiny::tags$script(glue("initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})")),
                shiny::tags$script(src = "src/updateTabItems.js")
                )
@@ -280,7 +280,6 @@ dashboard_page <- function(header, sidebar, body, title = "",
   class <- paste("dashboard-page", margin_class, class)
   shiny.semantic::semanticPage(header, sidebar_and_body, get_dashboard_dependencies(), margin = "0",
                                title = title, theme = theme, suppress_bootstrap = suppress_bootstrap,
-                               class = class)
 }
 
 #' @describeIn dashboard_page Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
