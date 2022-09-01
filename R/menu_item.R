@@ -100,8 +100,8 @@ menuSubItem <- menu_item
 #'   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
 #'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"), selected = TRUE)
 #'   )
-sidebar_menu <- function(..., id = "uisidebar") {
-  c(as.list(environment()), list(...))
+sidebar_menu <- function(...) {
+  shiny::div(id = "uisidebar", list(...))
 }
 
 #' @describeIn sidebar_menu Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
@@ -146,11 +146,10 @@ update_tab_items <- function(session = shiny::getDefaultReactiveDomain(), tab) {
 updateTabItems <- update_tab_items
 
 sidebar_user_panel <- function(name, subtitle = NULL, image = NULL,
-                               image_size = "mini") {
-  div(class = "user-panel", if (!is.null(image)) {
-    div(class = "pull-left image",
-        img(src = image, class = glue("ui {image_size} circular image",
-                                       alt = "User Image")))
-  }, div(class = "pull-left info", style = if (is.null(image))
-    "left: 4px", p(name), subtitle))
-}
+                               image_size = "tiny") {
+    div(class = "user-panel", if (!is.null(image)) {
+        img(src = image, class = glue("ui {image_size} circular left floated image",
+                                      alt = "User Image"))},
+        p(name), subtitle)
+ }
+
