@@ -14,6 +14,7 @@ icon <- function(type, ...) {
 
 #' Valid tab name should not containt dot character '.'.
 #' @param name Tab name to validate.
+#' @keywords internal
 validate_tab_name <- function(name) {
   if (grepl(".", name, fixed = TRUE)) {
     stop("tabName must not have a '.' in it.")

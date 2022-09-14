@@ -25,9 +25,9 @@ It's possible to set selected menu item by setting `selected = TRUE` in `menuIte
 }
 \section{Functions}{
 \itemize{
-\item \code{sidebarMenu}: Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
-}}
+\item \code{sidebarMenu()}: Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
 
+}}
 \examples{
 sidebarMenu(
   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),

@@ -60,9 +60,9 @@ Create a page with menu item sidebar and body containing tabs and other addition
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardPage}: Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
-}}
+\item \code{dashboardPage()}: Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
 
+}}
 \examples{
 if(interactive()){
 

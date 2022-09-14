@@ -6,3 +6,4 @@
 \description{
 semantic.dashboard
 }
+\keyword{internal}

@@ -24,9 +24,9 @@ Create a tab panel with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{tabItem}: Create a tab (alias for \code{tab_item} for compatibility with \code{shinydashboard})
-}}
+\item \code{tabItem()}: Create a tab (alias for \code{tab_item} for compatibility with \code{shinydashboard})
 
+}}
 \examples{
 tab_item(tabName = "tab1", "Tab 1")
 }

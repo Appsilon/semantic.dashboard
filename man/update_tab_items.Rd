@@ -19,10 +19,10 @@ Change the selected tab on the client
 }
 \section{Functions}{
 \itemize{
-\item \code{updateTabItems}: Change the selected item on the client (alias for \code{update_tab_items} for
+\item \code{updateTabItems()}: Change the selected item on the client (alias for \code{update_tab_items} for
 compatibility with \code{shinydashboard})
-}}
 
+}}
 \examples{
 if (interactive()) {
   ui <- dashboardPage(
