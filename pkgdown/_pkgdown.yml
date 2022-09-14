@@ -16,13 +16,13 @@ navbar:
     - icon: fa-university
       text: "Tutorials"
       href: articles/index.html
-  right:
     - icon: fa-file-code-o
       text: "Reference"
       href: reference/index.html
     - icon: fa-newspaper-o
       text: "Changes"
       href: CHANGELOG.html
+  right:
     - icon: fa-github fa-lg
       href: https://github.com/Appsilon/semantic.dashboard
     - icon: fa-twitter fa-lg

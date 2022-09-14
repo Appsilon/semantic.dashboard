@@ -3,7 +3,7 @@
 > _Quick, beautiful and customizable dashboard template for Shiny based on shiny.semantic and Fomantic UI._
 
 <!-- badges: start -->
-![R-CMD-check](https://github.com/Appsilon/semantic.dashboard/workflows/R-CMD-check/badge.svg)
+[![R-CMD-check](https://github.com/Appsilon/semantic.dashboard/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/semantic.dashboard/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/Appsilon/semantic.dashboard/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/semantic.dashboard)
 [![cranlogs](https://cranlogs.r-pkg.org/badges/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
 [![total](https://cranlogs.r-pkg.org/badges/grand-total/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
