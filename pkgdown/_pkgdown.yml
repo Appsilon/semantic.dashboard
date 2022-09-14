@@ -1,10 +1,12 @@
-title: SHINY.SEMANTIC
+title: semantic.dashboard
 template:
-  params:
-    bootswatch: yeti
+  bootstrap: 5
+  bootswatch: pulse
+  bslib:
+    pkgdown-nav-height: 100px
 
 navbar:
-  type: inverse
+  bg: primary
   left:
     - icon: fa-home
       href: index.html
@@ -52,6 +54,7 @@ reference:
 - title: Other UI elements
   desc: All functions that generate UI elements.
   contents:
+  - '`icon`'
   - '`infoBox`'
   - '`infoBoxOutput`'
   - '`menuItem`'
@@ -92,3 +95,7 @@ reference:
   contents:
   - '`light_semantic_palette`'
   - '`semantic_palette`'
+
+- title: Other
+  contents:
+  - '`update_tab_items`'
