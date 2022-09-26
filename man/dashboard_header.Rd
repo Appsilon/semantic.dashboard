@@ -79,9 +79,9 @@ Create a header of a dashboard with other additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardHeader}: Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
-}}
+\item \code{dashboardHeader()}: Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
 
+}}
 \examples{
 if(interactive()) {
 

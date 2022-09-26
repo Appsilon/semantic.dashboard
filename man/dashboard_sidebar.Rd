@@ -75,9 +75,9 @@ Create a pushable sidebar of a dashboard with menu items and other additional UI
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardSidebar}: Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})
-}}
+\item \code{dashboardSidebar()}: Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})
 
+}}
 \examples{
 if(interactive()){
 

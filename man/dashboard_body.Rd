@@ -22,9 +22,9 @@ Create a body of a dashboard with tabs and other additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardBody}: Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
-}}
+\item \code{dashboardBody()}: Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
 
+}}
 \examples{
 if(interactive()){
 

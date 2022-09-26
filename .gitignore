@@ -35,3 +35,4 @@ vignettes/*.pdf
 *.knit.md
 .Rproj.user
 
+/docs/

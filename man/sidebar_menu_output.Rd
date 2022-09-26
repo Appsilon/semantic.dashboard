@@ -20,6 +20,6 @@ UI-side function for dynamic sidebarMenu.
 }
 \section{Functions}{
 \itemize{
-\item \code{sidebarMenuOutput}: Create a sidebar menu output (alias for \code{sidebar_menu_output} for compatibility with \code{shinydashboard})
-}}
+\item \code{sidebarMenuOutput()}: Create a sidebar menu output (alias for \code{sidebar_menu_output} for compatibility with \code{shinydashboard})
 
+}}

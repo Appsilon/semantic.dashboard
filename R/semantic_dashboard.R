@@ -4,6 +4,7 @@
 #' @import htmltools
 #' @import glue
 #' @import checkmate
+#' @keywords internal
 NULL
 
 #' Create a header of a dashboard.
