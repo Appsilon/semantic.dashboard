@@ -10,6 +10,7 @@ get_dashboard_dependencies()
 semantic.dashboard dependencies
 }
 \description{
-To add dependencies in the future follow the \code{\link[htmltools]{htmlDependency}} help.
+To add dependencies in the future follow the \code{\link[htmltools]{htmlDependency}}
+  help.
 }
 \keyword{internal}

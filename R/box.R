@@ -23,7 +23,10 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
                 collapsible = TRUE, width = 8, id = NULL, collapse_icon = "minus",
                 expand_icon = "plus") {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
-  verify_value_allowed("title_side", if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON)
+  verify_value_allowed(
+    "title_side",
+    if (ribbon) ALLOWED_BOX_SIDES_RIBBON else ALLOWED_BOX_SIDES_NONRIBBON
+  )
   box_id <- if (!is.character(id)) {
     paste0("box_", random_id_generator())
   } else {
@@ -42,11 +45,13 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
     shiny::div(class = title_class, minimize_button, title)
   }
   icon_selector <- glue::glue("'#{title_id} > .label > .icon'")
+  # nolint start: line_length_linter
   js_script <- glue::glue("$('#{box_id}').accordion({{
     selector: {{ trigger: {icon_selector} }},
     onOpening: function() {{ $({icon_selector}).removeClass('{expand_icon}').addClass('{collapse_icon}'); }},
     onClosing: function() {{ $({icon_selector}).removeClass('{collapse_icon}').addClass('{expand_icon}'); }}
   }});")
+  # nolint end
   column(width = width,
     shiny::div(class = paste("ui segment raised", color),
       shiny::div(id = box_id, class = "ui accordion",
@@ -54,6 +59,8 @@ box <- function(..., title = NULL, color = "", ribbon = TRUE, title_side = "top 
         shiny::div(class = "content active", shiny::div(...))
       )
     ),
-    if (collapsible) shiny::singleton(shiny::tags$script(shiny::HTML(paste0("$(document).ready(function() {", js_script, " })"))))
+    if (collapsible) shiny::singleton(
+      shiny::tags$script(shiny::HTML(paste0("$(document).ready(function() {", js_script, " })")))
+    )
   )
 }

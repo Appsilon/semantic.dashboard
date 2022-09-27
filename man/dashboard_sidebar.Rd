@@ -44,13 +44,15 @@ dashboardSidebar(
 
 \item{size}{Size of the sidebar. One of \code{c("", "thin", "very thin", "wide", "very wide")}}
 
-\item{color}{Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
-One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the sidebar / text / icons (depending on the value of `inverted`
+parameter. One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue",
+"violet","purple", "pink", "brown", "grey", "black")}}
 
 \item{inverted}{If FALSE sidebar will be white and text will be colored. \
 If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
 
-\item{closable}{If \code{TRUE} allow close sidebar by clicking in the body. Default to \code{FALSE}}
+\item{closable}{If \code{TRUE} allow close sidebar by clicking in the body. Default to
+\code{FALSE}}
 
 \item{pushable}{If \code{TRUE} the menu button is active. Default to \code{TRUE}}
 
@@ -60,10 +62,12 @@ If TRUE text will be white and background will be colored. Default is \code{FALS
 
 \item{disable}{If \code{TRUE}, don't display the sidebar.}
 
-\item{overlay}{If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is displayed next to the content.
-Relevant only for sidebar positioned on left or right. Default to \code{FALSE}}
+\item{overlay}{If \code{TRUE}, opened sidebar will cover the tab content. Otherwise it is
+displayed next to the content. Relevant only for sidebar positioned on left or right. Default
+to \code{FALSE}}
 
-\item{dim_page}{If \code{TRUE}, page content will be darkened when sidebr is open. Default to \code{FALSE}}
+\item{dim_page}{If \code{TRUE}, page content will be darkened when sidebr is open. Default to
+\code{FALSE}}
 
 \item{class}{CSS class to be applied to the container of \code{dashboardSidebar}.}
 }
@@ -71,11 +75,13 @@ Relevant only for sidebar positioned on left or right. Default to \code{FALSE}}
 A sidebar that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 }
 \description{
-Create a pushable sidebar of a dashboard with menu items and other additional UI elements.
+Create a pushable sidebar of a dashboard with menu items and other additional UI
+  elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardSidebar()}: Create a sidebar of a dashboard (alias for \code{dashboard_sidebar} for compatibility with \code{shinydashboard})
+\item \code{dashboardSidebar()}: Create a sidebar of a dashboard (alias for \code{dashboard_sidebar}
+for compatibility with \code{shinydashboard})
 
 }}
 \examples{

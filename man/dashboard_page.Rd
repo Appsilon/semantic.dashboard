@@ -42,7 +42,8 @@ dashboardPage(
 FomanticUI and Bootstrap. For the time being it's better to suppress Bootstrap.
 If \code{TRUE} bootstrap dependency from \code{shiny} will be disabled.}
 
-\item{theme}{Theme name or path. For possible options see \code{\link[shiny.semantic]{semanticPage}}.}
+\item{theme}{Theme name or path. For possible options see
+\code{\link[shiny.semantic]{semanticPage}}.}
 
 \item{margin}{If \code{TRUE}, margin to be applied to the whole dashboard.
 Defaults to \code{TRUE}.}
@@ -56,11 +57,13 @@ Defaults to \code{TRUE}.}
 Dashboard.
 }
 \description{
-Create a page with menu item sidebar and body containing tabs and other additional elements.
+Create a page with menu item sidebar and body containing tabs and other additional
+  elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardPage()}: Create a dashboard (alias for \code{dashboard_page} for compatibility with \code{shinydashboard})
+\item \code{dashboardPage()}: Create a dashboard (alias for \code{dashboard_page} for compatibility
+with \code{shinydashboard})
 
 }}
 \examples{

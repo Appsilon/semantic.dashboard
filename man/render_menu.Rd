@@ -14,7 +14,8 @@ renderMenu(expr, env = parent.frame(), quoted = FALSE)
 
 \item{env}{The environment in which to evaluate expr.}
 
-\item{quoted}{Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.}
+\item{quoted}{Is expr a quoted expression (with \code{quote()})? This is useful if you want to
+save an expression in a variable.}
 }
 \value{
 A dynamic menu that can be assigned to output.
@@ -24,6 +25,7 @@ Server-side function for dynamic sidebarMenu.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderMenu()}: Create a menu output (alias for \code{render_menu} for compatibility with \code{shinydashboard})
+\item \code{renderMenu()}: Create a menu output (alias for \code{render_menu} for compatibility
+with \code{shinydashboard})
 
 }}

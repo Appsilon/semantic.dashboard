@@ -59,9 +59,11 @@ Create a menu item corresponding to a tab.
 }
 \section{Functions}{
 \itemize{
-\item \code{menuItem()}: Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
+\item \code{menuItem()}: Create a menu item (alias for \code{menu_item} for compatibility with
+\code{shinydashboard})
 
-\item \code{menuSubItem()}: Create a menu item (alias for \code{manu_item} for compatibility with \code{shinydashboard})
+\item \code{menuSubItem()}: Create a menu item (alias for \code{menu_item} for compatibility with
+\code{shinydashboard})
 
 }}
 \examples{

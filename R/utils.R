@@ -1,7 +1,7 @@
 # Verify that given variable is in the list of allowed values.
 verify_value_allowed <- function(variable, values) {
   var <- get(variable, envir = parent.frame())
-  if (!(var %in% values)){
+  if (!(var %in% values)) {
     warning(paste(paste0("'", variable, "'"),
                   "argument should be one of:",
                   paste0("'", values, "'", collapse = ", ")))
@@ -15,7 +15,7 @@ get_inverted_class <- function(inverted) {
 
 # Interlace elements with dividers between each pair of elements.
 interlace_dividers <- function(elements) {
-  dividers <- lapply(1:length(elements), function(i) shiny::tags$div(class = "divider"))
+  dividers <- lapply(seq_along(elements), function(i) shiny::tags$div(class = "divider"))
   utils::head(c(rbind(elements, dividers)), -1) # Skips last divider with head.
 }
 
@@ -28,8 +28,7 @@ random_id_generator <- function(values = 0:9, id_length = 30) {
 # The default label is the caller function's name.
 validate_session_object <- function(session, label = as.character(sys.call(sys.parent())[[1]])) {
   if (missing(session) ||
-      !inherits(session, c("ShinySession", "MockShinySession", "session_proxy")))
-  {
+      !inherits(session, c("ShinySession", "MockShinySession", "session_proxy"))) {
     stop(call. = FALSE,
          sprintf(
            "`session` must be a 'ShinySession' object. Did you forget to pass `session` to `%s()`?",

@@ -12,11 +12,12 @@
 #'               messageItem("Marek", "Another test!", icon = "warning", color = "red"))
 #' })
 #' }
-dropdown_menu_output <- function(outputId){
+dropdown_menu_output <- function(outputId) {
   shiny::uiOutput(outputId, class = "right icon menu")
 }
 
-#' @describeIn dropdown_menu_output Create a dropdown menu output (alias for \code{dropdown_menu_output} for compatibility with \code{shinydashboard})
+#' @describeIn dropdown_menu_output Create a dropdown menu output (alias for \code{dropdown_menu
+#'   output} for compatibility with \code{shinydashboard})
 #' @export
 dropdownMenuOutput <- dropdown_menu_output
 
@@ -24,7 +25,8 @@ dropdownMenuOutput <- dropdown_menu_output
 #' @description Server-side function for dynamic dropdownMenu.
 #' @param expr dropdownMenu.
 #' @param env The environment in which to evaluate expr.
-#' @param quoted Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.
+#' @param quoted Is expr a quoted expression (with \code{quote()})? This is useful if you want to
+#'   save an expression in a variable.
 #' @return A dynamic dropdown menu that can be assigned to output.
 #' @export
 #' @examples
@@ -36,11 +38,12 @@ dropdownMenuOutput <- dropdown_menu_output
 #'               messageItem("Marek", "Another test!", icon = "warning", color = "red"))
 #' })
 #' }
-render_dropdown_menu <- function(expr, env = parent.frame(), quoted = FALSE){
+render_dropdown_menu <- function(expr, env = parent.frame(), quoted = FALSE) {
   fun <- shiny::exprToFunction(expr, env, quoted)
   shiny::renderUI(fun())
 }
 
-#' @describeIn render_dropdown_menu Create a dropdown menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+#' @describeIn render_dropdown_menu Create a dropdown menu output (alias for \code{render_dropdown
+#'   menu} for compatibility with \code{shinydashboard})
 #' @export
 renderDropdownMenu <- render_dropdown_menu

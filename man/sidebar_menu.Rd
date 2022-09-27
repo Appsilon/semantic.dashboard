@@ -12,7 +12,8 @@ sidebarMenu(..., id = "uisidebar")
 \arguments{
 \item{...}{Menu items.}
 
-\item{id}{The sidebar id class also used for update input on server side. Default is \code{uisidebar}}
+\item{id}{The sidebar id class also used for update input on server side. Default is
+\code{uisidebar}}
 }
 \value{
 A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
@@ -25,7 +26,8 @@ It's possible to set selected menu item by setting `selected = TRUE` in `menuIte
 }
 \section{Functions}{
 \itemize{
-\item \code{sidebarMenu()}: Create a sidebar menu (alias for \code{sidebar_menu} for compatibility with \code{shinydashboard})
+\item \code{sidebarMenu()}: Create a sidebar menu (alias for \code{sidebar_menu} for compatibility
+with \code{shinydashboard})
 
 }}
 \examples{

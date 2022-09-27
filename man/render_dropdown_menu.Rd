@@ -14,7 +14,8 @@ renderDropdownMenu(expr, env = parent.frame(), quoted = FALSE)
 
 \item{env}{The environment in which to evaluate expr.}
 
-\item{quoted}{Is expr a quoted expression (with \code{quote()})? This is useful if you want to save an expression in a variable.}
+\item{quoted}{Is expr a quoted expression (with \code{quote()})? This is useful if you want to
+save an expression in a variable.}
 }
 \value{
 A dynamic dropdown menu that can be assigned to output.
@@ -24,7 +25,8 @@ Server-side function for dynamic dropdownMenu.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderDropdownMenu()}: Create a dropdown menu output (alias for \code{render_dropdown_menu} for compatibility with \code{shinydashboard})
+\item \code{renderDropdownMenu()}: Create a dropdown menu output (alias for \code{render_dropdown
+menu} for compatibility with \code{shinydashboard})
 
 }}
 \examples{

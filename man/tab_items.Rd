@@ -20,7 +20,8 @@ Create a panel with tabs.
 }
 \section{Functions}{
 \itemize{
-\item \code{tabItems()}: Create a panel with tabs (alias for \code{tab_items} for compatibility with \code{shinydashboard})
+\item \code{tabItems()}: Create a panel with tabs (alias for \code{tab_items} for compatibility
+with \code{shinydashboard})
 
 }}
 \examples{
