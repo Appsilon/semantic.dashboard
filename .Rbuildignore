@@ -17,3 +17,4 @@ development
 ^srcjs$
 ^styles$
 pkgdown
+.lintr
