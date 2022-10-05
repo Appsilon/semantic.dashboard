@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   intro: intro.html
-last_built: 2022-09-26T07:07Z
+last_built: 2022-10-05T19:04Z
 urls:
   reference: https://appsilon.github.io/semantic.dashboard/reference
   article: https://appsilon.github.io/semantic.dashboard/articles
