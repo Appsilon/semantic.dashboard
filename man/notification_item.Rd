@@ -26,7 +26,8 @@ Create a notification item.
 }
 \section{Functions}{
 \itemize{
-\item \code{notificationItem()}: Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})
+\item \code{notificationItem()}: Create a notification item (alias for \code{notification_item} for
+compatibility with \code{shinydashboard})
 
 }}
 \examples{

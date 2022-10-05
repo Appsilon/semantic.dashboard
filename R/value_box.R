@@ -12,7 +12,7 @@
 #' @export
 #' @examples
 #' valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5, size = "tiny")
-value_box <- function(subtitle, value, icon = NULL, color = "blue", width = 5, size = ""){
+value_box <- function(subtitle, value, icon = NULL, color = "blue", width = 5, size = "") {
   verify_value_allowed("color", ALLOWED_COLORS)
   verify_value_allowed("size", ALLOWED_VALUEBOX_SIZES)
   column(width = width,
@@ -50,7 +50,7 @@ infoBox <- value_box
 #'     width = 5)
 #' })
 #' }
-value_box_output <- function(outputId, width = 5){
+value_box_output <- function(outputId, width = 5) {
   column(width = width, shiny::uiOutput(outputId))
 }
 
@@ -83,7 +83,7 @@ infoBoxOutput <- value_box_output
 #'     width = 5)
 #' })
 #' }
-render_value_box <- function(expr, env = parent.frame(), quoted = FALSE){
+render_value_box <- function(expr, env = parent.frame(), quoted = FALSE) {
   fun <- shiny::exprToFunction(expr, env, quoted)
   shiny::renderUI(fun())
 }
@@ -95,4 +95,3 @@ renderValueBox <- render_value_box
 #' @describeIn render_value_box Create a value box output (alias for \code{render_value_box})
 #' @export
 renderInfoBox <- render_value_box
-

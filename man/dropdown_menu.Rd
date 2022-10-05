@@ -14,7 +14,7 @@ dropdownMenu(..., type = "messages", icon = NULL, show_counter = TRUE)
 
 \item{type}{Type of the displayed items.}
 
-\item{icon}{Icon of the dropdown menu. If not specyfied created based on \code{type} agrument.}
+\item{icon}{Icon of the dropdown menu. If not specified created based on \code{type} argument.}
 
 \item{show_counter}{If true circular label with counter is going to be shown for dropdown.}
 }
@@ -26,7 +26,8 @@ Create a dropdown menu with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dropdownMenu()}: Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})
+\item \code{dropdownMenu()}: Create a dropdown menu (alias for \code{dropdown_menu} for
+compatibility with \code{shinydashboard})
 
 }}
 \examples{

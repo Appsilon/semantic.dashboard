@@ -42,22 +42,27 @@ dashboardHeader(
 \arguments{
 \item{...}{UI elements to include within the header. They will be displayed on the right side.}
 
-\item{left}{UI element to put on the left of the header. It will be placed after (to the right) the title and menu button (if they exist).}
+\item{left}{UI element to put on the left of the header. It will be placed after (to the right)
+the title and menu button (if they exist).}
 
 \item{center}{UI element to put in the center of the header.}
 
-\item{right}{UI element to put to the right of the header. It will be placed before elements defined in \code{...} (if there are any).}
+\item{right}{UI element to put to the right of the header. It will be placed before elements
+defined in \code{...} (if there are any).}
 
-\item{title}{Dashboard title to be displayed in the upper left corner. If NULL, will not display any title field. Use "" for an empty title.}
+\item{title}{Dashboard title to be displayed in the upper left corner. If NULL, will not display
+any title field. Use "" for an empty title.}
 
-\item{titleWidth}{Title field width, one of \code{c(NULL, "very thin", "thin", "wide", "very wide")}}
+\item{titleWidth}{Title field width, one of \code{c(NULL, "very thin", "thin", "wide",
+"very wide")}}
 
 \item{logo_align}{Where should logo be placed. One of \code{c("left", "center")}}
 
 \item{logo_path}{Path or URL of the logo to be shown in the header.}
 
-\item{color}{Color of the sidebar / text / icons (depending on the value of `inverted` parameter. \
-One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black")}}
+\item{color}{Color of the sidebar / text / icons (depending on the value of `inverted` parameter.
+One of \code{c("", "red", "orange", "yellow", "olive", "green", "teal", "blue", "violet",
+"purple", "pink", "brown", "grey", "black")}}
 
 \item{inverted}{If FALSE sidebar will be white and text will be colored. \
 If TRUE text will be white and background will be colored. Default is \code{FALSE}.}
@@ -75,11 +80,13 @@ A header that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
 }
 \description{
 Create a header of a dashboard with other additional UI elements.
-             Hint: use \code{shiny::tagList()} if you want to add multiple elements in \code{left} / \code{center} or \code{right}.
+             Hint: use \code{shiny::tagList()} if you want to add multiple elements in
+             \code{left} / \code{center} or \code{right}.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardHeader()}: Create a header of a dashboard (alias for \code{dashboard_header} for compatibility with \code{shinydashboard})
+\item \code{dashboardHeader()}: Create a header of a dashboard (alias for \code{dashboard_header}
+for compatibility with \code{shinydashboard})
 
 }}
 \examples{

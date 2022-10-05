@@ -75,4 +75,3 @@ test_that("equivalence of valueBoxOutput and infoBoxOutput", {
   expect_equal(si_str3, si_str2)
   expect_equal(si_str1, si_str3)
 })
-
