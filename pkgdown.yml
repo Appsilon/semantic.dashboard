@@ -1,9 +1,9 @@
-pandoc: 2.14.2
+pandoc: 2.19.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   intro: intro.html
-last_built: 2022-10-05T19:04Z
+last_built: 2022-10-31T11:07Z
 urls:
   reference: https://appsilon.github.io/semantic.dashboard/reference
   article: https://appsilon.github.io/semantic.dashboard/articles
