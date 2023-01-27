@@ -44,11 +44,14 @@ sidebarUserPanel(
 )
 
 ui_user <- sidebarUserPanel(
-  "Luca Turilli",
+  "Jane Smith",
   subtitle = a(href = "#", icon("circle"), "Online"),
   # Image file should be in www/ subdir
   # or a link to a image
-  image = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Luca_Turilli_in_2019_\%282\%29.jpg/330px-Luca_Turilli_in_2019_\%282\%29.jpg", # nolint: line_length_linter
+  image = base::system.file(
+    file.path('examples', "www", "jane_smith.jpg"),
+    package = "semantic.dashboard"
+  ),
   image_size = "mini"
 )
 
