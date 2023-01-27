@@ -3,14 +3,11 @@
 \name{sidebar_menu}
 \alias{sidebar_menu}
 \alias{sidebarMenu}
-\alias{sidebarUserPanel}
 \title{Create a sidebar menu.}
 \usage{
 sidebar_menu(...)
 
 sidebarMenu(...)
-
-sidebarUserPanel(name, subtitle = NULL, image = NULL, image_size = "tiny")
 }
 \arguments{
 \item{...}{Menu items.}
@@ -31,8 +28,6 @@ It's possible to set selected menu item by setting `selected = TRUE` in `menuIte
 \itemize{
 \item \code{sidebarMenu()}: Create a sidebar menu (alias for \code{sidebar_menu} for compatibility
 with \code{shinydashboard})
-
-\item \code{sidebarUserPanel()}: Create a sidebar user panel (alias for \code{sidebar_user_panel} for compatibility with \code{shinydashboard})
 
 }}
 \examples{

@@ -185,7 +185,7 @@ updateTabItems <- update_tab_items
 #'   subtitle = a(href = "#", icon("circle"), "Online"),
 #'   # Image file should be in www/ subdir
 #'   # or a link to a image
-#'   image = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Luca_Turilli_in_2019_%282%29.jpg/330px-Luca_Turilli_in_2019_%282%29.jpg",
+#'   image = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Luca_Turilli_in_2019_%282%29.jpg/330px-Luca_Turilli_in_2019_%282%29.jpg", # nolint: line_length_linter
 #'   image_size = "mini"
 #' )
 #'
@@ -210,14 +210,24 @@ updateTabItems <- update_tab_items
 #'   server <- function(input, output, session) {}
 #'   shinyApp(ui, server)
 #' }
-sidebar_user_panel <- function(name, subtitle = NULL, image = NULL,
+sidebar_user_panel <- function(name,
+                               subtitle = NULL,
+                               image = NULL,
                                image_size = "tiny") {
-    div(class = "user-panel", if (!is.null(image)) {
-        img(src = image, class = glue("ui {image_size} circular left floated image",
-                                      alt = "User Image"))},
-        p(name), subtitle)
+  div(
+    class = "user-panel",
+    if (!is.null(image)) {
+      img(
+        src = image,
+        class = glue("ui {image_size} circular left floated image",
+        alt = "User Image")
+      )
+    },
+    p(name), subtitle
+  )
  }
 
-#' @describeIn sidebar_menu Create a sidebar user panel (alias for \code{sidebar_user_panel} for compatibility with \code{shinydashboard})
+#' @describeIn sidebar_user_panel Create a sidebar user panel (alias for
+#' \code{sidebar_user_panel} for compatibility with \code{shinydashboard})
 #' @export
 sidebarUserPanel <- sidebar_user_panel

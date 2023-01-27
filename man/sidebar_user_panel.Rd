@@ -2,9 +2,12 @@
 % Please edit documentation in R/menu_item.R
 \name{sidebar_user_panel}
 \alias{sidebar_user_panel}
+\alias{sidebarUserPanel}
 \title{Create a user panel}
 \usage{
 sidebar_user_panel(name, subtitle = NULL, image = NULL, image_size = "tiny")
+
+sidebarUserPanel(name, subtitle = NULL, image = NULL, image_size = "tiny")
 }
 \arguments{
 \item{name}{Name of the user}
@@ -24,6 +27,12 @@ A div tag with the user panel
 \description{
 This creates an user panel using Semantic UI styles.
 }
+\section{Functions}{
+\itemize{
+\item \code{sidebarUserPanel()}: Create a sidebar user panel (alias for
+\code{sidebar_user_panel} for compatibility with \code{shinydashboard})
+
+}}
 \examples{
 sidebarUserPanel(
   "Some Name",
@@ -39,7 +48,7 @@ ui_user <- sidebarUserPanel(
   subtitle = a(href = "#", icon("circle"), "Online"),
   # Image file should be in www/ subdir
   # or a link to a image
-  image = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Luca_Turilli_in_2019_\%282\%29.jpg/330px-Luca_Turilli_in_2019_\%282\%29.jpg",
+  image = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Luca_Turilli_in_2019_\%282\%29.jpg/330px-Luca_Turilli_in_2019_\%282\%29.jpg", # nolint: line_length_linter
   image_size = "mini"
 )
 
