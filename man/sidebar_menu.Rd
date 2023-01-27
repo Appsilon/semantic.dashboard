@@ -11,9 +11,6 @@ sidebarMenu(...)
 }
 \arguments{
 \item{...}{Menu items.}
-
-\item{id}{The sidebar id class also used for update input on server side. Default is
-\code{uisidebar}}
 }
 \value{
 A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}

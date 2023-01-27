@@ -36,7 +36,7 @@ This creates an user panel using Semantic UI styles.
 \examples{
 sidebarUserPanel(
   "Some Name",
-  subtitle = a(href = "#", icon("circle"), "Online"),
+  subtitle = shiny::a(href = "#", icon("circle"), "Online"),
   # Image file should be in www/ subdir
   # or a link to a image
   image = "some_image_located_inside_www_dir.jpg",
@@ -45,7 +45,7 @@ sidebarUserPanel(
 
 ui_user <- sidebarUserPanel(
   "Jane Smith",
-  subtitle = a(href = "#", icon("circle"), "Online"),
+  subtitle = shiny::a(href = "#", icon("circle"), "Online"),
   # Image file should be in www/ subdir
   # or a link to a image
   image = base::system.file(

@@ -97,8 +97,6 @@ menuSubItem <- menu_item
 
 #' Create a sidebar menu.
 #' @description Create a sidebar menu with menu items.
-#' @param id The sidebar id class also used for update input on server side. Default is
-#'   \code{uisidebar}
 #' @param ... Menu items.
 #' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
@@ -173,7 +171,7 @@ updateTabItems <- update_tab_items
 #' @examples
 #' sidebarUserPanel(
 #'   "Some Name",
-#'   subtitle = a(href = "#", icon("circle"), "Online"),
+#'   subtitle = shiny::a(href = "#", icon("circle"), "Online"),
 #'   # Image file should be in www/ subdir
 #'   # or a link to a image
 #'   image = "some_image_located_inside_www_dir.jpg",
@@ -182,7 +180,7 @@ updateTabItems <- update_tab_items
 #'
 #' ui_user <- sidebarUserPanel(
 #'   "Jane Smith",
-#'   subtitle = a(href = "#", icon("circle"), "Online"),
+#'   subtitle = shiny::a(href = "#", icon("circle"), "Online"),
 #'   # Image file should be in www/ subdir
 #'   # or a link to a image
 #'   image = base::system.file(
