@@ -31,5 +31,5 @@ with \code{shinydashboard})
 sidebarMenu(
   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"), selected = TRUE)
-  )
+)
 }

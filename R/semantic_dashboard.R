@@ -198,7 +198,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
 
     shiny::div(
       closable = closable,
-      id = ..1$id,
+      id = ..1$attribs$id,
       class = paste(
         "dashboard-sidebar ui",
         size,
@@ -213,7 +213,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
         overlay_class,
         class
       ),
-      ..1[-1],
+      ..1$children,
       shiny::tags$script(glue("initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})")),
       shiny::tags$script(src = "src/updateTabItems.js")
     )
