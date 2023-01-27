@@ -181,7 +181,6 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
   if (disable || length(list(...)) < 1) {
     NULL
   } else {
-    arguments <- list(...)
     verify_value_allowed("side", ALLOWED_SIDEBAR_SIDES)
     verify_value_allowed("size", ALLOWED_SIDEBAR_SIZES)
     verify_value_allowed("color", ALLOWED_COLORS)
