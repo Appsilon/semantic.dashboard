@@ -155,7 +155,6 @@ update_tab_items <- function(session = shiny::getDefaultReactiveDomain(), tab) {
 #' @export
 updateTabItems <- update_tab_items
 
-
 #' Create a user panel
 #'
 #' @description This creates an user panel using Semantic UI styles.
@@ -172,7 +171,7 @@ updateTabItems <- update_tab_items
 #' @export
 #'
 #' @examples
-#' sidebar_user_panel(
+#' sidebarUserPanel(
 #'   "Some Name",
 #'   subtitle = a(href = "#", icon("circle"), "Online"),
 #'   # Image file should be in www/ subdir
@@ -181,7 +180,7 @@ updateTabItems <- update_tab_items
 #'   image_size = "mini"
 #' )
 #'
-#' ui_user <- sidebar_user_panel(
+#' ui_user <- sidebarUserPanel(
 #'   "Luca Turilli",
 #'   subtitle = a(href = "#", icon("circle"), "Online"),
 #'   # Image file should be in www/ subdir
@@ -219,3 +218,6 @@ sidebar_user_panel <- function(name, subtitle = NULL, image = NULL,
         p(name), subtitle)
  }
 
+#' @describeIn sidebar_menu Create a sidebar user panel (alias for \code{sidebar_user_panel} for compatibility with \code{shinydashboard})
+#' @export
+sidebarUserPanel <- sidebar_user_panel

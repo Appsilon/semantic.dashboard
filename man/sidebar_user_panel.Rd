@@ -25,7 +25,7 @@ A div tag with the user panel
 This creates an user panel using Semantic UI styles.
 }
 \examples{
-sidebar_user_panel(
+sidebarUserPanel(
   "Some Name",
   subtitle = a(href = "#", icon("circle"), "Online"),
   # Image file should be in www/ subdir
@@ -34,7 +34,7 @@ sidebar_user_panel(
   image_size = "mini"
 )
 
-ui_user <- sidebar_user_panel(
+ui_user <- sidebarUserPanel(
   "Luca Turilli",
   subtitle = a(href = "#", icon("circle"), "Online"),
   # Image file should be in www/ subdir

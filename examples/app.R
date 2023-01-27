@@ -25,7 +25,7 @@ ui <- dashboardPage(
                   dim_page = FALSE,
                   closable = FALSE,
                   sidebarMenu(
-                      sidebar_user_panel(
+                      sidebarUserPanel(
                       "Jane Smith",
                       subtitle = a(href = "#", icon("circle"), "Online"),
                       # Original image is published with a free to use license.

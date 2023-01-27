@@ -5,7 +5,7 @@ context("Function names")
 test_that("All functions from shinydashboard are implemented except functions known to be missing", { # nolint: line_length_linter
   to_be_implemented <- c(
     "menuItemOutput", "menuSubItem", "renderMenu", "sidebarMenuOutput",
-    "sidebarSearchForm", "sidebarUserPanel", "updateTabItems"
+    "sidebarSearchForm", "updateTabItems"
   )
   not_implemented <- setdiff(
     setdiff(ls("package:shinydashboard"), ls("package:semantic.dashboard")),
