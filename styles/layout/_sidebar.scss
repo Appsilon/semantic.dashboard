@@ -24,3 +24,8 @@ $opposite-sides: ("left": "right", "right": "left", "top": "bottom", "bottom": "
     border-#{$opposide-side}-width: 1px;
   }
 }
+
+.ui.sidebar .user-panel{
+  min-height: 65px;
+  padding: .92857143em 1.14285714em;
+}

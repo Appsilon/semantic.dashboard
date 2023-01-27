@@ -24,9 +24,17 @@ ui <- dashboardPage(
                   visible = TRUE,
                   dim_page = FALSE,
                   closable = FALSE,
-                   sidebarMenu(
-                     menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
-                     menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
+                  sidebarMenu(
+                      sidebar_user_panel(
+                      "Jane Smith",
+                      subtitle = a(href = "#", icon("circle"), "Online"),
+                      # Original image is published with a free to use license.
+                      # https://www.pexels.com/photo/3492736/
+                      image = "jane_smith.jpg",
+                      image_size = "mini"
+                    ),
+                    menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
+                    menuItem(tabName = "table_tab", text = "My table", icon = icon("smile")))),
 
   dashboardBody(
     tabItems(
