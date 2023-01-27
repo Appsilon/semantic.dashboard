@@ -155,6 +155,62 @@ update_tab_items <- function(session = shiny::getDefaultReactiveDomain(), tab) {
 #' @export
 updateTabItems <- update_tab_items
 
+
+#' Create a user panel
+#'
+#' @description This creates an user panel using Semantic UI styles.
+#'
+#' @param name Name of the user
+#' @param subtitle Information to be displayed below the name (for example
+#' if the user is online)
+#' @param image Path to an image. This can be a relative link to an existing
+#' `www/` directory, or an URL to an image
+#' @param image_size CSS class to display the image, see Semantic documentation
+#' for all sizes (goes from `mini` to `massive`)
+#'
+#' @return A div tag with the user panel
+#' @export
+#'
+#' @examples
+#' sidebar_user_panel(
+#'   "Some Name",
+#'   subtitle = a(href = "#", icon("circle"), "Online"),
+#'   # Image file should be in www/ subdir
+#'   # or a link to a image
+#'   image = "some_image_located_inside_www_dir.jpg",
+#'   image_size = "mini"
+#' )
+#'
+#' ui_user <- sidebar_user_panel(
+#'   "Luca Turilli",
+#'   subtitle = a(href = "#", icon("circle"), "Online"),
+#'   # Image file should be in www/ subdir
+#'   # or a link to a image
+#'   image = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Luca_Turilli_in_2019_%282%29.jpg/330px-Luca_Turilli_in_2019_%282%29.jpg",
+#'   image_size = "mini"
+#' )
+#'
+#' if (interactive()) {
+#'   ui <- dashboardPage(
+#'     dashboardHeader(),
+#'     dashboardSidebar(
+#'       ui_user,
+#'       sidebarMenu(
+#'         menuItem("Tab 1", tabName = "tab1"),
+#'         menuItem("Tab 2", tabName = "tab2")
+#'       )
+#'     ),
+#'     body = dashboardBody(
+#'       tabItems(
+#'         tabItem(tabName = "tab1", h2("Tab 1")),
+#'         tabItem(tabName = "tab2", h2("Tab 2"))
+#'       )
+#'     )
+#'   )
+#'
+#'   server <- function(input, output, session) {}
+#'   shinyApp(ui, server)
+#' }
 sidebar_user_panel <- function(name, subtitle = NULL, image = NULL,
                                image_size = "tiny") {
     div(class = "user-panel", if (!is.null(image)) {
