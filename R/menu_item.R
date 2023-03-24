@@ -97,8 +97,6 @@ menuSubItem <- menu_item
 
 #' Create a sidebar menu.
 #' @description Create a sidebar menu with menu items.
-#' @param id The sidebar id class also used for update input on server side. Default is
-#'   \code{uisidebar}
 #' @param ... Menu items.
 #' @return A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
 #' @export
@@ -108,9 +106,9 @@ menuSubItem <- menu_item
 #' sidebarMenu(
 #'   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
 #'   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"), selected = TRUE)
-#'   )
-sidebar_menu <- function(..., id = "uisidebar") {
-  c(as.list(environment()), list(...))
+#' )
+sidebar_menu <- function(...) {
+  shiny::div(id = "uisidebar", list(...))
 }
 
 #' @describeIn sidebar_menu Create a sidebar menu (alias for \code{sidebar_menu} for compatibility
@@ -154,3 +152,83 @@ update_tab_items <- function(session = shiny::getDefaultReactiveDomain(), tab) {
 #' \code{update_tab_items} for compatibility with \code{shinydashboard})
 #' @export
 updateTabItems <- update_tab_items
+
+#' Create a user panel
+#'
+#' @description This creates an user panel using Semantic UI styles.
+#'
+#' @param name Name of the user
+#' @param subtitle Information to be displayed below the name (for example
+#' if the user is online)
+#' @param image Path to an image. This can be a relative link to an existing
+#' `www/` directory, or an URL to an image
+#' @param image_size CSS class to display the image, see Semantic documentation
+#' for all sizes (goes from `mini` to `massive`)
+#'
+#' @return A div tag with the user panel
+#' @export
+#'
+#' @examples
+#' sidebarUserPanel(
+#'   "Some Name",
+#'   subtitle = shiny::a(href = "#", icon("circle"), "Online"),
+#'   # Image file should be in www/ subdir
+#'   # or a link to a image
+#'   image = "some_image_located_inside_www_dir.jpg",
+#'   image_size = "mini"
+#' )
+#'
+#' ui_user <- sidebarUserPanel(
+#'   "Jane Smith",
+#'   subtitle = shiny::a(href = "#", icon("circle"), "Online"),
+#'   # Image file should be in www/ subdir
+#'   # or a link to a image
+#'   image = base::system.file(
+#'     file.path('examples', "www", "jane_smith.jpg"),
+#'     package = "semantic.dashboard"
+#'   ),
+#'   image_size = "mini"
+#' )
+#'
+#' if (interactive()) {
+#'   ui <- dashboardPage(
+#'     dashboardHeader(),
+#'     dashboardSidebar(
+#'       ui_user,
+#'       sidebarMenu(
+#'         menuItem("Tab 1", tabName = "tab1"),
+#'         menuItem("Tab 2", tabName = "tab2")
+#'       )
+#'     ),
+#'     body = dashboardBody(
+#'       tabItems(
+#'         tabItem(tabName = "tab1", h2("Tab 1")),
+#'         tabItem(tabName = "tab2", h2("Tab 2"))
+#'       )
+#'     )
+#'   )
+#'
+#'   server <- function(input, output, session) {}
+#'   shinyApp(ui, server)
+#' }
+sidebar_user_panel <- function(name,
+                               subtitle = NULL,
+                               image = NULL,
+                               image_size = "tiny") {
+  shiny::div(
+    class = "user-panel",
+    if (!is.null(image)) {
+      shiny::img(
+        src = image,
+        class = glue::glue("ui {image_size} circular left floated image",
+        alt = "User Image")
+      )
+    },
+    p(name), subtitle
+  )
+ }
+
+#' @describeIn sidebar_user_panel Create a sidebar user panel (alias for
+#' \code{sidebar_user_panel} for compatibility with \code{shinydashboard})
+#' @export
+sidebarUserPanel <- sidebar_user_panel

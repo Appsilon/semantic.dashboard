@@ -5,15 +5,12 @@
 \alias{sidebarMenu}
 \title{Create a sidebar menu.}
 \usage{
-sidebar_menu(..., id = "uisidebar")
+sidebar_menu(...)
 
-sidebarMenu(..., id = "uisidebar")
+sidebarMenu(...)
 }
 \arguments{
 \item{...}{Menu items.}
-
-\item{id}{The sidebar id class also used for update input on server side. Default is
-\code{uisidebar}}
 }
 \value{
 A sidebar menu that can be passed \code{\link[semantic.dashboard]{dashboardSidebar}}
@@ -34,5 +31,5 @@ with \code{shinydashboard})
 sidebarMenu(
   menuItem(tabName = "plot_tab", text = "My plot", icon = icon("home")),
   menuItem(tabName = "table_tab", text = "My table", icon = icon("smile"), selected = TRUE)
-  )
+)
 }

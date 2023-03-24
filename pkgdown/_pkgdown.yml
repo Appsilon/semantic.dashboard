@@ -96,6 +96,8 @@ reference:
   - '`sidebar_menu`'
   - '`sidebarMenuOutput`'
   - '`sidebar_menu_output`'
+  - '`sidebarUserPanel`'
+  - '`sidebar_user_panel`'
   - '`tabBox`'
   - '`tab_box`'
   - '`tabItem`'

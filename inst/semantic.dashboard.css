@@ -259,3 +259,7 @@ body.no-margin .ui.top.menu.dashboard-header {
   border-top-width: 1px;
 }
 
+.ui.sidebar .user-panel {
+  min-height: 65px;
+  padding: 13px 16px;
+}

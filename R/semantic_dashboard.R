@@ -181,6 +181,7 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
   if (disable || length(list(...)) < 1) {
     NULL
   } else {
+    arguments <- list(...)
     verify_value_allowed("side", ALLOWED_SIDEBAR_SIDES)
     verify_value_allowed("size", ALLOWED_SIDEBAR_SIZES)
     verify_value_allowed("color", ALLOWED_COLORS)
@@ -196,28 +197,32 @@ dashboard_sidebar <- function(..., side = "left", size = "thin", color = "", inv
     overlay <- ifelse(overlay, quote(true), quote(false))
     dim_page <- ifelse(dim_page, quote(true), quote(false))
 
-    shiny::div(
-      closable = closable,
-      id = ..1$id,
-      class = paste(
-        "dashboard-sidebar ui",
-        size,
-        side,
-        color,
-        ifelse(side %in% c("top", "bottom"), "", "vertical"),
-        display_type,
-        ifelse(visible, "visible", ""),
-        inverted_value,
-        "menu sidebar",
-        uncover_class,
-        overlay_class,
-        class
-      ),
-      ..1[-1],
-      shiny::tags$script(glue("initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})")),
-      shiny::tags$script(src = "src/updateTabItems.js")
+    do.call(
+      shiny::div,
+      list(
+        closable = glue::glue("{closable}"),
+        id = arguments$id,
+        class = paste(
+          "dashboard-sidebar ui",
+          size,
+          side,
+          color,
+          ifelse(side %in% c("top", "bottom"), "", "vertical"),
+          display_type,
+          ifelse(visible, "visible", ""),
+          inverted_value,
+          "menu sidebar",
+          uncover_class,
+          overlay_class,
+          class
+        ),
+        arguments,
+        shiny::tags$script(glue::glue(
+          "initialize_sidebar({closable}, {pushable}, {overlay}, {dim_page})"
+        )),
+        shiny::tags$script(src = "src/updateTabItems.js")
+      )
     )
-
   }
 }
 
