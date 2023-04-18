@@ -50,8 +50,7 @@ shinyApp(ui, server)
 
 `semantic.dashboard` offers basic functions for creating dashboard with Fomantic UI.
 
-How to install?
----------------
+## How to install?
 
 Install `shiny.semantic` library first. [Here](https://github.com/Appsilon/shiny.semantic) you can find how.
 
@@ -67,21 +66,18 @@ To install [previous version]() you can run:
 
     remotes::install_github("Appsilon/semantic.dashboard", ref = "0.1.0")
 
-Example
--------
+## Example
 
 You can find examples in the `examples/` folder of the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
 
 You can check [documentation](https://appsilon.github.io/semantic.dashboard/) for tutorials.
 
-How to contribute?
-------------------
+## How to contribute?
 
 If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix. Please check `development/README.md` first! It contains useful
 information that will help you run your dev environment for `semantic.dashboard`.
 
-Troubleshooting
----------------
+## Troubleshooting
 
 We used the latest versions of dependencies for this library, so please update your R environment before installation.
 
@@ -91,21 +87,20 @@ However, if you encounter any problems, try the following:
 2.  Installing specific dependent libraries versions
     -   shiny.semantic
 
-Future enhacements
-------------------
+## Future enhacements
 
 -   Release of a stable 1.0.0 version
 -   Closer integration with shinydashboard
 
-Appsilon
---------
-
+## Appsilon
 
 <img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%" />
 
-Appsilon is a **Full Service Certified RStudio Partner**. Learn more
-at [appsilon.com](https://appsilon.com).
+Appsilon is a **Posit (formerly RStudio) Full Service Certified Partner**.<br/>
+Learn more at [appsilon.com](https://appsilon.com).
 
-Get in touch [opensource@appsilon.com](opensource@appsilon.com)
+Get in touch [opensource@appsilon.com](mailto:opensource@appsilon.com)
 
-<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
+Explore the [Rhinoverse](https://rhinoverse.dev) - a family of R packages built around [Rhino](https://appsilon.github.io/rhino/)!
+
+<a href = "https://appsilon.com/careers/" target="_blank"><img src="https://raw.githubusercontent.com/Appsilon/website-cdn/gh-pages/WeAreHiring1.png" alt="We are hiring!"/></a>
