@@ -8,7 +8,7 @@ ui <- dashboardPage(
   margin = TRUE,
   dashboardHeader(
     logo_align = "center",
-    logo_path = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",
+    logo_path = "https://avatars0.githubusercontent.com/u/6096772",
     dropdownMenuOutput("dropdown"),
     title = "Appsilon",
     titleWidth = "thin",

@@ -4,7 +4,7 @@ library(semantic.dashboard)
 ui <- dashboardPage(margin = TRUE,
   dashboardHeader(title = "Sample app",
                   titleWidth = "thin",
-                  logo_path = "http://d2v95fjda94ghc.cloudfront.net/appsilon_logo.png",
+                  logo_path = "https://avatars0.githubusercontent.com/u/6096772",
                   logo_align = "center",
                   show_menu_button = FALSE,
                   left = tagList(h4("Header test", style="margin-left: 5px"), shiny::icon("check-circle")),
