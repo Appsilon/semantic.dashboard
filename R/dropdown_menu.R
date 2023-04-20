@@ -2,7 +2,7 @@
 #' @description Create a dropdown menu with additional UI elements.
 #' @param ... UI elements to include within the dropdown menu.
 #' @param type Type of the displayed items.
-#' @param icon Icon of the dropdown menu. If not specyfied created based on \code{type} agrument.
+#' @param icon Icon of the dropdown menu. If not specified created based on \code{type} argument.
 #' @param show_counter If true circular label with counter is going to be shown for dropdown.
 #' @return A dropdown menu that can be passed to \code{\link[semantic.dashboard]{dashboardHeader}}
 #' @export
@@ -31,7 +31,8 @@ dropdown_menu <- function(..., type = "messages", icon = NULL, show_counter = TR
                      shiny::tags$script(progress_bar_js))
 }
 
-#' @describeIn dropdown_menu Create a dropdown menu (alias for \code{dropdown_menu} for compatibility with \code{shinydashboard})
+#' @describeIn dropdown_menu Create a dropdown menu (alias for \code{dropdown_menu} for
+#'   compatibility with \code{shinydashboard})
 #' @export
 dropdownMenu <- dropdown_menu
 
@@ -54,7 +55,8 @@ message_item <- function(from, message, ..., icon = "user") {
                 ...)
 }
 
-#' @describeIn message_item Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})
+#' @describeIn message_item Create a message item (alias for \code{message_item} for compatibility
+#'   with \code{shinydashboard})
 #' @export
 messageItem <- message_item
 
@@ -69,19 +71,26 @@ messageItem <- message_item
 #' @export
 #' @examples
 #' taskItem("Project progress...", 50.777, color = "red")
-task_item <- function(text, value, color = ""){
-  if (!is.numeric(value) || (value < MIN_PROGRESS_VALUE) || (value > MAX_PROGRESS_VALUE)){
+task_item <- function(text, value, color = "") {
+  if (!is.numeric(value) || (value < MIN_PROGRESS_VALUE) || (value > MAX_PROGRESS_VALUE)) {
     warning(paste("'value' must be between", MIN_PROGRESS_VALUE, "and", MAX_PROGRESS_VALUE))
   }
   verify_value_allowed("color", c("", ALLOWED_COLORS))
-  shiny::tags$div(class = "item", style = "min-width: 200px;",
-                  shiny::tags$div(class = paste("ui active progress", color),
-                                  `data-percent` = value, `data-total` = 100,
-                                  shiny::tags$div(class = "bar", shiny::tags$div(class = "progress")),
-                                  shiny::tags$div(class = "label", text)))
+  shiny::tags$div(
+    class = "item",
+    style = "min-width: 200px;",
+    shiny::tags$div(
+      class = paste("ui active progress", color),
+      `data-percent` = value,
+      `data-total` = 100,
+      shiny::tags$div(class = "bar", shiny::tags$div(class = "progress")),
+      shiny::tags$div(class = "label", text)
+    )
+  )
 }
 
-#' @describeIn task_item Create a task item (alias for \code{taks_item} for compatibility with \code{shinydashboard})
+#' @describeIn task_item Create a task item (alias for \code{taks_item} for compatibility with
+#'   \code{shinydashboard})
 #' @export
 taskItem <- task_item
 
@@ -96,13 +105,14 @@ taskItem <- task_item
 #' @export
 #' @examples
 #' notificationItem("This is notification!", color = "red")
-notification_item <- function(text, icon = "warning", color = ""){
+notification_item <- function(text, icon = "warning", color = "") {
   verify_value_allowed("color", c("", ALLOWED_COLORS))
   shiny::tags$div(class = "item",
                   shiny::tags$div(class = paste("ui label", color),
                                   shiny::tags$i(class = paste("small", icon, "icon")), text))
 }
 
-#' @describeIn notification_item Create a notification item (alias for \code{notification_item} for compatibility with \code{shinydashboard})
+#' @describeIn notification_item Create a notification item (alias for \code{notification_item} for
+#'   compatibility with \code{shinydashboard})
 #' @export
 notificationItem <- notification_item

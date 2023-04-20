@@ -12,7 +12,8 @@ dashboardBody(..., class = "")
 \arguments{
 \item{...}{UI elements to include within the body.}
 
-\item{class}{CSS class to be applied to the container of \code{dashboardBody}. Note it's not the \code{<body>} tag.}
+\item{class}{CSS class to be applied to the container of \code{dashboardBody}. Note it's not the
+\code{<body>} tag.}
 }
 \value{
 A tab that can be passed to \code{\link[semantic.dashboard]{dashboardPage}}
@@ -22,9 +23,10 @@ Create a body of a dashboard with tabs and other additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{dashboardBody}: Create a body of a dashboard (alias for \code{dashboard_body} for compatibility with \code{shinydashboard})
-}}
+\item \code{dashboardBody()}: Create a body of a dashboard (alias for \code{dashboard_body} for
+compatibility with \code{shinydashboard})
 
+}}
 \examples{
 if(interactive()){
 

@@ -28,11 +28,11 @@ Server-side function for dynamic valueBox.
 }
 \section{Functions}{
 \itemize{
-\item \code{renderValueBox}: Create a value box output (alias for \code{render_value_box})
+\item \code{renderValueBox()}: Create a value box output (alias for \code{render_value_box})
 
-\item \code{renderInfoBox}: Create a value box output (alias for \code{render_value_box})
+\item \code{renderInfoBox()}: Create a value box output (alias for \code{render_value_box})
+
 }}
-
 \examples{
 \dontrun{
 valueBoxOutput("value_box")

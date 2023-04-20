@@ -35,11 +35,11 @@ Create a valueBox with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{valueBox}: Create a valueBox (alias for \code{value_box})
+\item \code{valueBox()}: Create a valueBox (alias for \code{value_box})
 
-\item \code{infoBox}: Create a valueBox (alias for \code{value_box})
+\item \code{infoBox()}: Create a valueBox (alias for \code{value_box})
+
 }}
-
 \examples{
 valueBox("Unread Mail", 44, icon("mail"), color = "blue", width = 5, size = "tiny")
 }

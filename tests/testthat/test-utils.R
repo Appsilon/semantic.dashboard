@@ -31,3 +31,7 @@ test_that("test random_id_generator", {
   expect_true(nchar(random_id_generator(id_length = 3)) == 3)
 })
 
+test_that("validate_session_object", {
+  session <- character(1)
+  expect_error(validate_session_object(session))
+})

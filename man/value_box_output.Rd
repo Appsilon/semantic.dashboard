@@ -25,11 +25,11 @@ UI-side function for dynamic valueBox.
 }
 \section{Functions}{
 \itemize{
-\item \code{valueBoxOutput}: Create a valueBox output (alias for \code{value_box_output})
+\item \code{valueBoxOutput()}: Create a valueBox output (alias for \code{value_box_output})
 
-\item \code{infoBoxOutput}: Create a valueBox output (alias for \code{value_box_output})
+\item \code{infoBoxOutput()}: Create a valueBox output (alias for \code{value_box_output})
+
 }}
-
 \examples{
 \dontrun{
 valueBoxOutput("value_box")

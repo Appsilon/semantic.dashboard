@@ -14,7 +14,8 @@ tabItem(tabName, ..., fluid = TRUE)
 
 \item{...}{UI elements to include within the tab.}
 
-\item{fluid}{Controls whether tab width should be 100\% (TRUE) or limited by Foomantic UI breakpoints (FALSE).}
+\item{fluid}{Controls whether tab width should be 100\% (TRUE) or limited by Foomantic UI
+breakpoints (FALSE).}
 }
 \value{
 A tab that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
@@ -24,9 +25,10 @@ Create a tab panel with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{tabItem}: Create a tab (alias for \code{tab_item} for compatibility with \code{shinydashboard})
-}}
+\item \code{tabItem()}: Create a tab (alias for \code{tab_item} for compatibility with
+\code{shinydashboard})
 
+}}
 \examples{
 tab_item(tabName = "tab1", "Tab 1")
 }

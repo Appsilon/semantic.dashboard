@@ -59,9 +59,10 @@ Create a tab box with additional UI elements.
 }
 \section{Functions}{
 \itemize{
-\item \code{tabBox}: Create a tab box (alias for \code{tab_box} for compatibility with \code{shinydashboard})
-}}
+\item \code{tabBox()}: Create a tab box (alias for \code{tab_box} for compatibility with
+\code{shinydashboard})
 
+}}
 \examples{
 tabBox(title = "Sample tab box", color = "blue", width = 5,
        tabs = list(

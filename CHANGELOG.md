@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- `sidebarUserPanel` was added increasing support of `shinydashboard` functions
+
 ### Changed
 ### Fixed
 ### Removed
@@ -17,7 +19,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - `fluid` param for `tabItem`
 - `class` param for `dashboardPage`, `dashboardBody`, `dashboardSidebar` and `dashboardHeader` 
 - `dashboardPage`, `dashboardBody`, `dashboardSidebar` and `dashboardHeader` have now built-in CSS classes of syntax `dashboard-<component>` e.g. `dashboard-page`. Thanks to that it's easy to write selectors for DOM nodes related to them
-- pkgdown docuemntation
+- pkgdown documentation
 - tests for dropdown menu, utils and value box
 
 ### Changed

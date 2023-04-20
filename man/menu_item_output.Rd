@@ -20,6 +20,7 @@ UI-side function for dynamic manuItem.
 }
 \section{Functions}{
 \itemize{
-\item \code{menuItemOutput}: Create a menu item output (alias for \code{menu_item_output} for compatibility with \code{shinydashboard})
-}}
+\item \code{menuItemOutput()}: Create a menu item output (alias for \code{menu_item_output} for
+compatibility with \code{shinydashboard})
 
+}}

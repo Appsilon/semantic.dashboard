@@ -1,10 +1,32 @@
-title: SHINY.SEMANTIC
+title: semantic.dashboard
 template:
-  params:
-    bootswatch: yeti
+  bootstrap: 5
+  bootswatch: pulse
+  bslib:
+    pkgdown-nav-height: 100px
+  includes:
+    in_header: |
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVSGPM9FF2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZVSGPM9FF2');
+      </script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQQZL5V93G"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FQQZL5V93G');
+      </script>
+
+url: https://appsilon.github.io/semantic.dashboard/
 
 navbar:
-  type: inverse
+  bg: primary
   left:
     - icon: fa-home
       href: index.html
@@ -12,13 +34,13 @@ navbar:
     - icon: fa-university
       text: "Tutorials"
       href: articles/index.html
-  right:
     - icon: fa-file-code-o
       text: "Reference"
       href: reference/index.html
     - icon: fa-newspaper-o
       text: "Changes"
       href: CHANGELOG.html
+  right:
     - icon: fa-github fa-lg
       href: https://github.com/Appsilon/semantic.dashboard
     - icon: fa-twitter fa-lg
@@ -52,6 +74,7 @@ reference:
 - title: Other UI elements
   desc: All functions that generate UI elements.
   contents:
+  - '`icon`'
   - '`infoBox`'
   - '`infoBoxOutput`'
   - '`menuItem`'
@@ -73,6 +96,8 @@ reference:
   - '`sidebar_menu`'
   - '`sidebarMenuOutput`'
   - '`sidebar_menu_output`'
+  - '`sidebarUserPanel`'
+  - '`sidebar_user_panel`'
   - '`tabBox`'
   - '`tab_box`'
   - '`tabItem`'
@@ -92,3 +117,7 @@ reference:
   contents:
   - '`light_semantic_palette`'
   - '`semantic_palette`'
+
+- title: Other
+  contents:
+  - '`update_tab_items`'

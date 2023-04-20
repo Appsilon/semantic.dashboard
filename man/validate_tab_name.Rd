@@ -12,3 +12,4 @@ validate_tab_name(name)
 \description{
 Valid tab name should not containt dot character '.'.
 }
+\keyword{internal}

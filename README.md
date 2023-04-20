@@ -1,16 +1,13 @@
-<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
+# semantic.dashboard <a href="https://appsilon.github.io/semantic.dashboard/"><img src="man/figures/hexsticker.png" align="right" alt="semantic.dashboard logo" style="height: 140px;"></a>
 
-<img src="man/figures/hexsticker.png" align="right" alt="" width="130" />
+> _Quick, beautiful and customizable dashboard template for Shiny based on shiny.semantic and Fomantic UI._
 
-semantic.dashboard
-==================
-
-![R-CMD-check](https://github.com/Appsilon/semantic.dashboard/workflows/R-CMD-check/badge.svg)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/Appsilon/semantic.dashboard/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/semantic.dashboard/actions/workflows/main.yml)
 [![codecov](https://codecov.io/gh/Appsilon/semantic.dashboard/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/semantic.dashboard)
 [![cranlogs](https://cranlogs.r-pkg.org/badges/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
 [![total](https://cranlogs.r-pkg.org/badges/grand-total/semantic.dashboard)](https://CRAN.R-project.org/package=semantic.dashboard)
-
-Dashboard with Semantic UI Support for Shiny.
+<!-- badges: end -->
 
 Are you fed up with ordinary `shinydashboard` look?
 
@@ -53,8 +50,7 @@ shinyApp(ui, server)
 
 `semantic.dashboard` offers basic functions for creating dashboard with Fomantic UI.
 
-How to install?
----------------
+## How to install?
 
 Install `shiny.semantic` library first. [Here](https://github.com/Appsilon/shiny.semantic) you can find how.
 
@@ -70,31 +66,18 @@ To install [previous version]() you can run:
 
     remotes::install_github("Appsilon/semantic.dashboard", ref = "0.1.0")
 
-Example
--------
+## Example
 
 You can find examples in the `examples/` folder of the [GitHub repository](https://github.com/Appsilon/semantic.dashboard).
 
 You can check [documentation](https://appsilon.github.io/semantic.dashboard/) for tutorials.
 
-How to contribute?
-------------------
+## How to contribute?
 
 If you want to contribute to this project please submit a regular PR, once you're done with new feature or bug fix. Please check `development/README.md` first! It contains useful
 information that will help you run your dev environment for `semantic.dashboard`.
 
-Changes in documentation
-------------------------
-
-Both repository **README.md** file and an official documentation page
-are generated with Rmarkdown, so if there is a need to update them,
-please modify accordingly a **README.Rmd** file and use “Knit”.
-
-Documentation is rendered with `pkgdown`. Just run
-`pkgdown::build_site()` after rendering new **README.md**.
-
-Troubleshooting
----------------
+## Troubleshooting
 
 We used the latest versions of dependencies for this library, so please update your R environment before installation.
 
@@ -104,19 +87,20 @@ However, if you encounter any problems, try the following:
 2.  Installing specific dependent libraries versions
     -   shiny.semantic
 
-Future enhacements
-------------------
+## Future enhacements
 
 -   Release of a stable 1.0.0 version
 -   Closer integration with shinydashboard
 
-Appsilon
---------
-
+## Appsilon
 
 <img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%" />
 
-Appsilon is the **Full Service Certified RStudio Partner**. Learn more
-at [appsilon.com](https://appsilon.com).
+Appsilon is a **Posit (formerly RStudio) Full Service Certified Partner**.<br/>
+Learn more at [appsilon.com](https://appsilon.com).
 
-Get in touch [dev@appsilon.com](dev@appsilon.com)
+Get in touch [opensource@appsilon.com](mailto:opensource@appsilon.com)
+
+Explore the [Rhinoverse](https://rhinoverse.dev) - a family of R packages built around [Rhino](https://appsilon.github.io/rhino/)!
+
+<a href = "https://appsilon.com/careers/" target="_blank"><img src="https://raw.githubusercontent.com/Appsilon/website-cdn/gh-pages/WeAreHiring1.png" alt="We are hiring!"/></a>

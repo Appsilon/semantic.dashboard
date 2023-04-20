@@ -5,14 +5,12 @@
 \alias{tabItems}
 \title{Create a panel with tabs.}
 \usage{
-tab_items(..., selected = 1)
+tab_items(...)
 
-tabItems(..., selected = 1)
+tabItems(...)
 }
 \arguments{
 \item{...}{Tabs.}
-
-\item{selected}{Which tab should be active on start.}
 }
 \value{
 A panel with tabs that can be passed to \code{\link[semantic.dashboard]{dashboardBody}}
@@ -22,9 +20,10 @@ Create a panel with tabs.
 }
 \section{Functions}{
 \itemize{
-\item \code{tabItems}: Create a panel with tabs (alias for \code{tab_items} for compatibility with \code{shinydashboard})
-}}
+\item \code{tabItems()}: Create a panel with tabs (alias for \code{tab_items} for compatibility
+with \code{shinydashboard})
 
+}}
 \examples{
 tabItems(
  tabItem(tabName = "tab1", "Tab 1"),

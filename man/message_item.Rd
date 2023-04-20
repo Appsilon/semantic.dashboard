@@ -26,9 +26,10 @@ Create a message item.
 }
 \section{Functions}{
 \itemize{
-\item \code{messageItem}: Create a message item (alias for \code{message_item} for compatibility with \code{shinydashboard})
-}}
+\item \code{messageItem()}: Create a message item (alias for \code{message_item} for compatibility
+with \code{shinydashboard})
 
+}}
 \examples{
 messageItem("Marek", "Another test!", icon = "warning")
 }
