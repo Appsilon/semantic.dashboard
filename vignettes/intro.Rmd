@@ -90,7 +90,7 @@ For example:
 
 
 **PRACTICE** *Try to add icons to the `menuItem`.*
-The content of the app can be defined ike this. Note that we refer to exactly
+The content of the app can be defined like this. Note that we refer to exactly
 the same `tabName` as in the sidebar.
 
 ```{r echo=T, include = T, eval = FALSE, screenshot.force = FALSE}
